@@ -9,7 +9,7 @@ import UIKit
 
 class GreetingViewController: UIViewController {
     
-    // MARK: - add gui elements
+    // MARK: - gui elements
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "launchScreen")
@@ -42,12 +42,7 @@ class GreetingViewController: UIViewController {
     
     private lazy var descriptionLabel: UILabel = {
         let description = UILabel()
-        description.text = """
-        «Торты в Мозыре» познакомят Вас с миром
-        вкусной, домашней выпечки, которой можно
-        побавловать себя, друзей и родственников.
-        Давайте скорее посмотрим в меню!
-        """
+        description.text = "«Торты в Мозыре» познакомят Вас с миром вкусной, домашней выпечки, которой можно побавловать себя, друзей и родственников. Давайте скорее посмотрим в меню!"
         description.textColor = UIColor(named: "AKLightGray")
         description.font = UIFont.systemFont(ofSize: 15, weight: .light)
         description.textAlignment = .center
@@ -74,7 +69,7 @@ class GreetingViewController: UIViewController {
         
         self.view.backgroundColor = .white
         
-        // adding views
+        // add views
         self.view.addSubview(backgroundImageView)
         self.view.addSubview(whiteAreaView)
         self.view.addSubview(titleLabel)
@@ -96,7 +91,6 @@ class GreetingViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-//            self.whiteAreaView.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 150),
             self.whiteAreaView.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -270),
             self.whiteAreaView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
             self.whiteAreaView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
@@ -128,7 +122,9 @@ class GreetingViewController: UIViewController {
     
     // MARK: - actions
     @objc func startButtonTapped() {
-        self.present(AuthorizationViewController(), animated: true)
+        let authPage = AuthorizationViewController()
+        authPage.modalPresentationStyle = .fullScreen
+        self.present(authPage, animated: true)
     }
 
 }

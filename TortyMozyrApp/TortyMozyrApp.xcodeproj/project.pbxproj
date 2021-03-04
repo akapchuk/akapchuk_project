@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1193C19625EE4C5A00729DDB /* Colors.xcassets */; };
+		11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
 		11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE86F625ED83C000CFFD69 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1193C19625EE4C5A00729DDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialMediaIcons.xcassets; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				11DE86F925ED83C700CFFD69 /* Assets.xcassets */,
 				1193C19625EE4C5A00729DDB /* Colors.xcassets */,
+				11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */,
 				11DE86FB25ED83C700CFFD69 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -175,6 +178,7 @@
 				1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */,
 				11DE86FA25ED83C700CFFD69 /* Assets.xcassets in Resources */,
 				11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */,
+				11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
