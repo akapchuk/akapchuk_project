@@ -84,6 +84,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         // text field configuration
         self.emailTextField.keyboardType = .emailAddress
         self.emailTextField.textContentType = .emailAddress
+        self.emailTextField.returnKeyType = .send
         self.emailTextField.delegate = self
         
         // add gestures
@@ -104,7 +105,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+        self.sendNewPasswordButtonTapped()
         return true
     }
     
@@ -173,15 +174,10 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
                                                         message: "Адрес не введен",
                                                         preferredStyle: .alert)
                 
-                let okAction = UIAlertAction(title: "Ввести адрес", style: .default) { _ in
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                     print("OK action tapped")
                 }
                 alertController.addAction(okAction)
-                
-                let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { _ in
-                    print("Отмена")
-                }
-                alertController.addAction(cancelAction)
     
                 self.present(alertController, animated: true, completion: nil)
             } else if !emailSymbols.contains("@") || !emailSymbols.contains(".") {
@@ -192,11 +188,13 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
                 
                 let okAction = UIAlertAction(title: "Ввести повторно", style: .default) { _ in
                     print("OK action tapped")
+                    self.emailTextField.becomeFirstResponder()
                 }
                 alertController.addAction(okAction)
                 
                 let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { _ in
                     print("Отмена")
+                    self.dismiss(animated: true, completion: nil)
                 }
                 alertController.addAction(cancelAction)
     

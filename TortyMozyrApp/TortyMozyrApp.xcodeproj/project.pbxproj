@@ -17,6 +17,9 @@
 		11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */; };
 		11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */; };
 		11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */; };
+		11EF0E6625F239B3006FE5B8 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6525F239B3006FE5B8 /* HomepageViewController.swift */; };
+		11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */; };
+		11EF0E6D25F24EE7006FE5B8 /* AKWhiteAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		11EF0E6525F239B3006FE5B8 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBigBlueButton.swift; sourceTree = "<group>"; };
+		11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKWhiteAreaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 		11DE870C25EE3AD700CFFD69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */,
+				11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 			children = (
 				11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */,
 				11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */,
+				11EF0E6525F239B3006FE5B8 /* HomepageViewController.swift */,
 				11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controllers;
@@ -214,6 +223,9 @@
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
+				11EF0E6D25F24EE7006FE5B8 /* AKWhiteAreaView.swift in Sources */,
+				11EF0E6625F239B3006FE5B8 /* HomepageViewController.swift in Sources */,
+				11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */,
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,

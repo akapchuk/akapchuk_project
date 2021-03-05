@@ -19,16 +19,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         return imageView
     }()
     
-    private lazy var whiteAreaView: UIView = {
-        let whiteArea = UIView()
-        whiteArea.backgroundColor = .white
-        whiteArea.backgroundColor = UIColor(named: "AKWhite")
-        whiteArea.layer.cornerRadius = 40
-        whiteArea.layer.maskedCorners = [
-            .layerMinXMinYCorner,
-            .layerMaxXMinYCorner
-        ]
-        whiteArea.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var whiteAreaView: AKWhiteAreaView = {
+        let whiteArea = AKWhiteAreaView()
         return whiteArea
     }()
     

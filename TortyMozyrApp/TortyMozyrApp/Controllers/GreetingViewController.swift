@@ -18,15 +18,8 @@ class GreetingViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var whiteAreaView: UIView = {
-        let whiteView = UIView()
-        whiteView.backgroundColor = UIColor(named: "AKWhite")
-        whiteView.layer.cornerRadius = 40
-        whiteView.layer.maskedCorners = [
-            .layerMinXMinYCorner,
-            .layerMaxXMinYCorner
-        ]
-        whiteView.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var whiteAreaView: AKWhiteAreaView = {
+        let whiteView = AKWhiteAreaView()
         return whiteView
     }()
     
@@ -51,14 +44,9 @@ class GreetingViewController: UIViewController {
         return description
     }()
     
-    private lazy var startButton: UIButton = {
-        let button = UIButton()
+    private lazy var startButton: AKBigBlueButton = {
+        let button = AKBigBlueButton()
         button.setTitle("Начать", for: UIControl.State())
-        button.setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKBlue")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 30
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         return button
     }()
