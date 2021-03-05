@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthorizationViewController: UIViewController {
+class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - gui elements
     
@@ -66,7 +66,7 @@ class AuthorizationViewController: UIViewController {
         button.setTitleColor(UIColor(named: "AKBlue"), for: UIControl.State())
         button.backgroundColor = UIColor(named: "AKWhite")
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
-        button.addTarget(self, action: #selector(createProfileButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -165,6 +165,9 @@ class AuthorizationViewController: UIViewController {
                 
         self.view.backgroundColor = .white
         
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        
         self.emailTextField.keyboardType = .emailAddress
         self.emailTextField.textContentType = .emailAddress
         self.passwordTextField.textContentType = .password
@@ -189,8 +192,22 @@ class AuthorizationViewController: UIViewController {
         
         self.setUpConstraints()
         
+        // add gestures
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewDidTapped)))
+        self.appleIDView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.appleIDButtonTapped)))
+        self.facebookView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.facebookButtonTapped)))
+        self.googleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.googleButtonTapped)))
     }
+    
+    // MARK: - text fields delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    // MARK: - set constraints
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
@@ -292,6 +309,13 @@ class AuthorizationViewController: UIViewController {
     }
         
     // MARK: - actions
+    
+    @objc func forgotPasswordButtonTapped() {
+        let forgotPasswordVC = ForgotPasswordViewController()
+        forgotPasswordVC.modalPresentationStyle = .fullScreen
+        self.present(forgotPasswordVC, animated: true)
+    }
+    
     @objc func createProfileButtonTapped() {
         print("Button 'Создать профиль' was tapped")
     }
@@ -303,4 +327,16 @@ class AuthorizationViewController: UIViewController {
     @objc private func viewDidTapped() {
             self.view.endEditing(true)
         }
+    
+    @objc func appleIDButtonTapped() {
+        print("Apple ID Button Was Tapped")
+    }
+    
+    @objc func facebookButtonTapped() {
+        print("Facebooke Button Was Tapped")
+    }
+    
+    @objc func googleButtonTapped() {
+        print("Google Button Was Tapped")
+    }
 }
