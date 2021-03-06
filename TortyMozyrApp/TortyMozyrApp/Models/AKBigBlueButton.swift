@@ -19,11 +19,10 @@ class AKBigBlueButton: UIButton {
     }
     
     private func setUpButton() {
-    setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())
-    backgroundColor = UIColor(named: "AKBlue")
-    titleLabel?.font = UIFont.systemFont(ofSize: 17)
-    translatesAutoresizingMaskIntoConstraints = false
-    layer.cornerRadius = 30
+        setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())
+        backgroundColor = UIColor(named: "AKBlue")
+        titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        translatesAutoresizingMaskIntoConstraints = false
+        layer.cornerRadius = 30
     }
-    
 }

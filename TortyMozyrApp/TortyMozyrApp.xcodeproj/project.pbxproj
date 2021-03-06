@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1175F06C25F3EA2F0071EBD8 /* TabBarIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1175F06B25F3EA2F0071EBD8 /* TabBarIcons.xcassets */; };
+		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
+		11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */; };
+		11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5525F3D49F00C412FF /* TMBasketViewController.swift */; };
+		11852E5A25F3D4E000C412FF /* TMMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5925F3D4E000C412FF /* TMMoreViewController.swift */; };
+		11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */; };
 		1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1193C19625EE4C5A00729DDB /* Colors.xcassets */; };
 		11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
@@ -17,12 +23,20 @@
 		11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */; };
 		11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */; };
 		11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */; };
-		11EF0E6625F239B3006FE5B8 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6525F239B3006FE5B8 /* HomepageViewController.swift */; };
+		11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */; };
 		11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */; };
 		11EF0E6D25F24EE7006FE5B8 /* AKWhiteAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */; };
+		11EF0E7625F256EF006FE5B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11EF0E7525F256EF006FE5B8 /* GoogleService-Info.plist */; };
+		A5665B6475732B466600DD95 /* Pods_TortyMozyrApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F213603539E15B2F34A3C6 /* Pods_TortyMozyrApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1175F06B25F3EA2F0071EBD8 /* TabBarIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarIcons.xcassets; sourceTree = "<group>"; };
+		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
+		11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDeliveryViewController.swift; sourceTree = "<group>"; };
+		11852E5525F3D49F00C412FF /* TMBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBasketViewController.swift; sourceTree = "<group>"; };
+		11852E5925F3D4E000C412FF /* TMMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMoreViewController.swift; sourceTree = "<group>"; };
+		11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTabBarViewController.swift; sourceTree = "<group>"; };
 		1193C19625EE4C5A00729DDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialMediaIcons.xcassets; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,9 +49,13 @@
 		11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		11EF0E6525F239B3006FE5B8 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMHomepageViewController.swift; sourceTree = "<group>"; };
 		11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBigBlueButton.swift; sourceTree = "<group>"; };
 		11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKWhiteAreaView.swift; sourceTree = "<group>"; };
+		11EF0E7525F256EF006FE5B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		58D93A5ACFBA7CCBEBE69502 /* Pods-TortyMozyrApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TortyMozyrApp.release.xcconfig"; path = "Target Support Files/Pods-TortyMozyrApp/Pods-TortyMozyrApp.release.xcconfig"; sourceTree = "<group>"; };
+		58F213603539E15B2F34A3C6 /* Pods_TortyMozyrApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TortyMozyrApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		727774C5D70190DFB0F8BFFA /* Pods-TortyMozyrApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TortyMozyrApp.debug.xcconfig"; path = "Target Support Files/Pods-TortyMozyrApp/Pods-TortyMozyrApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +63,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5665B6475732B466600DD95 /* Pods_TortyMozyrApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11852E6025F3DCFA00C412FF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */,
+				11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */,
+				11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		11DE86E425ED83C000CFFD69 = {
 			isa = PBXGroup;
 			children = (
+				11DE870B25EE3ACA00CFFD69 /* Views */,
 				11DE86EF25ED83C000CFFD69 /* TortyMozyrApp */,
 				11DE86EE25ED83C000CFFD69 /* Products */,
+				8CE43C6D595F6EF3C85E2C22 /* Pods */,
+				7AB6C316F50562E124A4767E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +110,7 @@
 				11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */,
 				11DE86F625ED83C000CFFD69 /* Main.storyboard */,
 				11DE86FE25ED83C700CFFD69 /* Info.plist */,
-				11DE870B25EE3ACA00CFFD69 /* Views */,
+				11EF0E7525F256EF006FE5B8 /* GoogleService-Info.plist */,
 			);
 			path = TortyMozyrApp;
 			sourceTree = "<group>";
@@ -109,10 +141,13 @@
 		11DE870E25EE3AF500CFFD69 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */,
-				11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */,
-				11EF0E6525F239B3006FE5B8 /* HomepageViewController.swift */,
-				11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */,
+				11852E6025F3DCFA00C412FF /* Auth */,
+				11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */,
+				11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */,
+				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
+				11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */,
+				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
+				11852E5925F3D4E000C412FF /* TMMoreViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,9 +158,27 @@
 				11DE86F925ED83C700CFFD69 /* Assets.xcassets */,
 				1193C19625EE4C5A00729DDB /* Colors.xcassets */,
 				11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */,
+				1175F06B25F3EA2F0071EBD8 /* TabBarIcons.xcassets */,
 				11DE86FB25ED83C700CFFD69 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7AB6C316F50562E124A4767E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58F213603539E15B2F34A3C6 /* Pods_TortyMozyrApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CE43C6D595F6EF3C85E2C22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				727774C5D70190DFB0F8BFFA /* Pods-TortyMozyrApp.debug.xcconfig */,
+				58D93A5ACFBA7CCBEBE69502 /* Pods-TortyMozyrApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,10 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11DE870125ED83C700CFFD69 /* Build configuration list for PBXNativeTarget "TortyMozyrApp" */;
 			buildPhases = (
+				4514C73058DCE32D71107CF5 /* [CP] Check Pods Manifest.lock */,
 				11DE86E925ED83C000CFFD69 /* Sources */,
 				11DE86EA25ED83C000CFFD69 /* Frameworks */,
 				11DE86EB25ED83C000CFFD69 /* Resources */,
 				11DE870525ED850600CFFD69 /* ShellScript */,
+				7759A0E5A5DFF53CF7D96A4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +246,8 @@
 				11DE86FA25ED83C700CFFD69 /* Assets.xcassets in Resources */,
 				11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */,
 				11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */,
+				11EF0E7625F256EF006FE5B8 /* GoogleService-Info.plist in Resources */,
+				1175F06C25F3EA2F0071EBD8 /* TabBarIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +271,45 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		4514C73058DCE32D71107CF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TortyMozyrApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7759A0E5A5DFF53CF7D96A4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TortyMozyrApp/Pods-TortyMozyrApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TortyMozyrApp/Pods-TortyMozyrApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TortyMozyrApp/Pods-TortyMozyrApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -222,9 +318,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
+				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
+				11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */,
+				11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */,
+				11852E5A25F3D4E000C412FF /* TMMoreViewController.swift in Sources */,
 				11EF0E6D25F24EE7006FE5B8 /* AKWhiteAreaView.swift in Sources */,
-				11EF0E6625F239B3006FE5B8 /* HomepageViewController.swift in Sources */,
+				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
+				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,
 				11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */,
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
@@ -372,6 +473,7 @@
 		};
 		11DE870225ED83C700CFFD69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 727774C5D70190DFB0F8BFFA /* Pods-TortyMozyrApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,6 +493,7 @@
 		};
 		11DE870325ED83C700CFFD69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58D93A5ACFBA7CCBEBE69502 /* Pods-TortyMozyrApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

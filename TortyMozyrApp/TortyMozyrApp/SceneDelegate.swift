@@ -20,5 +20,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = GreetingViewController()
         self.window = window
         window.makeKeyAndVisible()
+
+        self.setUpNavBarAppearance()
+    }
+
+    // MARK: - navBar & navButtons configurations
+
+    func setUpNavBarAppearance() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithTransparentBackground()
+        navBarAppearance.backgroundColor = UIColor(named: "AKBlue")
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+
+        let buttonStyle = UIBarButtonItemAppearance(style: .plain)
+        buttonStyle.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.buttonAppearance = buttonStyle
+        navBarAppearance.doneButtonAppearance = buttonStyle
+
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().tintColor = .white
+    }
+
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else { return }
+
+        window.rootViewController = vc
+
+        if animated {
+            UIView.transition(with: window,
+                              duration: 0.5,
+                              options: .transitionFlipFromRight,
+                              animations: nil,
+                              completion: nil)
+        }
     }
 }

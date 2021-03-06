@@ -8,16 +8,16 @@
 import UIKit
 
 class AKWhiteAreaView: UIView {
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     private func setUpView() {
         backgroundColor = UIColor(named: "AKWhite")
         layer.cornerRadius = 40
@@ -27,5 +27,4 @@ class AKWhiteAreaView: UIView {
         ]
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
 }
