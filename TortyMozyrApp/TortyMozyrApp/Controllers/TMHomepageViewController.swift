@@ -19,8 +19,11 @@ class TMHomepageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // NavController customize
         self.title = "Главная"
-        
+        let addButton = UIBarButtonItem(systemItem: .add)
+        self.navigationItem.setRightBarButton(addButton, animated: false)
+
         self.view.addSubview(backButton)
 
         self.view.backgroundColor = UIColor(named: "AKWhite")

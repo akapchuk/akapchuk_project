@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1175F06C25F3EA2F0071EBD8 /* TabBarIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1175F06B25F3EA2F0071EBD8 /* TabBarIcons.xcassets */; };
 		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
 		11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */; };
 		11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5525F3D49F00C412FF /* TMBasketViewController.swift */; };
@@ -31,7 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1175F06B25F3EA2F0071EBD8 /* TabBarIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarIcons.xcassets; sourceTree = "<group>"; };
 		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
 		11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDeliveryViewController.swift; sourceTree = "<group>"; };
 		11852E5525F3D49F00C412FF /* TMBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBasketViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				11DE86F925ED83C700CFFD69 /* Assets.xcassets */,
 				1193C19625EE4C5A00729DDB /* Colors.xcassets */,
 				11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */,
-				1175F06B25F3EA2F0071EBD8 /* TabBarIcons.xcassets */,
 				11DE86FB25ED83C700CFFD69 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -247,7 +244,6 @@
 				11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */,
 				11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */,
 				11EF0E7625F256EF006FE5B8 /* GoogleService-Info.plist in Resources */,
-				1175F06C25F3EA2F0071EBD8 /* TabBarIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

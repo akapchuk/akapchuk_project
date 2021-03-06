@@ -58,6 +58,12 @@ class TMTabBarViewController: UITabBarController {
         self.tabBar.tintColor = UIColor(named: "AKBlue")
         self.tabBar.unselectedItemTintColor = UIColor(named: "AKLightGray")
         self.tabBar.itemPositioning = .automatic
+
+        // Tab Bar Shadow configure
+        self.tabBar.layer.shadowOffset = CGSize(width: 0, height: -5)
+        self.tabBar.layer.shadowRadius = 5
+        self.tabBar.layer.shadowOpacity = 0.2
+        self.tabBar.layer.shadowColor = UIColor(named: "AKBlue")?.cgColor
     }
 
     // MARK: - tab bar icons animation
