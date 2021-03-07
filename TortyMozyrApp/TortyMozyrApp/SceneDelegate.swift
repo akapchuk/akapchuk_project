@@ -42,7 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().tintColor = .white
     }
 
-    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true, options: UIView.AnimationOptions) {
         guard let window = self.window else { return }
 
         window.rootViewController = vc
@@ -50,7 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if animated {
             UIView.transition(with: window,
                               duration: 0.5,
-                              options: .transitionFlipFromRight,
+                              options: options,
                               animations: nil,
                               completion: nil)
         }

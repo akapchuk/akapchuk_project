@@ -154,8 +154,6 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        self.view.backgroundColor = .white
         
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
@@ -299,7 +297,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         ])
 
     }
-        
+
     // MARK: - actions
     
     @objc func forgotPasswordButtonTapped() {
@@ -310,11 +308,12 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @objc func createProfileButtonTapped() {
         print("Button 'Создать профиль' was tapped")
-//        let homepage = HomepageViewController()
-//        homepage.modalPresentationStyle = .fullScreen
-//        self.present(homepage, animated: true)
+        //        let homepage = HomepageViewController()
+        //        homepage.modalPresentationStyle = .fullScreen
+        //        self.present(homepage, animated: true)
         // Вызываем Tab Bar
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController())
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController(),
+                                                                                                           options: .transitionFlipFromLeft)
     }
     
     @objc func logInButtonTapped() {
@@ -322,8 +321,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func viewDidTapped() {
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
+    }
     
     @objc func appleIDButtonTapped() {
         print("Apple ID Button Was Tapped")

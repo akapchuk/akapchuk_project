@@ -87,21 +87,21 @@ class GreetingViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             self.welcomeTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                               constant: -220),
+                                                        constant: -220),
             self.welcomeTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
             self.welcomeTitleLabel.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
         ])
         
         NSLayoutConstraint.activate([
             self.descriptionLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                               constant: -170),
+                                                       constant: -170),
             self.descriptionLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
             self.descriptionLabel.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
         ])
         
         NSLayoutConstraint.activate([
             self.startButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                               constant: -70),
+                                                  constant: -70),
             self.startButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
             self.startButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25),
             self.startButton.heightAnchor.constraint(equalToConstant: 60)
@@ -113,6 +113,9 @@ class GreetingViewController: UIViewController {
         let authPage = AuthorizationViewController()
         authPage.modalPresentationStyle = .fullScreen
         self.present(authPage, animated: false)
+
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(AuthorizationViewController(),
+                                                                                                           options: .transitionCrossDissolve)
     }
 
 }

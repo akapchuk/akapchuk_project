@@ -119,7 +119,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         ])
         
         NSLayoutConstraint.activate([
-            self.whiteAreaView.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -500),
+            self.whiteAreaView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -450),
             self.whiteAreaView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
             self.whiteAreaView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
             self.whiteAreaView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
@@ -145,8 +145,8 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         ])
         
         NSLayoutConstraint.activate([
-            self.sendNewPasswordButton.topAnchor.constraint(equalTo: self.grayEmailDividerView.bottomAnchor,
-                                                            constant: 40),
+            self.sendNewPasswordButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor,
+                                                            constant: 210),
             self.sendNewPasswordButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
             self.sendNewPasswordButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25),
             self.sendNewPasswordButton.heightAnchor.constraint(equalToConstant: 60)
