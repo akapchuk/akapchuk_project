@@ -295,9 +295,9 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             self.alreadyHaveAccountStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             self.alreadyHaveAccountStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
-
+        
     }
-
+    
     // MARK: - actions
     
     @objc func forgotPasswordButtonTapped() {
@@ -318,6 +318,9 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     @objc func logInButtonTapped() {
         print("Button 'Войти' was tapped")
+        let logInVC = LogInViewController()
+        logInVC.modalPresentationStyle = .fullScreen
+        self.present(logInVC, animated: false)
     }
     
     @objc private func viewDidTapped() {

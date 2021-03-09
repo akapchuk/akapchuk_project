@@ -45,6 +45,8 @@ class TMMoreViewController: UIViewController {
     @objc func exitButtonTapped() {
 //        self.present(AuthorizationViewController(), animated: true, completion: nil)
         self.navigationController?.pushViewController(AuthorizationViewController(), animated: true)
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
 
 }
