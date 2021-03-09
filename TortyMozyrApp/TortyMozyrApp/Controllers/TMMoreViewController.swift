@@ -11,8 +11,8 @@ class TMMoreViewController: UIViewController {
 
     // MARK: - gui variables
 
-    private lazy var exitButton: AKBigBlueButton = {
-        let button = AKBigBlueButton()
+    private lazy var exitButton: AKDarkGraySystemButton = {
+        let button = AKDarkGraySystemButton()
         button.setTitle("Выйти", for: UIControl.State())
         button.backgroundColor = UIColor(named: "AKDarkGray")
         button.addTarget(self, action: #selector(exitButtonTapped), for: .touchUpInside)

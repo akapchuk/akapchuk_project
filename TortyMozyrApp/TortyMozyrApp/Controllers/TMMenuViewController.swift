@@ -118,12 +118,30 @@ class TMMenuViewController: UIViewController {
         return rating
     }()
 
+    private lazy var rightBarButtonItem: UIBarButtonItem = {
+        let barButton = UIBarButtonItem(systemItem: .search)
+        return barButton
+    }()
+
+    private lazy var leftBarButtonItem: UIBarButtonItem = {
+        let filterImage = UIImage(systemName: "line.horizontal.3.decrease.circle")
+        let barButton = UIBarButtonItem(image: filterImage,
+                                        landscapeImagePhone: nil,
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(filterNavBarButtonTapped))
+        return barButton
+    }()
+
     // MARK: - view life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // navigation controller settings
         self.title = "Меню"
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
+        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
         self.view.backgroundColor = #colorLiteral(red: 0.7899044156, green: 0.83537817, blue: 0.9258431196, alpha: 1)
 
@@ -228,6 +246,10 @@ class TMMenuViewController: UIViewController {
     }
 
     // MARK: - actions
+
+    @objc func filterNavBarButtonTapped() {
+
+    }
 
     @objc func likeButtonTapped() {
         if self.likeIconImage.tintColor == UIColor(named: "AKDarkGray") {

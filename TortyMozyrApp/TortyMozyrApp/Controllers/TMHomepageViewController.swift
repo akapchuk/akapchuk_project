@@ -18,12 +18,12 @@ class TMHomepageViewController: UIViewController {
     }()
 
     private lazy var rightBarButtonItem: UIBarButtonItem = {
-        let barButton = UIBarButtonItem(systemItem: .compose)
+        let barButton = UIBarButtonItem(systemItem: .search)
         return barButton
     }()
 
     private lazy var leftBarButtonItem: UIBarButtonItem = {
-        let barButton = UIBarButtonItem(systemItem: .fastForward)
+        let barButton = UIBarButtonItem(systemItem: .add)
         return barButton
     }()
     
@@ -32,7 +32,7 @@ class TMHomepageViewController: UIViewController {
 
         // NavController customize
         self.title = "Главная"
-        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
         self.view.addSubview(storiesHeaderTitleLabel)
