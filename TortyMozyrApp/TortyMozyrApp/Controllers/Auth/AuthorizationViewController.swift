@@ -287,8 +287,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             self.googleView.heightAnchor.constraint(equalToConstant: 50),
             self.googleImageView.centerXAnchor.constraint(equalTo: self.googleView.centerXAnchor),
             self.googleImageView.centerYAnchor.constraint(equalTo: self.googleView.centerYAnchor),
-            self.googleImageView.widthAnchor.constraint(equalToConstant: 24),
-            self.googleImageView.heightAnchor.constraint(equalToConstant: 24)
+            self.googleImageView.widthAnchor.constraint(equalToConstant: 20),
+            self.googleImageView.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         NSLayoutConstraint.activate([
