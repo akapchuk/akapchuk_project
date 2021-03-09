@@ -8,8 +8,9 @@
 import UIKit
 
 class GreetingViewController: UIViewController {
-    
-    // MARK: - gui elements
+
+    // MARK: - gui variables
+
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "launchScreen")

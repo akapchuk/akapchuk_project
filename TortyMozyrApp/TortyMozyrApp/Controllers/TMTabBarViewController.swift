@@ -58,6 +58,7 @@ class TMTabBarViewController: UITabBarController {
         self.tabBar.tintColor = UIColor(named: "AKBlue")
         self.tabBar.unselectedItemTintColor = UIColor(named: "AKLightGray")
         self.tabBar.itemPositioning = .automatic
+//        self.tabBar.isTranslucent = true
 
         // Tab Bar Shadow configure
         self.tabBar.layer.shadowOffset = CGSize(width: 0, height: -5)

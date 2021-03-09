@@ -9,6 +9,11 @@ import UIKit
 
 class TMBasketViewController: UIViewController {
 
+    // MARK: - gui variables
+
+
+    // MARK: - view life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,4 +21,8 @@ class TMBasketViewController: UIViewController {
 
         self.view.backgroundColor = UIColor(named: "AKWhite")
     }
+
+    // MARK: - set up constraints
+
+    // MARK: - actions
 }

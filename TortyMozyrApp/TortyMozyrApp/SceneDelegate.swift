@@ -30,7 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithTransparentBackground()
         navBarAppearance.backgroundColor = UIColor(named: "AKBlue")
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white,
+                                                .font: UIFont.systemFont(ofSize: 25, weight: .thin)]
 
         let buttonStyle = UIBarButtonItemAppearance(style: .plain)
         buttonStyle.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -42,7 +43,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().tintColor = .white
     }
 
-    func changeRootViewController(_ vc: UIViewController, animated: Bool = true, options: UIView.AnimationOptions) {
+    func changeRootViewController(_ vc: UIViewController,
+                                  animated: Bool = true,
+                                  options: UIView.AnimationOptions) {
         guard let window = self.window else { return }
 
         window.rootViewController = vc

@@ -8,12 +8,23 @@
 import UIKit
 
 class TMHomepageViewController: UIViewController {
-    
-    private lazy var backButton: AKBigBlueButton = {
-        let button = AKBigBlueButton()
-        button.setTitle("Назад", for: UIControl.State())
-        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        return button
+
+    // MARK: - gui variables
+
+    private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
+        let header = AKHeaderTitleLabel()
+        header.text = "Истории"
+        return header
+    }()
+
+    private lazy var rightBarButtonItem: UIBarButtonItem = {
+        let barButton = UIBarButtonItem(systemItem: .compose)
+        return barButton
+    }()
+
+    private lazy var leftBarButtonItem: UIBarButtonItem = {
+        let barButton = UIBarButtonItem(systemItem: .fastForward)
+        return barButton
     }()
     
     override func viewDidLoad() {
@@ -21,10 +32,10 @@ class TMHomepageViewController: UIViewController {
 
         // NavController customize
         self.title = "Главная"
-        let addButton = UIBarButtonItem(systemItem: .add)
-        self.navigationItem.setRightBarButton(addButton, animated: false)
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
+        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
-        self.view.addSubview(backButton)
+        self.view.addSubview(storiesHeaderTitleLabel)
 
         self.view.backgroundColor = UIColor(named: "AKWhite")
         
@@ -32,18 +43,11 @@ class TMHomepageViewController: UIViewController {
     }
     
     func setUpConstraints() {
+
         NSLayoutConstraint.activate([
-            self.backButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.backButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.backButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
-            self.backButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25),
-            self.backButton.heightAnchor.constraint(equalToConstant: 60)
+            self.storiesHeaderTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            self.storiesHeaderTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20)
         ])
-    }
-    
-    @objc func backButtonTapped() {
-//        self.present(AuthorizationViewController(), animated: true, completion: nil)
-        self.navigationController?.pushViewController(AuthorizationViewController(), animated: true)
     }
 
 }
