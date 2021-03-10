@@ -1,13 +1,13 @@
 //
-//  LogInViewController.swift
+//  RegisterViewController.swift
 //  TortyMozyrApp
 //
-//  Created by Саша Капчук on 9.03.21.
+//  Created by Саша Капчук on 10.03.21.
 //
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - gui variables
 
@@ -52,10 +52,24 @@ class LogInViewController: UIViewController {
         return divider
     }()
 
-    private lazy var logInButton: AKBigBlueButton = {
+    private lazy var telephoneTextField: UITextField = {
+        let telephone = UITextField()
+        telephone.placeholder = "Телефон"
+        telephone.translatesAutoresizingMaskIntoConstraints = false
+        return telephone
+    }()
+
+    private lazy var grayTelephoneDividerView: UIView = {
+        let divider = UIView()
+        divider.backgroundColor = UIColor(named: "AKLightGray")
+        divider.translatesAutoresizingMaskIntoConstraints = false
+        return divider
+    }()
+
+    private lazy var registerButton: AKBigBlueButton = {
         let button = AKBigBlueButton()
-        button.setTitle("Войти", for: UIControl.State())
-        button.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
+        button.setTitle("Зарегистрироваться", for: UIControl.State())
+        button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -75,16 +89,40 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.telephoneTextField.delegate = self
+
+        self.emailTextField.keyboardType = .emailAddress
+        self.emailTextField.textContentType = .emailAddress
+        self.passwordTextField.textContentType = .password
+        self.passwordTextField.isSecureTextEntry = true
+        self.telephoneTextField.keyboardType = .numberPad
+        self.telephoneTextField.textContentType = .telephoneNumber
+
         self.view.addSubview(backgroundImageView)
         self.view.addSubview(whiteAreaView)
         self.whiteAreaView.addSubview(emailTextField)
         self.whiteAreaView.addSubview(grayEmailDividerView)
         self.whiteAreaView.addSubview(passwordTextField)
         self.whiteAreaView.addSubview(grayPasswordDividerView)
-        self.whiteAreaView.addSubview(logInButton)
+        self.whiteAreaView.addSubview(telephoneTextField)
+        self.whiteAreaView.addSubview(grayTelephoneDividerView)
+        self.whiteAreaView.addSubview(registerButton)
         self.whiteAreaView.addSubview(backButton)
 
+        // add gestures
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewDidTapped)))
+
         self.setUpConstraints()
+    }
+
+    // MARK: - text fields delegate
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+
+        return true
     }
 
     // MARK: - constraints
@@ -130,15 +168,29 @@ class LogInViewController: UIViewController {
             self.grayPasswordDividerView.heightAnchor.constraint(equalToConstant: 1)
         ])
 
+        // -----
         NSLayoutConstraint.activate([
-            self.logInButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 210),
-            self.logInButton.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.logInButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.logInButton.heightAnchor.constraint(equalToConstant: 60)
+            self.telephoneTextField.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 150),
+            self.telephoneTextField.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
+            self.telephoneTextField.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
         ])
 
         NSLayoutConstraint.activate([
-            self.backButton.topAnchor.constraint(equalTo: self.logInButton.bottomAnchor, constant: 10),
+            self.grayTelephoneDividerView.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 175),
+            self.grayTelephoneDividerView.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
+            self.grayTelephoneDividerView.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
+            self.grayTelephoneDividerView.heightAnchor.constraint(equalToConstant: 1)
+        ])
+
+        NSLayoutConstraint.activate([
+            self.registerButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 210),
+            self.registerButton.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
+            self.registerButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
+            self.registerButton.heightAnchor.constraint(equalToConstant: 60)
+        ])
+
+        NSLayoutConstraint.activate([
+            self.backButton.topAnchor.constraint(equalTo: self.registerButton.bottomAnchor, constant: 10),
             self.backButton.centerXAnchor.constraint(equalTo: self.whiteAreaView.centerXAnchor)
         ])
 
@@ -146,7 +198,11 @@ class LogInViewController: UIViewController {
 
     // MARK: - actions
 
-    @objc func logInButtonTapped() {
+    @objc private func viewDidTapped() {
+        self.view.endEditing(true)
+    }
+
+    @objc func registerButtonTapped() {
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController(),
                                                                                                            options: .transitionFlipFromLeft)
     }
@@ -154,4 +210,5 @@ class LogInViewController: UIViewController {
     @objc func backButtonTapped() {
         self.dismiss(animated: false, completion: nil)
     }
+
 }

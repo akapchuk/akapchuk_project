@@ -65,7 +65,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var createProfileButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Создать профиль", for: UIControl.State())
+        button.setTitle("Войти", for: UIControl.State())
         button.setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())
         button.backgroundColor = UIColor(named: "AKBlue")
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
@@ -132,15 +132,15 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var alreadyHaveAccountStackView: UIStackView = {
         let text = UILabel()
-        text.text = "Уже есть аккаунт?"
+        text.text = "Нет аккаунта?"
         text.textColor = UIColor(named: "AKLightGray")
         text.font = UIFont.systemFont(ofSize: 17, weight: .light)
         
         let button = UIButton()
-        button.setTitle("Войти", for: UIControl.State())
+        button.setTitle("Регистрация", for: UIControl.State())
         button.setTitleColor(UIColor(named: "AKBlue"), for: UIControl.State())
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
-        button.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         
         
         let stack = UIStackView(arrangedSubviews: [text, button])
@@ -316,11 +316,11 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
                                                                                                            options: .transitionFlipFromLeft)
     }
     
-    @objc func logInButtonTapped() {
-        print("Button 'Войти' was tapped")
-        let logInVC = LogInViewController()
-        logInVC.modalPresentationStyle = .fullScreen
-        self.present(logInVC, animated: false)
+    @objc func registerButtonTapped() {
+        print("Button 'Регистрация' was tapped")
+        let registerVC = RegisterViewController()
+        registerVC.modalPresentationStyle = .fullScreen
+        self.present(registerVC, animated: false)
     }
     
     @objc private func viewDidTapped() {

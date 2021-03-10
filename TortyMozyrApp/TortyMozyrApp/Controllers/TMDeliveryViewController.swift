@@ -22,10 +22,16 @@ class TMDeliveryViewController: UIViewController {
         controller.layer.masksToBounds = true
 //        controller.backgroundColor = UIColor(named: "AKBlue")
 //        controller.selectedSegmentTintColor = UIColor(named: "AKOrange")
-        controller.layer.borderColor = UIColor(named: "AKBlue")?.cgColor
+        controller.layer.borderColor = UIColor(named: "AKDarkGray")?.cgColor
         controller.addTarget(self, action: #selector(handleSegmentValueChanged(_:)), for: .valueChanged)
         controller.translatesAutoresizingMaskIntoConstraints = false
         return controller
+    }()
+
+    private lazy var deliveryTypeHeaderTitleLabel: AKHeaderTitleLabel = {
+        let header = AKHeaderTitleLabel()
+        header.text = "Список"
+        return header
     }()
 
 
@@ -39,6 +45,7 @@ class TMDeliveryViewController: UIViewController {
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
         self.view.addSubview(mapOrListSegmentedControl)
+        self.view.addSubview(deliveryTypeHeaderTitleLabel)
 
         self.setUpConstraints()
 
@@ -49,9 +56,14 @@ class TMDeliveryViewController: UIViewController {
     fileprivate func setUpConstraints() {
         NSLayoutConstraint.activate([
             self.mapOrListSegmentedControl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            self.mapOrListSegmentedControl.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
-            self.mapOrListSegmentedControl.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25),
+            self.mapOrListSegmentedControl.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20),
+            self.mapOrListSegmentedControl.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -20),
             self.mapOrListSegmentedControl.heightAnchor.constraint(equalToConstant: 35)
+        ])
+
+        NSLayoutConstraint.activate([
+            self.deliveryTypeHeaderTitleLabel.topAnchor.constraint(equalTo: self.mapOrListSegmentedControl.bottomAnchor, constant: 10),
+            self.deliveryTypeHeaderTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20)
         ])
     }
 
@@ -61,8 +73,10 @@ class TMDeliveryViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             print("Selected the list")
+            self.deliveryTypeHeaderTitleLabel.text = "Список"
         case 1:
             print("Selected the map")
+            self.deliveryTypeHeaderTitleLabel.text = "На карте"
         default:
             print("Default")
         }
