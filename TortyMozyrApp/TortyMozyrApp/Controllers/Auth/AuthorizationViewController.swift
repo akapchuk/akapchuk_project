@@ -31,10 +31,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         return email
     }()
     
-    private lazy var grayEmailDividerView: UIView = {
-        let divider = UIView()
-        divider.backgroundColor = UIColor(named: "AKLightGray")
-        divider.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var grayEmailDividerView: AKGrayThinDividerView = {
+        let divider = AKGrayThinDividerView()
         return divider
     }()
     
@@ -45,43 +43,29 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         return password
     }()
     
-    private lazy var grayPasswordDividerView: UIView = {
-        let divider = UIView()
-        divider.backgroundColor = UIColor(named: "AKLightGray")
-        divider.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var grayPasswordDividerView: AKGrayThinDividerView = {
+        let divider = AKGrayThinDividerView()
         return divider
     }()
     
-    private lazy var forgotPasswordButton: UIButton = {
-        let button = UIButton()
+    private lazy var forgotPasswordButton: AKSmallBlueButton = {
+        let button = AKSmallBlueButton()
         button.setTitle("Забыли пароль?", for: UIControl.State())
-        button.setTitleColor(UIColor(named: "AKBlue"), for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKWhite")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
         button.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    private lazy var createProfileButton: UIButton = {
-        let button = UIButton()
+    private lazy var createProfileButton: AKBigBlueButton = {
+        let button = AKBigBlueButton()
         button.setTitle("Войти", for: UIControl.State())
-        button.setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKBlue")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 30
         button.addTarget(self, action: #selector(createProfileButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    private lazy var orLogInWithTextLabel: UILabel = {
-        let text = UILabel()
+    private lazy var orLogInWithTextLabel: AKDescriptionTitleLabel = {
+        let text = AKDescriptionTitleLabel()
         text.text = "или войти с помощью:"
-        text.textColor = UIColor(named: "AKLightGray")
         text.font = UIFont.systemFont(ofSize: 17, weight: .light)
-        text.translatesAutoresizingMaskIntoConstraints = false
-        text.textAlignment = .center
         return text
     }()
     
@@ -131,15 +115,12 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private lazy var alreadyHaveAccountStackView: UIStackView = {
-        let text = UILabel()
+        let text = AKDescriptionTitleLabel()
         text.text = "Нет аккаунта?"
-        text.textColor = UIColor(named: "AKLightGray")
         text.font = UIFont.systemFont(ofSize: 17, weight: .light)
         
-        let button = UIButton()
+        let button = AKSmallBlueButton()
         button.setTitle("Регистрация", for: UIControl.State())
-        button.setTitleColor(UIColor(named: "AKBlue"), for: UIControl.State())
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
         button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         
         

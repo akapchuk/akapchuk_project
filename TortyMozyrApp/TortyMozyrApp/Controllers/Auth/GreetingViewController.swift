@@ -34,14 +34,9 @@ class GreetingViewController: UIViewController {
         return title
     }()
     
-    private lazy var descriptionLabel: UILabel = {
-        let description = UILabel()
+    private lazy var descriptionLabel: AKDescriptionTitleLabel = {
+        let description = AKDescriptionTitleLabel()
         description.text = "«Торты в Мозыре» познакомят Вас с миром вкусной, домашней выпечки, которой можно побавловать себя, друзей и родственников. Давайте скорее посмотрим в меню!"
-        description.textColor = UIColor(named: "AKLightGray")
-        description.font = UIFont.systemFont(ofSize: 15, weight: .light)
-        description.textAlignment = .center
-        description.numberOfLines = 0
-        description.translatesAutoresizingMaskIntoConstraints = false
         return description
     }()
     

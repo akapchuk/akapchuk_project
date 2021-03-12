@@ -31,10 +31,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         return email
     }()
 
-    private lazy var grayEmailDividerView: UIView = {
-        let divider = UIView()
-        divider.backgroundColor = UIColor(named: "AKLightGray")
-        divider.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var grayEmailDividerView: AKGrayThinDividerView = {
+        let divider = AKGrayThinDividerView()
         return divider
     }()
 
@@ -45,10 +43,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         return password
     }()
 
-    private lazy var grayPasswordDividerView: UIView = {
-        let divider = UIView()
-        divider.backgroundColor = UIColor(named: "AKLightGray")
-        divider.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var grayPasswordDividerView: AKGrayThinDividerView = {
+        let divider = AKGrayThinDividerView()
         return divider
     }()
 
@@ -59,10 +55,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         return telephone
     }()
 
-    private lazy var grayTelephoneDividerView: UIView = {
-        let divider = UIView()
-        divider.backgroundColor = UIColor(named: "AKLightGray")
-        divider.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var grayTelephoneDividerView: AKGrayThinDividerView = {
+        let divider = AKGrayThinDividerView()
         return divider
     }()
 
@@ -73,14 +67,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
 
-    private lazy var backButton: UIButton = {
-        let button = UIButton()
+    private lazy var backButton: AKSmallBlueButton = {
+        let button = AKSmallBlueButton()
         button.setTitle("Вернуться", for: UIControl.State())
-        button.setTitleColor(UIColor(named: "AKBlue"), for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKWhite")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 

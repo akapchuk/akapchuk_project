@@ -11,7 +11,7 @@ class AKWhiteAreaView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpView()
+        self.setUpView()
     }
 
     required init?(coder: NSCoder) {

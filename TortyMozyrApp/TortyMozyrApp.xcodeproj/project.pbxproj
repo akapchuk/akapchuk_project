@@ -17,6 +17,9 @@
 		11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */; };
 		1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1193C19625EE4C5A00729DDB /* Colors.xcassets */; };
 		11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */; };
+		11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */; };
+		11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */; };
+		11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
 		11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE86F625ED83C000CFFD69 /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTabBarViewController.swift; sourceTree = "<group>"; };
 		1193C19625EE4C5A00729DDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialMediaIcons.xcassets; sourceTree = "<group>"; };
+		11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDecrscriptionTitleLable.swift; sourceTree = "<group>"; };
+		11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSmallBlueButton.swift; sourceTree = "<group>"; };
+		11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKGrayThinDividerView.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +89,74 @@
 				117B9D6925F9181B001B172A /* RegisterViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		11AE541E25FB9AEE0064B3EA /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				1175F07725F7AF170071EBD8 /* AKDarkGraySystemButton.swift */,
+				11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */,
+				11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		11AE541F25FB9B060064B3EA /* Titles */ = {
+			isa = PBXGroup;
+			children = (
+				1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */,
+				11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */,
+			);
+			path = Titles;
+			sourceTree = "<group>";
+		};
+		11AE542025FB9B390064B3EA /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		11AE542125FB9B460064B3EA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		11AE542225FB9B500064B3EA /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
+		11AE542325FB9B570064B3EA /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		11AE542425FB9B5D0064B3EA /* More */ = {
+			isa = PBXGroup;
+			children = (
+				11852E5925F3D4E000C412FF /* TMMoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		11AE542625FB9BDB0064B3EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */,
+				11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		11DE86E425ED83C000CFFD69 = {
@@ -130,10 +204,9 @@
 		11DE870C25EE3AD700CFFD69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */,
-				11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */,
-				1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */,
-				1175F07725F7AF170071EBD8 /* AKDarkGraySystemButton.swift */,
+				11AE542625FB9BDB0064B3EA /* Views */,
+				11AE541F25FB9B060064B3EA /* Titles */,
+				11AE541E25FB9AEE0064B3EA /* Buttons */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,12 +222,12 @@
 			isa = PBXGroup;
 			children = (
 				11852E6025F3DCFA00C412FF /* Auth */,
+				11AE542025FB9B390064B3EA /* Homepage */,
+				11AE542125FB9B460064B3EA /* Menu */,
+				11AE542225FB9B500064B3EA /* Delivery */,
+				11AE542325FB9B570064B3EA /* Basket */,
+				11AE542425FB9B5D0064B3EA /* More */,
 				11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */,
-				11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */,
-				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
-				11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */,
-				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
-				11852E5925F3D4E000C412FF /* TMMoreViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,9 +406,12 @@
 				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
 				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,
 				11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */,
+				11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */,
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
+				11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */,
 				117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
+				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,
 			);
@@ -488,6 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DH4AL3XKU;
 				INFOPLIST_FILE = TortyMozyrApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -508,6 +585,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7DH4AL3XKU;
 				INFOPLIST_FILE = TortyMozyrApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

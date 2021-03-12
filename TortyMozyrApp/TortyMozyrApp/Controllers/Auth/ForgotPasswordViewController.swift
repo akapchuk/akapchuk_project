@@ -48,33 +48,22 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         return email
     }()
     
-    private lazy var grayEmailDividerView: UIView = {
-        let divider = UIView()
-        divider.backgroundColor = UIColor(named: "AKLightGray")
-        divider.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var grayEmailDividerView: AKGrayThinDividerView = {
+        let divider = AKGrayThinDividerView()
         return divider
     }()
     
-    private lazy var sendNewPasswordButton: UIButton = {
-        let button = UIButton()
+    private lazy var sendNewPasswordButton: AKBigBlueButton = {
+        let button = AKBigBlueButton()
         button.setTitle("Выслать новый пароль", for: UIControl.State())
-        button.setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKBlue")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 30
         button.addTarget(self, action: #selector(sendNewPasswordButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    private lazy var backButton: UIButton = {
-        let button = UIButton()
+    private lazy var backButton: AKSmallBlueButton = {
+        let button = AKSmallBlueButton()
         button.setTitle("Вернуться", for: UIControl.State())
-        button.setTitleColor(UIColor(named: "AKBlue"), for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKWhite")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
