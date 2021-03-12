@@ -41,6 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().tintColor = .white
+
     }
 
     func changeRootViewController(_ vc: UIViewController,

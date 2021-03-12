@@ -143,7 +143,7 @@ class TMMenuViewController: UIViewController {
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
-        self.view.backgroundColor = #colorLiteral(red: 0.7899044156, green: 0.83537817, blue: 0.9258431196, alpha: 1)
+        self.setUpGradientView()
 
         self.view.addSubview(headerTitleLabel)
         self.view.addSubview(leftTileView)
@@ -164,6 +164,21 @@ class TMMenuViewController: UIViewController {
         self.ratingWhiteAreaView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingButtonTapped)))
 
         self.setUpConstraints()
+    }
+
+    // MARK: - set up gradient view
+
+    fileprivate func setUpGradientView() {
+        let gradient = CAGradientLayer()
+        let colorOne = #colorLiteral(red: 0.9700546861, green: 0.9117200971, blue: 0.9169881344, alpha: 1).cgColor
+        let colorTwo = #colorLiteral(red: 0.5985868573, green: 0.754337132, blue: 0.9377599955, alpha: 1).cgColor
+
+        gradient.colors = [colorOne, colorTwo]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient.frame = view.bounds
+
+        self.view.layer.addSublayer(gradient)
     }
 
     // MARK: - set up constraints

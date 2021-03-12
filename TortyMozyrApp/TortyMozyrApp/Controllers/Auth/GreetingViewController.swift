@@ -24,13 +24,9 @@ class GreetingViewController: UIViewController {
         return whiteView
     }()
     
-    private lazy var welcomeTitleLabel: UILabel = {
-        let title = UILabel()
+    private lazy var welcomeTitleLabel: AKSubheaderTitleLabel = {
+        let title = AKSubheaderTitleLabel()
         title.text = "Добро пожаловать"
-        title.textColor = UIColor(named: "AKDarkGray")
-        title.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.textAlignment = .center
         return title
     }()
     

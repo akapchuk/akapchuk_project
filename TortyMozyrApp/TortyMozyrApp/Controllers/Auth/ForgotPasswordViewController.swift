@@ -31,13 +31,9 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         return whiteView
     }()
     
-    private lazy var titleLabel: UILabel = {
-        let title = UILabel()
+    private lazy var titleLabel: AKSubheaderTitleLabel = {
+        let title = AKSubheaderTitleLabel()
         title.text = "Сброс пароля"
-        title.textColor = UIColor(named: "AKDarkGray")
-        title.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.textAlignment = .center
         return title
     }()
     
