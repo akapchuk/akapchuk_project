@@ -229,8 +229,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         NSLayoutConstraint.activate([
             self.createProfileButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 210),
             self.createProfileButton.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.createProfileButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.createProfileButton.heightAnchor.constraint(equalToConstant: 60)
+            self.createProfileButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
         ])
         
         NSLayoutConstraint.activate([

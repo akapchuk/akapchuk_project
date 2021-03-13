@@ -175,8 +175,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         NSLayoutConstraint.activate([
             self.registerButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 210),
             self.registerButton.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.registerButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.registerButton.heightAnchor.constraint(equalToConstant: 60)
+            self.registerButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
         ])
 
         NSLayoutConstraint.activate([
