@@ -37,8 +37,7 @@ class TMMoreViewController: UIViewController {
             self.exitButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.exitButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             self.exitButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
-            self.exitButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25),
-            self.exitButton.heightAnchor.constraint(equalToConstant: 60)
+            self.exitButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
         ])
     }
 

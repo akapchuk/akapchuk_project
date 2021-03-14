@@ -8,6 +8,10 @@
 import UIKit
 
 class AKDarkGraySystemButton: UIButton {
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 300, height: 60)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,6 +22,7 @@ class AKDarkGraySystemButton: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+
 
     private func setUpButton() {
         setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())

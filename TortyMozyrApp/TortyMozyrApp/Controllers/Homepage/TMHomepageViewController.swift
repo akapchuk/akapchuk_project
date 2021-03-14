@@ -11,6 +11,16 @@ class TMHomepageViewController: UIViewController {
 
     // MARK: - gui variables
 
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame: CGRect(x: 0,
+                                                    y: 0,
+                                                    width: self.view.frame.size.width,
+                                                    height: self.view.frame.size.height))
+        scrollView.backgroundColor = .systemGreen
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 2200)
+        return scrollView
+    }()
+
     private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
         header.text = "Истории"
@@ -35,7 +45,8 @@ class TMHomepageViewController: UIViewController {
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
-        self.view.addSubview(storiesHeaderTitleLabel)
+        self.view.addSubview(scrollView)
+        self.scrollView.addSubview(storiesHeaderTitleLabel)
 
         self.view.backgroundColor = UIColor(named: "AKWhite")
         
@@ -45,7 +56,7 @@ class TMHomepageViewController: UIViewController {
     func setUpConstraints() {
 
         NSLayoutConstraint.activate([
-            self.storiesHeaderTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            self.storiesHeaderTitleLabel.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 10),
             self.storiesHeaderTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20)
         ])
     }
