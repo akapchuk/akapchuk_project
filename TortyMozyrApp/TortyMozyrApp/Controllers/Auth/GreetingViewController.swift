@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class GreetingViewController: UIViewController {
 
@@ -60,12 +61,10 @@ class GreetingViewController: UIViewController {
     // MARK: - constraints
 
     func setUpConstraints() {
-        NSLayoutConstraint.activate([
-            self.backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.backgroundImageView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.backgroundImageView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ])
+
+        self.backgroundImageView.snp.updateConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
 
         NSLayoutConstraint.activate([
             self.whiteAreaView.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -270),

@@ -162,6 +162,7 @@ class TMMenuViewController: UIViewController {
         // MARK: - gestures
         self.iconBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(likeButtonTapped)))
         self.ratingWhiteAreaView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingButtonTapped)))
+        self.leftTileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(leftTileViewTapped)))
 
         self.setUpConstraints()
     }
@@ -284,6 +285,10 @@ class TMMenuViewController: UIViewController {
             self.ratingStarIconImage.tintColor = UIColor.systemOrange
             self.ratingStarIconImage.image = UIImage(systemName: "star")
         }
+    }
+
+    @objc func leftTileViewTapped() {
+        self.navigationController?.pushViewController(MedovikCakeViewController(), animated: false)
     }
 
 }

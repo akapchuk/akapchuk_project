@@ -16,7 +16,7 @@ class TMHomepageViewController: UIViewController {
                                                     y: 0,
                                                     width: self.view.frame.size.width,
                                                     height: self.view.frame.size.height))
-        scrollView.backgroundColor = .systemGreen
+        scrollView.backgroundColor = UIColor(named: "AKWhite")
         scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 2200)
         return scrollView
     }()
@@ -47,8 +47,6 @@ class TMHomepageViewController: UIViewController {
 
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(storiesHeaderTitleLabel)
-
-        self.view.backgroundColor = UIColor(named: "AKWhite")
         
         self.setUpConstraints()
     }

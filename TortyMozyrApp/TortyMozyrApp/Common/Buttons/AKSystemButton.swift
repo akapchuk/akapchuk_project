@@ -10,7 +10,7 @@ import UIKit
 class AKSystemButton: UIButton {
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 300, height: 60)
+        return CGSize(width: 1, height: 60)
     }
 
     override init(frame: CGRect) {

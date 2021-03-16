@@ -10,7 +10,8 @@
 		1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */; };
 		1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */; };
 		1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */; };
-		1175F07825F7AF170071EBD8 /* AKDarkGraySystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07725F7AF170071EBD8 /* AKDarkGraySystemButton.swift */; };
+		1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07725F7AF170071EBD8 /* AKSystemButton.swift */; };
+		1176E0C425FFEF32005F87AE /* AKBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176E0C325FFEF32005F87AE /* AKBackgroundImageView.swift */; };
 		117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B9D6925F9181B001B172A /* RegisterViewController.swift */; };
 		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
 		11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */; };
@@ -29,6 +30,8 @@
 		11DE86FD25ED83C700CFFD69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE86FB25ED83C700CFFD69 /* LaunchScreen.storyboard */; };
 		11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */; };
 		11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */; };
+		11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */; };
+		11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EBB3F025FE7C62000EF11B /* Products.xcassets */; };
 		11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */; };
 		11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */; };
 		11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */; };
@@ -41,7 +44,8 @@
 		1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCorporateBackgroundImageView.swift; sourceTree = "<group>"; };
 		1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSubheaderTitleLabel.swift; sourceTree = "<group>"; };
 		1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHeaderTitleLabel.swift; sourceTree = "<group>"; };
-		1175F07725F7AF170071EBD8 /* AKDarkGraySystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDarkGraySystemButton.swift; sourceTree = "<group>"; };
+		1175F07725F7AF170071EBD8 /* AKSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSystemButton.swift; sourceTree = "<group>"; };
+		1176E0C325FFEF32005F87AE /* AKBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBackgroundImageView.swift; sourceTree = "<group>"; };
 		117B9D6925F9181B001B172A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
 		11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDeliveryViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		11DE86FE25ED83C700CFFD69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedovikCakeViewController.swift; sourceTree = "<group>"; };
+		11EBB3F025FE7C62000EF11B /* Products.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Products.xcassets; sourceTree = "<group>"; };
 		11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMHomepageViewController.swift; sourceTree = "<group>"; };
 		11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBigBlueButton.swift; sourceTree = "<group>"; };
@@ -92,6 +98,13 @@
 			path = ImageViews;
 			sourceTree = "<group>";
 		};
+		1176E0C125FFEF0C005F87AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		11852E6025F3DCFA00C412FF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +119,7 @@
 		11AE541E25FB9AEE0064B3EA /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				1175F07725F7AF170071EBD8 /* AKDarkGraySystemButton.swift */,
+				1175F07725F7AF170071EBD8 /* AKSystemButton.swift */,
 				11EF0E6925F24B93006FE5B8 /* AKBigBlueButton.swift */,
 				11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */,
 			);
@@ -135,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
+				11EBB3DB25FE7859000EF11B /* Products */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -168,6 +182,7 @@
 			children = (
 				11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */,
 				11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */,
+				1176E0C325FFEF32005F87AE /* AKBackgroundImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +190,7 @@
 		11DE86E425ED83C000CFFD69 = {
 			isa = PBXGroup;
 			children = (
+				1176E0C125FFEF0C005F87AE /* Models */,
 				11DE870B25EE3ACA00CFFD69 /* Views */,
 				11DE86EF25ED83C000CFFD69 /* TortyMozyrApp */,
 				11DE86EE25ED83C000CFFD69 /* Products */,
@@ -197,7 +213,7 @@
 				11DE870F25EE3B1600CFFD69 /* Resources */,
 				11DE870E25EE3AF500CFFD69 /* Controllers */,
 				11DE870D25EE3AE000CFFD69 /* Extensions */,
-				11DE870C25EE3AD700CFFD69 /* Models */,
+				11DE870C25EE3AD700CFFD69 /* Common */,
 				11DE86F025ED83C000CFFD69 /* AppDelegate.swift */,
 				11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */,
 				11DE86F625ED83C000CFFD69 /* Main.storyboard */,
@@ -214,7 +230,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		11DE870C25EE3AD700CFFD69 /* Models */ = {
+		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				1110544425FB9E50002A6E79 /* ImageViews */,
@@ -222,7 +238,7 @@
 				11AE541F25FB9B060064B3EA /* Titles */,
 				11AE541E25FB9AEE0064B3EA /* Buttons */,
 			);
-			path = Models;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		11DE870D25EE3AE000CFFD69 /* Extensions */ = {
@@ -252,9 +268,26 @@
 				11DE86F925ED83C700CFFD69 /* Assets.xcassets */,
 				1193C19625EE4C5A00729DDB /* Colors.xcassets */,
 				11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */,
+				11EBB3F025FE7C62000EF11B /* Products.xcassets */,
 				11DE86FB25ED83C700CFFD69 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		11EBB3DB25FE7859000EF11B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11EBB3DC25FE7865000EF11B /* Cakes */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		11EBB3DC25FE7865000EF11B /* Cakes */ = {
+			isa = PBXGroup;
+			children = (
+				11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */,
+			);
+			path = Cakes;
 			sourceTree = "<group>";
 		};
 		7AB6C316F50562E124A4767E /* Frameworks */ = {
@@ -337,6 +370,7 @@
 				11DE86FD25ED83C700CFFD69 /* LaunchScreen.storyboard in Resources */,
 				1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */,
 				11DE86FA25ED83C700CFFD69 /* Assets.xcassets in Resources */,
+				11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */,
 				11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */,
 				11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */,
 				11EF0E7625F256EF006FE5B8 /* GoogleService-Info.plist in Resources */,
@@ -410,7 +444,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
-				1175F07825F7AF170071EBD8 /* AKDarkGraySystemButton.swift in Sources */,
+				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
+				1176E0C425FFEF32005F87AE /* AKBackgroundImageView.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,
@@ -425,6 +460,7 @@
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
 				1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */,
 				11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */,
+				11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */,
 				117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
