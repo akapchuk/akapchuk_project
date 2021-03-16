@@ -11,7 +11,6 @@
 		1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */; };
 		1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */; };
 		1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07725F7AF170071EBD8 /* AKSystemButton.swift */; };
-		1176E0C425FFEF32005F87AE /* AKBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176E0C325FFEF32005F87AE /* AKBackgroundImageView.swift */; };
 		117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B9D6925F9181B001B172A /* RegisterViewController.swift */; };
 		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
 		11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */; };
@@ -45,7 +44,6 @@
 		1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSubheaderTitleLabel.swift; sourceTree = "<group>"; };
 		1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHeaderTitleLabel.swift; sourceTree = "<group>"; };
 		1175F07725F7AF170071EBD8 /* AKSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSystemButton.swift; sourceTree = "<group>"; };
-		1176E0C325FFEF32005F87AE /* AKBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBackgroundImageView.swift; sourceTree = "<group>"; };
 		117B9D6925F9181B001B172A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
 		11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDeliveryViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 			children = (
 				11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */,
 				11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */,
-				1176E0C325FFEF32005F87AE /* AKBackgroundImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -445,7 +442,6 @@
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
-				1176E0C425FFEF32005F87AE /* AKBackgroundImageView.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,

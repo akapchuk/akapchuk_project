@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
@@ -118,70 +119,58 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     // MARK: - constraints
 
     func setUpConstraints() {
-        NSLayoutConstraint.activate([
-            self.backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.backgroundImageView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.backgroundImageView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ])
 
-        NSLayoutConstraint.activate([
-            self.whiteAreaView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -450),
-            self.whiteAreaView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
-            self.whiteAreaView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
-            self.whiteAreaView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ])
+        self.backgroundImageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
 
-        NSLayoutConstraint.activate([
-            self.emailTextField.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 50),
-            self.emailTextField.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.emailTextField.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
+        self.whiteAreaView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(450)
+            make.left.right.bottom.equalToSuperview()
+        }
 
-        NSLayoutConstraint.activate([
-            self.grayEmailDividerView.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 75),
-            self.grayEmailDividerView.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.grayEmailDividerView.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.grayEmailDividerView.heightAnchor.constraint(equalToConstant: 1)
-        ])
+        self.emailTextField.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(50)
+            make.left.right.equalToSuperview().inset(25)
+        }
 
-        NSLayoutConstraint.activate([
-            self.passwordTextField.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 100),
-            self.passwordTextField.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.passwordTextField.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
+        self.grayEmailDividerView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(75)
+            make.left.right.equalToSuperview().inset(25)
+            make.height.equalTo(1)
+        }
 
-        NSLayoutConstraint.activate([
-            self.grayPasswordDividerView.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 125),
-            self.grayPasswordDividerView.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.grayPasswordDividerView.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.grayPasswordDividerView.heightAnchor.constraint(equalToConstant: 1)
-        ])
+        self.passwordTextField.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(100)
+            make.left.right.equalToSuperview().inset(25)
+        }
 
-        // -----
-        NSLayoutConstraint.activate([
-            self.telephoneTextField.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 150),
-            self.telephoneTextField.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.telephoneTextField.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
+        self.grayPasswordDividerView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(125)
+            make.left.right.equalToSuperview().inset(25)
+            make.height.equalTo(1)
+        }
 
-        NSLayoutConstraint.activate([
-            self.grayTelephoneDividerView.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 175),
-            self.grayTelephoneDividerView.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.grayTelephoneDividerView.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.grayTelephoneDividerView.heightAnchor.constraint(equalToConstant: 1)
-        ])
+        self.telephoneTextField.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(150)
+            make.left.right.equalToSuperview().inset(25)
+        }
 
-        NSLayoutConstraint.activate([
-            self.registerButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 210),
-            self.registerButton.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.registerButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
+        self.grayTelephoneDividerView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(175)
+            make.left.right.equalToSuperview().inset(25)
+            make.height.equalTo(1)
+        }
 
-        NSLayoutConstraint.activate([
-            self.backButton.topAnchor.constraint(equalTo: self.registerButton.bottomAnchor, constant: 10),
-            self.backButton.centerXAnchor.constraint(equalTo: self.whiteAreaView.centerXAnchor)
-        ])
+        self.registerButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(210)
+            make.left.right.equalToSuperview().inset(25)
+        }
+
+        self.backButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.registerButton.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
 
     }
 

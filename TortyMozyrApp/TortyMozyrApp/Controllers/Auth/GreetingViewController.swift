@@ -51,48 +51,41 @@ class GreetingViewController: UIViewController {
 
         self.view.addSubview(backgroundImageView)
         self.view.addSubview(whiteAreaView)
-        self.view.addSubview(welcomeTitleLabel)
-        self.view.addSubview(descriptionLabel)
-        self.view.addSubview(startButton)
+        self.whiteAreaView.addSubview(welcomeTitleLabel)
+        self.whiteAreaView.addSubview(descriptionLabel)
+        self.whiteAreaView.addSubview(startButton)
 
         self.setUpConstraints()
+
     }
 
     // MARK: - constraints
 
     func setUpConstraints() {
 
-        self.backgroundImageView.snp.updateConstraints { (make) in
+        self.backgroundImageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
 
-        NSLayoutConstraint.activate([
-            self.whiteAreaView.topAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -270),
-            self.whiteAreaView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
-            self.whiteAreaView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
-            self.whiteAreaView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        ])
+        self.whiteAreaView.snp.makeConstraints { (make) in
+            make.height.equalTo(270)
+            make.left.right.bottom.equalToSuperview()
+        }
 
-        NSLayoutConstraint.activate([
-            self.welcomeTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                                        constant: -220),
-            self.welcomeTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
-            self.welcomeTitleLabel.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
-        ])
+        self.welcomeTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(15)
+            make.left.right.equalToSuperview().inset(25)
+        }
 
-        NSLayoutConstraint.activate([
-            self.descriptionLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                                       constant: -170),
-            self.descriptionLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
-            self.descriptionLabel.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
-        ])
+        self.descriptionLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.welcomeTitleLabel.snp.bottom).offset(15)
+            make.left.right.equalToSuperview().inset(25)
+        }
 
-        NSLayoutConstraint.activate([
-            self.startButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: -70),
-            self.startButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
-            self.startButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
-        ])
+        self.startButton.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().inset(50)
+            make.left.right.equalToSuperview().inset(25)
+        }
     }
 
     // MARK: - actions

@@ -19,17 +19,20 @@ class TMMoreViewController: UIViewController {
         return button
     }()
 
+    // MARK: - app life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Ещё"
-
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
         self.view.addSubview(exitButton)
 
         self.setUpConstraints()
     }
+
+    // MARK: - set up constraints
 
     func setUpConstraints() {
 
@@ -42,7 +45,6 @@ class TMMoreViewController: UIViewController {
     }
 
     @objc func exitButtonTapped() {
-//        self.present(AuthorizationViewController(), animated: true, completion: nil)
         self.navigationController?.pushViewController(AuthorizationViewController(), animated: true)
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true

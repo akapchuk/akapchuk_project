@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     
@@ -73,7 +74,8 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         self.emailTextField.delegate = self
         
         // add gestures
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewDidTapped)))
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                              action: #selector(self.viewDidTapped)))
         
         self.view.addSubview(backgroundImageView)
         self.view.addSubview(whiteAreaView)

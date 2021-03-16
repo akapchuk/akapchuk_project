@@ -6,22 +6,31 @@
 //
 
 import UIKit
+import SnapKit
 
-class AKCorporateBackgroundImageView: UIImageView {
+class AKCorporateBackgroundImageView: UIView {
+
+    let backgroundImage = UIImage(named: "launchScreen")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.setUpImageView()
+
+        contentMode = .scaleAspectFill
+        translatesAutoresizingMaskIntoConstraints = false
     }
+
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 
-    private func setUpImageView() {
-        image = UIImage(named: "launchScreen")
-        contentMode = .scaleAspectFill
-        translatesAutoresizingMaskIntoConstraints = false
+    override func updateConstraints() {
+
+
+        self.updateConstraints()
     }
 }
+
+// Создать класс наследуемый от UIView . В методе иницаизатора установить настройки.
+

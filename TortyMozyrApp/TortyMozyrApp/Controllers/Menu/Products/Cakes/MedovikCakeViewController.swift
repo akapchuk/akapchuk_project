@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MedovikCakeViewController: UIViewController {
 
@@ -39,7 +40,7 @@ class MedovikCakeViewController: UIViewController {
 
     private lazy var cakeImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "medovikCake")
+        image.image = UIImage(named: "medovikSecondImage")
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 40
@@ -58,14 +59,6 @@ class MedovikCakeViewController: UIViewController {
         return header
     }()
 
-    private lazy var addToBasketButton: AKSystemButton = {
-        let button = AKSystemButton()
-        button.setTitle("Добавить в корзину", for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKOrange")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
     private lazy var subHeaderTitle: UILabel = {
         let subHeader = UILabel()
         subHeader.text = "Вес: 1,5 ... 2,5 кг"
@@ -74,9 +67,37 @@ class MedovikCakeViewController: UIViewController {
         return subHeader
     }()
 
+    private lazy var priceTitle: AKSubheaderTitleLabel = {
+        let price = AKSubheaderTitleLabel()
+        price.text = "\(self.medovikPrice) BYN"
+        price.translatesAutoresizingMaskIntoConstraints = false
+        return price
+    }()
+
+    private lazy var productStepper: UIStepper = {
+        let stepper = UIStepper()
+        stepper.minimumValue = 0.5
+        stepper.maximumValue = 3.5
+        stepper.stepValue = 0.5
+        stepper.value = 1
+        stepper.isContinuous = true
+        stepper.translatesAutoresizingMaskIntoConstraints = false
+        return stepper
+    }()
+
+    private lazy var addToBasketButton: AKSystemButton = {
+        let button = AKSystemButton()
+        button.setTitle("Добавить в корзину", for: UIControl.State())
+        button.backgroundColor = UIColor(named: "AKOrange")
+        button.addTarget(self, action: #selector(addToBasketButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     private var medovikPrice = 29.9
 
     // MARK: - vc life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
@@ -89,11 +110,11 @@ class MedovikCakeViewController: UIViewController {
         self.imageMaskView.addSubview(self.cakeImageView)
         self.imageMaskView.addSubview(self.buttonBackgroundView)
         self.buttonBackgroundView.addSubview(backButtonImageView)
-        self.view.addSubview(addToBasketButton)
         self.view.addSubview(headerTitleLabel)
         self.view.addSubview(subHeaderTitle)
-
-
+        self.view.addSubview(addToBasketButton)
+        self.view.addSubview(productStepper)
+        self.view.addSubview(priceTitle)
 
         self.buttonBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonTapped)))
 
@@ -131,12 +152,6 @@ class MedovikCakeViewController: UIViewController {
         ])
 
         NSLayoutConstraint.activate([
-            self.addToBasketButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            self.addToBasketButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
-            self.addToBasketButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
-        ])
-
-        NSLayoutConstraint.activate([
             self.headerTitleLabel.topAnchor.constraint(equalTo: self.imageMaskView.bottomAnchor, constant: 15),
             self.headerTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20)
         ])
@@ -145,12 +160,32 @@ class MedovikCakeViewController: UIViewController {
             self.subHeaderTitle.topAnchor.constraint(equalTo: self.headerTitleLabel.bottomAnchor, constant: 10),
             self.subHeaderTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20)
         ])
+
+        self.priceTitle.snp.makeConstraints { (make) in
+            make.left.equalTo(self.addToBasketButton.snp.left)
+            make.bottom.equalToSuperview().inset(175)
+        }
+
+        self.productStepper.snp.makeConstraints { (make) in
+            make.right.equalTo(self.addToBasketButton.snp.right)
+            make.bottom.equalToSuperview().inset(175)
+        }
+
+        NSLayoutConstraint.activate([
+            self.addToBasketButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            self.addToBasketButton.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 25),
+            self.addToBasketButton.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -25)
+        ])
     }
 
     // MARK: - actions
 
     @objc func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @objc func addToBasketButtonTapped() {
+        print(self.productStepper.value)
     }
 
 }
