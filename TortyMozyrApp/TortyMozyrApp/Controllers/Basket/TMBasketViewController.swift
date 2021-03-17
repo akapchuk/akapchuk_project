@@ -7,16 +7,21 @@
 
 import UIKit
 
-class TMBasketViewController: UIViewController {
+class TMBasketViewController: UITableViewController {
 
-    // MARK: - gui variables
+    struct AKBasketItems {
+        let image: UIImage
+        let itemNameLabel: UILabel
+        let itemPrice: UILabel
+    }
 
-    private lazy var basketHeaderTitleLabel: AKHeaderTitleLabel = {
-        let header = AKHeaderTitleLabel()
-        header.text = "Корзина"
-        return header
-    }()
-
+    private let items = [
+        "medovik",
+        "choco balls",
+        "napoleon",
+        "pear pie",
+        "gift box"
+    ]
 
     // MARK: - view life cycle
 
@@ -25,19 +30,26 @@ class TMBasketViewController: UIViewController {
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
         self.title = "Корзина"
-
-        self.view.addSubview(basketHeaderTitleLabel)
-
-        self.setUpConstraints()
+        self.tableView.register(AKBasketItemCell.self,
+                                forCellReuseIdentifier: AKBasketItemCell.reuseIdentifier)
     }
 
-    // MARK: - set up constraints
+    // MARK: - set up cells
 
-    func setUpConstraints() {
-        NSLayoutConstraint.activate([
-            self.basketHeaderTitleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            self.basketHeaderTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20)
-        ])
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AKBasketItemCell.reuseIdentifier, for: indexPath)
+
+        (cell as? AKBasketItemCell)?.setCellData(imageName: self.items[indexPath.row],
+                                                 imageDescription: "29.99 BYN")
+
+//        cell.imageView?.image = UIImage(named: "fruitCakeImage")
+//        cell.textLabel?.text = self.items[indexPath.row]
+//        cell.accessoryType = .detailDisclosureButton
+        return cell
     }
 
     // MARK: - actions

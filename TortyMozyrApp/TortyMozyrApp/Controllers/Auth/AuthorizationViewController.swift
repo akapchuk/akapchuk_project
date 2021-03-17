@@ -190,48 +190,42 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             make.left.right.bottom.equalToSuperview()
         }
 
-        NSLayoutConstraint.activate([
-            self.emailTextField.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 50),
-            self.emailTextField.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.emailTextField.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
-        
-        NSLayoutConstraint.activate([
-            self.grayEmailDividerView.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 75),
-            self.grayEmailDividerView.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.grayEmailDividerView.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.grayEmailDividerView.heightAnchor.constraint(equalToConstant: 1)
-        ])
-        
-        NSLayoutConstraint.activate([
-            self.passwordTextField.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 100),
-            self.passwordTextField.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.passwordTextField.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
-        
-        NSLayoutConstraint.activate([
-            self.grayPasswordDividerView.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 125),
-            self.grayPasswordDividerView.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.grayPasswordDividerView.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25),
-            self.grayPasswordDividerView.heightAnchor.constraint(equalToConstant: 1)
-        ])
-        
-        NSLayoutConstraint.activate([
-            self.forgotPasswordButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 140),
-            self.forgotPasswordButton.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25)
-        ])
-        
-        NSLayoutConstraint.activate([
-            self.createProfileButton.topAnchor.constraint(equalTo: self.whiteAreaView.topAnchor, constant: 210),
-            self.createProfileButton.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.createProfileButton.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
-        
-        NSLayoutConstraint.activate([
-            self.orLogInWithTextLabel.topAnchor.constraint(equalTo: self.createProfileButton.bottomAnchor, constant: 10),
-            self.orLogInWithTextLabel.leftAnchor.constraint(equalTo: self.whiteAreaView.leftAnchor, constant: 25),
-            self.orLogInWithTextLabel.rightAnchor.constraint(equalTo: self.whiteAreaView.rightAnchor, constant: -25)
-        ])
+        self.emailTextField.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(50)
+            make.left.right.equalToSuperview().inset(25)
+        }
+
+        self.grayEmailDividerView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(75)
+            make.left.right.equalToSuperview().inset(25)
+            make.height.equalTo(1)
+        }
+
+        self.passwordTextField.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(100)
+            make.left.right.equalToSuperview().inset(25)
+        }
+
+        self.grayPasswordDividerView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(125)
+            make.left.right.equalToSuperview().inset(25)
+            make.height.equalTo(1)
+        }
+
+        self.forgotPasswordButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(140)
+            make.left.equalToSuperview().inset(25)
+        }
+
+        self.createProfileButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(210)
+            make.left.right.equalToSuperview().inset(25)
+        }
+
+        self.orLogInWithTextLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.createProfileButton.snp.bottom).offset(10)
+            make.left.right.equalToSuperview().inset(25)
+        }
         
         NSLayoutConstraint.activate([
             self.appleIDView.rightAnchor.constraint(equalTo: self.facebookView.leftAnchor, constant: -10),
@@ -265,11 +259,11 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             self.googleImageView.widthAnchor.constraint(equalToConstant: 20),
             self.googleImageView.heightAnchor.constraint(equalToConstant: 20)
         ])
-        
-        NSLayoutConstraint.activate([
-            self.alreadyHaveAccountStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            self.alreadyHaveAccountStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        ])
+
+        self.alreadyHaveAccountStackView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(40) // safe
+        }
         
     }
     

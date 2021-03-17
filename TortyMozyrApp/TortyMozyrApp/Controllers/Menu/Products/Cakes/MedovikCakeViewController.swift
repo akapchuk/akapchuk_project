@@ -40,7 +40,7 @@ class MedovikCakeViewController: UIViewController {
 
     private lazy var cakeImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "medovikSecondImage")
+        image.image = UIImage(named: "medovikCakeImage")
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 40
@@ -61,10 +61,17 @@ class MedovikCakeViewController: UIViewController {
 
     private lazy var subHeaderTitle: UILabel = {
         let subHeader = UILabel()
-        subHeader.text = "Вес: 1,5 ... 2,5 кг"
+        subHeader.text = "Вес: \(Int(self.productStepper.value * 1000)) гр."
         subHeader.font = UIFont.systemFont(ofSize: 25, weight: .medium)
         subHeader.translatesAutoresizingMaskIntoConstraints = false
         return subHeader
+    }()
+
+    private lazy var descriptionLabel: AKDescriptionTitleLabel = {
+        let description = AKDescriptionTitleLabel()
+        description.text = "Красивая легенда о многослойном шедевре подарит вам вдохновение и воспоминание, связанные с тортом. А если вы никогда не пробовали «‎Медовик‎»‎, то обязательно захотите это сделать."
+        description.textAlignment = .left
+        return description
     }()
 
     private lazy var priceTitle: AKSubheaderTitleLabel = {
@@ -81,6 +88,7 @@ class MedovikCakeViewController: UIViewController {
         stepper.stepValue = 0.5
         stepper.value = 1
         stepper.isContinuous = true
+        stepper.addTarget(self, action: #selector(productStepperWasChanged), for: .touchUpInside)
         stepper.translatesAutoresizingMaskIntoConstraints = false
         return stepper
     }()
@@ -115,6 +123,7 @@ class MedovikCakeViewController: UIViewController {
         self.view.addSubview(addToBasketButton)
         self.view.addSubview(productStepper)
         self.view.addSubview(priceTitle)
+        self.view.addSubview(descriptionLabel)
 
         self.buttonBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonTapped)))
 
@@ -161,14 +170,20 @@ class MedovikCakeViewController: UIViewController {
             self.subHeaderTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20)
         ])
 
+        self.descriptionLabel.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(25)
+            make.top.equalTo(self.subHeaderTitle.snp.bottom).offset(20)
+        }
+
         self.priceTitle.snp.makeConstraints { (make) in
             make.left.equalTo(self.addToBasketButton.snp.left)
-            make.bottom.equalToSuperview().inset(175)
+//            make.bottom.equalToSuperview().inset(175)
+            make.bottom.equalTo(self.addToBasketButton.snp.top).offset(-10)
         }
 
         self.productStepper.snp.makeConstraints { (make) in
             make.right.equalTo(self.addToBasketButton.snp.right)
-            make.bottom.equalToSuperview().inset(175)
+            make.bottom.equalTo(self.addToBasketButton.snp.top).offset(-10)
         }
 
         NSLayoutConstraint.activate([
@@ -184,8 +199,28 @@ class MedovikCakeViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+    @objc func productStepperWasChanged() {
+        print("Stepper value is \(self.productStepper.value)")
+        self.priceTitle.text = "\(Double(round((self.medovikPrice * self.productStepper.value) * 100) / 100)) BYN"
+        self.subHeaderTitle.text = "Вес \(Int((self.productStepper.value) * 1000)) гр."
+    }
+
     @objc func addToBasketButtonTapped() {
-        print(self.productStepper.value)
+        let alertController = UIAlertController(title: "Готово!",
+                                                message: "Товар добавлен в корзину",
+                                                preferredStyle: .actionSheet)
+
+        let continueAction = UIAlertAction(title: "Продолжить", style: .default) { _ in
+            self.navigationController?.pushViewController(TMMenuViewController(), animated: true)
+        }
+        alertController.addAction(continueAction)
+
+        let goToBasketAction = UIAlertAction(title: "Перейти в корзину", style: .default) { _ in
+            self.navigationController?.pushViewController(TMBasketViewController(), animated: true)
+        }
+        alertController.addAction(goToBasketAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
 
 }

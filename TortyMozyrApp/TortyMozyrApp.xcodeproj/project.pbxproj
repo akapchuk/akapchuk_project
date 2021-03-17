@@ -17,6 +17,7 @@
 		11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5525F3D49F00C412FF /* TMBasketViewController.swift */; };
 		11852E5A25F3D4E000C412FF /* TMMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5925F3D4E000C412FF /* TMMoreViewController.swift */; };
 		11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */; };
+		118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C3F932602111C00CCED7E /* AKBasketItemCell.swift */; };
 		1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1193C19625EE4C5A00729DDB /* Colors.xcassets */; };
 		11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */; };
 		11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */; };
@@ -50,6 +51,7 @@
 		11852E5525F3D49F00C412FF /* TMBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBasketViewController.swift; sourceTree = "<group>"; };
 		11852E5925F3D4E000C412FF /* TMMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMoreViewController.swift; sourceTree = "<group>"; };
 		11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTabBarViewController.swift; sourceTree = "<group>"; };
+		118C3F932602111C00CCED7E /* AKBasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBasketItemCell.swift; sourceTree = "<group>"; };
 		1193C19625EE4C5A00729DDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialMediaIcons.xcassets; sourceTree = "<group>"; };
 		11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDecrscriptionTitleLable.swift; sourceTree = "<group>"; };
@@ -114,6 +116,22 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		118C3F9026020CF900CCED7E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				118C3F932602111C00CCED7E /* AKBasketItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		118C3F922602101800CCED7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				118C3F9026020CF900CCED7E /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		11AE541E25FB9AEE0064B3EA /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
+				118C3F922602101800CCED7E /* Views */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -459,6 +478,7 @@
 				11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */,
 				117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
+				118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,
