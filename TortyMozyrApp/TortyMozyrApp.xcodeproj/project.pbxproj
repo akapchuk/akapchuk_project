@@ -18,6 +18,7 @@
 		11852E5A25F3D4E000C412FF /* TMMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5925F3D4E000C412FF /* TMMoreViewController.swift */; };
 		11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */; };
 		118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C3F932602111C00CCED7E /* AKBasketItemCell.swift */; };
+		118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C3F9826024D3700CCED7E /* AKViewController.swift */; };
 		1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1193C19625EE4C5A00729DDB /* Colors.xcassets */; };
 		11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */; };
 		11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */; };
@@ -52,6 +53,7 @@
 		11852E5925F3D4E000C412FF /* TMMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMoreViewController.swift; sourceTree = "<group>"; };
 		11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTabBarViewController.swift; sourceTree = "<group>"; };
 		118C3F932602111C00CCED7E /* AKBasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBasketItemCell.swift; sourceTree = "<group>"; };
+		118C3F9826024D3700CCED7E /* AKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKViewController.swift; sourceTree = "<group>"; };
 		1193C19625EE4C5A00729DDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialMediaIcons.xcassets; sourceTree = "<group>"; };
 		11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDecrscriptionTitleLable.swift; sourceTree = "<group>"; };
@@ -206,8 +208,6 @@
 		11DE86E425ED83C000CFFD69 = {
 			isa = PBXGroup;
 			children = (
-				1176E0C125FFEF0C005F87AE /* Models */,
-				11DE870B25EE3ACA00CFFD69 /* Views */,
 				11DE86EF25ED83C000CFFD69 /* TortyMozyrApp */,
 				11DE86EE25ED83C000CFFD69 /* Products */,
 				8CE43C6D595F6EF3C85E2C22 /* Pods */,
@@ -226,10 +226,12 @@
 		11DE86EF25ED83C000CFFD69 /* TortyMozyrApp */ = {
 			isa = PBXGroup;
 			children = (
+				1176E0C125FFEF0C005F87AE /* Models */,
 				11DE870F25EE3B1600CFFD69 /* Resources */,
 				11DE870E25EE3AF500CFFD69 /* Controllers */,
 				11DE870D25EE3AE000CFFD69 /* Extensions */,
 				11DE870C25EE3AD700CFFD69 /* Common */,
+				118C3F9826024D3700CCED7E /* AKViewController.swift */,
 				11DE86F025ED83C000CFFD69 /* AppDelegate.swift */,
 				11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */,
 				11DE86F625ED83C000CFFD69 /* Main.storyboard */,
@@ -237,13 +239,6 @@
 				11EF0E7525F256EF006FE5B8 /* GoogleService-Info.plist */,
 			);
 			path = TortyMozyrApp;
-			sourceTree = "<group>";
-		};
-		11DE870B25EE3ACA00CFFD69 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
@@ -479,6 +474,7 @@
 				117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
 				118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */,
+				118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,

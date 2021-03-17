@@ -7,19 +7,9 @@
 
 import UIKit
 
-class TMHomepageViewController: UIViewController {
+class TMHomepageViewController: AKViewController {
 
     // MARK: - gui variables
-
-    private lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView(frame: CGRect(x: 0,
-                                                    y: 0,
-                                                    width: self.view.frame.size.width,
-                                                    height: self.view.frame.size.height))
-        scrollView.backgroundColor = UIColor(named: "AKWhite")
-        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 2200)
-        return scrollView
-    }()
 
     private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
@@ -36,27 +26,27 @@ class TMHomepageViewController: UIViewController {
         let barButton = UIBarButtonItem(systemItem: .add)
         return barButton
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(named: "AKWhite")
 
         // NavController customize
         self.title = "Главная"
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(storiesHeaderTitleLabel)
-        
+        self.mainView.addSubview(storiesHeaderTitleLabel)
+
         self.setUpConstraints()
     }
-    
+
     func setUpConstraints() {
 
-        NSLayoutConstraint.activate([
-            self.storiesHeaderTitleLabel.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 10),
-            self.storiesHeaderTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20)
-        ])
+        self.storiesHeaderTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(10)
+            make.left.right.equalToSuperview().inset(20)
+        }
     }
 
 }

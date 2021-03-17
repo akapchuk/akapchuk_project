@@ -22,11 +22,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-    
-//    func showGreetingVC() {
-//        let greetingVC = AuthViewController()
-//        greetingVC.modalPresentationStyle = .fullScreen
-//        self.window?.rootViewController?.present(greetingVC, animated: true, completion: nil)
-//    }
 }
-

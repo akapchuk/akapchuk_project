@@ -14,6 +14,17 @@ class AKBasketItemCell: UITableViewCell {
 
     // MARK: - gui variables
 
+    private lazy var cardContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(viewWasSwiped)))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(viewWasSwiped)))
+        view.isUserInteractionEnabled = true
+        return view
+    }()
+
     private lazy var itemImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "medovikCakeImage")
@@ -26,7 +37,7 @@ class AKBasketItemCell: UITableViewCell {
 
     private lazy var nameTitleLabel: UILabel = {
         let name = UILabel()
-        name.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
+        name.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         name.textAlignment = .left
         //        name.text = "Торт «Медовик»"
         name.translatesAutoresizingMaskIntoConstraints = false
@@ -55,26 +66,37 @@ class AKBasketItemCell: UITableViewCell {
     }
 
     func initCell() {
-        self.contentView.addSubview(itemImage)
-        self.contentView.addSubview(nameTitleLabel)
-        self.contentView.addSubview(priceTitleLabel)
-    }
+        self.contentView.addSubview(cardContainerView)
+        self.cardContainerView.addSubview(itemImage)
+        self.cardContainerView.addSubview(nameTitleLabel)
+        self.cardContainerView.addSubview(priceTitleLabel)
 
+        self.selectionStyle = .none
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        self.cardContainerView.backgroundColor = selected ? #colorLiteral(red: 0.9680817723, green: 0.9634761214, blue: 0.9716416001, alpha: 1) : .white
+
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+            self.cardContainerView.backgroundColor = .white
+        }
     }
 
     // MARK: - set up constraints
 
     override func updateConstraints() {
 
+        self.cardContainerView.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview().inset(5)
+            make.left.right.equalToSuperview().inset(30)
+        }
+
         self.itemImage.snp.makeConstraints { (make) in
-            make.top.left.bottom.equalToSuperview().inset(15)
-            make.height.equalTo(100)
-            make.width.equalTo(100)
+            make.top.left.bottom.equalTo(self.cardContainerView).inset(10)
+            make.height.equalTo(75)
+            make.width.equalTo(75)
         }
 
         self.nameTitleLabel.snp.makeConstraints { (make) in
@@ -96,5 +118,26 @@ class AKBasketItemCell: UITableViewCell {
 
         self.setNeedsUpdateConstraints()
     }
+
+    // MARK: - actions
+
+    @objc func viewWasSwiped(_ gesture: UIPanGestureRecognizer) {
+
+        // Код в зависимости от условия жеста (state)
+        if gesture.state == .began {
+            print("began")
+        } else if gesture.state == .changed {
+            let translation = gesture.translation(in: self.contentView)
+            cardContainerView.transform = CGAffineTransform(translationX: translation.x, y: 0)
+
+        } else if gesture.state == .ended {
+            print("ended")
+            // Анимация пружины
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseIn) {
+                self.cardContainerView.transform = .identity
+            }
+        }
+    }
+
 
 }
