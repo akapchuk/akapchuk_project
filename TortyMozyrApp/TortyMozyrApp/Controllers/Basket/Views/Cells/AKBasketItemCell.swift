@@ -54,13 +54,19 @@ class AKBasketItemCell: UITableViewCell {
         return price
     }()
 
+    private lazy var itemValueStepper: AKStepper = {
+        let stepper = AKStepper()
+        stepper.isContinuous = true
+        stepper.translatesAutoresizingMaskIntoConstraints = false
+        return stepper
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         self.initCell()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -70,6 +76,7 @@ class AKBasketItemCell: UITableViewCell {
         self.cardContainerView.addSubview(itemImage)
         self.cardContainerView.addSubview(nameTitleLabel)
         self.cardContainerView.addSubview(priceTitleLabel)
+        self.cardContainerView.addSubview(itemValueStepper)
 
         self.selectionStyle = .none
     }
@@ -109,6 +116,10 @@ class AKBasketItemCell: UITableViewCell {
             make.left.equalTo(self.itemImage.snp.right).offset(20)
         }
 
+        self.itemValueStepper.snp.makeConstraints { (make) in
+            make.right.bottom.equalToSuperview().inset(15)
+        }
+
         super.updateConstraints()
     }
 
@@ -138,6 +149,5 @@ class AKBasketItemCell: UITableViewCell {
             }
         }
     }
-
 
 }

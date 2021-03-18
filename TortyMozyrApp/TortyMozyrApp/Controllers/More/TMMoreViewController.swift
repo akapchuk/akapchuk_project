@@ -19,8 +19,15 @@ class TMMoreViewController: UIViewController {
         return button
     }()
 
-
-
+    private lazy var rightBarButtonItem: UIBarButtonItem = {
+        let infoImage = UIImage(systemName: "info.circle")
+        let barButton = UIBarButtonItem(image: infoImage,
+                                        landscapeImagePhone: nil,
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(infoNavBarButtonTapped))
+        return barButton
+    }()
 
     // MARK: - app life cycle
 
@@ -28,6 +35,8 @@ class TMMoreViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Ещё"
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
+
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
         self.view.addSubview(exitButton)
@@ -51,6 +60,10 @@ class TMMoreViewController: UIViewController {
         self.navigationController?.pushViewController(AuthorizationViewController(), animated: true)
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
+    }
+
+    @objc func infoNavBarButtonTapped() {
+        self.navigationController?.pushViewController(AKAboutViewController(), animated: true)
     }
 
 }

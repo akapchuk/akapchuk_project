@@ -88,6 +88,7 @@ class MedovikCakeViewController: UIViewController {
         stepper.stepValue = 0.5
         stepper.value = 1
         stepper.isContinuous = true
+        stepper.autorepeat = true
         stepper.addTarget(self, action: #selector(productStepperWasChanged), for: .touchUpInside)
         stepper.translatesAutoresizingMaskIntoConstraints = false
         return stepper
@@ -197,6 +198,7 @@ class MedovikCakeViewController: UIViewController {
 
     @objc func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     @objc func productStepperWasChanged() {

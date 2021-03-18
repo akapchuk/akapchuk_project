@@ -27,6 +27,8 @@ class TMHomepageViewController: AKViewController {
         return barButton
     }()
 
+    // MARK: - app life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
@@ -40,6 +42,8 @@ class TMHomepageViewController: AKViewController {
 
         self.setUpConstraints()
     }
+
+    // MARK: - set up constraints
 
     func setUpConstraints() {
 

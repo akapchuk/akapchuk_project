@@ -1,14 +1,13 @@
 //
-//  AKGrayThinDividerView.swift
+//  AKAboutPageWhiteAreaView.swift
 //  TortyMozyrApp
 //
-//  Created by Саша Капчук on 12.03.21.
+//  Created by Саша Капчук on 18.03.21.
 //
 
 import UIKit
 
-
-class AKGrayThinDividerView: UILabel {
+class AKAboutPageWhiteAreaView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,9 +18,11 @@ class AKGrayThinDividerView: UILabel {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     private func setUpView() {
-        backgroundColor = UIColor(named: "AKLightGray")
+        backgroundColor = .white
+        layer.cornerRadius = 15
+        layer.opacity = 0.95
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

@@ -10,13 +10,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let scene = scene as? UIWindowScene else { return }
         let window = UIWindow(frame: scene.coordinateSpace.bounds)
         window.windowScene = scene
-        
+
         window.rootViewController = GreetingViewController()
         self.window = window
         window.makeKeyAndVisible()
@@ -41,9 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().tintColor = .white
-
     }
-
 
     func changeRootViewController(_ vc: UIViewController,
                                   animated: Bool = true,

@@ -67,7 +67,6 @@ class TMBasketViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 
     // MARK: - actions
