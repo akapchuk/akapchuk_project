@@ -12,11 +12,11 @@ class GreetingViewController: UIViewController {
 
     // MARK: - gui variables
 
-    private lazy var backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "launchScreen")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var backgroundImageView: AKCorporateBackgroundImageView = {
+        let imageView = AKCorporateBackgroundImageView()
+//        imageView.image = UIImage(named: "launchScreen")
+//        imageView.contentMode = .scaleAspectFill
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 

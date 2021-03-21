@@ -158,7 +158,6 @@ class TMMenuViewController: UIViewController {
         self.ratingWhiteAreaView.addSubview(ratingStarIconImage)
         self.ratingWhiteAreaView.addSubview(ratingLabel)
 
-
         // MARK: - gestures
         self.iconBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(likeButtonTapped)))
         self.ratingWhiteAreaView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingButtonTapped)))

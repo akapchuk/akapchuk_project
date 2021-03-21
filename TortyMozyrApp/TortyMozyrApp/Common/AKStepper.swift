@@ -9,7 +9,6 @@ import UIKit
 
 class AKStepper: UIStepper {
 
-
     override func decrementImage(for state: UIControl.State) -> UIImage? {
         return UIImage(systemName: "minus.circle")
     }

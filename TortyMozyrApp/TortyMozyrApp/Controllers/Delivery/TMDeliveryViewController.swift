@@ -6,8 +6,18 @@
 //
 
 import UIKit
+import Lottie
 
 class TMDeliveryViewController: UIViewController {
+
+    private lazy var animationView: AnimationView = {
+        let animation = AnimationView()
+        animation.animation = Animation.named("delivery.map")
+        animation.contentMode = .scaleAspectFit
+        animation.loopMode = .playOnce
+        animation.play()
+        return animation
+    }()
 
     // MARK: - gui variables
 
@@ -20,8 +30,7 @@ class TMDeliveryViewController: UIViewController {
         controller.layer.cornerRadius = 9
         controller.layer.borderWidth = 1
         controller.layer.masksToBounds = true
-//        controller.backgroundColor = UIColor(named: "AKBlue")
-//        controller.selectedSegmentTintColor = UIColor(named: "AKOrange")
+        controller.selectedSegmentTintColor = UIColor(named: "AKOrange")
         controller.layer.borderColor = UIColor(named: "AKDarkGray")?.cgColor
         controller.addTarget(self, action: #selector(handleSegmentValueChanged(_:)), for: .valueChanged)
         controller.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +43,6 @@ class TMDeliveryViewController: UIViewController {
         return header
     }()
 
-
     // MARK: - view life cycle
 
     override func viewDidLoad() {
@@ -42,10 +50,11 @@ class TMDeliveryViewController: UIViewController {
 
         self.title = "Доставка"
 
-        self.view.backgroundColor = UIColor(named: "AKWhite")
+        self.view.backgroundColor = .white
 
         self.view.addSubview(mapOrListSegmentedControl)
         self.view.addSubview(deliveryTypeHeaderTitleLabel)
+        self.view.addSubview(animationView)
 
         self.setUpConstraints()
 
@@ -54,17 +63,23 @@ class TMDeliveryViewController: UIViewController {
     // MARK: - set up constraints
 
     fileprivate func setUpConstraints() {
-        NSLayoutConstraint.activate([
-            self.mapOrListSegmentedControl.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            self.mapOrListSegmentedControl.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-            self.mapOrListSegmentedControl.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -20),
-            self.mapOrListSegmentedControl.heightAnchor.constraint(equalToConstant: 35)
-        ])
 
-        NSLayoutConstraint.activate([
-            self.deliveryTypeHeaderTitleLabel.topAnchor.constraint(equalTo: self.mapOrListSegmentedControl.bottomAnchor, constant: 10),
-            self.deliveryTypeHeaderTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20)
-        ])
+        self.mapOrListSegmentedControl.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(10)
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(35)
+        }
+
+        self.deliveryTypeHeaderTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.mapOrListSegmentedControl.snp.bottom).offset(10)
+            make.left.equalToSuperview().inset(20)
+        }
+
+        self.animationView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.8)
+        }
     }
 
     // MARK: - actions
@@ -81,6 +96,4 @@ class TMDeliveryViewController: UIViewController {
             print("Default")
         }
     }
-
-
 }

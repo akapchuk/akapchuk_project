@@ -19,7 +19,7 @@ class AKGrayThinDividerView: UILabel {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     private func setUpView() {
         backgroundColor = UIColor(named: "AKLightGray")
         translatesAutoresizingMaskIntoConstraints = false

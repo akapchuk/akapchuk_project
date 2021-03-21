@@ -8,7 +8,7 @@
 import UIKit
 
 class AKSystemButton: UIButton {
-    
+
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 1, height: 60)
     }
@@ -22,7 +22,6 @@ class AKSystemButton: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
 
     private func setUpButton() {
         setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class AKSubheaderTitleLabel: UILabel {
 
     override init(frame: CGRect) {
@@ -27,4 +26,3 @@ class AKSubheaderTitleLabel: UILabel {
         textAlignment = .center
     }
 }
-

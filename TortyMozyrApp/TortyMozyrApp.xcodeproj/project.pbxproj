@@ -11,6 +11,7 @@
 		11057A5C260359D0003AB1B9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11057A5B260359D0003AB1B9 /* Media.xcassets */; };
 		1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */; };
 		1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */; };
+		1118A4A02604E95000AF722E /* delivery.map.json in Resources */ = {isa = PBXBuildFile; fileRef = 1118A49E2604E95000AF722E /* delivery.map.json */; };
 		1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C20D260297CF00E85F37 /* AKStepper.swift */; };
 		1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */; };
 		1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07725F7AF170071EBD8 /* AKSystemButton.swift */; };
@@ -27,6 +28,7 @@
 		11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */; };
 		11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */; };
 		11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */; };
+		11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
@@ -50,6 +52,7 @@
 		11057A5B260359D0003AB1B9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCorporateBackgroundImageView.swift; sourceTree = "<group>"; };
 		1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSubheaderTitleLabel.swift; sourceTree = "<group>"; };
+		1118A49E2604E95000AF722E /* delivery.map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delivery.map.json; sourceTree = "<group>"; };
 		1156C20D260297CF00E85F37 /* AKStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStepper.swift; sourceTree = "<group>"; };
 		1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHeaderTitleLabel.swift; sourceTree = "<group>"; };
 		1175F07725F7AF170071EBD8 /* AKSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSystemButton.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDecrscriptionTitleLable.swift; sourceTree = "<group>"; };
 		11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSmallBlueButton.swift; sourceTree = "<group>"; };
 		11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKGrayThinDividerView.swift; sourceTree = "<group>"; };
+		11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +243,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		11C38F4826077A1E008A8CEF /* StackViews */ = {
+			isa = PBXGroup;
+			children = (
+				11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */,
+			);
+			path = StackViews;
+			sourceTree = "<group>";
+		};
 		11D3AE89260370A900F19071 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +306,7 @@
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				11C38F4826077A1E008A8CEF /* StackViews */,
 				1110544425FB9E50002A6E79 /* ImageViews */,
 				11AE542625FB9BDB0064B3EA /* Views */,
 				11AE541F25FB9B060064B3EA /* Titles */,
@@ -328,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				11057A59260359AB003AB1B9 /* allPages */,
+				1118A49E2604E95000AF722E /* delivery.map.json */,
 				11DE86F925ED83C700CFFD69 /* Assets.xcassets */,
 				1193C19625EE4C5A00729DDB /* Colors.xcassets */,
 				11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */,
@@ -433,6 +447,7 @@
 				11DE86FD25ED83C700CFFD69 /* LaunchScreen.storyboard in Resources */,
 				1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */,
 				11057A5C260359D0003AB1B9 /* Media.xcassets in Resources */,
+				1118A4A02604E95000AF722E /* delivery.map.json in Resources */,
 				11DE86FA25ED83C700CFFD69 /* Assets.xcassets in Resources */,
 				11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */,
 				11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */,
@@ -512,6 +527,7 @@
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
+				11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,
 				11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */,
