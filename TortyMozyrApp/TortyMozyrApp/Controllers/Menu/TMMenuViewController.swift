@@ -55,18 +55,11 @@ class TMMenuViewController: UIViewController {
         return title
     }()
 
-    private lazy var iconBackgroundView: UIView = {
-        let circle = UIView()
-        circle.backgroundColor = #colorLiteral(red: 0.9751266837, green: 0.9601493478, blue: 0.9733665586, alpha: 1)
-        circle.layer.cornerRadius = 18
-        circle.translatesAutoresizingMaskIntoConstraints = false
-        return circle
-    }()
-
     private lazy var likeIconImage: UIImageView = {
         let like = UIImageView()
         like.image = UIImage(systemName: "heart")
         like.tintColor = UIColor(named: "AKDarkGray")
+        like.isUserInteractionEnabled = true
         like.translatesAutoresizingMaskIntoConstraints = false
         return like
     }()
@@ -150,8 +143,7 @@ class TMMenuViewController: UIViewController {
         self.leftTileView.addSubview(borderForPictureView)
         self.borderForPictureView.addSubview(leftTileImageView)
         self.leftTileView.addSubview(itemTitleLabel)
-        self.leftTileView.addSubview(iconBackgroundView)
-        self.iconBackgroundView.addSubview(likeIconImage)
+        self.leftTileView.addSubview(likeIconImage)
         self.leftTileView.addSubview(priceBackgroundView)
         self.priceBackgroundView.addSubview(priceLabel)
         self.leftTileView.addSubview(ratingWhiteAreaView)
@@ -159,7 +151,7 @@ class TMMenuViewController: UIViewController {
         self.ratingWhiteAreaView.addSubview(ratingLabel)
 
         // MARK: - gestures
-        self.iconBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(likeButtonTapped)))
+        self.likeIconImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(likeButtonTapped)))
         self.ratingWhiteAreaView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingButtonTapped)))
         self.leftTileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(leftTileViewTapped)))
 
@@ -216,19 +208,10 @@ class TMMenuViewController: UIViewController {
             self.itemTitleLabel.centerXAnchor.constraint(equalTo: self.leftTileImageView.centerXAnchor)
         ])
 
-        NSLayoutConstraint.activate([
-            self.iconBackgroundView.topAnchor.constraint(equalTo: self.leftTileView.topAnchor, constant: 5),
-            self.iconBackgroundView.leftAnchor.constraint(equalTo: self.leftTileView.leftAnchor, constant: 5),
-            self.iconBackgroundView.heightAnchor.constraint(equalToConstant: 36),
-            self.iconBackgroundView.widthAnchor.constraint(equalToConstant: 36)
-        ])
-
-        NSLayoutConstraint.activate([
-            self.likeIconImage.centerXAnchor.constraint(equalTo: self.iconBackgroundView.centerXAnchor),
-            self.likeIconImage.centerYAnchor.constraint(equalTo: self.iconBackgroundView.centerYAnchor),
-            self.likeIconImage.heightAnchor.constraint(equalToConstant: 28),
-            self.likeIconImage.widthAnchor.constraint(equalToConstant: 30)
-        ])
+        self.likeIconImage.snp.makeConstraints { (make) in
+            make.top.left.equalToSuperview().inset(10)
+            make.size.equalTo(28)
+        }
 
         NSLayoutConstraint.activate([
             self.priceBackgroundView.topAnchor.constraint(equalTo: self.leftTileView.topAnchor),
@@ -267,6 +250,8 @@ class TMMenuViewController: UIViewController {
     }
 
     @objc func likeButtonTapped() {
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+
         if self.likeIconImage.tintColor == UIColor(named: "AKDarkGray") {
             self.likeIconImage.tintColor = .systemRed
             self.likeIconImage.image = UIImage(systemName: "heart.fill")
@@ -277,6 +262,8 @@ class TMMenuViewController: UIViewController {
     }
 
     @objc func ratingButtonTapped() {
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+
         if self.ratingStarIconImage.tintColor == UIColor.systemOrange {
             self.ratingStarIconImage.tintColor = UIColor(named: "AKOrange")
             self.ratingStarIconImage.image = UIImage(systemName: "star.fill")

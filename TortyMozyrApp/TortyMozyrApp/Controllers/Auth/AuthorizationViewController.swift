@@ -276,13 +276,13 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func createProfileButtonTapped() {
-        print("Button 'Создать профиль' was tapped")
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+        
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController(),
                                                                                                            options: .transitionFlipFromLeft)
     }
 
     @objc func registerButtonTapped() {
-        print("Button 'Регистрация' was tapped")
         let registerVC = RegisterViewController()
         registerVC.modalPresentationStyle = .fullScreen
         self.present(registerVC, animated: false)

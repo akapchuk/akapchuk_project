@@ -135,7 +135,7 @@ class TMMoreViewController: UIViewController {
         self.socialNetworkBackgroundView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
             make.left.right.equalToSuperview().inset(25)
-            make.height.equalTo(150)
+            make.height.equalTo(160)
         }
 
         self.socailNetworksTitleLabel.snp.makeConstraints { (make) in
@@ -151,7 +151,7 @@ class TMMoreViewController: UIViewController {
 
         self.instagramIconView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.socailNetworksDescriptionLabel.snp.bottom).offset(5)
+            make.top.equalTo(self.socailNetworksDescriptionLabel.snp.bottom).offset(15)
             make.width.height.equalTo(50)
         }
 
