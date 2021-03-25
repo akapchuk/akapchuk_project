@@ -12,15 +12,26 @@ class AKBasketItemCell: UITableViewCell {
 
     static let reuseIdentifier = "AKBasketItemCell"
 
+    var ratingWasTapped: (() -> Void)?
+
+    private var isRated = false {
+        didSet {
+            self.ratingStarIconImage.image = isRated
+                ? UIImage(systemName: "star.fill")
+                : UIImage(systemName: "star")
+
+            self.ratingStarIconImage.tintColor = isRated
+                ? .systemYellow : .white
+        }
+    }
+
     // MARK: - gui variables
 
     private lazy var cardContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 20
-        view.addGestureRecognizer(UISwipeGestureRecognizer(target: self, action: #selector(viewWasSwiped)))
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(viewWasSwiped)))
         view.isUserInteractionEnabled = true
         return view
     }()
@@ -31,6 +42,7 @@ class AKBasketItemCell: UITableViewCell {
         image.layer.cornerRadius = 10
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
+        image.isUserInteractionEnabled = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -50,6 +62,16 @@ class AKBasketItemCell: UITableViewCell {
         price.textAlignment = .left
         price.translatesAutoresizingMaskIntoConstraints = false
         return price
+    }()
+
+    private lazy var ratingStarIconImage: UIImageView = {
+        let star = UIImageView()
+        star.image = UIImage(systemName: "star")
+        star.tintColor = .white
+        star.isUserInteractionEnabled = true
+        star.translatesAutoresizingMaskIntoConstraints = false
+        star.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingImageTapped)))
+        return star
     }()
 
     private lazy var itemValueStepper: AKStepper = {
@@ -74,6 +96,7 @@ class AKBasketItemCell: UITableViewCell {
         self.cardContainerView.addSubview(itemImage)
         self.cardContainerView.addSubview(nameTitleLabel)
         self.cardContainerView.addSubview(priceTitleLabel)
+        self.itemImage.addSubview(ratingStarIconImage)
         self.cardContainerView.addSubview(itemValueStepper)
 
         self.selectionStyle = .none
@@ -114,6 +137,11 @@ class AKBasketItemCell: UITableViewCell {
             make.left.equalTo(self.itemImage.snp.right).offset(20)
         }
 
+        self.ratingStarIconImage.snp.makeConstraints { (make) in
+            make.left.bottom.equalToSuperview().inset(5)
+            make.size.equalTo(20)
+        }
+
         self.itemValueStepper.snp.makeConstraints { (make) in
             make.right.bottom.equalToSuperview().inset(15)
         }
@@ -131,28 +159,16 @@ class AKBasketItemCell: UITableViewCell {
     func setCell(model: AKBasket) {
         self.nameTitleLabel.text = model.title
         self.priceTitleLabel.text = model.price
-        
+        self.isRated = model.isRated
         self.setNeedsUpdateConstraints()
     }
 
     // MARK: - actions
 
-    @objc func viewWasSwiped(_ gesture: UIPanGestureRecognizer) {
-
-        // Код в зависимости от условия жеста (state)
-        if gesture.state == .began {
-            print("began")
-        } else if gesture.state == .changed {
-            let translation = gesture.translation(in: self.contentView)
-            cardContainerView.transform = CGAffineTransform(translationX: translation.x, y: 0)
-
-        } else if gesture.state == .ended {
-            print("ended")
-            // Анимация пружины
-            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseIn) {
-                self.cardContainerView.transform = .identity
-            }
-        }
+    @objc private func ratingImageTapped() {
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+        self.isRated.toggle()
+        self.ratingWasTapped?()
     }
 
 }

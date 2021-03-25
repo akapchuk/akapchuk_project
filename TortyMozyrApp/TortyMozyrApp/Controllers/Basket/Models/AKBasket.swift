@@ -12,4 +12,5 @@ struct AKBasket {
     var imageUrl: String
     let title: String
     var price: String
+    var isRated: Bool
 }
