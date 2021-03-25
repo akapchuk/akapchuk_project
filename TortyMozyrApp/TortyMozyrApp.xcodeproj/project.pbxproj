@@ -15,6 +15,8 @@
 		1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C20D260297CF00E85F37 /* AKStepper.swift */; };
 		1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */; };
 		1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07725F7AF170071EBD8 /* AKSystemButton.swift */; };
+		11787670260C49A900970385 /* AKBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178766F260C49A900970385 /* AKBasket.swift */; };
+		11787675260C4A0A00970385 /* AKMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11787674260C4A0A00970385 /* AKMenu.swift */; };
 		117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B9D6925F9181B001B172A /* RegisterViewController.swift */; };
 		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
 		11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */; };
@@ -56,6 +58,8 @@
 		1156C20D260297CF00E85F37 /* AKStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStepper.swift; sourceTree = "<group>"; };
 		1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHeaderTitleLabel.swift; sourceTree = "<group>"; };
 		1175F07725F7AF170071EBD8 /* AKSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSystemButton.swift; sourceTree = "<group>"; };
+		1178766F260C49A900970385 /* AKBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBasket.swift; sourceTree = "<group>"; };
+		11787674260C4A0A00970385 /* AKMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKMenu.swift; sourceTree = "<group>"; };
 		117B9D6925F9181B001B172A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
 		11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDeliveryViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1178766E260C497000970385 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1178766F260C49A900970385 /* AKBasket.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11787673260C49FC00970385 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11787674260C4A0A00970385 /* AKMenu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		11852E6025F3DCFA00C412FF /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,8 +222,9 @@
 		11AE542125FB9B460064B3EA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
 				11EBB3DB25FE7859000EF11B /* Products */,
+				11787673260C49FC00970385 /* Models */,
+				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -219,6 +240,7 @@
 		11AE542325FB9B570064B3EA /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				1178766E260C497000970385 /* Models */,
 				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
 				118C3F922602101800CCED7E /* Views */,
 			);
@@ -293,7 +315,6 @@
 				11DE870E25EE3AF500CFFD69 /* Controllers */,
 				11DE870D25EE3AE000CFFD69 /* Extensions */,
 				11DE870C25EE3AD700CFFD69 /* Common */,
-				118C3F9826024D3700CCED7E /* AKViewController.swift */,
 				11DE86F025ED83C000CFFD69 /* AppDelegate.swift */,
 				11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */,
 				11DE86F625ED83C000CFFD69 /* Main.storyboard */,
@@ -311,6 +332,7 @@
 				11AE542625FB9BDB0064B3EA /* Views */,
 				11AE541F25FB9B060064B3EA /* Titles */,
 				11AE541E25FB9AEE0064B3EA /* Buttons */,
+				118C3F9826024D3700CCED7E /* AKViewController.swift */,
 				1156C20D260297CF00E85F37 /* AKStepper.swift */,
 			);
 			path = Common;
@@ -326,13 +348,13 @@
 		11DE870E25EE3AF500CFFD69 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */,
 				11852E6025F3DCFA00C412FF /* Auth */,
 				11AE542025FB9B390064B3EA /* Homepage */,
 				11AE542125FB9B460064B3EA /* Menu */,
 				11AE542225FB9B500064B3EA /* Delivery */,
 				11AE542325FB9B570064B3EA /* Basket */,
 				11AE542425FB9B5D0064B3EA /* More */,
-				11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -524,6 +546,7 @@
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
+				11787670260C49A900970385 /* AKBasket.swift in Sources */,
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
@@ -539,6 +562,7 @@
 				11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */,
 				11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */,
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
+				11787675260C4A0A00970385 /* AKMenu.swift in Sources */,
 				1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */,
 				11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */,
 				11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */,

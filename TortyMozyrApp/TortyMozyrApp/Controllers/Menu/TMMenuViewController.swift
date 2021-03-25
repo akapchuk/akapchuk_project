@@ -11,6 +11,25 @@ class TMMenuViewController: UIViewController {
 
     // MARK: - gui variables
 
+    private var isLiked = false {
+        didSet {
+            self.likeIconImage.image = isLiked
+                ? UIImage(systemName: "heart.fill")
+                : UIImage(systemName: "heart")
+
+            self.likeIconImage.tintColor = isLiked
+                ? .red : UIColor(named: "AKDarkGray")
+        }
+    }
+
+    private var isRated = false {
+        didSet {
+            self.ratingStarIconImage.image = isRated
+                ? UIImage(systemName: "star.fill")
+                : UIImage(systemName: "star")
+        }
+    }
+
     private lazy var headerTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
         header.text = "Каталог"
@@ -20,7 +39,7 @@ class TMMenuViewController: UIViewController {
     private lazy var leftTileView: UIStackView = {
         let stack = UIStackView()
         stack.backgroundColor = #colorLiteral(red: 0.9361310005, green: 0.9450566173, blue: 0.9709554315, alpha: 1)
-//        stack.distribution = .fillEqually
+        //        stack.distribution = .fillEqually
         stack.axis = .vertical
         stack.layer.cornerRadius = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -209,7 +228,7 @@ class TMMenuViewController: UIViewController {
         ])
 
         self.likeIconImage.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview().inset(10)
+            make.top.left.equalToSuperview().inset(5)
             make.size.equalTo(28)
         }
 
@@ -245,35 +264,21 @@ class TMMenuViewController: UIViewController {
 
     // MARK: - actions
 
-    @objc func filterNavBarButtonTapped() {
+    @objc private func filterNavBarButtonTapped() {
 
     }
 
-    @objc func likeButtonTapped() {
+    @objc private func likeButtonTapped() {
+        self.isLiked.toggle()
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
-
-        if self.likeIconImage.tintColor == UIColor(named: "AKDarkGray") {
-            self.likeIconImage.tintColor = .systemRed
-            self.likeIconImage.image = UIImage(systemName: "heart.fill")
-        } else {
-            self.likeIconImage.tintColor = UIColor(named: "AKDarkGray")
-            self.likeIconImage.image = UIImage(systemName: "heart")
-        }
     }
 
-    @objc func ratingButtonTapped() {
+    @objc private func ratingButtonTapped() {
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
-
-        if self.ratingStarIconImage.tintColor == UIColor.systemOrange {
-            self.ratingStarIconImage.tintColor = UIColor(named: "AKOrange")
-            self.ratingStarIconImage.image = UIImage(systemName: "star.fill")
-        } else {
-            self.ratingStarIconImage.tintColor = UIColor.systemOrange
-            self.ratingStarIconImage.image = UIImage(systemName: "star")
-        }
+        self.isRated.toggle()
     }
 
-    @objc func leftTileViewTapped() {
+    @objc private func leftTileViewTapped() {
         self.navigationController?.pushViewController(MedovikCakeViewController(), animated: false)
     }
 

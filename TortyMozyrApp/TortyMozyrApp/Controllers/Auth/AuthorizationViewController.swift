@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
@@ -299,7 +298,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     @objc func facebookButtonTapped() {
         print("Facebooke Button Was Tapped")
     }
-    
+
     @objc func googleButtonTapped() {
         print("Google Button Was Tapped")
     }

@@ -39,7 +39,6 @@ class AKBasketItemCell: UITableViewCell {
         let name = UILabel()
         name.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         name.textAlignment = .left
-        //        name.text = "Торт «Медовик»"
         name.translatesAutoresizingMaskIntoConstraints = false
         return name
     }()
@@ -49,7 +48,6 @@ class AKBasketItemCell: UITableViewCell {
         price.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         price.textColor = UIColor(named: "AKLightGray")
         price.textAlignment = .left
-        //        price.text = "Торт «Медовик»"
         price.translatesAutoresizingMaskIntoConstraints = false
         return price
     }()
@@ -127,6 +125,13 @@ class AKBasketItemCell: UITableViewCell {
         self.nameTitleLabel.text = imageName
         self.priceTitleLabel.text = imageDescription
 
+        self.setNeedsUpdateConstraints()
+    }
+
+    func setCell(model: AKBasket) {
+        self.nameTitleLabel.text = model.title
+        self.priceTitleLabel.text = model.price
+        
         self.setNeedsUpdateConstraints()
     }
 
