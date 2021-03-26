@@ -30,7 +30,7 @@ class TMBasketViewController: UITableViewController {
                                         landscapeImagePhone: nil,
                                         style: .plain,
                                         target: self,
-                                        action: #selector(filterNavBarButtonTapped))
+                                        action: #selector(clearNavBarButtonTapped))
         return barButton
     }()
 
@@ -75,7 +75,7 @@ class TMBasketViewController: UITableViewController {
 
     // MARK: - actions
 
-    @objc func filterNavBarButtonTapped() {
+    @objc func clearNavBarButtonTapped() {
 
         let alertController = UIAlertController(title: "Очистить корзину?",
                                                 message: "Все товары будут удалены",

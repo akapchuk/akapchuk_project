@@ -123,8 +123,7 @@ class AKBasketItemCell: UITableViewCell {
 
         self.itemImage.snp.makeConstraints { (make) in
             make.top.left.bottom.equalTo(self.cardContainerView).inset(10)
-            make.height.equalTo(75)
-            make.width.equalTo(75)
+            make.size.equalTo(75)
         }
 
         self.nameTitleLabel.snp.makeConstraints { (make) in

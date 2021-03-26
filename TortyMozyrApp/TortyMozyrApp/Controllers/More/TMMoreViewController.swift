@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TMMoreViewController: UIViewController {
 
@@ -51,6 +52,8 @@ class TMMoreViewController: UIViewController {
     private lazy var instagramIconImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "instagram")
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(instagramTapped)))
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -66,6 +69,7 @@ class TMMoreViewController: UIViewController {
     private lazy var phoneIconImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "phone")
+        image.isUserInteractionEnabled = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -82,6 +86,8 @@ class TMMoreViewController: UIViewController {
     private lazy var vkIconImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "vk.blue")
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(vkTapped)))
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -188,14 +194,30 @@ class TMMoreViewController: UIViewController {
         }
     }
 
+    // MARK: - actions
+
+    @objc func infoNavBarButtonTapped() {
+        self.navigationController?.pushViewController(AKAboutViewController(), animated: true)
+    }
+
+    @objc func phoneCallTapped() {
+
+    }
+
+    @objc func instagramTapped() {
+        let instargamSafariPage = SFSafariViewController(url: URL(string: "https://www.instagram.com/torty_mozyr/")!)
+        present(instargamSafariPage, animated: true)
+    }
+
+    @objc func vkTapped() {
+        let vkSafariPage = SFSafariViewController(url: URL(string: "https://vk.com/torty_mozyr")!)
+        present(vkSafariPage, animated: true)
+    }
+
     @objc func exitButtonTapped() {
         self.navigationController?.pushViewController(AuthorizationViewController(), animated: true)
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
-    }
-
-    @objc func infoNavBarButtonTapped() {
-        self.navigationController?.pushViewController(AKAboutViewController(), animated: true)
     }
 
 }
