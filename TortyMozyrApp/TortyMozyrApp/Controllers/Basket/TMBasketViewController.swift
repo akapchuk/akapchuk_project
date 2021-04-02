@@ -9,6 +9,8 @@ import UIKit
 
 class TMBasketViewController: UITableViewController {
 
+    // MARK: - models
+
     private var items: [AKBasket] = [
         AKBasket(imageUrl: "https://cdn.bitrix24.by/b8893905/landing/fea/fea7af70800639bcea8436653a403809/tort-mozyr-zakaz_2x.jpg",
                  title: "Медовик",
@@ -22,7 +24,21 @@ class TMBasketViewController: UITableViewController {
                  title: "Торт с фрутками",
                  price: "27,99 BYN",
                  isRated: false)
-    ]
+    ] {
+        didSet {
+            self.filteredItems = self.items
+        }
+    }
+
+    private lazy var filteredItems: [AKBasket] = self.items
+
+    // MARK: - gui variables
+
+    private lazy var searchBar: UISearchBar = {
+        let search = UISearchBar()
+        search.sizeToFit()
+        return search
+    }()
 
     private lazy var leftBarButtonItem: UIBarButtonItem = {
         let deleteImage = UIImage(systemName: "trash.fill")
@@ -43,6 +59,9 @@ class TMBasketViewController: UITableViewController {
         self.title = "Корзина"
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
+        self.tableView.tableHeaderView = self.searchBar
+        self.searchBar.delegate = self
+
         self.tableView.separatorStyle = .none
         self.tableView.showsVerticalScrollIndicator = false
         self.tableView.register(AKBasketItemCell.self,
@@ -55,13 +74,13 @@ class TMBasketViewController: UITableViewController {
     // MARK: - set up cells
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return self.filteredItems.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AKBasketItemCell.reuseIdentifier, for: indexPath)
 
-        (cell as? AKBasketItemCell)?.setCell(model: self.items[indexPath.row])
+        (cell as? AKBasketItemCell)?.setCell(model: self.filteredItems[indexPath.row])
         (cell as? AKBasketItemCell)?.ratingWasTapped = { [weak self] in
             self?.items[indexPath.row].isRated.toggle()
         }
@@ -94,9 +113,11 @@ class TMBasketViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 
-//    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .insert
-//    }
+    //    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    //        return .insert
+    //    }
+
+    // MARK: - editing cells
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
@@ -112,10 +133,10 @@ class TMBasketViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title = "Ваш заказ:"
-        return title
-    }
+    //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //        let title = "Ваш заказ:"
+    //        return title
+    //    }
 
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -123,6 +144,19 @@ class TMBasketViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         self.items.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+        self.tableView.reloadData()
+    }
+}
+
+// MARK: - extensions
+
+extension TMBasketViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.filteredItems = self.items
+        } else {
+            self.filteredItems = self.items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+        }
         self.tableView.reloadData()
     }
 }

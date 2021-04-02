@@ -310,9 +310,9 @@
 		11DE86EF25ED83C000CFFD69 /* TortyMozyrApp */ = {
 			isa = PBXGroup;
 			children = (
+				11DE870E25EE3AF500CFFD69 /* Controllers */,
 				1176E0C125FFEF0C005F87AE /* Models */,
 				11DE870F25EE3B1600CFFD69 /* Resources */,
-				11DE870E25EE3AF500CFFD69 /* Controllers */,
 				11DE870D25EE3AE000CFFD69 /* Extensions */,
 				11DE870C25EE3AD700CFFD69 /* Common */,
 				11DE86F025ED83C000CFFD69 /* AppDelegate.swift */,
