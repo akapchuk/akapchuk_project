@@ -11,26 +11,17 @@ class AKFavouriteViewController: UIViewController {
 
     // MARK: - models
 
-    private var items: [AKBasket] = [
-        AKBasket(imageUrl: "https://cdn.bitrix24.by/b8893905/landing/fea/fea7af70800639bcea8436653a403809/tort-mozyr-zakaz_2x.jpg",
-                 title: "Медовик",
-                 price: "29,99 BYN",
-                 isRated: true),
-        AKBasket(imageUrl: "https://cdn.bitrix24.by/b8893905/landing/a96/a96912fd72570944dd4d6ff3322f3270/mozyr-tort_2x.jpg",
-                 title: "Красный бархат",
-                 price: "24,99 BYN",
-                 isRated: false),
-        AKBasket(imageUrl: "https://cdn-ru.bitrix24.by/b8893905/landing/02c/02c687e00c5832917dd9b10d9e53dfdb/13-tort-8-marta-mozyr_2x.jpg",
-                 title: "Торт с фрутками",
-                 price: "27,99 BYN",
-                 isRated: false)
-    ] {
+    private var items: [AKBasket] = AKDefaults.sh.items.filter { $0.isRated } {
         didSet {
             self.filteredItems = self.items
         }
     }
 
-    private lazy var filteredItems: [AKBasket] = self.items
+    private lazy var filteredItems: [AKBasket] = self.items {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     // MARK: - gui variables
 
@@ -72,6 +63,23 @@ class AKFavouriteViewController: UIViewController {
         self.searchController.searchResultsUpdater = self
         self.navigationItem.searchController = self.searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
+
+        self.subscribeToNotifications()
+    }
+
+    // MARK: - notification center
+
+    private func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(itemFavorAction),
+                                               name: .itemFavAction,
+                                               object: nil )
+    }
+
+    // MARK: - actions
+
+    @objc private func itemFavorAction() {
+        self.items = AKDefaults.sh.items.filter { $0.isRated }
     }
 
 }

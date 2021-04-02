@@ -61,7 +61,13 @@ class TMBasketViewController: UITableViewController {
         self.navigationItem.rightBarButtonItems = [self.editButtonItem]
     }
 
-    // MARK: - set up cells
+    // MARK: - fav notification
+
+    private func sendFavActionNotification() {
+        NotificationCenter.default.post(Notification(name: .itemFavAction))
+    }
+
+    // MARK: - table view
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.filteredItems.count
@@ -73,6 +79,7 @@ class TMBasketViewController: UITableViewController {
         (cell as? AKBasketItemCell)?.setCell(model: self.filteredItems[indexPath.row])
         (cell as? AKBasketItemCell)?.ratingWasTapped = { [weak self] in
             self?.items[indexPath.row].isRated.toggle()
+            self?.sendFavActionNotification()
         }
 
         cell.backgroundColor = #colorLiteral(red: 0.948936522, green: 0.9490728974, blue: 0.9489069581, alpha: 1)
