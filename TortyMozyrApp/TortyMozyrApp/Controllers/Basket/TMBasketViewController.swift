@@ -11,21 +11,9 @@ class TMBasketViewController: UITableViewController {
 
     // MARK: - models
 
-    private var items: [AKBasket] = [
-        AKBasket(imageUrl: "https://cdn.bitrix24.by/b8893905/landing/fea/fea7af70800639bcea8436653a403809/tort-mozyr-zakaz_2x.jpg",
-                 title: "Медовик",
-                 price: "29,99 BYN",
-                 isRated: true),
-        AKBasket(imageUrl: "https://cdn.bitrix24.by/b8893905/landing/a96/a96912fd72570944dd4d6ff3322f3270/mozyr-tort_2x.jpg",
-                 title: "Красный бархат",
-                 price: "24,99 BYN",
-                 isRated: false),
-        AKBasket(imageUrl: "https://cdn-ru.bitrix24.by/b8893905/landing/02c/02c687e00c5832917dd9b10d9e53dfdb/13-tort-8-marta-mozyr_2x.jpg",
-                 title: "Торт с фрутками",
-                 price: "27,99 BYN",
-                 isRated: false)
-    ] {
+    private var items: [AKBasket] = AKDefaults.sh.items {
         didSet {
+            AKDefaults.sh.items = self.items
             self.filteredItems = self.items
         }
     }
@@ -143,6 +131,7 @@ class TMBasketViewController: UITableViewController {
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
 
+        self.searchBar.searchTextField.resignFirstResponder()
         self.searchBar.isHidden = editing
     }
 }

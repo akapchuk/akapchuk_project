@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AKBasket {
+struct AKBasket: Codable {
     let id = UUID()
     var imageUrl: String
     let title: String

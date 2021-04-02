@@ -13,6 +13,7 @@ class AKViewController: UIViewController {
         let scroll = UIScrollView()
         scroll.showsVerticalScrollIndicator = false
         scroll.contentInsetAdjustmentBehavior = .never
+        scroll.keyboardDismissMode = .onDrag
         scroll.backgroundColor = .clear
         return scroll
     }()
