@@ -15,7 +15,7 @@ class TMBasketViewController: UITableViewController {
         AKBasket(imageUrl: "https://cdn.bitrix24.by/b8893905/landing/fea/fea7af70800639bcea8436653a403809/tort-mozyr-zakaz_2x.jpg",
                  title: "Медовик",
                  price: "29,99 BYN",
-                 isRated: false),
+                 isRated: true),
         AKBasket(imageUrl: "https://cdn.bitrix24.by/b8893905/landing/a96/a96912fd72570944dd4d6ff3322f3270/mozyr-tort_2x.jpg",
                  title: "Красный бархат",
                  price: "24,99 BYN",
@@ -37,6 +37,8 @@ class TMBasketViewController: UITableViewController {
     private lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.sizeToFit()
+        search.barTintColor = UIColor(named: "AKWhite")
+        search.placeholder = "Поиск"
         return search
     }()
 
@@ -113,10 +115,6 @@ class TMBasketViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 
-    //    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-    //        return .insert
-    //    }
-
     // MARK: - editing cells
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -133,11 +131,6 @@ class TMBasketViewController: UITableViewController {
         }
     }
 
-    //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        let title = "Ваш заказ:"
-    //        return title
-    //    }
-
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -146,17 +139,24 @@ class TMBasketViewController: UITableViewController {
         self.items.swapAt(sourceIndexPath.row, destinationIndexPath.row)
         self.tableView.reloadData()
     }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+
+        self.searchBar.isHidden = editing
+    }
 }
 
 // MARK: - extensions
 
 extension TMBasketViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            self.filteredItems = self.items
-        } else {
-            self.filteredItems = self.items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
-        }
+        self.navigationItem.rightBarButtonItems = searchText.isEmpty ? [self.editButtonItem] : nil
+
+        self.filteredItems = searchText.isEmpty
+            ? self.items
+            : self.items.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+
         self.tableView.reloadData()
     }
 }

@@ -39,6 +39,7 @@
 		11DE86FD25ED83C700CFFD69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE86FB25ED83C700CFFD69 /* LaunchScreen.storyboard */; };
 		11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */; };
 		11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */; };
+		11DEAE0C261709AD002B8D03 /* AKFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE0B261709AD002B8D03 /* AKFavouriteViewController.swift */; };
 		11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */; };
 		11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EBB3F025FE7C62000EF11B /* Products.xcassets */; };
 		11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */; };
@@ -84,6 +85,7 @@
 		11DE86FE25ED83C700CFFD69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11DE870825EE36DF00CFFD69 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		11DE871025EE3B6000CFFD69 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		11DEAE0B261709AD002B8D03 /* AKFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKFavouriteViewController.swift; sourceTree = "<group>"; };
 		11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedovikCakeViewController.swift; sourceTree = "<group>"; };
 		11EBB3F025FE7C62000EF11B /* Products.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Products.xcassets; sourceTree = "<group>"; };
 		11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		11AE542425FB9B5D0064B3EA /* More */ = {
 			isa = PBXGroup;
 			children = (
+				11DEAE0A26170985002B8D03 /* Favourites */,
 				11057A5E26035C34003AB1B9 /* About */,
 				11852E5925F3D4E000C412FF /* TMMoreViewController.swift */,
 			);
@@ -371,6 +374,14 @@
 				11DE86FB25ED83C700CFFD69 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		11DEAE0A26170985002B8D03 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				11DEAE0B261709AD002B8D03 /* AKFavouriteViewController.swift */,
+			);
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 		11EBB3DB25FE7859000EF11B /* Products */ = {
@@ -564,6 +575,7 @@
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
 				11787675260C4A0A00970385 /* AKMenu.swift in Sources */,
 				1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */,
+				11DEAE0C261709AD002B8D03 /* AKFavouriteViewController.swift in Sources */,
 				11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */,
 				11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */,
 				11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */,

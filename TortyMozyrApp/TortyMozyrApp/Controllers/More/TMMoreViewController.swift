@@ -110,6 +110,16 @@ class TMMoreViewController: UIViewController {
         return barButton
     }()
 
+    private lazy var leftBarButtonItem: UIBarButtonItem = {
+        let favImage = UIImage(systemName: "star.fill")
+        let barButton = UIBarButtonItem(image: favImage,
+                                        landscapeImagePhone: nil,
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(favNavBarButtonTapped))
+        return barButton
+    }()
+
     // MARK: - app life cycle
 
     override func viewDidLoad() {
@@ -117,6 +127,7 @@ class TMMoreViewController: UIViewController {
 
         self.title = "Ещё"
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
+        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: false)
 
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
@@ -198,6 +209,9 @@ class TMMoreViewController: UIViewController {
 
     @objc func infoNavBarButtonTapped() {
         self.navigationController?.pushViewController(AKAboutViewController(), animated: true)
+    }
+    @objc func favNavBarButtonTapped() {
+        self.navigationController?.pushViewController(AKFavouriteViewController(), animated: true)
     }
 
     @objc func phoneCallTapped() {
