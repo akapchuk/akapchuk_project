@@ -66,6 +66,12 @@ class AKActualCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+        self.cardContainerView.backgroundColor = selected ? #colorLiteral(red: 0.9680817723, green: 0.9634761214, blue: 0.9716416001, alpha: 1) : UIColor(named: "AKWhite")
+
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+            self.cardContainerView.backgroundColor = UIColor(named: "AKWhite")
+        }
     }
 
     func initCell() {
@@ -73,6 +79,8 @@ class AKActualCell: UITableViewCell {
         self.cardContainerView.addSubview(cardImageView)
         self.cardContainerView.addSubview(subheaderTitleLabel)
         self.cardContainerView.addSubview(descriptionTitleLabel)
+
+        self.selectionStyle = .none
 
 //        self.cardContainerView.addSubview(actionButton)
     }
