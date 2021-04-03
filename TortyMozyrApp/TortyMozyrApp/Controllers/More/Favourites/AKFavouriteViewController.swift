@@ -39,6 +39,8 @@ class AKFavouriteViewController: UIViewController {
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController()
         searchController.searchBar.placeholder = "Поиск"
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.searchTextField.backgroundColor = .white
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         return searchController

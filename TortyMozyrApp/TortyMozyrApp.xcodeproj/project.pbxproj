@@ -29,6 +29,7 @@
 		118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C3F932602111C00CCED7E /* AKBasketItemCell.swift */; };
 		118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C3F9826024D3700CCED7E /* AKViewController.swift */; };
 		1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1193C19625EE4C5A00729DDB /* Colors.xcassets */; };
+		11A074A92618960000601766 /* TMMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A074A82618960000601766 /* TMMenuVC.swift */; };
 		11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */; };
 		11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */; };
 		11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */; };
@@ -82,6 +83,7 @@
 		118C3F932602111C00CCED7E /* AKBasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBasketItemCell.swift; sourceTree = "<group>"; };
 		118C3F9826024D3700CCED7E /* AKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKViewController.swift; sourceTree = "<group>"; };
 		1193C19625EE4C5A00729DDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		11A074A82618960000601766 /* TMMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuVC.swift; sourceTree = "<group>"; };
 		11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialMediaIcons.xcassets; sourceTree = "<group>"; };
 		11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDecrscriptionTitleLable.swift; sourceTree = "<group>"; };
 		11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSmallBlueButton.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				11787673260C49FC00970385 /* Models */,
 				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
 				11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */,
+				11A074A82618960000601766 /* TMMenuVC.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
 				11DEAE16261787B4002B8D03 /* TMMenuListViewController.swift in Sources */,
 				11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */,
+				11A074A92618960000601766 /* TMMenuVC.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,
 				11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */,
