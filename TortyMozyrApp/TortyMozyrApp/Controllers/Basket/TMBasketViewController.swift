@@ -63,8 +63,11 @@ class TMBasketViewController: UITableViewController {
 
     // MARK: - fav notification
 
-    private func sendFavActionNotification() {
-        NotificationCenter.default.post(Notification(name: .itemFavAction))
+    private func sendFavActionNotification(id: UUID) {
+//        NotificationCenter.default.post(Notification(name: .itemFavAction))
+        let notificationInfo: [String: UUID] = ["id": id]
+        NotificationCenter.default.post(name: .itemFavAction,
+                                        object: nil, userInfo: notificationInfo)
     }
 
     // MARK: - table view
@@ -78,8 +81,9 @@ class TMBasketViewController: UITableViewController {
 
         (cell as? AKBasketItemCell)?.setCell(model: self.filteredItems[indexPath.row])
         (cell as? AKBasketItemCell)?.ratingWasTapped = { [weak self] in
-            self?.items[indexPath.row].isRated.toggle()
-            self?.sendFavActionNotification()
+            guard let self = self else { return }
+            self.items[indexPath.row].isRated.toggle()
+            self.sendFavActionNotification(id: self.items[indexPath.row].id)
         }
 
         cell.backgroundColor = #colorLiteral(red: 0.948936522, green: 0.9490728974, blue: 0.9489069581, alpha: 1)

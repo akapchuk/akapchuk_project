@@ -78,7 +78,12 @@ class AKFavouriteViewController: UIViewController {
 
     // MARK: - actions
 
-    @objc private func itemFavorAction() {
+    @objc private func itemFavorAction(_ notification: NSNotification) {
+        if let id = notification.userInfo?["id"] as? UUID {
+            print("Faved action id is \(id)")
+
+        }
+
         self.items = AKDefaults.sh.items.filter { $0.isRated }
     }
 
@@ -96,6 +101,7 @@ extension AKFavouriteViewController: UITableViewDelegate, UITableViewDataSource 
 
         if let cell = cell as? AKBasketItemCell {
             cell.setCell(model: self.filteredItems[indexPath.row])
+            cell.showFavouriteIcon = false
         }
 
         return cell

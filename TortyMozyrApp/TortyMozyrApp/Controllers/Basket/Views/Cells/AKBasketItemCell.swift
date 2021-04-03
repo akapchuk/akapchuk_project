@@ -13,6 +13,11 @@ class AKBasketItemCell: UITableViewCell {
     static let reuseIdentifier = "AKBasketItemCell"
 
     var ratingWasTapped: (() -> Void)?
+    var showFavouriteIcon = true {
+        didSet {
+            self.ratingStarIconImage.isHidden = !self.showFavouriteIcon
+        }
+    }
 
     private var isRated = false {
         didSet {

@@ -22,7 +22,8 @@ class TMTabBarViewController: UITabBarController {
                                                      image: UIImage(systemName: "house.circle"),
                                                      selectedImage: UIImage(systemName: "house.circle.fill"))
 
-        let menuController = TMMenuViewController()
+//        let menuController = TMMenuViewController()
+        let menuController = TMMenuListViewController()
         menuController.tabBarItem = UITabBarItem(title: "Меню",
                                                  image: UIImage(systemName: "line.horizontal.3.circle"),
                                                  selectedImage: UIImage(systemName: "line.horizontal.3.circle.fill"))

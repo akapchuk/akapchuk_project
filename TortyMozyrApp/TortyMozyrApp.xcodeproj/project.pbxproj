@@ -18,6 +18,9 @@
 		11787670260C49A900970385 /* AKBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178766F260C49A900970385 /* AKBasket.swift */; };
 		11787675260C4A0A00970385 /* AKMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11787674260C4A0A00970385 /* AKMenu.swift */; };
 		117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B9D6925F9181B001B172A /* RegisterViewController.swift */; };
+		1181BCF9261794C100B42647 /* AKProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BCF8261794C100B42647 /* AKProductCell.swift */; };
+		1181BD022618775500B42647 /* AKActualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BD012618775500B42647 /* AKActualCell.swift */; };
+		1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BD06261878E900B42647 /* AKActualTableViewController.swift */; };
 		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
 		11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */; };
 		11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5525F3D49F00C412FF /* TMBasketViewController.swift */; };
@@ -42,6 +45,10 @@
 		11DEAE0C261709AD002B8D03 /* AKFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE0B261709AD002B8D03 /* AKFavouriteViewController.swift */; };
 		11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE0F261732CD002B8D03 /* AKDefaults.swift */; };
 		11DEAE132617687D002B8D03 /* NotificationName+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE122617687D002B8D03 /* NotificationName+Ex.swift */; };
+		11DEAE16261787B4002B8D03 /* TMMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */; };
+		11DEAE19261789B7002B8D03 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE18261789B7002B8D03 /* UIView+Ex.swift */; };
+		11DEAE1C26178A49002B8D03 /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */; };
+		11DEAE1F26178A8E002B8D03 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */; };
 		11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */; };
 		11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EBB3F025FE7C62000EF11B /* Products.xcassets */; };
 		11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */; };
@@ -64,6 +71,9 @@
 		1178766F260C49A900970385 /* AKBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBasket.swift; sourceTree = "<group>"; };
 		11787674260C4A0A00970385 /* AKMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKMenu.swift; sourceTree = "<group>"; };
 		117B9D6925F9181B001B172A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1181BCF8261794C100B42647 /* AKProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKProductCell.swift; sourceTree = "<group>"; };
+		1181BD012618775500B42647 /* AKActualCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKActualCell.swift; sourceTree = "<group>"; };
+		1181BD06261878E900B42647 /* AKActualTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKActualTableViewController.swift; sourceTree = "<group>"; };
 		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
 		11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDeliveryViewController.swift; sourceTree = "<group>"; };
 		11852E5525F3D49F00C412FF /* TMBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBasketViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +100,10 @@
 		11DEAE0B261709AD002B8D03 /* AKFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKFavouriteViewController.swift; sourceTree = "<group>"; };
 		11DEAE0F261732CD002B8D03 /* AKDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDefaults.swift; sourceTree = "<group>"; };
 		11DEAE122617687D002B8D03 /* NotificationName+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Ex.swift"; sourceTree = "<group>"; };
+		11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuListViewController.swift; sourceTree = "<group>"; };
+		11DEAE18261789B7002B8D03 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
+		11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedovikCakeViewController.swift; sourceTree = "<group>"; };
 		11EBB3F025FE7C62000EF11B /* Products.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Products.xcassets; sourceTree = "<group>"; };
 		11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +161,14 @@
 			path = ImageViews;
 			sourceTree = "<group>";
 		};
+		114B32D426178E2B007CBCAA /* Steppers */ = {
+			isa = PBXGroup;
+			children = (
+				1156C20D260297CF00E85F37 /* AKStepper.swift */,
+			);
+			path = Steppers;
+			sourceTree = "<group>";
+		};
 		1176E0C125FFEF0C005F87AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +190,47 @@
 				11787674260C4A0A00970385 /* AKMenu.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1181BCF62617946B00B42647 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1181BCF72617947200B42647 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1181BCF72617947200B42647 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1181BCF8261794C100B42647 /* AKProductCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1181BCFB2618715E00B42647 /* Actual */ = {
+			isa = PBXGroup;
+			children = (
+				1181BCFF261876EB00B42647 /* Views */,
+				1181BD06261878E900B42647 /* AKActualTableViewController.swift */,
+			);
+			path = Actual;
+			sourceTree = "<group>";
+		};
+		1181BCFF261876EB00B42647 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1181BD00261876F200B42647 /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1181BD00261876F200B42647 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1181BD012618775500B42647 /* AKActualCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		11852E6025F3DCFA00C412FF /* Auth */ = {
@@ -220,6 +283,7 @@
 		11AE542025FB9B390064B3EA /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				1181BCFB2618715E00B42647 /* Actual */,
 				11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */,
 			);
 			path = Homepage;
@@ -228,9 +292,11 @@
 		11AE542125FB9B460064B3EA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				1181BCF62617946B00B42647 /* Views */,
 				11EBB3DB25FE7859000EF11B /* Products */,
 				11787673260C49FC00970385 /* Models */,
 				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
+				11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -247,8 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				1178766E260C497000970385 /* Models */,
-				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
 				118C3F922602101800CCED7E /* Views */,
+				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -334,14 +400,14 @@
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				118C3F9826024D3700CCED7E /* AKViewController.swift */,
+				114B32D426178E2B007CBCAA /* Steppers */,
 				11DEAE0E261732B3002B8D03 /* DataSaving */,
 				11C38F4826077A1E008A8CEF /* StackViews */,
 				1110544425FB9E50002A6E79 /* ImageViews */,
 				11AE542625FB9BDB0064B3EA /* Views */,
 				11AE541F25FB9B060064B3EA /* Titles */,
 				11AE541E25FB9AEE0064B3EA /* Buttons */,
-				118C3F9826024D3700CCED7E /* AKViewController.swift */,
-				1156C20D260297CF00E85F37 /* AKStepper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -350,6 +416,9 @@
 			isa = PBXGroup;
 			children = (
 				11DEAE122617687D002B8D03 /* NotificationName+Ex.swift */,
+				11DEAE18261789B7002B8D03 /* UIView+Ex.swift */,
+				11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */,
+				11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -570,11 +639,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
+				1181BCF9261794C100B42647 /* AKProductCell.swift in Sources */,
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
 				11787670260C49A900970385 /* AKBasket.swift in Sources */,
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
+				11DEAE16261787B4002B8D03 /* TMMenuListViewController.swift in Sources */,
 				11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,
@@ -585,6 +656,8 @@
 				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
 				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,
 				11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */,
+				11DEAE1C26178A49002B8D03 /* UIEdgeInsets+Ex.swift in Sources */,
+				1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */,
 				11DEAE132617687D002B8D03 /* NotificationName+Ex.swift in Sources */,
 				11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */,
 				11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */,
@@ -592,6 +665,7 @@
 				11787675260C4A0A00970385 /* AKMenu.swift in Sources */,
 				1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */,
 				11DEAE0C261709AD002B8D03 /* AKFavouriteViewController.swift in Sources */,
+				11DEAE1F26178A8E002B8D03 /* Date+Ex.swift in Sources */,
 				11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */,
 				11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */,
 				11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */,
@@ -599,9 +673,11 @@
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
 				118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */,
 				118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */,
+				1181BD022618775500B42647 /* AKActualCell.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,
+				11DEAE19261789B7002B8D03 /* UIView+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
