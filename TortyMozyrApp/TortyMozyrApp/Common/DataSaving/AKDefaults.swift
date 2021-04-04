@@ -49,7 +49,7 @@ class AKDefaults {
                          price: "24,99 BYN",
                          isRated: false),
                 AKBasket(imageUrl: "https://cdn-ru.bitrix24.by/b8893905/landing/02c/02c687e00c5832917dd9b10d9e53dfdb/13-tort-8-marta-mozyr_2x.jpg",
-                         title: "Торт с фрутками",
+                         title: "Торт с фруктами",
                          price: "27,99 BYN",
                          isRated: false)
             ]

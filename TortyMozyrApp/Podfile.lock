@@ -80,6 +80,7 @@ PODS:
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
   - SnapKit (5.0.1)
+  - TTGTagCollectionView (1.11.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - Firebase/Database
   - lottie-ios
   - SnapKit (~> 5.0.0)
+  - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
@@ -107,6 +109,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SnapKit
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   Firebase: cd2ab85eec8170dc260186159f21072ecb679ad5
@@ -125,7 +128,8 @@ SPEC CHECKSUMS:
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: 8c9d29e0eacaefd41bf931c75198fe9322af6bad
+PODFILE CHECKSUM: ea481d8118c7c2b1394f2089ea42d659937c898e
 
 COCOAPODS: 1.10.1
