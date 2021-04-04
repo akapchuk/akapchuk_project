@@ -7,7 +7,24 @@
 
 import UIKit
 
+struct CustomStoriesData {
+    var title: String
+    var image: UIImage
+    var url: String
+}
+
 class TMHomepageViewController: AKViewController {
+
+    let storiesData = [
+        CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "На ДР", image: #imageLiteral(resourceName: "medovikCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Торты для детей", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Учителю", image: #imageLiteral(resourceName: "medovikCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Наборы", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Пироги", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Любимым", image: #imageLiteral(resourceName: "medovikCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com")
+    ]
 
     // MARK: - gui variables
 
@@ -15,6 +32,20 @@ class TMHomepageViewController: AKViewController {
         let header = AKHeaderTitleLabel()
         header.text = "Истории"
         return header
+    }()
+
+    private lazy var storiesCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 20
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsHorizontalScrollIndicator = false
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(AKStoriesCell.self, forCellWithReuseIdentifier: "cell")
+        cv.backgroundColor = UIColor(named: "AKWhite")
+        cv.delegate = self
+        cv.dataSource = self
+        return cv
     }()
 
     private lazy var actualHeaderTitleLabel: AKHeaderTitleLabel = {
@@ -60,6 +91,8 @@ class TMHomepageViewController: AKViewController {
         self.mainView.addSubview(actualHeaderTitleLabel)
         self.view.addSubview(actualImageView) // ⚠️
 
+        self.view.addSubview(storiesCollectionView)
+
         self.setUpConstraints()
     }
 
@@ -72,8 +105,15 @@ class TMHomepageViewController: AKViewController {
             make.left.right.equalToSuperview().inset(20)
         }
 
+        self.storiesCollectionView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.storiesHeaderTitleLabel.snp.bottom).offset(5)
+            make.left.equalToSuperview()
+            make.width.equalTo(400)
+            make.height.equalTo(125)
+        }
+
         self.actualHeaderTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.storiesHeaderTitleLabel).offset(150)
+            make.top.equalTo(self.storiesCollectionView.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(20)
         }
 
@@ -95,3 +135,24 @@ class TMHomepageViewController: AKViewController {
 }
 
 // MARK: - extensions
+
+extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //        return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.width / 2)
+        return CGSize(width: 80, height: 80)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.storiesData.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+
+        if let cell = cell as? AKStoriesCell {
+            cell.storiesData = self.storiesData[indexPath.row]
+        }
+
+        return cell
+    }
+}

@@ -78,6 +78,7 @@ class TMDeliveryViewController: UIViewController {
         self.animationView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
+            make.size.equalTo(200)
             make.width.equalToSuperview().multipliedBy(0.8)
         }
     }

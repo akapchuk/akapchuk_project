@@ -34,6 +34,7 @@
 		11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */; };
 		11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */; };
 		11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */; };
+		11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */; };
 		11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
@@ -88,6 +89,7 @@
 		11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDecrscriptionTitleLable.swift; sourceTree = "<group>"; };
 		11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSmallBlueButton.swift; sourceTree = "<group>"; };
 		11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKGrayThinDividerView.swift; sourceTree = "<group>"; };
+		11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStoriesCell.swift; sourceTree = "<group>"; };
 		11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +287,8 @@
 		11AE542025FB9B390064B3EA /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				11AE9C5F261A0F9B00FC1AAC /* Data */,
+				11AE9C59261A084500FC1AAC /* Views */,
 				1181BCFB2618715E00B42647 /* Actual */,
 				11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */,
 			);
@@ -339,6 +343,29 @@
 				11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		11AE9C59261A084500FC1AAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11AE9C5A261A085700FC1AAC /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11AE9C5A261A085700FC1AAC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		11AE9C5F261A0F9B00FC1AAC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		11C38F4826077A1E008A8CEF /* StackViews */ = {
@@ -678,6 +705,7 @@
 				118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */,
 				118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */,
 				1181BD022618775500B42647 /* AKActualCell.swift in Sources */,
+				11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,

@@ -36,6 +36,7 @@ class AKActualTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Актуальное"
         self.view.backgroundColor = .white
 
         self.tableView.separatorStyle = .none

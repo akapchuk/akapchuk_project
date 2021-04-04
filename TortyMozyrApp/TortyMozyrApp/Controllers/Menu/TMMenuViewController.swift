@@ -6,10 +6,26 @@
 //
 
 import UIKit
+import TTGTagCollectionView
 
 class TMMenuViewController: UIViewController {
 
     // MARK: - gui variables
+
+    private lazy var tagsCollectionView: TTGTextTagCollectionView = {
+        let tags = TTGTextTagCollectionView()
+        let textTagConfig = TTGTextTagConfig()
+        textTagConfig.backgroundColor = .systemBlue
+        textTagConfig.textColor = .white
+        tags.addTags(["Торт", "Десерт", "Подарок", "Пирог", "Наборы", "Десерты детства", "На День Рождения", "Любимому человеку"], with: textTagConfig)
+        tags.scrollDirection = .horizontal
+        tags.showsHorizontalScrollIndicator = false
+        tags.alignment = .left
+        tags.delegate = self
+        return tags
+    }()
+
+    private var tagSelections = [String]()
 
     private var isLiked = false {
         didSet {
@@ -158,6 +174,7 @@ class TMMenuViewController: UIViewController {
         self.setUpGradientView()
 
         self.view.addSubview(headerTitleLabel)
+        self.view.addSubview(tagsCollectionView)
         self.view.addSubview(leftTileView)
         self.leftTileView.addSubview(borderForPictureView)
         self.borderForPictureView.addSubview(leftTileImageView)
@@ -201,8 +218,14 @@ class TMMenuViewController: UIViewController {
             self.headerTitleLabel.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20)
         ])
 
+        self.tagsCollectionView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(65)
+            make.width.equalTo(500)
+            make.height.equalTo(40)
+        }
+
         NSLayoutConstraint.activate([
-            self.leftTileView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            self.leftTileView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 120),
             self.leftTileView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20),
             self.leftTileView.widthAnchor.constraint(equalToConstant: 150),
             self.leftTileView.heightAnchor.constraint(equalToConstant: 220)
@@ -282,4 +305,13 @@ class TMMenuViewController: UIViewController {
         self.navigationController?.pushViewController(MedovikCakeViewController(), animated: false)
     }
 
+}
+
+// MARK: - extensions
+
+extension TMMenuViewController: TTGTextTagCollectionViewDelegate {
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+        tagSelections.append(tagText)
+        print(tagSelections)
+    }
 }
