@@ -16,14 +16,14 @@ struct CustomStoriesData {
 class TMHomepageViewController: AKViewController {
 
     let storiesData = [
-        CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Пироги", image: #imageLiteral(resourceName: "pearPieImage"), url: "google.com"),
         CustomStoriesData(title: "На ДР", image: #imageLiteral(resourceName: "medovikCakeImage"), url: "google.com"),
-        CustomStoriesData(title: "Торты для детей", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
-        CustomStoriesData(title: "Учителю", image: #imageLiteral(resourceName: "medovikCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Торты для детей", image: #imageLiteral(resourceName: "cupcakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Учителю", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com"),
         CustomStoriesData(title: "Наборы", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
-        CustomStoriesData(title: "Пироги", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com"),
-        CustomStoriesData(title: "Любимым", image: #imageLiteral(resourceName: "medovikCakeImage"), url: "google.com"),
-        CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "bigFruitCakeImage"), url: "google.com")
+        CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "krasniyBarhatImage"), url: "google.com"),
+        CustomStoriesData(title: "Любимым", image: #imageLiteral(resourceName: "fruitCakeImage"), url: "google.com"),
+        CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "blackberryCakeImage"), url: "google.com")
     ]
 
     // MARK: - gui variables
@@ -42,7 +42,7 @@ class TMHomepageViewController: AKViewController {
         cv.showsHorizontalScrollIndicator = false
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(AKStoriesCell.self, forCellWithReuseIdentifier: "cell")
-        cv.backgroundColor = UIColor(named: "AKWhite")
+        cv.backgroundColor = .clear
         cv.delegate = self
         cv.dataSource = self
         return cv
@@ -66,6 +66,12 @@ class TMHomepageViewController: AKViewController {
         return image
     }()
 
+    private lazy var promotionsHeaderTitleLabel: AKHeaderTitleLabel = {
+        let header = AKHeaderTitleLabel()
+        header.text = "Акции"
+        return header
+    }()
+
     private lazy var rightBarButtonItem: UIBarButtonItem = {
         let barButton = UIBarButtonItem(systemItem: .search)
         return barButton
@@ -87,11 +93,11 @@ class TMHomepageViewController: AKViewController {
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
+        self.view.addSubview(storiesCollectionView)
         self.mainView.addSubview(storiesHeaderTitleLabel)
         self.mainView.addSubview(actualHeaderTitleLabel)
         self.view.addSubview(actualImageView) // ⚠️
-
-        self.view.addSubview(storiesCollectionView)
+        self.mainView.addSubview(promotionsHeaderTitleLabel)
 
         self.setUpConstraints()
     }
@@ -106,14 +112,14 @@ class TMHomepageViewController: AKViewController {
         }
 
         self.storiesCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.storiesHeaderTitleLabel.snp.bottom).offset(5)
+            make.top.equalTo(self.storiesHeaderTitleLabel.snp.bottom).inset(15)
             make.left.equalToSuperview()
             make.width.equalTo(400)
-            make.height.equalTo(125)
+            make.height.equalTo(130)
         }
 
         self.actualHeaderTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.storiesCollectionView.snp.bottom).offset(40)
+            make.top.equalTo(self.storiesCollectionView.snp.bottom).offset(30)
             make.left.right.equalToSuperview().inset(20)
         }
 
@@ -122,6 +128,11 @@ class TMHomepageViewController: AKViewController {
             make.centerX.equalToSuperview()
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(150)
+        }
+
+        self.promotionsHeaderTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.actualImageView.snp.bottom).offset(30)
+            make.left.right.equalToSuperview().inset(20)
         }
 
     }
@@ -139,7 +150,7 @@ class TMHomepageViewController: AKViewController {
 extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //        return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.width / 2)
-        return CGSize(width: 80, height: 80)
+        return CGSize(width: 70, height: 70)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

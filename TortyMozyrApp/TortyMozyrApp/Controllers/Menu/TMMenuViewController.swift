@@ -12,6 +12,16 @@ class TMMenuViewController: UIViewController {
 
     // MARK: - gui variables
 
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.searchBar.placeholder = "Поиск"
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        return searchController
+    }()
+
     private lazy var tagsCollectionView: TTGTextTagCollectionView = {
         let tags = TTGTextTagCollectionView()
         let textTagConfig = TTGTextTagConfig()
@@ -146,11 +156,6 @@ class TMMenuViewController: UIViewController {
         return rating
     }()
 
-    private lazy var rightBarButtonItem: UIBarButtonItem = {
-        let barButton = UIBarButtonItem(systemItem: .search)
-        return barButton
-    }()
-
     private lazy var leftBarButtonItem: UIBarButtonItem = {
         let filterImage = UIImage(systemName: "line.horizontal.3.decrease.circle")
         let barButton = UIBarButtonItem(image: filterImage,
@@ -158,6 +163,16 @@ class TMMenuViewController: UIViewController {
                                         style: .plain,
                                         target: self,
                                         action: #selector(filterNavBarButtonTapped))
+        return barButton
+    }()
+
+    private lazy var rightBarButtonItem: UIBarButtonItem = {
+        let favImage = UIImage(systemName: "heart")
+        let barButton = UIBarButtonItem(image: favImage,
+                                        landscapeImagePhone: nil,
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(rightBarButtonWasTapped))
         return barButton
     }()
 
@@ -191,6 +206,10 @@ class TMMenuViewController: UIViewController {
         self.ratingWhiteAreaView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingButtonTapped)))
         self.leftTileView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(leftTileViewTapped)))
 
+        self.searchController.searchResultsUpdater = self
+        self.navigationItem.searchController = self.searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+
         self.setUpConstraints()
     }
 
@@ -219,7 +238,7 @@ class TMMenuViewController: UIViewController {
         ])
 
         self.tagsCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(65)
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(60)
             make.width.equalTo(500)
             make.height.equalTo(40)
         }
@@ -291,6 +310,10 @@ class TMMenuViewController: UIViewController {
 
     }
 
+    @objc func rightBarButtonWasTapped() {
+
+    }
+
     @objc private func likeButtonTapped() {
         self.isLiked.toggle()
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
@@ -314,4 +337,11 @@ extension TMMenuViewController: TTGTextTagCollectionViewDelegate {
         tagSelections.append(tagText)
         print(tagSelections)
     }
+}
+
+extension TMMenuViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        //
+    }
+
 }

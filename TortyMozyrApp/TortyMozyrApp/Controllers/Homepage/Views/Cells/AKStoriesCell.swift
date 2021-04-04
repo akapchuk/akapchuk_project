@@ -20,7 +20,7 @@ class AKStoriesCell: UICollectionViewCell {
     private lazy var colorCircleStoriesView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemOrange
-        view.layer.cornerRadius = 46
+        view.layer.cornerRadius = 40
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
@@ -29,7 +29,7 @@ class AKStoriesCell: UICollectionViewCell {
     private lazy var whiteCircleStoriesView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.layer.cornerRadius = 43
+        view.layer.cornerRadius = 38
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -37,7 +37,7 @@ class AKStoriesCell: UICollectionViewCell {
     private lazy var storiesImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
-        iv.layer.cornerRadius = 40
+        iv.layer.cornerRadius = 35
         iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -45,7 +45,7 @@ class AKStoriesCell: UICollectionViewCell {
 
     private lazy var storiesTitle: UILabel = {
         let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        title.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         title.textAlignment = .center
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
@@ -60,13 +60,13 @@ class AKStoriesCell: UICollectionViewCell {
         contentView.addSubview(storiesTitle)
 
         self.colorCircleStoriesView.snp.makeConstraints { (make) in
-            make.size.equalTo(92)
+            make.size.equalTo(80)
             make.centerX.equalTo(self.storiesImageView.snp.centerX)
             make.centerY.equalTo(self.storiesImageView.snp.centerY)
         }
 
         self.whiteCircleStoriesView.snp.makeConstraints { (make) in
-            make.size.equalTo(86)
+            make.size.equalTo(76)
             make.centerX.centerY.equalToSuperview()
         }
 
