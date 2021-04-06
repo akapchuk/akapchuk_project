@@ -9,10 +9,14 @@ import UIKit
 
 class AKCustomSearchController: UISearchController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init() {
+        super.init(searchResultsController: nil)
 
         self.setUpSearchController()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     private func setUpSearchController() {

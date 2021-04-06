@@ -79,7 +79,7 @@ class AKBasketItemCell: UITableViewCell {
         return star
     }()
 
-    private lazy var itemValueStepper: AKStepper = {
+    private(set) lazy var itemValueStepper: AKStepper = {
         let stepper = AKStepper()
         stepper.isContinuous = true
         stepper.translatesAutoresizingMaskIntoConstraints = false

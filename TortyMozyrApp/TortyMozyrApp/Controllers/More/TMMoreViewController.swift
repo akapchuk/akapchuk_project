@@ -110,6 +110,45 @@ class TMMoreViewController: UIViewController {
         return barButton
     }()
 
+    // MARK: - about author banner
+
+    private lazy var aboutAuthorBackgroundView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 15
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var aboutAuthorImageView: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "about.author")
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 40
+        image.contentMode = .scaleAspectFill
+        image.isUserInteractionEnabled = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+
+    private lazy var aboutAuthorTitleLabel: AKSubheaderTitleLabel = {
+        let title = AKSubheaderTitleLabel()
+        title.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        title.text = "О кондитере"
+        return title
+    }()
+
+    private lazy var aboutAuthorButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Смотреть", for: UIControl.State())
+        button.backgroundColor = UIColor(named: "AKOrange")
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(aboutAuthorButtonTapped), for: .touchUpInside)
+        return button
+    }()
+
+    // MARK: - set up navBar Buttons
+
     private lazy var leftBarButtonItem: UIBarButtonItem = {
         let favImage = UIImage(systemName: "star.fill")
         let barButton = UIBarButtonItem(image: favImage,
@@ -141,6 +180,11 @@ class TMMoreViewController: UIViewController {
         self.phoneCallIconView.addSubview(phoneIconImage)
         self.socialNetworkBackgroundView.addSubview(vkIconView)
         self.vkIconView.addSubview(vkIconImage)
+
+        self.view.addSubview(aboutAuthorBackgroundView)
+        self.aboutAuthorBackgroundView.addSubview(aboutAuthorImageView)
+        self.aboutAuthorBackgroundView.addSubview(aboutAuthorTitleLabel)
+        self.aboutAuthorBackgroundView.addSubview(aboutAuthorButton)
 
         self.setUpConstraints()
     }
@@ -203,6 +247,31 @@ class TMMoreViewController: UIViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(20)
             make.left.right.equalToSuperview().inset(25)
         }
+
+        /// About Author banner constraints
+        self.aboutAuthorBackgroundView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.socialNetworkBackgroundView.snp.bottom).offset(270)
+            make.left.right.equalToSuperview().inset(25)
+            make.height.equalTo(100)
+        }
+
+        self.aboutAuthorImageView.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().inset(10)
+            make.size.equalTo(80)
+        }
+
+        self.aboutAuthorTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().inset(15)
+            make.left.equalTo(self.aboutAuthorImageView.snp.right).offset(15)
+        }
+
+        self.aboutAuthorButton.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().inset(15)
+            make.left.equalTo(self.aboutAuthorImageView.snp.right).offset(15)
+            make.width.equalToSuperview().multipliedBy(0.6)
+            make.height.equalTo(30)
+        }
     }
 
     // MARK: - actions
@@ -216,6 +285,10 @@ class TMMoreViewController: UIViewController {
 
     @objc func phoneCallTapped() {
 
+    }
+
+    @objc func aboutAuthorButtonTapped() {
+        self.navigationController?.pushViewController(AKAboutViewController(), animated: true)
     }
 
     @objc func instagramTapped() {

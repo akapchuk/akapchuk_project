@@ -13,6 +13,13 @@ struct CustomStoriesData {
     var url: String
 }
 
+struct CustomPromotionsData {
+    var title: String
+    var image: UIImage
+    var url: String
+    var color: UIColor
+}
+
 class TMHomepageViewController: AKViewController {
 
     let storiesData = [
@@ -24,6 +31,12 @@ class TMHomepageViewController: AKViewController {
         CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "krasniyBarhatImage"), url: "google.com"),
         CustomStoriesData(title: "Любимым", image: #imageLiteral(resourceName: "fruitCakeImage"), url: "google.com"),
         CustomStoriesData(title: "Торты в Мозыре", image: #imageLiteral(resourceName: "blackberryCakeImage"), url: "google.com")
+    ]
+
+    let promotionsData = [
+        CustomPromotionsData(title: "На все пироги", image: #imageLiteral(resourceName: "strawberryPieImage"), url: "google.com", color: .purple),
+        CustomPromotionsData(title: "На каждый 5-й торт", image: #imageLiteral(resourceName: "medovikSecondImage"), url: "google.com", color: .systemGreen),
+        CustomPromotionsData(title: "В Мае", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com", color: .magenta)
     ]
 
     // MARK: - gui variables
@@ -45,6 +58,7 @@ class TMHomepageViewController: AKViewController {
         cv.backgroundColor = .clear
         cv.delegate = self
         cv.dataSource = self
+        cv.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         return cv
     }()
 
@@ -72,6 +86,21 @@ class TMHomepageViewController: AKViewController {
         return header
     }()
 
+    private lazy var promotionsCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 20
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsHorizontalScrollIndicator = false
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(AKPromotionsCell.self, forCellWithReuseIdentifier: "cellPromo")
+        cv.backgroundColor = .clear
+        cv.delegate = self
+        cv.dataSource = self
+        cv.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        return cv
+    }()
+
     private lazy var rightBarButtonItem: UIBarButtonItem = {
         let barButton = UIBarButtonItem(systemItem: .search)
         return barButton
@@ -93,11 +122,12 @@ class TMHomepageViewController: AKViewController {
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
-        self.view.addSubview(storiesCollectionView)
+        self.mainView.addSubview(storiesCollectionView)
         self.mainView.addSubview(storiesHeaderTitleLabel)
         self.mainView.addSubview(actualHeaderTitleLabel)
-        self.view.addSubview(actualImageView) // ⚠️
+        self.mainView.addSubview(actualImageView)
         self.mainView.addSubview(promotionsHeaderTitleLabel)
+        self.mainView.addSubview(promotionsCollectionView)
 
         self.setUpConstraints()
     }
@@ -113,7 +143,6 @@ class TMHomepageViewController: AKViewController {
 
         self.storiesCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(self.storiesHeaderTitleLabel.snp.bottom).inset(15)
-            make.left.equalToSuperview()
             make.width.equalTo(400)
             make.height.equalTo(130)
         }
@@ -132,7 +161,13 @@ class TMHomepageViewController: AKViewController {
 
         self.promotionsHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.actualImageView.snp.bottom).offset(30)
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.bottom.equalToSuperview().inset(20)
+        }
+
+        self.promotionsCollectionView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.promotionsHeaderTitleLabel.snp.bottom).offset(5)
+            make.width.equalTo(400)
+            make.height.equalTo(130)
         }
 
     }
@@ -149,21 +184,42 @@ class TMHomepageViewController: AKViewController {
 
 extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //        return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.width / 2)
-        return CGSize(width: 70, height: 70)
+
+        if collectionView == self.storiesCollectionView {
+            return CGSize(width: 80, height: 80)
+        } else {
+            return CGSize(width: 300, height: 130)
+//            return CGSize(width: collectionView.frame.width / 1.3, height: collectionView.frame.width / 3)
+        }
+
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.storiesData.count
+
+        if collectionView == self.storiesCollectionView {
+            return self.storiesData.count
+        } else {
+            return self.promotionsData.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
 
-        if let cell = cell as? AKStoriesCell {
-            cell.storiesData = self.storiesData[indexPath.row]
+        if collectionView == self.storiesCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+            if let cell = cell as? AKStoriesCell {
+                cell.storiesData = self.storiesData[indexPath.row]
+            }
+
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPromo", for: indexPath)
+            if let cell = cell as? AKPromotionsCell {
+                cell.promotionsData = self.promotionsData[indexPath.row]
+            }
+
+            return cell
         }
 
-        return cell
     }
 }

@@ -144,6 +144,7 @@ class TMBasketViewController: UITableViewController {
 
         self.searchBar.searchTextField.resignFirstResponder()
         self.searchBar.isHidden = editing
+        self.tableView.visibleCells.forEach{ ($0 as? AKBasketItemCell)?.itemValueStepper.isHidden = editing }
         
     }
 }

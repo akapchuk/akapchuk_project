@@ -82,7 +82,7 @@ class AKActualCell: UITableViewCell {
 
         self.selectionStyle = .none
 
-//        self.cardContainerView.addSubview(actionButton)
+        self.cardContainerView.addSubview(actionButton)
     }
 
     // MARK: - set up constraints
@@ -113,17 +113,17 @@ class AKActualCell: UITableViewCell {
         }
 
         self.actionButton.snp.updateConstraints { (make) in
-//            make.left.bottom.equalToSuperview().inset(7)
+            make.left.bottom.equalToSuperview().inset(7)
+            make.width.equalToSuperview().multipliedBy(0.6)
         }
 
         super.updateConstraints()
     }
 
-    func setCellData(image: UIImage, imageName: String, imageDescription: String, button: UIButton) {
+    func setCellData(image: UIImage, imageName: String, imageDescription: String) {
         self.subheaderTitleLabel.text = imageName
         self.descriptionTitleLabel.text = imageDescription
         self.cardImageView.image = image
-        self.actionButton = button
 
         self.setNeedsUpdateConstraints()
     }

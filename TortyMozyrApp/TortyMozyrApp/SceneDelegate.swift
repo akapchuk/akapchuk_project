@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navBarAppearance.configureWithTransparentBackground()
         navBarAppearance.backgroundColor = UIColor(named: "AKBlue")
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white,
-                                                .font: UIFont.systemFont(ofSize: 25, weight: .thin)]
+                                                .font: UIFont.systemFont(ofSize: 25, weight: .regular)]
 
         let buttonStyle = UIBarButtonItemAppearance(style: .plain)
         buttonStyle.normal.titleTextAttributes = [.foregroundColor: UIColor.white]

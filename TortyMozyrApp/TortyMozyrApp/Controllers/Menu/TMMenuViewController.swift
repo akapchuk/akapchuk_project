@@ -12,13 +12,14 @@ class TMMenuViewController: UIViewController {
 
     // MARK: - gui variables
 
-    private lazy var searchController: UISearchController = {
-        let searchController = UISearchController()
-        searchController.searchBar.placeholder = "Поиск"
-        searchController.searchBar.tintColor = .white
-        searchController.searchBar.searchTextField.backgroundColor = .white
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
+    private lazy var searchController: AKCustomSearchController = {
+        let searchController = AKCustomSearchController()
+
+//        searchController.searchBar.placeholder = "Поиск"
+//        searchController.searchBar.tintColor = .white
+//        searchController.searchBar.searchTextField.backgroundColor = .white
+//        searchController.hidesNavigationBarDuringPresentation = false
+//        searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
 
@@ -239,7 +240,7 @@ class TMMenuViewController: UIViewController {
 
         self.tagsCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(60)
-            make.width.equalTo(500)
+            make.width.equalTo(UIScreen.main.bounds.width)
             make.height.equalTo(40)
         }
 

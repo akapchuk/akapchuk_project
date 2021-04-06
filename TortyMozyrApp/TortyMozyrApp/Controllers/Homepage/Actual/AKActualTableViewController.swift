@@ -57,8 +57,8 @@ class AKActualTableViewController: UITableViewController {
         if let cell = cell as? AKActualCell {
             cell.setCellData(image: self.images[indexPath.row] ?? #imageLiteral(resourceName: "blackberryCakeImage"),
                              imageName: self.titles[indexPath.row],
-                             imageDescription: self.descriptions[indexPath.row],
-                             button: UIButton())
+                             imageDescription: self.descriptions[indexPath.row]
+                             /*,button: UIButton()*/)
         }
         return cell
     }

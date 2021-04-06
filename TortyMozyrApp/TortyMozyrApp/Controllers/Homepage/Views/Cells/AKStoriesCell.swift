@@ -51,27 +51,29 @@ class AKStoriesCell: UICollectionViewCell {
         return title
     }()
 
+    // MARK: - cell initialization
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         contentView.addSubview(colorCircleStoriesView)
         colorCircleStoriesView.addSubview(whiteCircleStoriesView)
-        contentView.addSubview(storiesImageView)
-        contentView.addSubview(storiesTitle)
+        whiteCircleStoriesView.addSubview(storiesImageView)
+        colorCircleStoriesView.addSubview(storiesTitle)
+
+        // MARK: - set up constraints
 
         self.colorCircleStoriesView.snp.makeConstraints { (make) in
-            make.size.equalTo(80)
-            make.centerX.equalTo(self.storiesImageView.snp.centerX)
-            make.centerY.equalTo(self.storiesImageView.snp.centerY)
+            make.edges.equalToSuperview()
         }
 
         self.whiteCircleStoriesView.snp.makeConstraints { (make) in
-            make.size.equalTo(76)
-            make.centerX.centerY.equalToSuperview()
+            make.edges.equalToSuperview().inset(2)
         }
 
         self.storiesImageView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.size.equalTo(70)
+            make.center.equalToSuperview()
         }
 
         self.storiesTitle.snp.makeConstraints { (make) in
@@ -84,4 +86,10 @@ class AKStoriesCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        self.colorCircleStoriesView.layer.cornerRadius = self.colorCircleStoriesView.frame.width / 2
+//    }
 }

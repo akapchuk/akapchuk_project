@@ -12,6 +12,8 @@ pod 'Firebase/Database'
 
 pod 'TTGTagCollectionView'
 
+pod 'youtube-ios-player-helper'
+
 pod 'SnapKit', '~> 5.0.0'
 
 pod 'lottie-ios'

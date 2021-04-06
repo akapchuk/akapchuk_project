@@ -35,6 +35,7 @@ class AKAboutViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
+        self.title = "Об авторе"
 
         self.tableView.separatorStyle = .none
         self.tableView.showsVerticalScrollIndicator = false

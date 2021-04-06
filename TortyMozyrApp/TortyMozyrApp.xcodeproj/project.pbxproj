@@ -36,8 +36,10 @@
 		11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */; };
 		11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */; };
 		11AE9C6D261A202500FC1AAC /* AKCustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */; };
+		11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B80915261CE8030085793D /* AKPromotionsCell.swift */; };
 		11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
+		11D5E753261B349C007FB083 /* AKYoutubeTest050421VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5E752261B349C007FB083 /* AKYoutubeTest050421VC.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
 		11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE86F625ED83C000CFFD69 /* Main.storyboard */; };
@@ -92,8 +94,10 @@
 		11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKGrayThinDividerView.swift; sourceTree = "<group>"; };
 		11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStoriesCell.swift; sourceTree = "<group>"; };
 		11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCustomSearchController.swift; sourceTree = "<group>"; };
+		11B80915261CE8030085793D /* AKPromotionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKPromotionsCell.swift; sourceTree = "<group>"; };
 		11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
+		11D5E752261B349C007FB083 /* AKYoutubeTest050421VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKYoutubeTest050421VC.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 				11787673260C49FC00970385 /* Models */,
 				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
 				11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */,
+				11D5E752261B349C007FB083 /* AKYoutubeTest050421VC.swift */,
 				11A074A82618960000601766 /* TMMenuVC.swift */,
 			);
 			path = Menu;
@@ -359,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */,
+				11B80915261CE8030085793D /* AKPromotionsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -700,6 +706,7 @@
 				11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */,
 				11DEAE1C26178A49002B8D03 /* UIEdgeInsets+Ex.swift in Sources */,
 				1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */,
+				11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */,
 				11DEAE132617687D002B8D03 /* NotificationName+Ex.swift in Sources */,
 				11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */,
 				11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */,
@@ -719,6 +726,7 @@
 				11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
+				11D5E753261B349C007FB083 /* AKYoutubeTest050421VC.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,
 				11AE9C6D261A202500FC1AAC /* AKCustomSearchController.swift in Sources */,
 				11DEAE19261789B7002B8D03 /* UIView+Ex.swift in Sources */,
