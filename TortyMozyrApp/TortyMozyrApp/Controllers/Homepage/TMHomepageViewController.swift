@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 struct CustomStoriesData {
     var title: String
@@ -18,6 +19,12 @@ struct CustomPromotionsData {
     var image: UIImage
     var url: String
     var color: UIColor
+}
+
+struct CustomVideosData {
+    var title: String
+    var id: String
+
 }
 
 class TMHomepageViewController: AKViewController {
@@ -36,7 +43,13 @@ class TMHomepageViewController: AKViewController {
     let promotionsData = [
         CustomPromotionsData(title: "На все пироги", image: #imageLiteral(resourceName: "strawberryPieImage"), url: "google.com", color: .purple),
         CustomPromotionsData(title: "На каждый 5-й торт", image: #imageLiteral(resourceName: "medovikSecondImage"), url: "google.com", color: .systemGreen),
-        CustomPromotionsData(title: "В Мае", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com", color: .magenta)
+        CustomPromotionsData(title: "Весь Май", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com", color: .magenta)
+    ]
+
+    let videosData = [
+        CustomVideosData(title: "Первое видео", id: "D5tdtncYeXs"),
+        CustomVideosData(title: "Второе видео", id: "hpikLBH8B88"),
+        CustomVideosData(title: "Третье видео", id: "isIgQQG2gHQ")
     ]
 
     // MARK: - gui variables
@@ -101,6 +114,27 @@ class TMHomepageViewController: AKViewController {
         return cv
     }()
 
+    private lazy var videosHeaderTitleLabel: AKHeaderTitleLabel = {
+        let header = AKHeaderTitleLabel()
+        header.text = "Посмотреть"
+        return header
+    }()
+
+    private lazy var videosCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 20
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsHorizontalScrollIndicator = false
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(AKVideoCell.self, forCellWithReuseIdentifier: "cellVideo")
+        cv.backgroundColor = .clear
+        cv.delegate = self
+        cv.dataSource = self
+        cv.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        return cv
+    }()
+
     private lazy var rightBarButtonItem: UIBarButtonItem = {
         let barButton = UIBarButtonItem(systemItem: .search)
         return barButton
@@ -122,12 +156,16 @@ class TMHomepageViewController: AKViewController {
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
+//        self.mainScrollView.isScrollEnabled = false
+
         self.mainView.addSubview(storiesCollectionView)
         self.mainView.addSubview(storiesHeaderTitleLabel)
         self.mainView.addSubview(actualHeaderTitleLabel)
         self.mainView.addSubview(actualImageView)
         self.mainView.addSubview(promotionsHeaderTitleLabel)
         self.mainView.addSubview(promotionsCollectionView)
+        self.mainView.addSubview(videosHeaderTitleLabel)
+        self.mainView.addSubview(videosCollectionView)
 
         self.setUpConstraints()
     }
@@ -161,13 +199,26 @@ class TMHomepageViewController: AKViewController {
 
         self.promotionsHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.actualImageView.snp.bottom).offset(30)
-            make.left.right.bottom.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(20)
         }
 
         self.promotionsCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(self.promotionsHeaderTitleLabel.snp.bottom).offset(5)
-            make.width.equalTo(400)
+            make.width.equalTo(UIScreen.main.bounds.width)
             make.height.equalTo(130)
+//            make.bottom.equalToSuperview() // опасная штука
+        }
+
+        self.videosHeaderTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.promotionsCollectionView.snp.bottom).offset(30)
+            make.left.right.equalToSuperview().inset(20)
+        }
+
+        self.videosCollectionView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.videosHeaderTitleLabel.snp.bottom).offset(5)
+            make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.equalTo(150)
+            make.bottom.equalToSuperview().offset(-20) // опасная штука
         }
 
     }
@@ -187,9 +238,10 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
 
         if collectionView == self.storiesCollectionView {
             return CGSize(width: 80, height: 80)
-        } else {
+        } else if collectionView == self.promotionsCollectionView {
             return CGSize(width: 300, height: 130)
-//            return CGSize(width: collectionView.frame.width / 1.3, height: collectionView.frame.width / 3)
+        } else {
+            return CGSize(width: 300, height: 150)
         }
 
     }
@@ -198,8 +250,10 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
 
         if collectionView == self.storiesCollectionView {
             return self.storiesData.count
-        } else {
+        } else if collectionView == self.promotionsCollectionView {
             return self.promotionsData.count
+        } else {
+            return self.videosData.count
         }
     }
 
@@ -212,10 +266,17 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
             }
 
             return cell
-        } else {
+        } else if collectionView == self.promotionsCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPromo", for: indexPath)
             if let cell = cell as? AKPromotionsCell {
                 cell.promotionsData = self.promotionsData[indexPath.row]
+            }
+
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellVideo", for: indexPath)
+            if let cell = cell as? AKVideoCell {
+                cell.videosData = self.videosData[indexPath.row]
             }
 
             return cell

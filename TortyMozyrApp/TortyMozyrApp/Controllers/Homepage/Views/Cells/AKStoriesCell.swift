@@ -61,7 +61,17 @@ class AKStoriesCell: UICollectionViewCell {
         whiteCircleStoriesView.addSubview(storiesImageView)
         colorCircleStoriesView.addSubview(storiesTitle)
 
-        // MARK: - set up constraints
+        self.setNeedsUpdateConstraints()
+
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - set up constraints
+
+    override func updateConstraints() {
 
         self.colorCircleStoriesView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -81,10 +91,7 @@ class AKStoriesCell: UICollectionViewCell {
             make.top.equalTo(self.storiesImageView.snp.bottom).offset(10)
         }
 
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.updateConstraints()
     }
 
 //    override func layoutSubviews() {

@@ -24,6 +24,7 @@ class AKPromotionsCell: UICollectionViewCell {
         let image = UIImageView()
         image.clipsToBounds = true
         image.layer.cornerRadius = 15
+        image.isUserInteractionEnabled = true
         image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -31,6 +32,11 @@ class AKPromotionsCell: UICollectionViewCell {
 
     private lazy var promotionColorView: UIView = {
         let view = UIView()
+
+        //
+
+//        view.layer.addSublayer(CAGradientLayer)
+
         view.layer.cornerRadius = 15
         view.layer.opacity = 0.5
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,26 +59,40 @@ class AKPromotionsCell: UICollectionViewCell {
         contentView.addSubview(promotionColorView)
         contentView.addSubview(promotionTitle)
 
-        // MARK: - set up constraints
+        self.setNeedsUpdateConstraints()
 
-        self.promotionImageView.snp.makeConstraints { (make) in
-            make.width.equalTo(300)
-            make.height.equalTo(130)
-        }
-
-        self.promotionColorView.snp.makeConstraints { (make) in
-            make.width.equalTo(300)
-            make.height.equalTo(130)
-        }
-
-        self.promotionTitle.snp.makeConstraints { (make) in
-            make.width.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(10)
-        }
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//
+//    }
+
+    // MARK: - set up constraints
+
+    override func updateConstraints() {
+
+        self.promotionImageView.snp.updateConstraints { (make) in
+            make.width.equalTo(300)
+            make.height.equalTo(130)
+        }
+
+        self.promotionColorView.snp.updateConstraints { (make) in
+            make.width.equalTo(300)
+            make.height.equalTo(130)
+        }
+
+        self.promotionTitle.snp.updateConstraints { (make) in
+            make.width.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(10)
+        }
+
+        super.updateConstraints()
     }
 
 }

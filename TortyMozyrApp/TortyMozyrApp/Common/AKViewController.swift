@@ -9,7 +9,7 @@ import UIKit
 
 class AKViewController: UIViewController {
 
-    private lazy var mainScrollView: UIScrollView = {
+    private(set) lazy var mainScrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.showsVerticalScrollIndicator = false
         scroll.contentInsetAdjustmentBehavior = .never
@@ -32,11 +32,17 @@ class AKViewController: UIViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
 
-        self.mainView.snp.makeConstraints { (make) in
+        self.setContentScrolling(isEnabled: true)
+
+    }
+
+    func setContentScrolling(isEnabled: Bool) {
+        self.mainView.snp.remakeConstraints { (make) in
             make.edges.width.equalToSuperview()
+            if isEnabled {
 
+            }
         }
-
     }
 
 }

@@ -8,31 +8,30 @@
 import UIKit
 
 class TMTabBarViewController: UITabBarController {
-    
+
     // MARK: - app life cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // MARK: - tab bar configuration
         let tabBarController = UITabBarController()
-        
+
         let homepageController = TMHomepageViewController()
         homepageController.tabBarItem = UITabBarItem(title: "Главная",
                                                      image: UIImage(systemName: "house.circle"),
                                                      selectedImage: UIImage(systemName: "house.circle.fill"))
-        
         //        let menuController = TMMenuViewController()
         let menuController = TMMenuViewController()
         menuController.tabBarItem = UITabBarItem(title: "Меню",
                                                  image: UIImage(systemName: "line.horizontal.3.circle"),
                                                  selectedImage: UIImage(systemName: "line.horizontal.3.circle.fill"))
-        
+
         let deliveryController = TMDeliveryViewController()
         deliveryController.tabBarItem = UITabBarItem(title: "Доставка",
                                                      image: UIImage(systemName: "car.circle"),
                                                      selectedImage: UIImage(systemName: "car.circle.fill"))
-        
+
         let basketController = TMBasketViewController()
         basketController.tabBarItem = UITabBarItem(title: "Корзина",
                                                    image: UIImage(systemName: "cart.circle"),

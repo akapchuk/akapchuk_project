@@ -54,6 +54,8 @@
 		11DEAE19261789B7002B8D03 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE18261789B7002B8D03 /* UIView+Ex.swift */; };
 		11DEAE1C26178A49002B8D03 /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */; };
 		11DEAE1F26178A8E002B8D03 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */; };
+		11EA6AB9262309800035550A /* TMCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA6AB8262309800035550A /* TMCaller.swift */; };
+		11EA6ABC26230C5F0035550A /* AKVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA6ABB26230C5F0035550A /* AKVideoCell.swift */; };
 		11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */; };
 		11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EBB3F025FE7C62000EF11B /* Products.xcassets */; };
 		11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */; };
@@ -114,6 +116,8 @@
 		11DEAE18261789B7002B8D03 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
 		11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
+		11EA6AB8262309800035550A /* TMCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCaller.swift; sourceTree = "<group>"; };
+		11EA6ABB26230C5F0035550A /* AKVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKVideoCell.swift; sourceTree = "<group>"; };
 		11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedovikCakeViewController.swift; sourceTree = "<group>"; };
 		11EBB3F025FE7C62000EF11B /* Products.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Products.xcassets; sourceTree = "<group>"; };
 		11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 			children = (
 				11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */,
 				11B80915261CE8030085793D /* AKPromotionsCell.swift */,
+				11EA6ABB26230C5F0035550A /* AKVideoCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				11AE542225FB9B500064B3EA /* Delivery */,
 				11AE542325FB9B570064B3EA /* Basket */,
 				11AE542425FB9B5D0064B3EA /* More */,
+				11EA6AB8262309800035550A /* TMCaller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
+				11EA6ABC26230C5F0035550A /* AKVideoCell.swift in Sources */,
 				1181BCF9261794C100B42647 /* AKProductCell.swift in Sources */,
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
 				11787670260C49A900970385 /* AKBasket.swift in Sources */,
@@ -704,6 +711,7 @@
 				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
 				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,
 				11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */,
+				11EA6AB9262309800035550A /* TMCaller.swift in Sources */,
 				11DEAE1C26178A49002B8D03 /* UIEdgeInsets+Ex.swift in Sources */,
 				1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */,
 				11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */,
