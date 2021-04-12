@@ -10,15 +10,6 @@ import Lottie
 
 class TMDeliveryViewController: UIViewController {
 
-    private lazy var animationView: AnimationView = {
-        let animation = AnimationView()
-        animation.animation = Animation.named("delivery.map")
-        animation.contentMode = .scaleAspectFit
-        animation.loopMode = .playOnce
-        animation.play()
-        return animation
-    }()
-
     // MARK: - gui variables
 
     private lazy var mapOrListSegmentedControl: UISegmentedControl = {
@@ -41,6 +32,15 @@ class TMDeliveryViewController: UIViewController {
         let header = AKHeaderTitleLabel()
         header.text = "Список"
         return header
+    }()
+
+    private lazy var animationView: AnimationView = {
+        let animation = AnimationView()
+        animation.animation = Animation.named("delivery.map")
+        animation.contentMode = .scaleAspectFit
+        animation.loopMode = .playOnce
+        animation.play()
+        return animation
     }()
 
     // MARK: - view life cycle
@@ -76,9 +76,7 @@ class TMDeliveryViewController: UIViewController {
         }
 
         self.animationView.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-            make.size.equalTo(200)
+            make.center.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
         }
     }

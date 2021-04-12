@@ -283,4 +283,10 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
         }
 
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.storiesCollectionView {
+            self.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
+        }
+    }
 }

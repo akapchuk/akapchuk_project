@@ -14,7 +14,7 @@ class AKPromotionsCell: UICollectionViewCell {
             guard let data = promotionsData else { return }
             promotionImageView.image = data.image
             promotionTitle.text = data.title
-            promotionColorView.backgroundColor = data.color
+            //            promotionColorView.backgroundColor = data.color
         }
     }
 
@@ -30,13 +30,20 @@ class AKPromotionsCell: UICollectionViewCell {
         return image
     }()
 
+    private lazy var gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.type = .axial
+        gradient.colors = [
+            UIColor.red.withAlphaComponent(0.5).cgColor,
+            UIColor.purple.cgColor,
+            UIColor.cyan.cgColor
+        ]
+        gradient.locations = [0, 0.25, 1]
+        return gradient
+    }()
+
     private lazy var promotionColorView: UIView = {
         let view = UIView()
-
-        //
-
-//        view.layer.addSublayer(CAGradientLayer)
-
         view.layer.cornerRadius = 15
         view.layer.opacity = 0.5
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -60,18 +67,18 @@ class AKPromotionsCell: UICollectionViewCell {
         contentView.addSubview(promotionTitle)
 
         self.setNeedsUpdateConstraints()
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//
-//    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.gradient.frame = self.promotionColorView.bounds
+        self.promotionColorView.layer.addSublayer(gradient)
+    }
 
     // MARK: - set up constraints
 
