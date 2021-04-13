@@ -9,30 +9,30 @@ import Foundation
 
 class AKDefaults {
     static let sh = AKDefaults()
-
+    
     private struct Keys {
         static let items = "AKItems"
     }
-
+    
     var items: [AKBasket] {
         get {
             self.loadItems()
         }
-
+        
         set {
             self.saveItems(newValue)
         }
     }
-
+    
     private init() {}
-
+    
     func saveItems(_ items: [AKBasket]) {
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(items) {
             UserDefaults.standard.setValue(data, forKey: Keys.items)
         }
     }
-
+    
     private func loadItems() -> [AKBasket] {
         let decoder = JSONDecoder()
         if let data = UserDefaults.standard.data(forKey: Keys.items),

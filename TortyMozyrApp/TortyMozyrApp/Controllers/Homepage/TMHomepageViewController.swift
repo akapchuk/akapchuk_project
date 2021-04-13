@@ -57,7 +57,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = "Истории"
+        header.text = NSLocalizedString("Stories", comment: "")
         return header
     }()
 

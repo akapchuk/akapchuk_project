@@ -15,7 +15,6 @@ struct CustomMenuData {
     var rating: String
     var isLiked: Bool
     var isFavourite: Bool
-
 }
 
 class TMMainMenuViewController: AKViewController {
