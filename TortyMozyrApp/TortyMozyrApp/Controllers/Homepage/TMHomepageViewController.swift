@@ -288,7 +288,7 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case self.storiesCollectionView:
-            self.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
+            self.navigationController?.pushViewController(StoriesViewController(), animated: true)
         case self.promotionsCollectionView:
             self.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
         default:

@@ -14,9 +14,6 @@ class GreetingViewController: UIViewController {
 
     private lazy var backgroundImageView: AKCorporateBackgroundImageView = {
         let imageView = AKCorporateBackgroundImageView()
-//        imageView.image = UIImage(named: "launchScreen")
-//        imageView.contentMode = .scaleAspectFill
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
