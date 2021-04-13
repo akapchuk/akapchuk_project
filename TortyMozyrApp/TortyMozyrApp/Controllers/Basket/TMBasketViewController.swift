@@ -46,7 +46,7 @@ class TMBasketViewController: UITableViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
-        self.title = "Корзина"
+        self.title = NSLocalizedString("Basket", comment: "")
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
 
         self.tableView.tableHeaderView = self.searchBar

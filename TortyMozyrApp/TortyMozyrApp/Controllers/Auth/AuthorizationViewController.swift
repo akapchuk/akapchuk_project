@@ -26,7 +26,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var emailTextField: UITextField = {
         let email = UITextField()
-        email.placeholder = "Электронная почта"
+        email.placeholder = NSLocalizedString("Email", comment: "")
         email.translatesAutoresizingMaskIntoConstraints = false
         return email
     }()
@@ -38,7 +38,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var passwordTextField: UITextField = {
         let password = UITextField()
-        password.placeholder = "Пароль"
+        password.placeholder = NSLocalizedString("Password", comment: "")
         password.translatesAutoresizingMaskIntoConstraints = false
         return password
     }()
@@ -47,24 +47,24 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         let divider = AKGrayThinDividerView()
         return divider
     }()
-    
+
     private lazy var forgotPasswordButton: AKSmallBlueButton = {
         let button = AKSmallBlueButton()
-        button.setTitle("Забыли пароль?", for: UIControl.State())
+        button.setTitle(NSLocalizedString("Forgot Password", comment: ""), for: UIControl.State())
         button.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         return button
     }()
 
     private lazy var createProfileButton: AKBigBlueButton = {
         let button = AKBigBlueButton()
-        button.setTitle("Войти", for: UIControl.State())
+        button.setTitle(NSLocalizedString("Log In", comment: ""), for: UIControl.State())
         button.addTarget(self, action: #selector(createProfileButtonTapped), for: .touchUpInside)
         return button
     }()
 
     private lazy var orLogInWithTextLabel: AKDescriptionTitleLabel = {
         let text = AKDescriptionTitleLabel()
-        text.text = "или войти с помощью:"
+        text.text = NSLocalizedString("Or Log In With", comment: "")
         text.font = UIFont.systemFont(ofSize: 17, weight: .light)
         return text
     }()
@@ -116,11 +116,11 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var alreadyHaveAccountStackView: UIStackView = {
         let text = AKDescriptionTitleLabel()
-        text.text = "Нет аккаунта?"
+        text.text = NSLocalizedString("Dont Have", comment: "")
         text.font = UIFont.systemFont(ofSize: 17, weight: .light)
 
         let button = AKSmallBlueButton()
-        button.setTitle("Регистрация", for: UIControl.State())
+        button.setTitle(NSLocalizedString("Registration", comment: ""), for: UIControl.State())
         button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
 
         let stack = UIStackView(arrangedSubviews: [text, button])

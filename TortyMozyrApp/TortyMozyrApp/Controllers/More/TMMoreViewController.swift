@@ -164,7 +164,7 @@ class TMMoreViewController: AKViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Ещё"
+        self.title = NSLocalizedString("More", comment: "")
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: false)
 

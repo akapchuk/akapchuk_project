@@ -17,27 +17,27 @@ class TMTabBarViewController: UITabBarController {
         // MARK: - tab bar configuration
 
         let homepageController = TMHomepageViewController()
-        homepageController.tabBarItem = UITabBarItem(title: "Главная",
+        homepageController.tabBarItem = UITabBarItem(title: NSLocalizedString("Homepage", comment: ""),
                                                      image: UIImage(systemName: "house.circle"),
                                                      selectedImage: UIImage(systemName: "house.circle.fill"))
 
         let menuController = TMMainMenuViewController()
-        menuController.tabBarItem = UITabBarItem(title: "Меню",
+        menuController.tabBarItem = UITabBarItem(title: NSLocalizedString("Menu", comment: ""),
                                                  image: UIImage(systemName: "line.horizontal.3.circle"),
                                                  selectedImage: UIImage(systemName: "line.horizontal.3.circle.fill"))
 
         let deliveryController = TMDeliveryViewController()
-        deliveryController.tabBarItem = UITabBarItem(title: "Доставка",
+        deliveryController.tabBarItem = UITabBarItem(title: NSLocalizedString("Delivery", comment: ""),
                                                      image: UIImage(systemName: "car.circle"),
                                                      selectedImage: UIImage(systemName: "car.circle.fill"))
 
         let basketController = TMBasketViewController()
-        basketController.tabBarItem = UITabBarItem(title: "Корзина",
+        basketController.tabBarItem = UITabBarItem(title: NSLocalizedString("Basket", comment: ""),
                                                    image: UIImage(systemName: "cart.circle"),
                                                    selectedImage: UIImage(systemName: "cart.circle.fill"))
 
         let moreController = TMMoreViewController()
-        moreController.tabBarItem = UITabBarItem(title: "Ещё",
+        moreController.tabBarItem = UITabBarItem(title: NSLocalizedString("More", comment: ""),
                                                  image: UIImage(systemName: "ellipsis.circle"),
                                                  selectedImage: UIImage(systemName: "ellipsis.circle.fill"))
 

@@ -59,7 +59,7 @@ class TMMainMenuViewController: AKViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Меню"
+        self.title = NSLocalizedString("Menu", comment: "")
         self.view.backgroundColor = .white
 
         self.mainView.addSubview(self.menuItemsCollectionView)

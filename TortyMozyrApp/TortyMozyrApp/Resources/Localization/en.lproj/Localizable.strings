@@ -6,4 +6,30 @@
   
 */
 
+// MARK: - tab bar pages
+"Homepage" = "Homepage";
+"Menu" = "Menu";
+"Delivery" = "Delivery";
+"Basket" = "Basket";
+"More" = "More";
+
+// MARK: - TMHomepageViewController
 "Stories" = "Stories";
+"Discounts" = "Discounts";
+"Actual" = "Actual";
+"Watch" = "Watch";
+
+// MARK: - GreetingViewController
+"Start" = "Start";
+"Welcome" = "Welcome";
+"Greeting Message" = "«Cakes in Mozyr» will introduce you to the world of delicious, homemade pastries, which you can add yourself, friends and relatives. Let's take a look at the menu soon!";
+
+// MARK: - AuthorizationViewController
+"Email" = "Email";
+"Password" = "Password";
+"Forgot Password" = "Forgot your password?";
+"Log In" = "Log in";
+"Or Log In With" = "or log in with:";
+"Dont Have" = "Haven't account?";
+"Registration" = "Registration";
+

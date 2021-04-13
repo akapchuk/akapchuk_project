@@ -24,19 +24,19 @@ class GreetingViewController: UIViewController {
 
     private lazy var welcomeTitleLabel: AKSubheaderTitleLabel = {
         let title = AKSubheaderTitleLabel()
-        title.text = "Добро пожаловать"
+        title.text = NSLocalizedString("Welcome", comment: "")
         return title
     }()
 
     private lazy var descriptionLabel: AKDescriptionTitleLabel = {
         let description = AKDescriptionTitleLabel()
-        description.text = "«Торты в Мозыре» познакомят Вас с миром вкусной, домашней выпечки, которой можно побавловать себя, друзей и родственников. Давайте скорее посмотрим в меню!"
+        description.text = NSLocalizedString("Greeting Message", comment: "")
         return description
     }()
 
     private lazy var startButton: AKBigBlueButton = {
         let button = AKBigBlueButton()
-        button.setTitle("Начать", for: UIControl.State())
+        button.setTitle(NSLocalizedString("Start", comment: ""), for: UIControl.State())
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         return button
     }()

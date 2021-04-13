@@ -48,7 +48,7 @@ class TMDeliveryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Доставка"
+        self.title = NSLocalizedString("Delivery", comment: "")
 
         self.view.backgroundColor = .white
 

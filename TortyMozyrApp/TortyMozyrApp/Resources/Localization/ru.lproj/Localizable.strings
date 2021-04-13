@@ -6,4 +6,29 @@
   
 */
 
+// MARK: - tab bar pages
+"Homepage" = "Главная";
+"Menu" = "Меню";
+"Delivery" = "Доставка";
+"Basket" = "Корзина";
+"More" = "Ещё";
+
+// MARK: - TMHomepageViewController
 "Stories" = "Истории";
+"Discounts" = "Акции";
+"Actual" = "Актульное";
+"Watch" = "Посмотреть";
+
+// MARK: - GreetingViewController
+"Start" = "Начать";
+"Welcome" = "Добро пожаловать";
+"Greeting Message" = "«Торты в Мозыре» познакомят Вас с миром вкусной, домашней выпечки, которой можно побавловать себя, друзей и родственников. Давайте скорее посмотрим в меню!";
+
+// MARK: - AuthorizationViewController
+"Email" = "Электронная почта";
+"Password" = "Парль";
+"Forgot Password" = "Забыли пароль?";
+"Log In" = "Войти";
+"Or Log In With" = "или войти с помощью:";
+"Dont Have" = "Нет аккаунта?";
+"Registration" = "Регистрация";

@@ -78,7 +78,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var actualHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = "Акутальное"
+        header.text = NSLocalizedString("Actual", comment: "")
         return header
     }()
 
@@ -96,7 +96,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var promotionsHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = "Акции"
+        header.text = NSLocalizedString("Discounts", comment: "")
         return header
     }()
 
@@ -117,7 +117,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var videosHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = "Посмотреть"
+        header.text = NSLocalizedString("Watch", comment: "")
         return header
     }()
 
@@ -152,7 +152,7 @@ class TMHomepageViewController: AKViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
-        self.title = "Главная"
+        self.title = NSLocalizedString("Homepage", comment: "")
 
         // NavController customize
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
