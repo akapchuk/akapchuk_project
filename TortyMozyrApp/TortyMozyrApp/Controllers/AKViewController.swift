@@ -39,8 +39,8 @@ class AKViewController: UIViewController {
     func setContentScrolling(isEnabled: Bool) {
         self.mainView.snp.remakeConstraints { (make) in
             make.edges.width.equalToSuperview()
-            if isEnabled {
-
+            if !isEnabled {
+                make.height.equalToSuperview()
             }
         }
     }

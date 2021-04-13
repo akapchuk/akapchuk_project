@@ -14,6 +14,11 @@ class AKPromotionsCell: UICollectionViewCell {
             guard let data = promotionsData else { return }
             promotionImageView.image = data.image
             promotionTitle.text = data.title
+            promotionPercentTitleLabel.text = data.percent
+
+            self.setNeedsUpdateConstraints()
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
             //            promotionColorView.backgroundColor = data.color
         }
     }
@@ -34,20 +39,11 @@ class AKPromotionsCell: UICollectionViewCell {
         let gradient = CAGradientLayer()
         gradient.type = .axial
         gradient.colors = [
-            UIColor.red.withAlphaComponent(0.5).cgColor,
-            UIColor.purple.cgColor,
-            UIColor.cyan.cgColor
+            UIColor.clear.cgColor,
+            UIColor.orange.cgColor
         ]
-        gradient.locations = [0, 0.25, 1]
+        gradient.locations = [0, 1]
         return gradient
-    }()
-
-    private lazy var promotionColorView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 15
-        view.layer.opacity = 0.5
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
     }()
 
     private lazy var promotionTitle: AKSubheaderTitleLabel = {
@@ -57,16 +53,36 @@ class AKPromotionsCell: UICollectionViewCell {
         return title
     }()
 
+    private lazy var promotionPercentColorView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.layer.maskedCorners = [
+            .layerMaxXMaxYCorner,
+            .layerMinXMaxYCorner
+        ]
+        view.backgroundColor = .red
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var promotionPercentTitleLabel: UILabel = {
+        let text = UILabel()
+        text.textColor = .white
+        text.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        text.translatesAutoresizingMaskIntoConstraints = false
+        return text
+    }()
+
     // MARK: - cell initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         contentView.addSubview(promotionImageView)
-        contentView.addSubview(promotionColorView)
         contentView.addSubview(promotionTitle)
-
-        self.setNeedsUpdateConstraints()
+        contentView.addSubview(promotionPercentColorView)
+        self.promotionPercentColorView.addSubview(promotionPercentTitleLabel)
+        self.promotionImageView.layer.addSublayer(gradient)
     }
 
     required init?(coder: NSCoder) {
@@ -76,8 +92,7 @@ class AKPromotionsCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        self.gradient.frame = self.promotionColorView.bounds
-        self.promotionColorView.layer.addSublayer(gradient)
+        self.gradient.frame = self.promotionImageView.frame
     }
 
     // MARK: - set up constraints
@@ -89,17 +104,31 @@ class AKPromotionsCell: UICollectionViewCell {
             make.height.equalTo(130)
         }
 
-        self.promotionColorView.snp.updateConstraints { (make) in
-            make.width.equalTo(300)
-            make.height.equalTo(130)
-        }
-
         self.promotionTitle.snp.updateConstraints { (make) in
             make.width.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(10)
         }
 
+        self.promotionPercentColorView.snp.updateConstraints { (make) in
+            make.top.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.2)
+            make.height.equalTo(30)
+            make.left.equalToSuperview().inset(30)
+        }
+
+        self.promotionPercentTitleLabel.snp.updateConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+
         super.updateConstraints()
     }
 
+    func set(data: CustomPromotionsData) {
+        self.promotionImageView.image = data.image
+        self.promotionTitle.text = data.title
+        self.promotionPercentTitleLabel.text = data.percent
+        self.gradient.frame = self.promotionImageView.frame
+
+        self.setNeedsUpdateConstraints()
+    }
 }

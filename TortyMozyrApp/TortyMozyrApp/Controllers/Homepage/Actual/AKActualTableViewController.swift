@@ -9,7 +9,7 @@ import UIKit
 
 class AKActualTableViewController: UITableViewController {
 
-    // MARK: - gui variables
+    // MARK: - variables
 
     private var images = [
         UIImage(named: "bigFruitCakeImage"),
@@ -61,6 +61,10 @@ class AKActualTableViewController: UITableViewController {
                              /*,button: UIButton()*/)
         }
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
     }
 
 }

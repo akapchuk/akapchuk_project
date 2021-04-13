@@ -9,9 +9,9 @@ import UIKit
 import Lottie
 
 class AKSorryPageViewController: UIViewController {
-
+    
     // MARK: - gui variables
-
+    
     private lazy var messageTitleLabel: AKDescriptionTitleLabel = {
         let text = AKDescriptionTitleLabel()
         text.text = "Мы упорно трудимся над созданием этой страницы. Уже совсем скоро вы сможете любоваться ею. Благодарим за понимание, вы великолепны!"
@@ -40,7 +40,6 @@ class AKSorryPageViewController: UIViewController {
 
         self.setUpConstraints()
     }
-
     // MARK: - set up constraints
 
     func setUpConstraints() {
@@ -48,13 +47,16 @@ class AKSorryPageViewController: UIViewController {
             make.width.equalToSuperview().multipliedBy(0.8)
             make.height.equalTo(200)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(20)
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(10)
         }
 
         self.lottieAnimationView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
         }
+
     }
+
+    // MARK: - actions
 
 }

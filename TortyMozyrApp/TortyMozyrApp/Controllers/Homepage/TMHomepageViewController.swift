@@ -19,6 +19,7 @@ struct CustomPromotionsData {
     var image: UIImage
     var url: String
     var color: UIColor
+    var percent: String
 }
 
 struct CustomVideosData {
@@ -41,9 +42,9 @@ class TMHomepageViewController: AKViewController {
     ]
 
     let promotionsData = [
-        CustomPromotionsData(title: "На все пироги", image: #imageLiteral(resourceName: "strawberryPieImage"), url: "google.com", color: .purple),
-        CustomPromotionsData(title: "На каждый 5-й торт", image: #imageLiteral(resourceName: "medovikSecondImage"), url: "google.com", color: .systemGreen),
-        CustomPromotionsData(title: "Весь Май", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com", color: .magenta)
+        CustomPromotionsData(title: "На все пироги", image: #imageLiteral(resourceName: "strawberryPieImage"), url: "google.com", color: .purple, percent: "-10%"),
+        CustomPromotionsData(title: "На каждый 5-й торт", image: #imageLiteral(resourceName: "medovikSecondImage"), url: "google.com", color: .systemGreen, percent: "-25%"),
+        CustomPromotionsData(title: "Весь Май", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com", color: .magenta, percent: "-5%")
     ]
 
     let videosData = [
@@ -151,12 +152,12 @@ class TMHomepageViewController: AKViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
-        // NavController customize
         self.title = "Главная"
+
+        // NavController customize
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
-
-//        self.mainScrollView.isScrollEnabled = false
+        self.navigationItem.backButtonTitle = " "
 
         self.mainView.addSubview(storiesCollectionView)
         self.mainView.addSubview(storiesHeaderTitleLabel)
@@ -186,7 +187,7 @@ class TMHomepageViewController: AKViewController {
         }
 
         self.actualHeaderTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.storiesCollectionView.snp.bottom).offset(30)
+            make.top.equalTo(self.storiesCollectionView.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(20)
         }
 
@@ -198,7 +199,7 @@ class TMHomepageViewController: AKViewController {
         }
 
         self.promotionsHeaderTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.actualImageView.snp.bottom).offset(30)
+            make.top.equalTo(self.actualImageView.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(20)
         }
 
@@ -206,11 +207,11 @@ class TMHomepageViewController: AKViewController {
             make.top.equalTo(self.promotionsHeaderTitleLabel.snp.bottom).offset(5)
             make.width.equalTo(UIScreen.main.bounds.width)
             make.height.equalTo(130)
-//            make.bottom.equalToSuperview() // опасная штука
+            //            make.bottom.equalToSuperview() // опасная штука
         }
 
         self.videosHeaderTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.promotionsCollectionView.snp.bottom).offset(30)
+            make.top.equalTo(self.promotionsCollectionView.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(20)
         }
 
@@ -285,8 +286,13 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == self.storiesCollectionView {
+        switch collectionView {
+        case self.storiesCollectionView:
             self.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
+        case self.promotionsCollectionView:
+            self.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
+        default:
+            break
         }
     }
 }

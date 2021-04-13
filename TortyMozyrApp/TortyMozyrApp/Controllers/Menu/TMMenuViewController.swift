@@ -14,12 +14,6 @@ class TMMenuViewController: UIViewController {
 
     private lazy var searchController: AKCustomSearchController = {
         let searchController = AKCustomSearchController()
-
-//        searchController.searchBar.placeholder = "Поиск"
-//        searchController.searchBar.tintColor = .white
-//        searchController.searchBar.searchTextField.backgroundColor = .white
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
 

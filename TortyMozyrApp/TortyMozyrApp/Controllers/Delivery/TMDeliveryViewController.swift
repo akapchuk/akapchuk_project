@@ -88,9 +88,11 @@ class TMDeliveryViewController: UIViewController {
         case 0:
             print("Selected the list")
             self.deliveryTypeHeaderTitleLabel.text = "Список"
+            self.animationView.isHidden = false
         case 1:
             print("Selected the map")
             self.deliveryTypeHeaderTitleLabel.text = "На карте"
+            self.animationView.isHidden = true
         default:
             print("Default")
         }

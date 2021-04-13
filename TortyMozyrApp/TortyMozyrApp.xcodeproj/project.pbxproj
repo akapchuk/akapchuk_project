@@ -11,15 +11,16 @@
 		11057A5C260359D0003AB1B9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11057A5B260359D0003AB1B9 /* Media.xcassets */; };
 		1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */; };
 		1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */; };
+		111887A52624389500B5E97E /* TMMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887A42624389400B5E97E /* TMMainMenuViewController.swift */; };
+		111887A926243C7800B5E97E /* TMMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887A826243C7800B5E97E /* TMMenuItemCell.swift */; };
+		111887AC26243DD400B5E97E /* TMMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887AB26243DD400B5E97E /* TMMenuItemModel.swift */; };
 		1118A4A02604E95000AF722E /* delivery.map.json in Resources */ = {isa = PBXBuildFile; fileRef = 1118A49E2604E95000AF722E /* delivery.map.json */; };
 		1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C20D260297CF00E85F37 /* AKStepper.swift */; };
 		1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */; };
 		1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */; };
 		1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175F07725F7AF170071EBD8 /* AKSystemButton.swift */; };
 		11787670260C49A900970385 /* AKBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178766F260C49A900970385 /* AKBasket.swift */; };
-		11787675260C4A0A00970385 /* AKMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11787674260C4A0A00970385 /* AKMenu.swift */; };
 		117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B9D6925F9181B001B172A /* RegisterViewController.swift */; };
-		1181BCF9261794C100B42647 /* AKProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BCF8261794C100B42647 /* AKProductCell.swift */; };
 		1181BD022618775500B42647 /* AKActualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BD012618775500B42647 /* AKActualCell.swift */; };
 		1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BD06261878E900B42647 /* AKActualTableViewController.swift */; };
 		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
@@ -30,7 +31,6 @@
 		118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C3F932602111C00CCED7E /* AKBasketItemCell.swift */; };
 		118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C3F9826024D3700CCED7E /* AKViewController.swift */; };
 		1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1193C19625EE4C5A00729DDB /* Colors.xcassets */; };
-		11A074A92618960000601766 /* TMMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A074A82618960000601766 /* TMMenuVC.swift */; };
 		11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */; };
 		11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */; };
 		11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */; };
@@ -40,7 +40,6 @@
 		11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B80915261CE8030085793D /* AKPromotionsCell.swift */; };
 		11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
-		11D5E753261B349C007FB083 /* AKYoutubeTest050421VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5E752261B349C007FB083 /* AKYoutubeTest050421VC.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
 		11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11DE86F625ED83C000CFFD69 /* Main.storyboard */; };
@@ -51,7 +50,6 @@
 		11DEAE0C261709AD002B8D03 /* AKFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE0B261709AD002B8D03 /* AKFavouriteViewController.swift */; };
 		11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE0F261732CD002B8D03 /* AKDefaults.swift */; };
 		11DEAE132617687D002B8D03 /* NotificationName+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE122617687D002B8D03 /* NotificationName+Ex.swift */; };
-		11DEAE16261787B4002B8D03 /* TMMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */; };
 		11DEAE19261789B7002B8D03 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE18261789B7002B8D03 /* UIView+Ex.swift */; };
 		11DEAE1C26178A49002B8D03 /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */; };
 		11DEAE1F26178A8E002B8D03 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */; };
@@ -73,15 +71,16 @@
 		11057A5B260359D0003AB1B9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCorporateBackgroundImageView.swift; sourceTree = "<group>"; };
 		1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSubheaderTitleLabel.swift; sourceTree = "<group>"; };
+		111887A42624389400B5E97E /* TMMainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMainMenuViewController.swift; sourceTree = "<group>"; };
+		111887A826243C7800B5E97E /* TMMenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuItemCell.swift; sourceTree = "<group>"; };
+		111887AB26243DD400B5E97E /* TMMenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuItemModel.swift; sourceTree = "<group>"; };
 		1118A49E2604E95000AF722E /* delivery.map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delivery.map.json; sourceTree = "<group>"; };
 		1156C20D260297CF00E85F37 /* AKStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStepper.swift; sourceTree = "<group>"; };
 		1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSorryPageViewController.swift; sourceTree = "<group>"; };
 		1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHeaderTitleLabel.swift; sourceTree = "<group>"; };
 		1175F07725F7AF170071EBD8 /* AKSystemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSystemButton.swift; sourceTree = "<group>"; };
 		1178766F260C49A900970385 /* AKBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBasket.swift; sourceTree = "<group>"; };
-		11787674260C4A0A00970385 /* AKMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKMenu.swift; sourceTree = "<group>"; };
 		117B9D6925F9181B001B172A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		1181BCF8261794C100B42647 /* AKProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKProductCell.swift; sourceTree = "<group>"; };
 		1181BD012618775500B42647 /* AKActualCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKActualCell.swift; sourceTree = "<group>"; };
 		1181BD06261878E900B42647 /* AKActualTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKActualTableViewController.swift; sourceTree = "<group>"; };
 		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 		118C3F932602111C00CCED7E /* AKBasketItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBasketItemCell.swift; sourceTree = "<group>"; };
 		118C3F9826024D3700CCED7E /* AKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKViewController.swift; sourceTree = "<group>"; };
 		1193C19625EE4C5A00729DDB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		11A074A82618960000601766 /* TMMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuVC.swift; sourceTree = "<group>"; };
 		11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SocialMediaIcons.xcassets; sourceTree = "<group>"; };
 		11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDecrscriptionTitleLable.swift; sourceTree = "<group>"; };
 		11AE541825FB99000064B3EA /* AKSmallBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSmallBlueButton.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		11B80915261CE8030085793D /* AKPromotionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKPromotionsCell.swift; sourceTree = "<group>"; };
 		11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
-		11D5E752261B349C007FB083 /* AKYoutubeTest050421VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKYoutubeTest050421VC.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +112,6 @@
 		11DEAE0B261709AD002B8D03 /* AKFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKFavouriteViewController.swift; sourceTree = "<group>"; };
 		11DEAE0F261732CD002B8D03 /* AKDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKDefaults.swift; sourceTree = "<group>"; };
 		11DEAE122617687D002B8D03 /* NotificationName+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Ex.swift"; sourceTree = "<group>"; };
-		11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuListViewController.swift; sourceTree = "<group>"; };
 		11DEAE18261789B7002B8D03 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
 		11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
@@ -205,7 +201,7 @@
 		11787673260C49FC00970385 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11787674260C4A0A00970385 /* AKMenu.swift */,
+				111887AB26243DD400B5E97E /* TMMenuItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,7 +217,7 @@
 		1181BCF72617947200B42647 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1181BCF8261794C100B42647 /* AKProductCell.swift */,
+				111887A826243C7800B5E97E /* TMMenuItemCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -315,10 +311,8 @@
 				1181BCF62617946B00B42647 /* Views */,
 				11EBB3DB25FE7859000EF11B /* Products */,
 				11787673260C49FC00970385 /* Models */,
+				111887A42624389400B5E97E /* TMMainMenuViewController.swift */,
 				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
-				11DEAE15261787B4002B8D03 /* TMMenuListViewController.swift */,
-				11D5E752261B349C007FB083 /* AKYoutubeTest050421VC.swift */,
-				11A074A82618960000601766 /* TMMenuVC.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -455,7 +449,6 @@
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				118C3F9826024D3700CCED7E /* AKViewController.swift */,
 				11AE9C66261A1F4A00FC1AAC /* SearchController */,
 				114B32D426178E2B007CBCAA /* Steppers */,
 				11DEAE0E261732B3002B8D03 /* DataSaving */,
@@ -491,6 +484,7 @@
 				11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */,
 				11EA6AB8262309800035550A /* TMCaller.swift */,
 				1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */,
+				118C3F9826024D3700CCED7E /* AKViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -708,15 +702,12 @@
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
 				11EA6ABC26230C5F0035550A /* AKVideoCell.swift in Sources */,
-				1181BCF9261794C100B42647 /* AKProductCell.swift in Sources */,
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
 				11787670260C49A900970385 /* AKBasket.swift in Sources */,
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
-				11DEAE16261787B4002B8D03 /* TMMenuListViewController.swift in Sources */,
 				11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */,
-				11A074A92618960000601766 /* TMMenuVC.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,
 				11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */,
@@ -725,6 +716,7 @@
 				11EF0E6D25F24EE7006FE5B8 /* AKWhiteAreaView.swift in Sources */,
 				1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */,
 				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
+				111887A52624389500B5E97E /* TMMainMenuViewController.swift in Sources */,
 				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,
 				11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */,
 				11EA6AB9262309800035550A /* TMCaller.swift in Sources */,
@@ -732,10 +724,10 @@
 				1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */,
 				11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */,
 				11DEAE132617687D002B8D03 /* NotificationName+Ex.swift in Sources */,
+				111887A926243C7800B5E97E /* TMMenuItemCell.swift in Sources */,
 				11EF0E6A25F24B93006FE5B8 /* AKBigBlueButton.swift in Sources */,
 				11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */,
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
-				11787675260C4A0A00970385 /* AKMenu.swift in Sources */,
 				1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */,
 				11DEAE0C261709AD002B8D03 /* AKFavouriteViewController.swift in Sources */,
 				11DEAE1F26178A8E002B8D03 /* Date+Ex.swift in Sources */,
@@ -748,9 +740,9 @@
 				118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */,
 				1181BD022618775500B42647 /* AKActualCell.swift in Sources */,
 				11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */,
+				111887AC26243DD400B5E97E /* TMMenuItemModel.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
-				11D5E753261B349C007FB083 /* AKYoutubeTest050421VC.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,
 				11AE9C6D261A202500FC1AAC /* AKCustomSearchController.swift in Sources */,
 				11DEAE19261789B7002B8D03 /* UIView+Ex.swift in Sources */,

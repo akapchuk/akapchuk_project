@@ -14,6 +14,7 @@ class AKStoriesCell: UICollectionViewCell {
             guard let data = storiesData else { return }
             storiesImageView.image = data.image
             storiesTitle.text = data.title
+            self.setNeedsUpdateConstraints()
         }
     }
 
@@ -60,8 +61,6 @@ class AKStoriesCell: UICollectionViewCell {
         colorCircleStoriesView.addSubview(whiteCircleStoriesView)
         whiteCircleStoriesView.addSubview(storiesImageView)
         colorCircleStoriesView.addSubview(storiesTitle)
-
-        self.setNeedsUpdateConstraints()
 
     }
 

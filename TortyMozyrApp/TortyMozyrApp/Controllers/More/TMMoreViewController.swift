@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class TMMoreViewController: UIViewController {
+class TMMoreViewController: AKViewController {
 
     // MARK: - gui variables
 
@@ -170,8 +170,7 @@ class TMMoreViewController: UIViewController {
 
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
-        self.view.addSubview(exitButton)
-        self.view.addSubview(socialNetworkBackgroundView)
+        self.mainView.addSubview(socialNetworkBackgroundView)
         self.socialNetworkBackgroundView.addSubview(socailNetworksTitleLabel)
         self.socialNetworkBackgroundView.addSubview(socailNetworksDescriptionLabel)
         self.socialNetworkBackgroundView.addSubview(instagramIconView)
@@ -181,10 +180,12 @@ class TMMoreViewController: UIViewController {
         self.socialNetworkBackgroundView.addSubview(vkIconView)
         self.vkIconView.addSubview(vkIconImage)
 
-        self.view.addSubview(aboutAuthorBackgroundView)
+        self.mainView.addSubview(aboutAuthorBackgroundView)
         self.aboutAuthorBackgroundView.addSubview(aboutAuthorImageView)
         self.aboutAuthorBackgroundView.addSubview(aboutAuthorTitleLabel)
         self.aboutAuthorBackgroundView.addSubview(aboutAuthorButton)
+
+        self.mainView.addSubview(exitButton)
 
         self.setUpConstraints()
     }
@@ -193,8 +194,9 @@ class TMMoreViewController: UIViewController {
 
     func setUpConstraints() {
 
+        /// set up constraints on social networks view
         self.socialNetworkBackgroundView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
+            make.top.equalToSuperview().inset(20)
             make.left.right.equalToSuperview().inset(25)
             make.height.equalTo(160)
         }
@@ -243,12 +245,7 @@ class TMMoreViewController: UIViewController {
             make.width.height.equalTo(24)
         }
 
-        self.exitButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(20)
-            make.left.right.equalToSuperview().inset(25)
-        }
-
-        /// About Author banner constraints
+        /// About author banner constraints
         self.aboutAuthorBackgroundView.snp.makeConstraints { (make) in
             make.top.equalTo(self.socialNetworkBackgroundView.snp.bottom).offset(270)
             make.left.right.equalToSuperview().inset(25)
@@ -271,6 +268,13 @@ class TMMoreViewController: UIViewController {
             make.left.equalTo(self.aboutAuthorImageView.snp.right).offset(15)
             make.width.equalToSuperview().multipliedBy(0.6)
             make.height.equalTo(30)
+        }
+
+        /// Exit button constraints
+        self.exitButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.aboutAuthorImageView.snp.bottom).offset(20)
+            make.bottom.equalToSuperview()
+            make.left.right.equalToSuperview().inset(25)
         }
     }
 
