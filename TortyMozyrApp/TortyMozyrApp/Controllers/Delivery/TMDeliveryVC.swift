@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Lottie
 
 class TMDeliveryVC: AKViewController {
     
+    // MARK: - gui variables
+    
     private lazy var mapOrListSegmentedControl: UISegmentedControl = {
-        let items = ["Список", "На карте"]
+        let items = [NSLocalizedString("List", comment: ""),
+                     NSLocalizedString("On Map", comment: "")]
         let itemsPics = [UIImage(systemName: "list.bullet"), UIImage(systemName: "map")]
         
         let controller = UISegmentedControl(items: itemsPics as [Any])
@@ -27,7 +31,7 @@ class TMDeliveryVC: AKViewController {
     
     private lazy var deliveryTypeHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = "Список"
+        header.text = NSLocalizedString("List", comment: "")
         return header
     }()
     
@@ -46,6 +50,23 @@ class TMDeliveryVC: AKViewController {
         return cv
     }()
     
+    private lazy var pageInDevelopingAnimationView: AnimationView = {
+        let animation = AnimationView()
+        animation.animation = Animation.named("developing")
+        animation.contentMode = .scaleAspectFit
+        animation.loopMode = .loop
+        animation.play()
+        return animation
+    }()
+    
+    private lazy var pageInDevelopingLabel: AKDescriptionTitleLabel = {
+        let text = AKDescriptionTitleLabel()
+        text.text = NSLocalizedString("Sorry Message", comment: "")
+        return text
+    }()
+    
+    // MARK: - app life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,10 +76,15 @@ class TMDeliveryVC: AKViewController {
         
         self.mainView.addSubview(mapOrListSegmentedControl)
         self.mainView.addSubview(deliveryTypeHeaderTitleLabel)
-        self.mainView.addSubview(self.deliveryListCollectionView)
+        self.mainView.addSubview(deliveryListCollectionView)
+        self.mainView.addSubview(pageInDevelopingAnimationView)
+        self.mainView.addSubview(pageInDevelopingLabel)
         
+        self.hideMapSectionElements(true)
         self.setUpConstraints()
     }
+    
+    // MARK: - set up constraints
     
     func setUpConstraints() {
         
@@ -79,6 +105,42 @@ class TMDeliveryVC: AKViewController {
             make.height.equalTo(410)
             make.bottom.equalToSuperview() // опасная штука
         }
+        
+        self.pageInDevelopingAnimationView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().multipliedBy(0.7)
+            make.top.equalTo(self.deliveryTypeHeaderTitleLabel.snp.bottom).offset(5)
+            make.bottom.centerX.equalToSuperview()
+        }
+        
+        self.pageInDevelopingLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.pageInDevelopingAnimationView.snp.bottom).inset(50)
+            make.width.equalToSuperview().multipliedBy(0.8)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
+    // MARK: - actions
+    
+    @objc private func handleSegmentValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("Selected the list")
+            self.deliveryTypeHeaderTitleLabel.text = NSLocalizedString("List", comment: "")
+            self.deliveryListCollectionView.isHidden = false
+            self.hideMapSectionElements(true)
+        case 1:
+            print("Selected the map")
+            self.deliveryTypeHeaderTitleLabel.text = NSLocalizedString("On Map", comment: "")
+            self.deliveryListCollectionView.isHidden = true
+            self.hideMapSectionElements(false)
+        default:
+            print("Default")
+        }
+    }
+    
+    private func hideMapSectionElements(_ isHide: Bool) {
+        self.pageInDevelopingLabel.isHidden = isHide
+        self.pageInDevelopingAnimationView.isHidden = isHide
     }
 }
 
@@ -104,20 +166,4 @@ extension TMDeliveryVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
         return cell
     }
     
-    // MARK: - actions
-    
-    @objc private func handleSegmentValueChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            print("Selected the list")
-            self.deliveryTypeHeaderTitleLabel.text = "Список"
-            self.deliveryListCollectionView.isHidden = false
-        case 1:
-            print("Selected the map")
-            self.deliveryTypeHeaderTitleLabel.text = "На карте"
-            self.deliveryListCollectionView.isHidden = true
-        default:
-            print("Default")
-        }
-    }
 }

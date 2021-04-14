@@ -15,6 +15,10 @@
 		111887A926243C7800B5E97E /* TMMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887A826243C7800B5E97E /* TMMenuItemCell.swift */; };
 		111887AC26243DD400B5E97E /* TMMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887AB26243DD400B5E97E /* TMMenuItemModel.swift */; };
 		1118A4A02604E95000AF722E /* delivery.map.json in Resources */ = {isa = PBXBuildFile; fileRef = 1118A49E2604E95000AF722E /* delivery.map.json */; };
+		1121CD292627752E00A81804 /* developing.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121CD282627752E00A81804 /* developing.json */; };
+		1121CD2C26277D1200A81804 /* CustomStoriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD2B26277D1200A81804 /* CustomStoriesData.swift */; };
+		1121CD2F26277D4600A81804 /* CustomPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */; };
+		112D69D1262752C500C92CC1 /* TMDeliveryVCImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */; };
 		114B697A2626389F00376E11 /* CustomDeliveryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B69792626389F00376E11 /* CustomDeliveryData.swift */; };
 		1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C20D260297CF00E85F37 /* AKStepper.swift */; };
 		1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */; };
@@ -80,6 +84,10 @@
 		111887A826243C7800B5E97E /* TMMenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuItemCell.swift; sourceTree = "<group>"; };
 		111887AB26243DD400B5E97E /* TMMenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuItemModel.swift; sourceTree = "<group>"; };
 		1118A49E2604E95000AF722E /* delivery.map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delivery.map.json; sourceTree = "<group>"; };
+		1121CD282627752E00A81804 /* developing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = developing.json; path = ../../../../../../../Downloads/developing.json; sourceTree = "<group>"; };
+		1121CD2B26277D1200A81804 /* CustomStoriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStoriesData.swift; sourceTree = "<group>"; };
+		1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPromotionsData.swift; sourceTree = "<group>"; };
+		112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TMDeliveryVCImages.xcassets; sourceTree = "<group>"; };
 		114B69792626389F00376E11 /* CustomDeliveryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeliveryData.swift; sourceTree = "<group>"; };
 		1156C20D260297CF00E85F37 /* AKStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStepper.swift; sourceTree = "<group>"; };
 		1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSorryPageViewController.swift; sourceTree = "<group>"; };
@@ -158,17 +166,18 @@
 		11057A59260359AB003AB1B9 /* allPages */ = {
 			isa = PBXGroup;
 			children = (
-				11057A5A260359BB003AB1B9 /* About */,
+				112D69CE2627524F00C92CC1 /* TMDeliveryVC */,
+				11057A5A260359BB003AB1B9 /* AKAboutPageCell */,
 			);
 			path = allPages;
 			sourceTree = "<group>";
 		};
-		11057A5A260359BB003AB1B9 /* About */ = {
+		11057A5A260359BB003AB1B9 /* AKAboutPageCell */ = {
 			isa = PBXGroup;
 			children = (
 				11057A5B260359D0003AB1B9 /* Media.xcassets */,
 			);
-			path = About;
+			path = AKAboutPageCell;
 			sourceTree = "<group>";
 		};
 		11057A5E26035C34003AB1B9 /* About */ = {
@@ -186,6 +195,14 @@
 				1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */,
 			);
 			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		112D69CE2627524F00C92CC1 /* TMDeliveryVC */ = {
+			isa = PBXGroup;
+			children = (
+				112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */,
+			);
+			path = TMDeliveryVC;
 			sourceTree = "<group>";
 		};
 		114B32D426178E2B007CBCAA /* Steppers */ = {
@@ -416,6 +433,8 @@
 		11AE9C5F261A0F9B00FC1AAC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1121CD2B26277D1200A81804 /* CustomStoriesData.swift */,
+				1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -581,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				11EA6AC02624236F0035550A /* cat.json */,
+				1121CD282627752E00A81804 /* developing.json */,
 				1118A49E2604E95000AF722E /* delivery.map.json */,
 			);
 			path = LottieAnimationJSON;
@@ -683,12 +703,14 @@
 				11DE86FD25ED83C700CFFD69 /* LaunchScreen.storyboard in Resources */,
 				1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */,
 				11E410292625A73C002C10DC /* Localizable.strings in Resources */,
+				112D69D1262752C500C92CC1 /* TMDeliveryVCImages.xcassets in Resources */,
 				11057A5C260359D0003AB1B9 /* Media.xcassets in Resources */,
 				1118A4A02604E95000AF722E /* delivery.map.json in Resources */,
 				11DE86FA25ED83C700CFFD69 /* Assets.xcassets in Resources */,
 				11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */,
 				11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */,
 				11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */,
+				1121CD292627752E00A81804 /* developing.json in Resources */,
 				11EA6AC12624236F0035550A /* cat.json in Resources */,
 				11EF0E7625F256EF006FE5B8 /* GoogleService-Info.plist in Resources */,
 			);
@@ -764,6 +786,7 @@
 				11EA6ABC26230C5F0035550A /* AKVideoCell.swift in Sources */,
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
 				11787670260C49A900970385 /* AKBasket.swift in Sources */,
+				1121CD2F26277D4600A81804 /* CustomPromotionsData.swift in Sources */,
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
@@ -797,6 +820,7 @@
 				11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */,
 				11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */,
 				11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */,
+				1121CD2C26277D1200A81804 /* CustomStoriesData.swift in Sources */,
 				117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
 				118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */,

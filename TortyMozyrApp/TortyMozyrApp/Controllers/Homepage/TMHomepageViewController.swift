@@ -8,20 +8,6 @@
 import UIKit
 import youtube_ios_player_helper
 
-struct CustomStoriesData {
-    var title: String
-    var image: UIImage
-    var url: String
-}
-
-struct CustomPromotionsData {
-    var title: String
-    var image: UIImage
-    var url: String
-    var color: UIColor
-    var percent: String
-}
-
 struct CustomVideosData {
     var title: String
     var id: String
