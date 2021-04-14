@@ -16,8 +16,13 @@
 // MARK: - TMHomepageViewController
 "Stories" = "Истории";
 "Discounts" = "Акции";
-"Actual" = "Актульное";
+"Actual" = "Актуальное";
 "Watch" = "Посмотреть";
+
+// MARK: - storiesData
+"Pies" = "Пироги";
+
+// MARK: - promotionsData
 
 // MARK: - GreetingViewController
 "Start" = "Начать";

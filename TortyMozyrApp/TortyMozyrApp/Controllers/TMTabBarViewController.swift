@@ -26,7 +26,7 @@ class TMTabBarViewController: UITabBarController {
                                                  image: UIImage(systemName: "line.horizontal.3.circle"),
                                                  selectedImage: UIImage(systemName: "line.horizontal.3.circle.fill"))
 
-        let deliveryController = TMDeliveryViewController()
+        let deliveryController = TMDeliveryVC()
         deliveryController.tabBarItem = UITabBarItem(title: NSLocalizedString("Delivery", comment: ""),
                                                      image: UIImage(systemName: "car.circle"),
                                                      selectedImage: UIImage(systemName: "car.circle.fill"))

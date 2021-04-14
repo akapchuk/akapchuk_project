@@ -41,6 +41,12 @@ class StoriesViewController: UIViewController {
         self.scale()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        self.navigationController?.navigationBar.isHidden = false
+    }
+
     // MARK: - set up constraints
 
     private func setUpConstraints() {
@@ -58,7 +64,6 @@ class StoriesViewController: UIViewController {
 
     private func storiesEnded() {
         Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
-            self.navigationController?.navigationBar.isHidden = false
             self.navigationController?.pushViewController(TMHomepageViewController(), animated: true)
         }
 

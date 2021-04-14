@@ -54,6 +54,16 @@ class TMMainMenuViewController: AKViewController {
         return menu
     }()
 
+    private lazy var rightBarButtonItem: UIBarButtonItem = {
+        let favImage = UIImage(systemName: "heart")
+        let barButton = UIBarButtonItem(image: favImage,
+                                        landscapeImagePhone: nil,
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(rightBarButtonWasTapped))
+        return barButton
+    }()
+
     // MARK: - initialization
 
     override func viewDidLoad() {
@@ -62,12 +72,20 @@ class TMMainMenuViewController: AKViewController {
         self.title = NSLocalizedString("Menu", comment: "")
         self.view.backgroundColor = .white
 
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
+
         self.mainView.addSubview(self.menuItemsCollectionView)
         self.setContentScrolling(isEnabled: false)
 
         self.menuItemsCollectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+
+    }
+
+    // MARK: - actions
+
+    @objc private func rightBarButtonWasTapped() {
 
     }
 

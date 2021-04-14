@@ -15,11 +15,11 @@ class AKPromotionsCell: UICollectionViewCell {
             promotionImageView.image = data.image
             promotionTitle.text = data.title
             promotionPercentTitleLabel.text = data.percent
+            gradient.colors = [UIColor.clear.cgColor, data.color.cgColor]
 
             self.setNeedsUpdateConstraints()
             self.setNeedsLayout()
             self.layoutIfNeeded()
-            //            promotionColorView.backgroundColor = data.color
         }
     }
 
@@ -38,10 +38,6 @@ class AKPromotionsCell: UICollectionViewCell {
     private lazy var gradient: CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.type = .axial
-        gradient.colors = [
-            UIColor.clear.cgColor,
-            UIColor.orange.cgColor
-        ]
         gradient.locations = [0, 1]
         return gradient
     }()
@@ -68,7 +64,7 @@ class AKPromotionsCell: UICollectionViewCell {
     private lazy var promotionPercentTitleLabel: UILabel = {
         let text = UILabel()
         text.textColor = .white
-        text.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        text.font = UIFont.systemFont(ofSize: 17, weight: .black)
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
@@ -123,12 +119,13 @@ class AKPromotionsCell: UICollectionViewCell {
         super.updateConstraints()
     }
 
-    func set(data: CustomPromotionsData) {
-        self.promotionImageView.image = data.image
-        self.promotionTitle.text = data.title
-        self.promotionPercentTitleLabel.text = data.percent
-        self.gradient.frame = self.promotionImageView.frame
-
-        self.setNeedsUpdateConstraints()
-    }
+    // Убрать didSet и воспользоваться этой функцией
+//    func set(data: CustomPromotionsData) {
+//        self.promotionImageView.image = data.image
+//        self.promotionTitle.text = data.title
+//        self.promotionPercentTitleLabel.text = data.percent
+//        self.gradient.frame = self.promotionImageView.frame
+//
+//        self.setNeedsUpdateConstraints()
+//    }
 }

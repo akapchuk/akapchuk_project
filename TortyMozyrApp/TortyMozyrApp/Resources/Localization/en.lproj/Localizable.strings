@@ -19,6 +19,11 @@
 "Actual" = "Actual";
 "Watch" = "Watch";
 
+// MARK: - storiesData
+"Pies" = "Pies";
+
+// MARK: - promotionsData
+
 // MARK: - GreetingViewController
 "Start" = "Start";
 "Welcome" = "Welcome";

@@ -31,7 +31,7 @@ struct CustomVideosData {
 class TMHomepageViewController: AKViewController {
 
     let storiesData = [
-        CustomStoriesData(title: "Пироги", image: #imageLiteral(resourceName: "pearPieImage"), url: "google.com"),
+        CustomStoriesData(title: NSLocalizedString("Pies", comment: ""), image: #imageLiteral(resourceName: "pearPieImage"), url: "google.com"),
         CustomStoriesData(title: "На ДР", image: #imageLiteral(resourceName: "medovikCakeImage"), url: "google.com"),
         CustomStoriesData(title: "Торты для детей", image: #imageLiteral(resourceName: "cupcakeImage"), url: "google.com"),
         CustomStoriesData(title: "Учителю", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com"),
@@ -42,9 +42,9 @@ class TMHomepageViewController: AKViewController {
     ]
 
     let promotionsData = [
-        CustomPromotionsData(title: "На все пироги", image: #imageLiteral(resourceName: "strawberryPieImage"), url: "google.com", color: .purple, percent: "-10%"),
-        CustomPromotionsData(title: "На каждый 5-й торт", image: #imageLiteral(resourceName: "medovikSecondImage"), url: "google.com", color: .systemGreen, percent: "-25%"),
-        CustomPromotionsData(title: "Весь Май", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com", color: .magenta, percent: "-5%")
+        CustomPromotionsData(title: "На все пироги", image: #imageLiteral(resourceName: "strawberryPieImage"), url: "google.com", color: .systemYellow, percent: "-10%"),
+        CustomPromotionsData(title: "На каждый 5-й торт", image: #imageLiteral(resourceName: "medovikSecondImage"), url: "google.com", color: .systemTeal, percent: "-25%"),
+        CustomPromotionsData(title: "Весь Май", image: #imageLiteral(resourceName: "trubochkiSecondImage"), url: "google.com", color: .systemBlue, percent: "-5%")
     ]
 
     let videosData = [
@@ -84,7 +84,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var actualImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "medovikSecondImage")
+        image.image = UIImage(named: "bigFruitCakeImage")
         image.layer.cornerRadius = 15
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill

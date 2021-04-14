@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class TMDeliveryViewController: UIViewController {
+class TMDeliveryViewController: AKViewController {
 
     // MARK: - gui variables
 
@@ -16,7 +16,7 @@ class TMDeliveryViewController: UIViewController {
         let items = ["Список", "На карте"]
         let itemsPics = [UIImage(systemName: "list.bullet"), UIImage(systemName: "map")]
 
-        let controller = UISegmentedControl(items: itemsPics)
+        let controller = UISegmentedControl(items: itemsPics as [Any])
         controller.selectedSegmentIndex = 0
         controller.layer.cornerRadius = 9
         controller.layer.borderWidth = 1
@@ -34,14 +34,14 @@ class TMDeliveryViewController: UIViewController {
         return header
     }()
 
-    private lazy var animationView: AnimationView = {
-        let animation = AnimationView()
-        animation.animation = Animation.named("delivery.map")
-        animation.contentMode = .scaleAspectFit
-        animation.loopMode = .playOnce
-        animation.play()
-        return animation
-    }()
+//    private lazy var animationView: AnimationView = {
+//        let animation = AnimationView()
+//        animation.animation = Animation.named("delivery.map")
+//        animation.contentMode = .scaleAspectFit
+//        animation.loopMode = .playOnce
+//        animation.play()
+//        return animation
+//    }()
 
     // MARK: - view life cycle
 
@@ -52,9 +52,9 @@ class TMDeliveryViewController: UIViewController {
 
         self.view.backgroundColor = .white
 
-        self.view.addSubview(mapOrListSegmentedControl)
-        self.view.addSubview(deliveryTypeHeaderTitleLabel)
-        self.view.addSubview(animationView)
+        self.mainView.addSubview(mapOrListSegmentedControl)
+        self.mainView.addSubview(deliveryTypeHeaderTitleLabel)
+//        self.view.addSubview(animationView)
 
         self.setUpConstraints()
 
@@ -65,20 +65,20 @@ class TMDeliveryViewController: UIViewController {
     fileprivate func setUpConstraints() {
 
         self.mapOrListSegmentedControl.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(10)
+            make.top.equalToSuperview().offset(10)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(35)
         }
 
         self.deliveryTypeHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.mapOrListSegmentedControl.snp.bottom).offset(10)
-            make.left.equalToSuperview().inset(20)
+            make.left.right.bottom.equalToSuperview().inset(20)
         }
 
-        self.animationView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.8)
-        }
+//        self.animationView.snp.makeConstraints { (make) in
+//            make.center.equalToSuperview()
+//            make.width.equalToSuperview().multipliedBy(0.8)
+//        }
     }
 
     // MARK: - actions
@@ -88,13 +88,12 @@ class TMDeliveryViewController: UIViewController {
         case 0:
             print("Selected the list")
             self.deliveryTypeHeaderTitleLabel.text = "Список"
-            self.animationView.isHidden = false
         case 1:
             print("Selected the map")
             self.deliveryTypeHeaderTitleLabel.text = "На карте"
-            self.animationView.isHidden = true
         default:
             print("Default")
         }
     }
 }
+
