@@ -8,31 +8,11 @@
 import UIKit
 import Foundation
 
-struct CustomMenuData {
-    var title: String
-    var image: UIImage
-    var price: String
-    var rating: String
-    var isLiked: Bool
-    var isFavourite: Bool
-}
-
 class TMMainMenuViewController: AKViewController {
 
     private let cellsPerRow: CGFloat = 2
     private let contentInset = UIEdgeInsets(all: 5)
     private let spaceBetweenCells: CGFloat = 10
-
-    let menuData = [
-        CustomMenuData(title: "Медовик", image: #imageLiteral(resourceName: "medovikCakeImage"), price: "24.99 BYN", rating: "4.2", isLiked: false, isFavourite: false),
-        CustomMenuData(title: "Красный бархат", image: #imageLiteral(resourceName: "krasniyBarhatImage"), price: "29.99 BYN", rating: "4.9", isLiked: false, isFavourite: false),
-        CustomMenuData(title: "Пирог с клубникой", image: #imageLiteral(resourceName: "strawberryPieImage"), price: "19.99 BYN", rating: "4.4", isLiked: false, isFavourite: false),
-        CustomMenuData(title: "Трубочки со сгущенкой", image: #imageLiteral(resourceName: "trubochkiSecondImage"), price: "39.99 BYN", rating: "4.7", isLiked: false, isFavourite: false),
-        CustomMenuData(title: "Грушевый пирог", image: #imageLiteral(resourceName: "pearPieImage"), price: "19.99 BYN", rating: "4.8", isLiked: false, isFavourite: false),
-        CustomMenuData(title: "Шоколадные шары с какао", image: #imageLiteral(resourceName: "chocoBallsImage"), price: "29.99 BYN", rating: "5.0", isLiked: false, isFavourite: false),
-        CustomMenuData(title: "Капкейки", image: #imageLiteral(resourceName: "cupcakeImage"), price: "20 BYN", rating: "4.1", isLiked: false, isFavourite: false),
-        CustomMenuData(title: "Наполеон", image: #imageLiteral(resourceName: "napoleonCakeImage"), price: "29.99 BYN", rating: "4.6", isLiked: false, isFavourite: false)
-    ]
 
     // MARK: - gui variables
 
@@ -96,14 +76,14 @@ class TMMainMenuViewController: AKViewController {
 extension TMMainMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.menuData.count
+        return menuData.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TMMenuItemCell.reuseIdentifier, for: indexPath)
 
         if let cell = cell as? TMMenuItemCell {
-            cell.set(data: self.menuData[indexPath.row])
+            cell.set(data: menuData[indexPath.row])
         }
 
         return cell

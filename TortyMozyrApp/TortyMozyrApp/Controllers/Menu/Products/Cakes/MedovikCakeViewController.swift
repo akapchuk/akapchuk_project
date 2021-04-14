@@ -178,7 +178,7 @@ class MedovikCakeViewController: UIViewController {
 
         self.priceTitle.snp.makeConstraints { (make) in
             make.left.equalTo(self.addToBasketButton.snp.left)
-//            make.bottom.equalToSuperview().inset(175)
+            //            make.bottom.equalToSuperview().inset(175)
             make.bottom.equalTo(self.addToBasketButton.snp.top).offset(-10)
         }
 

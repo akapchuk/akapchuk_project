@@ -18,6 +18,11 @@
 		1121CD292627752E00A81804 /* developing.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121CD282627752E00A81804 /* developing.json */; };
 		1121CD2C26277D1200A81804 /* CustomStoriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD2B26277D1200A81804 /* CustomStoriesData.swift */; };
 		1121CD2F26277D4600A81804 /* CustomPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */; };
+		1121CD3226277D9B00A81804 /* CustomVideosData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD3126277D9B00A81804 /* CustomVideosData.swift */; };
+		1121CD3626277F0F00A81804 /* CustomMenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD3526277F0F00A81804 /* CustomMenuData.swift */; };
+		1121CD3B2627809700A81804 /* AKHorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD3A2627809700A81804 /* AKHorizontalCollectionView.swift */; };
+		1121CD432627846800A81804 /* AKHorizontalCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */; };
+		1121CD472627872900A81804 /* AKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD462627872900A81804 /* AKImageView.swift */; };
 		112D69D1262752C500C92CC1 /* TMDeliveryVCImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */; };
 		114B697A2626389F00376E11 /* CustomDeliveryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B69792626389F00376E11 /* CustomDeliveryData.swift */; };
 		1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C20D260297CF00E85F37 /* AKStepper.swift */; };
@@ -87,6 +92,11 @@
 		1121CD282627752E00A81804 /* developing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = developing.json; path = ../../../../../../../Downloads/developing.json; sourceTree = "<group>"; };
 		1121CD2B26277D1200A81804 /* CustomStoriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStoriesData.swift; sourceTree = "<group>"; };
 		1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPromotionsData.swift; sourceTree = "<group>"; };
+		1121CD3126277D9B00A81804 /* CustomVideosData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideosData.swift; sourceTree = "<group>"; };
+		1121CD3526277F0F00A81804 /* CustomMenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuData.swift; sourceTree = "<group>"; };
+		1121CD3A2627809700A81804 /* AKHorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHorizontalCollectionView.swift; sourceTree = "<group>"; };
+		1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHorizontalCollectionViewLayout.swift; sourceTree = "<group>"; };
+		1121CD462627872900A81804 /* AKImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKImageView.swift; sourceTree = "<group>"; };
 		112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TMDeliveryVCImages.xcassets; sourceTree = "<group>"; };
 		114B69792626389F00376E11 /* CustomDeliveryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeliveryData.swift; sourceTree = "<group>"; };
 		1156C20D260297CF00E85F37 /* AKStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStepper.swift; sourceTree = "<group>"; };
@@ -193,8 +203,33 @@
 			isa = PBXGroup;
 			children = (
 				1110544525FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift */,
+				1121CD462627872900A81804 /* AKImageView.swift */,
 			);
 			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		1121CD3426277EF800A81804 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1121CD3526277F0F00A81804 /* CustomMenuData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1121CD392627806700A81804 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				1121CD3A2627809700A81804 /* AKHorizontalCollectionView.swift */,
+			);
+			path = CollectionViews;
+			sourceTree = "<group>";
+		};
+		1121CD412627843300A81804 /* CollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */,
+			);
+			path = CollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		112D69CE2627524F00C92CC1 /* TMDeliveryVC */ = {
@@ -363,6 +398,7 @@
 		11AE542125FB9B460064B3EA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				1121CD3426277EF800A81804 /* Data */,
 				1181BCF62617946B00B42647 /* Views */,
 				11EBB3DB25FE7859000EF11B /* Products */,
 				11787673260C49FC00970385 /* Models */,
@@ -435,6 +471,7 @@
 			children = (
 				1121CD2B26277D1200A81804 /* CustomStoriesData.swift */,
 				1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */,
+				1121CD3126277D9B00A81804 /* CustomVideosData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -509,6 +546,8 @@
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1121CD412627843300A81804 /* CollectionViewLayout */,
+				1121CD392627806700A81804 /* CollectionViews */,
 				11AE9C66261A1F4A00FC1AAC /* SearchController */,
 				114B32D426178E2B007CBCAA /* Steppers */,
 				11DEAE0E261732B3002B8D03 /* DataSaving */,
@@ -787,10 +826,12 @@
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
 				11787670260C49A900970385 /* AKBasket.swift in Sources */,
 				1121CD2F26277D4600A81804 /* CustomPromotionsData.swift in Sources */,
+				1121CD3226277D9B00A81804 /* CustomVideosData.swift in Sources */,
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
 				11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */,
+				1121CD3B2627809700A81804 /* AKHorizontalCollectionView.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,
 				11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */,
@@ -800,6 +841,7 @@
 				1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */,
 				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
 				111887A52624389500B5E97E /* TMMainMenuViewController.swift in Sources */,
+				1121CD432627846800A81804 /* AKHorizontalCollectionViewLayout.swift in Sources */,
 				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,
 				11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */,
 				11EA6AB9262309800035550A /* TMCaller.swift in Sources */,
@@ -828,7 +870,9 @@
 				1181BD022618775500B42647 /* AKActualCell.swift in Sources */,
 				11E8C1822627345900CE9DC0 /* TMDeliveryCell.swift in Sources */,
 				11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */,
+				1121CD3626277F0F00A81804 /* CustomMenuData.swift in Sources */,
 				111887AC26243DD400B5E97E /* TMMenuItemModel.swift in Sources */,
+				1121CD472627872900A81804 /* AKImageView.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,
 				11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */,
