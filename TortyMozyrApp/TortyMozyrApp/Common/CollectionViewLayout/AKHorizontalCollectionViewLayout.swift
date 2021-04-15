@@ -11,7 +11,6 @@ class AKHorizontalCollectionViewLayout: UICollectionViewFlowLayout {
 
     override init() {
         super.init()
-        
         scrollDirection = .horizontal
         minimumLineSpacing = 20
     }

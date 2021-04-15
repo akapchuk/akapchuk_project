@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Foundation
+import TTGTagCollectionView
 
 class TMMainMenuViewController: AKViewController {
 
@@ -15,6 +15,22 @@ class TMMainMenuViewController: AKViewController {
     private let spaceBetweenCells: CGFloat = 10
 
     // MARK: - gui variables
+
+    private lazy var tagsCollectionView: TTGTextTagCollectionView = {
+        let tags = TTGTextTagCollectionView()
+        let textTagConfig = TTGTextTagConfig()
+        textTagConfig.backgroundColor = .systemBlue
+        textTagConfig.textColor = .white
+        tags.addTags(["Торт", "Десерт", "Подарок", "Пирог", "Наборы", "Десерты детства", "На День Рождения", "Любимому человеку"], with: textTagConfig)
+        tags.scrollDirection = .horizontal
+        tags.layer.backgroundColor = UIColor.clear.cgColor
+        tags.showsHorizontalScrollIndicator = false
+        tags.alignment = .left
+        tags.delegate = self
+        return tags
+    }()
+
+    private var tagSelections = [String]()
 
     private lazy var collectionLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -30,6 +46,7 @@ class TMMainMenuViewController: AKViewController {
         menu.showsHorizontalScrollIndicator = false
         menu.delegate = self
         menu.dataSource = self
+        menu.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         menu.register(TMMenuItemCell.self, forCellWithReuseIdentifier: TMMenuItemCell.reuseIdentifier)
         return menu
     }()
@@ -55,12 +72,26 @@ class TMMainMenuViewController: AKViewController {
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
 
         self.mainView.addSubview(self.menuItemsCollectionView)
+        self.menuItemsCollectionView.addSubview(tagsCollectionView)
         self.setContentScrolling(isEnabled: false)
+
+        self.setUpConstraints()
+
+    }
+
+    // MARK: - set up constraints
+
+    private func setUpConstraints() {
+
+        self.tagsCollectionView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(-45)
+            make.width.equalToSuperview()
+            make.height.equalTo(40)
+        }
 
         self.menuItemsCollectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-
     }
 
     // MARK: - actions
@@ -109,4 +140,11 @@ extension TMMainMenuViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(all: 5)
     }
 
+}
+
+extension TMMainMenuViewController: TTGTextTagCollectionViewDelegate {
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+        tagSelections.append(tagText)
+        print(tagSelections)
+    }
 }

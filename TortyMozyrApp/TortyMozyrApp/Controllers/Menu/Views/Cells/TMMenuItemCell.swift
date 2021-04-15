@@ -74,16 +74,11 @@ class TMMenuItemCell: UICollectionViewCell {
         return price
     }()
 
-    private lazy var itemImageView: UIImageView = {
-        let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "about.experience")
-        image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
+    private lazy var itemImageView: AKImageView = {
+        let image = AKImageView()
         image.layer.borderColor = UIColor.white.cgColor
         image.layer.borderWidth = 5
         image.layer.cornerRadius = 60
-        image.isUserInteractionEnabled = true
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -123,6 +118,23 @@ class TMMenuItemCell: UICollectionViewCell {
         return rating
     }()
 
+    private lazy var addToBasketAreaView: UIView = {
+        let area = UIView()
+        area.backgroundColor = .systemOrange
+        area.layer.cornerRadius = 12
+//        area.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingButtonTapped)))
+        area.translatesAutoresizingMaskIntoConstraints = false
+        return area
+    }()
+
+    private lazy var addToBasketIconImage: UIImageView = {
+        let star = UIImageView()
+        star.image = UIImage(systemName: "cart.fill.badge.plus")
+        star.tintColor = .white
+        star.translatesAutoresizingMaskIntoConstraints = false
+        return star
+    }()
+
     // MARK: - init cell
 
     override init(frame: CGRect) {
@@ -145,11 +157,13 @@ class TMMenuItemCell: UICollectionViewCell {
             self.priceBackgroundView,
             self.itemImageView,
             self.titleLabel,
-            self.ratingWhiteAreaView
+            self.ratingWhiteAreaView,
+            self.addToBasketAreaView
         ])
         self.priceBackgroundView.addSubview(priceLabel)
         self.ratingWhiteAreaView.addSubview(ratingStarIconImage)
         self.ratingWhiteAreaView.addSubview(ratingLabel)
+        self.addToBasketAreaView.addSubview(addToBasketIconImage)
 
     }
 
@@ -190,8 +204,7 @@ class TMMenuItemCell: UICollectionViewCell {
         }
 
         self.ratingWhiteAreaView.snp.updateConstraints { (make) in
-            make.bottom.equalToSuperview().inset(5)
-            make.centerX.equalToSuperview()
+            make.left.bottom.equalToSuperview().inset(10)
             make.width.equalToSuperview().multipliedBy(0.35)
             make.height.equalTo(30)
         }
@@ -204,6 +217,16 @@ class TMMenuItemCell: UICollectionViewCell {
         self.ratingLabel.snp.updateConstraints { (make) in
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().inset(5)
+        }
+
+        self.addToBasketAreaView.snp.updateConstraints { (make) in
+            make.left.equalTo(self.ratingWhiteAreaView.snp.right).offset(20)
+            make.right.bottom.equalToSuperview().inset(10)
+            make.height.equalTo(30)
+        }
+
+        self.addToBasketIconImage.snp.updateConstraints { (make) in
+            make.center.equalToSuperview()
         }
 
         super.updateConstraints()

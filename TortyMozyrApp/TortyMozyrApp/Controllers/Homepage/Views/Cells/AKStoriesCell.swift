@@ -9,46 +9,28 @@ import UIKit
 
 class AKStoriesCell: UICollectionViewCell {
 
-    var storiesData: CustomStoriesData? {
-        didSet {
-            guard let data = storiesData else { return }
-            storiesImageView.image = data.image
-            storiesTitle.text = data.title
-            self.setNeedsUpdateConstraints()
-        }
-    }
-
-    private lazy var colorCircleStoriesView: UIView = {
-        let view = UIView()
+    private lazy var colorCircleStoriesView: AKCustomView = {
+        let view = AKCustomView()
         view.backgroundColor = .systemOrange
         view.layer.cornerRadius = 40
-        view.translatesAutoresizingMaskIntoConstraints = false
-
         return view
     }()
 
-    private lazy var whiteCircleStoriesView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
+    private lazy var whiteCircleStoriesView: AKCustomView = {
+        let view = AKCustomView()
         view.layer.cornerRadius = 38
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private lazy var storiesImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.clipsToBounds = true
+    private lazy var storiesImageView: AKImageView = {
+        let iv = AKImageView()
         iv.layer.cornerRadius = 35
-        iv.contentMode = .scaleAspectFill
-        iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
 
-    private lazy var storiesTitle: UILabel = {
-        let title = UILabel()
+    private lazy var storiesTitle: AKDescriptionTitleLabel = {
+        let title = AKDescriptionTitleLabel()
         title.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        title.textAlignment = .center
-        title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
 
@@ -93,9 +75,13 @@ class AKStoriesCell: UICollectionViewCell {
         super.updateConstraints()
     }
 
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        self.colorCircleStoriesView.layer.cornerRadius = self.colorCircleStoriesView.frame.width / 2
-//    }
+    // MARK: - set data
+
+    func set(data: CustomStoriesData) {
+        self.storiesImageView.image = data.image
+        self.storiesTitle.text = data.title
+
+        self.setNeedsUpdateConstraints()
+    }
+
 }

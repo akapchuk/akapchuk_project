@@ -24,6 +24,7 @@
 		1121CD432627846800A81804 /* AKHorizontalCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */; };
 		1121CD472627872900A81804 /* AKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD462627872900A81804 /* AKImageView.swift */; };
 		112D69D1262752C500C92CC1 /* TMDeliveryVCImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */; };
+		1145DEE926281C8200F2B2AA /* AKCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DEE826281C8200F2B2AA /* AKCustomView.swift */; };
 		114B697A2626389F00376E11 /* CustomDeliveryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B69792626389F00376E11 /* CustomDeliveryData.swift */; };
 		1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C20D260297CF00E85F37 /* AKStepper.swift */; };
 		1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */; };
@@ -98,6 +99,7 @@
 		1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHorizontalCollectionViewLayout.swift; sourceTree = "<group>"; };
 		1121CD462627872900A81804 /* AKImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKImageView.swift; sourceTree = "<group>"; };
 		112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TMDeliveryVCImages.xcassets; sourceTree = "<group>"; };
+		1145DEE826281C8200F2B2AA /* AKCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCustomView.swift; sourceTree = "<group>"; };
 		114B69792626389F00376E11 /* CustomDeliveryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeliveryData.swift; sourceTree = "<group>"; };
 		1156C20D260297CF00E85F37 /* AKStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStepper.swift; sourceTree = "<group>"; };
 		1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSorryPageViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,16 @@
 				1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */,
 			);
 			path = CollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		1121CD4926278E4B00A81804 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				11787673260C49FC00970385 /* Models */,
+				11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */,
+				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
+			);
+			path = Archive;
 			sourceTree = "<group>";
 		};
 		112D69CE2627524F00C92CC1 /* TMDeliveryVC */ = {
@@ -401,9 +413,7 @@
 				1121CD3426277EF800A81804 /* Data */,
 				1181BCF62617946B00B42647 /* Views */,
 				11EBB3DB25FE7859000EF11B /* Products */,
-				11787673260C49FC00970385 /* Models */,
 				111887A42624389400B5E97E /* TMMainMenuViewController.swift */,
-				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -414,7 +424,6 @@
 				114B69782626383A00376E11 /* Data */,
 				114B69732626365500376E11 /* Views */,
 				11E8C17E2627338B00CE9DC0 /* TMDeliveryVC.swift */,
-				11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */,
 			);
 			path = Delivery;
 			sourceTree = "<group>";
@@ -444,6 +453,7 @@
 			children = (
 				11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */,
 				11EF0E6C25F24EE7006FE5B8 /* AKWhiteAreaView.swift */,
+				1145DEE826281C8200F2B2AA /* AKCustomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -546,11 +556,11 @@
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				11DEAE0E261732B3002B8D03 /* DataSaving */,
 				1121CD412627843300A81804 /* CollectionViewLayout */,
 				1121CD392627806700A81804 /* CollectionViews */,
 				11AE9C66261A1F4A00FC1AAC /* SearchController */,
 				114B32D426178E2B007CBCAA /* Steppers */,
-				11DEAE0E261732B3002B8D03 /* DataSaving */,
 				11C38F4826077A1E008A8CEF /* StackViews */,
 				1110544425FB9E50002A6E79 /* ImageViews */,
 				11AE542625FB9BDB0064B3EA /* Views */,
@@ -574,6 +584,7 @@
 		11DE870E25EE3AF500CFFD69 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1121CD4926278E4B00A81804 /* Archive */,
 				11852E6025F3DCFA00C412FF /* Auth */,
 				11AE542025FB9B390064B3EA /* Homepage */,
 				11AE542125FB9B460064B3EA /* Menu */,
@@ -826,6 +837,7 @@
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
 				11787670260C49A900970385 /* AKBasket.swift in Sources */,
 				1121CD2F26277D4600A81804 /* CustomPromotionsData.swift in Sources */,
+				1145DEE926281C8200F2B2AA /* AKCustomView.swift in Sources */,
 				1121CD3226277D9B00A81804 /* CustomVideosData.swift in Sources */,
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,

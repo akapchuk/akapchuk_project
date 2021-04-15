@@ -8,7 +8,7 @@
 import UIKit
 
 class TMDeliveryCell: UICollectionViewCell {
-    
+
     // MARK: - gui variables
 
     private lazy var colorContainerView: UIView = {
@@ -18,13 +18,10 @@ class TMDeliveryCell: UICollectionViewCell {
         return view
     }()
 
-    private lazy var listItemTitle: UILabel = {
-        let title = UILabel()
-        title.numberOfLines = 0
+    private lazy var listItemTitle: AKDescriptionTitleLabel = {
+        let title = AKDescriptionTitleLabel()
         title.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         title.textColor = .white
-        title.textAlignment = .center
-        title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
 
@@ -37,14 +34,11 @@ class TMDeliveryCell: UICollectionViewCell {
         return title
     }()
 
-    private lazy var listItemImageView: UIImageView = {
-        let image = UIImageView()
-        image.clipsToBounds = true
+    private lazy var listItemImageView: AKImageView = {
+        let image = AKImageView()
         image.layer.cornerRadius = 75
         image.layer.borderWidth = 5
         image.layer.borderColor = UIColor.white.cgColor
-        image.contentMode = .scaleAspectFill
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -74,7 +68,7 @@ class TMDeliveryCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - set up constraints
 
     override func updateConstraints() {
@@ -107,7 +101,7 @@ class TMDeliveryCell: UICollectionViewCell {
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
         }
-        
+
         super.updateConstraints()
     }
 

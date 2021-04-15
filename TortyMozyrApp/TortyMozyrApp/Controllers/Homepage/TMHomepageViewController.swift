@@ -11,7 +11,7 @@ import youtube_ios_player_helper
 class TMHomepageViewController: AKViewController {
     
     // MARK: - gui variables
-    
+
     private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
         header.text = NSLocalizedString("Stories", comment: "")
@@ -163,7 +163,7 @@ class TMHomepageViewController: AKViewController {
     
     // MARK: - actions
     
-    @objc func actualImageWasTapped() {
+    @objc private func actualImageWasTapped() {
         self.navigationController?.pushViewController(AKActualTableViewController(), animated: true)
     }
     
@@ -200,9 +200,9 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
         if collectionView == self.storiesCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
             if let cell = cell as? AKStoriesCell {
-                cell.storiesData = storiesData[indexPath.row]
+                cell.set(data: storiesData[indexPath.row])
             }
-            
+
             return cell
         } else if collectionView == self.promotionsCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPromo", for: indexPath)
