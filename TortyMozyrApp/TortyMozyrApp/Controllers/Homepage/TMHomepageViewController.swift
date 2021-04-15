@@ -22,7 +22,9 @@ class TMHomepageViewController: AKViewController {
         let cv = AKHorizontalCollectionView(frame: .zero,
                                             collectionViewLayout: AKHorizontalCollectionViewLayout())
 
-        cv.register(AKStoriesCell.self, forCellWithReuseIdentifier: "cell")
+        cv.register(AKStoriesCell.self,
+                    forCellWithReuseIdentifier: AKStoriesCell.reuseIdentifier)
+
         cv.delegate = self
         cv.dataSource = self
         return cv
@@ -38,7 +40,8 @@ class TMHomepageViewController: AKViewController {
         let image = AKImageView()
         image.image = UIImage(named: "bigFruitCakeImage")
         image.layer.cornerRadius = 15
-        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actualImageWasTapped)))
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                          action: #selector(actualImageWasTapped)))
         return image
     }()
 
@@ -52,7 +55,7 @@ class TMHomepageViewController: AKViewController {
         let cv = AKHorizontalCollectionView(frame: .zero, collectionViewLayout:
                                                 AKHorizontalCollectionViewLayout())
 
-        cv.register(AKPromotionsCell.self, forCellWithReuseIdentifier: "cellPromo")
+        cv.register(AKPromotionsCell.self, forCellWithReuseIdentifier: AKPromotionsCell.reuseIdentifier)
         cv.delegate = self
         cv.dataSource = self
         return cv
@@ -67,7 +70,8 @@ class TMHomepageViewController: AKViewController {
     private lazy var videosCollectionView: AKHorizontalCollectionView = {
         let cv = AKHorizontalCollectionView(frame: .zero,
                                             collectionViewLayout: AKHorizontalCollectionViewLayout())
-        cv.register(AKVideoCell.self, forCellWithReuseIdentifier: "cellVideo")
+
+        cv.register(AKVideoCell.self, forCellWithReuseIdentifier: AKVideoCell.reuseIdentifier)
         cv.delegate = self
         cv.dataSource = self
         return cv
@@ -77,12 +81,12 @@ class TMHomepageViewController: AKViewController {
         let barButton = UIBarButtonItem(systemItem: .search)
         return barButton
     }()
-    
+
     private lazy var leftBarButtonItem: UIBarButtonItem = {
         let barButton = UIBarButtonItem(systemItem: .add)
         return barButton
     }()
-    
+
     // MARK: - app life cycle
     
     override func viewDidLoad() {
@@ -198,23 +202,23 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.storiesCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKStoriesCell.reuseIdentifier, for: indexPath)
             if let cell = cell as? AKStoriesCell {
                 cell.set(data: storiesData[indexPath.row])
             }
 
             return cell
         } else if collectionView == self.promotionsCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellPromo", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKPromotionsCell.reuseIdentifier, for: indexPath)
             if let cell = cell as? AKPromotionsCell {
-                cell.promotionsData = promotionsData[indexPath.row]
+                cell.set(data: promotionsData[indexPath.row])
             }
             
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellVideo", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKVideoCell.reuseIdentifier, for: indexPath)
             if let cell = cell as? AKVideoCell {
-                cell.videosData = videosData[indexPath.row]
+                cell.set(data: videosData[indexPath.row])
             }
             
             return cell

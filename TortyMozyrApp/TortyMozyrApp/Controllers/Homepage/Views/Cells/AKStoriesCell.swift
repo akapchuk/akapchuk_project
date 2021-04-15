@@ -9,6 +9,8 @@ import UIKit
 
 class AKStoriesCell: UICollectionViewCell {
 
+    static let reuseIdentifier = "AKStoriesCell"
+
     private lazy var colorCircleStoriesView: AKCustomView = {
         let view = AKCustomView()
         view.backgroundColor = .systemOrange

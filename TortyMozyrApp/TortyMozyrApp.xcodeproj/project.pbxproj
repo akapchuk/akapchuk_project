@@ -25,6 +25,7 @@
 		1121CD472627872900A81804 /* AKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD462627872900A81804 /* AKImageView.swift */; };
 		112D69D1262752C500C92CC1 /* TMDeliveryVCImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */; };
 		1145DEE926281C8200F2B2AA /* AKCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DEE826281C8200F2B2AA /* AKCustomView.swift */; };
+		1145DEEE2628309700F2B2AA /* AKAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DEED2628309700F2B2AA /* AKAnimationView.swift */; };
 		114B697A2626389F00376E11 /* CustomDeliveryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B69792626389F00376E11 /* CustomDeliveryData.swift */; };
 		1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156C20D260297CF00E85F37 /* AKStepper.swift */; };
 		1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */; };
@@ -100,6 +101,7 @@
 		1121CD462627872900A81804 /* AKImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKImageView.swift; sourceTree = "<group>"; };
 		112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TMDeliveryVCImages.xcassets; sourceTree = "<group>"; };
 		1145DEE826281C8200F2B2AA /* AKCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCustomView.swift; sourceTree = "<group>"; };
+		1145DEED2628309700F2B2AA /* AKAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAnimationView.swift; sourceTree = "<group>"; };
 		114B69792626389F00376E11 /* CustomDeliveryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeliveryData.swift; sourceTree = "<group>"; };
 		1156C20D260297CF00E85F37 /* AKStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStepper.swift; sourceTree = "<group>"; };
 		1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSorryPageViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,14 @@
 			path = TMDeliveryVC;
 			sourceTree = "<group>";
 		};
+		1145DEEC2628305800F2B2AA /* AnimationView */ = {
+			isa = PBXGroup;
+			children = (
+				1145DEED2628309700F2B2AA /* AKAnimationView.swift */,
+			);
+			path = AnimationView;
+			sourceTree = "<group>";
+		};
 		114B32D426178E2B007CBCAA /* Steppers */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,14 +395,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		11AE541F25FB9B060064B3EA /* Titles */ = {
+		11AE541F25FB9B060064B3EA /* Labels */ = {
 			isa = PBXGroup;
 			children = (
 				1175F07425F69DDD0071EBD8 /* AKHeaderTitleLabel.swift */,
 				1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */,
 				11AE541525FB96E70064B3EA /* AKDecrscriptionTitleLable.swift */,
 			);
-			path = Titles;
+			path = Labels;
 			sourceTree = "<group>";
 		};
 		11AE542025FB9B390064B3EA /* Homepage */ = {
@@ -556,6 +566,7 @@
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1145DEEC2628305800F2B2AA /* AnimationView */,
 				11DEAE0E261732B3002B8D03 /* DataSaving */,
 				1121CD412627843300A81804 /* CollectionViewLayout */,
 				1121CD392627806700A81804 /* CollectionViews */,
@@ -564,7 +575,7 @@
 				11C38F4826077A1E008A8CEF /* StackViews */,
 				1110544425FB9E50002A6E79 /* ImageViews */,
 				11AE542625FB9BDB0064B3EA /* Views */,
-				11AE541F25FB9B060064B3EA /* Titles */,
+				11AE541F25FB9B060064B3EA /* Labels */,
 				11AE541E25FB9AEE0064B3EA /* Buttons */,
 			);
 			path = Common;
@@ -852,6 +863,7 @@
 				11EF0E6D25F24EE7006FE5B8 /* AKWhiteAreaView.swift in Sources */,
 				1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */,
 				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
+				1145DEEE2628309700F2B2AA /* AKAnimationView.swift in Sources */,
 				111887A52624389500B5E97E /* TMMainMenuViewController.swift in Sources */,
 				1121CD432627846800A81804 /* AKHorizontalCollectionViewLayout.swift in Sources */,
 				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,

@@ -14,7 +14,7 @@ class AKSorryPageViewController: UIViewController {
     
     private lazy var messageTitleLabel: AKDescriptionTitleLabel = {
         let text = AKDescriptionTitleLabel()
-        text.text = "Мы упорно трудимся над созданием этой страницы. Уже совсем скоро вы сможете любоваться ею. Благодарим за понимание, вы великолепны!"
+        text.text = NSLocalizedString("Sorry Message", comment: "")
         return text
     }()
 

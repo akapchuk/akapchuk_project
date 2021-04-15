@@ -122,7 +122,7 @@ class TMMenuItemCell: UICollectionViewCell {
         let area = UIView()
         area.backgroundColor = .systemOrange
         area.layer.cornerRadius = 12
-//        area.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ratingButtonTapped)))
+        area.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addToBasketButtonTapped)))
         area.translatesAutoresizingMaskIntoConstraints = false
         return area
     }()
@@ -251,6 +251,10 @@ class TMMenuItemCell: UICollectionViewCell {
     @objc private func ratingButtonTapped() {
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
         self.isRated.toggle()
+    }
+
+    @objc private func addToBasketButtonTapped() {
+        print("Add to Basket Button tapped")
     }
 
 }

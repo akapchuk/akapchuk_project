@@ -13,20 +13,16 @@ class AKActualCell: UITableViewCell {
 
     // MARK: - gui variables
 
-    private lazy var cardContainerView: UIView = {
-        let view = UIView()
+    private lazy var cardContainerView: AKCustomView = {
+        let view = AKCustomView()
         view.backgroundColor = UIColor(named: "AKWhite")
         view.layer.cornerRadius = 15
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private lazy var cardImageView: UIImageView = {
-        let image = UIImageView()
+    private lazy var cardImageView: AKImageView = {
+        let image = AKImageView()
         image.layer.cornerRadius = 10
-        image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -119,6 +115,8 @@ class AKActualCell: UITableViewCell {
 
         super.updateConstraints()
     }
+
+    // MARK: - set data
 
     func setCellData(image: UIImage, imageName: String, imageDescription: String) {
         self.subheaderTitleLabel.text = imageName

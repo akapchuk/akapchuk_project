@@ -64,7 +64,6 @@ class TMDeliveryVC: AKViewController {
         super.viewDidLoad()
         
         self.title = NSLocalizedString("Delivery", comment: "")
-        
         self.view.backgroundColor = .white
 
         self.mainView.addSubview(mapOrListSegmentedControl)
@@ -104,7 +103,7 @@ class TMDeliveryVC: AKViewController {
             make.top.equalTo(self.deliveryTypeHeaderTitleLabel.snp.bottom).offset(5)
             make.bottom.centerX.equalToSuperview()
         }
-        
+
         self.pageInDevelopingLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.pageInDevelopingAnimationView.snp.bottom).inset(50)
             make.width.equalToSuperview().multipliedBy(0.8)
@@ -156,5 +155,5 @@ extension TMDeliveryVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
 
         return cell
     }
-    
+
 }

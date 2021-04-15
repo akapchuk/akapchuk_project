@@ -13,7 +13,12 @@ struct CustomVideosData {
 }
 
 let videosData = [
-    CustomVideosData(title: "Первое видео", id: "D5tdtncYeXs"),
-    CustomVideosData(title: "Второе видео", id: "hpikLBH8B88"),
-    CustomVideosData(title: "Третье видео", id: "isIgQQG2gHQ")
+    CustomVideosData(title: "Первое видео",
+                     id: "D5tdtncYeXs"),
+
+    CustomVideosData(title: "Второе видео",
+                     id: "hpikLBH8B88"),
+
+    CustomVideosData(title: "Третье видео",
+                     id: "isIgQQG2gHQ")
 ]

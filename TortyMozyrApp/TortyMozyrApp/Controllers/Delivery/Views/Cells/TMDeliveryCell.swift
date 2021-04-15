@@ -11,10 +11,9 @@ class TMDeliveryCell: UICollectionViewCell {
 
     // MARK: - gui variables
 
-    private lazy var colorContainerView: UIView = {
-        let view = UIView()
+    private lazy var colorContainerView: AKCustomView = {
+        let view = AKCustomView()
         view.layer.cornerRadius = 25
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -25,12 +24,10 @@ class TMDeliveryCell: UICollectionViewCell {
         return title
     }()
 
-    private lazy var listPriceTitle: UILabel = {
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 35, weight: .semibold)
+    private lazy var listPriceTitle: AKHeaderTitleLabel = {
+        let title = AKHeaderTitleLabel()
         title.textColor = .white
         title.textAlignment = .center
-        title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
 
