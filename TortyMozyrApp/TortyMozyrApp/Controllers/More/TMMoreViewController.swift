@@ -112,29 +112,23 @@ class TMMoreViewController: AKViewController {
 
     // MARK: - about author banner
 
-    private lazy var aboutAuthorBackgroundView: UIView = {
-        let view = UIView()
+    private lazy var aboutAuthorBackgroundView: AKCustomView = {
+        let view = AKCustomView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private lazy var aboutAuthorImageView: UIImageView = {
-        let image = UIImageView()
+    private lazy var aboutAuthorImageView: AKImageView = {
+        let image = AKImageView()
         image.image = UIImage(named: "about.author")
-        image.clipsToBounds = true
         image.layer.cornerRadius = 40
-        image.contentMode = .scaleAspectFill
-        image.isUserInteractionEnabled = true
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
     private lazy var aboutAuthorTitleLabel: AKSubheaderTitleLabel = {
         let title = AKSubheaderTitleLabel()
         title.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        title.text = "О кондитере"
+        title.text = NSLocalizedString("About Chef", comment: "")
         return title
     }()
 

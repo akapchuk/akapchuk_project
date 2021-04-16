@@ -42,3 +42,6 @@
 "List" = "Список";
 "On Map" = "На карте";
 "Sorry Message" = "Приносим извинения, эта страница сейчас находится в разработке.";
+
+// MARK: - TMMoreViewController
+"About Chef" = "О кондитере";

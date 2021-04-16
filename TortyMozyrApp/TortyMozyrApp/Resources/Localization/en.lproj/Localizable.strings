@@ -42,3 +42,7 @@
 "List" = "List";
 "On Map" = "On Map";
 "Sorry Message" = "Sorry, this page is currently under construction.";
+
+// MARK: - TMMoreViewController
+"About Chef" = "About the pastry chef";
+

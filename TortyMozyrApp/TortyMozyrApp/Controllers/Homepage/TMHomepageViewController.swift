@@ -8,13 +8,22 @@
 import UIKit
 import youtube_ios_player_helper
 
+extension String {
+    var localized: String {
+        NSLocalizedString(self, comment: "")
+    }
+}
+
 class TMHomepageViewController: AKViewController {
-    
+
+
+    private let edgeInsets: UIEdgeInsets =  UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    private let imageSize =  CGSize(width: 50, height: 50)
     // MARK: - gui variables
 
     private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = NSLocalizedString("Stories", comment: "")
+        header.text = "Stories".localized // Ого
         return header
     }()
 
@@ -118,7 +127,7 @@ class TMHomepageViewController: AKViewController {
         
         self.storiesHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(10)
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(self.edgeInsets) // snapkit is kind
         }
         
         self.storiesCollectionView.snp.makeConstraints { (make) in

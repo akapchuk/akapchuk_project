@@ -51,6 +51,9 @@
 		11AE9C6D261A202500FC1AAC /* AKCustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */; };
 		11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B80915261CE8030085793D /* AKPromotionsCell.swift */; };
 		11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */; };
+		11D20CF92629E9C0002FA6CA /* AKAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */; };
+		11D20D032629F45A002FA6CA /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D022629F45A002FA6CA /* MapAnnotation.swift */; };
+		11D20D07262A1319002FA6CA /* AKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D06262A1319002FA6CA /* AKWebViewController.swift */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
@@ -127,6 +130,9 @@
 		11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCustomSearchController.swift; sourceTree = "<group>"; };
 		11B80915261CE8030085793D /* AKPromotionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKPromotionsCell.swift; sourceTree = "<group>"; };
 		11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
+		11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAdressViewController.swift; sourceTree = "<group>"; };
+		11D20D022629F45A002FA6CA /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		11D20D06262A1319002FA6CA /* AKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKWebViewController.swift; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -431,9 +437,9 @@
 		11AE542225FB9B500064B3EA /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				11D20CFB2629EA58002FA6CA /* Controllers */,
 				114B69782626383A00376E11 /* Data */,
 				114B69732626365500376E11 /* Views */,
-				11E8C17E2627338B00CE9DC0 /* TMDeliveryVC.swift */,
 			);
 			path = Delivery;
 			sourceTree = "<group>";
@@ -512,6 +518,47 @@
 			path = StackViews;
 			sourceTree = "<group>";
 		};
+		11D20CFB2629EA58002FA6CA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11D20CFC2629EA61002FA6CA /* Adress */,
+				11E8C17E2627338B00CE9DC0 /* TMDeliveryVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11D20CFC2629EA61002FA6CA /* Adress */ = {
+			isa = PBXGroup;
+			children = (
+				11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */,
+			);
+			path = Adress;
+			sourceTree = "<group>";
+		};
+		11D20CFF2629F417002FA6CA /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				11D20D002629F420002FA6CA /* Location */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		11D20D002629F420002FA6CA /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				11D20D012629F428002FA6CA /* Models */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		11D20D012629F428002FA6CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11D20D022629F45A002FA6CA /* MapAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		11D3AE89260370A900F19071 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +596,7 @@
 		11DE86EF25ED83C000CFFD69 /* TortyMozyrApp */ = {
 			isa = PBXGroup;
 			children = (
+				11D20CFF2629F417002FA6CA /* Features */,
 				11DE870E25EE3AF500CFFD69 /* Controllers */,
 				1176E0C125FFEF0C005F87AE /* Models */,
 				11DE870F25EE3B1600CFFD69 /* Resources */,
@@ -606,6 +654,7 @@
 				11EA6AB8262309800035550A /* TMCaller.swift */,
 				1175DC472624240B007C52B4 /* AKSorryPageViewController.swift */,
 				118C3F9826024D3700CCED7E /* AKViewController.swift */,
+				11D20D06262A1319002FA6CA /* AKWebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -844,6 +893,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DE871125EE3B6000CFFD69 /* AuthorizationViewController.swift in Sources */,
+				11D20D07262A1319002FA6CA /* AKWebViewController.swift in Sources */,
 				11EA6ABC26230C5F0035550A /* AKVideoCell.swift in Sources */,
 				1175F07825F7AF170071EBD8 /* AKSystemButton.swift in Sources */,
 				11787670260C49A900970385 /* AKBasket.swift in Sources */,
@@ -851,6 +901,7 @@
 				1145DEE926281C8200F2B2AA /* AKCustomView.swift in Sources */,
 				1121CD3226277D9B00A81804 /* CustomVideosData.swift in Sources */,
 				11057A572603576C003AB1B9 /* AKAboutViewController.swift in Sources */,
+				11D20CF92629E9C0002FA6CA /* AKAdressViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
 				11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */,
@@ -891,6 +942,7 @@
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,
 				118C3F942602111D00CCED7E /* AKBasketItemCell.swift in Sources */,
 				118C3F9926024D3700CCED7E /* AKViewController.swift in Sources */,
+				11D20D032629F45A002FA6CA /* MapAnnotation.swift in Sources */,
 				1181BD022618775500B42647 /* AKActualCell.swift in Sources */,
 				11E8C1822627345900CE9DC0 /* TMDeliveryCell.swift in Sources */,
 				11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */,

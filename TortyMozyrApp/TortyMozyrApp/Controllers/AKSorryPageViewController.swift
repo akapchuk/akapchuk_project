@@ -20,7 +20,7 @@ class AKSorryPageViewController: UIViewController {
 
     private lazy var lottieAnimationView: AnimationView = {
         let animation = AnimationView()
-        animation.animation = Animation.named("cat")
+        animation.animation = Animation.named("developing")
         animation.contentMode = .scaleAspectFit
         animation.loopMode = .loop
         animation.play()

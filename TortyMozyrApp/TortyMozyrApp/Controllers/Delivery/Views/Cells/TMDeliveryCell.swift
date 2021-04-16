@@ -9,6 +9,8 @@ import UIKit
 
 class TMDeliveryCell: UICollectionViewCell {
 
+    var showMap: (() -> Void)?
+
     // MARK: - gui variables
 
     private lazy var colorContainerView: AKCustomView = {
@@ -47,6 +49,7 @@ class TMDeliveryCell: UICollectionViewCell {
         button.setTitleColor(.black, for: UIControl.State())
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(showMapTapped), for: .touchUpInside)
         return button
     }()
 
@@ -60,10 +63,15 @@ class TMDeliveryCell: UICollectionViewCell {
         self.colorContainerView.addSubview(listPriceTitle)
         self.colorContainerView.addSubview(listItemImageView)
         self.colorContainerView.addSubview(showInMapButton)
+
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @objc private func showMapTapped() {
+        self.showMap?()
     }
 
     // MARK: - set up constraints
