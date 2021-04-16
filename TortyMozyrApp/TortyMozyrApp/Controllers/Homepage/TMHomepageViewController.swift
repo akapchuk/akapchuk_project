@@ -8,14 +8,7 @@
 import UIKit
 import youtube_ios_player_helper
 
-extension String {
-    var localized: String {
-        NSLocalizedString(self, comment: "")
-    }
-}
-
 class TMHomepageViewController: AKViewController {
-
 
     private let edgeInsets: UIEdgeInsets =  UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     private let imageSize =  CGSize(width: 50, height: 50)
@@ -23,7 +16,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = "Stories".localized // Ого
+        header.text = "Stories".localized
         return header
     }()
 
@@ -41,7 +34,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var actualHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = NSLocalizedString("Actual", comment: "")
+        header.text = "Actual".localized
         return header
     }()
 
@@ -56,7 +49,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var promotionsHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = NSLocalizedString("Discounts", comment: "")
+        header.text = "Discounts".localized
         return header
     }()
 

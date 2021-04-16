@@ -54,6 +54,7 @@
 		11D20CF92629E9C0002FA6CA /* AKAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */; };
 		11D20D032629F45A002FA6CA /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D022629F45A002FA6CA /* MapAnnotation.swift */; };
 		11D20D07262A1319002FA6CA /* AKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D06262A1319002FA6CA /* AKWebViewController.swift */; };
+		11D20D0B262A2FA8002FA6CA /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D0A262A2FA8002FA6CA /* String+Ex.swift */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
@@ -133,6 +134,7 @@
 		11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAdressViewController.swift; sourceTree = "<group>"; };
 		11D20D022629F45A002FA6CA /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		11D20D06262A1319002FA6CA /* AKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKWebViewController.swift; sourceTree = "<group>"; };
+		11D20D0A262A2FA8002FA6CA /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -437,9 +439,9 @@
 		11AE542225FB9B500064B3EA /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
-				11D20CFB2629EA58002FA6CA /* Controllers */,
 				114B69782626383A00376E11 /* Data */,
 				114B69732626365500376E11 /* Views */,
+				11D20CFB2629EA58002FA6CA /* Controllers */,
 			);
 			path = Delivery;
 			sourceTree = "<group>";
@@ -636,6 +638,7 @@
 				11DEAE18261789B7002B8D03 /* UIView+Ex.swift */,
 				11DEAE1B26178A49002B8D03 /* UIEdgeInsets+Ex.swift */,
 				11DEAE1E26178A8E002B8D03 /* Date+Ex.swift */,
+				11D20D0A262A2FA8002FA6CA /* String+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				11EA6AB9262309800035550A /* TMCaller.swift in Sources */,
 				11DEAE1C26178A49002B8D03 /* UIEdgeInsets+Ex.swift in Sources */,
 				11E8C17F2627338B00CE9DC0 /* TMDeliveryVC.swift in Sources */,
+				11D20D0B262A2FA8002FA6CA /* String+Ex.swift in Sources */,
 				1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */,
 				11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */,
 				11DEAE132617687D002B8D03 /* NotificationName+Ex.swift in Sources */,

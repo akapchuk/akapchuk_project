@@ -26,15 +26,20 @@ class TMDeliveryVC: AKViewController {
                                image: UIImage(named: "mozyrMap"),
                                color: .systemOrange),
 
-        CustomDeliveryListData(title: "ДОСТАВКА В КАЛИНКОВИЧИ ИЛИ КОЗЕНКИ",
+        CustomDeliveryListData(title: "ДОСТАВКА В КОЗЕНКИ",
+                               price: "+ 20 BYN", url: "https://yandex.by/maps/-/CCUYe4atDA",
+                               image: UIImage(named: "mozyrMap"),
+                               color: .systemPink),
+
+        CustomDeliveryListData(title: "ДОСТАВКА В КАЛИНКОВИЧИ",
                                price: "+ 20 BYN",
-                               url: "https://yandex.by/maps/-/CCUYe4eZ2D",
+                               url: "https://yandex.by/maps/-/CCUYqPt7WB",
                                image: UIImage(named: "kalinkovichiMap") ?? #imageLiteral(resourceName: "kalinkovichiMap"),
                                color: .systemPurple)
     ]
 
     // MARK: - gui variables
-    
+
     private lazy var mapOrListSegmentedControl: UISegmentedControl = {
         let items = [NSLocalizedString("List", comment: ""),
                      NSLocalizedString("On Map", comment: "")]
@@ -45,7 +50,7 @@ class TMDeliveryVC: AKViewController {
         controller.layer.cornerRadius = 9
         controller.layer.borderWidth = 1
         controller.layer.masksToBounds = true
-        controller.selectedSegmentTintColor = UIColor(named: "AKOrange")
+        controller.selectedSegmentTintColor = .systemYellow
         controller.layer.borderColor = UIColor(named: "AKDarkGray")?.cgColor
         controller.addTarget(self, action: #selector(handleSegmentValueChanged(_:)), for: .valueChanged)
         controller.translatesAutoresizingMaskIntoConstraints = false
@@ -88,10 +93,20 @@ class TMDeliveryVC: AKViewController {
         return image
     }()
 
+    private lazy var pickUpTitleLabel: AKDescriptionTitleLabel = {
+        let title = AKDescriptionTitleLabel()
+        title.text = "0 BYN ПРИ ПОЛУЧЕНИИ В ПУНКТЕ САМОВЫВОЗА"
+        title.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        title.textColor = .white
+        return title
+    }()
+
     private lazy var pickUpButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemYellow
+        button.setTitleColor(.black, for: UIControl.State())
         button.setTitle("Посмотреть на карте", for: UIControl.State())
+        button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(pickUpButtonTapped), for: .touchUpInside)
         return button
@@ -102,6 +117,11 @@ class TMDeliveryVC: AKViewController {
     private lazy var mapView: MKMapView = {
         let view = MKMapView()
         view.delegate = self
+        view.layer.cornerRadius = 20
+        view.layer.maskedCorners = [
+            .layerMaxXMinYCorner,
+            .layerMinXMinYCorner
+        ]
         return view
     }()
 
@@ -125,6 +145,7 @@ class TMDeliveryVC: AKViewController {
         self.pikUpContainerView.addSubview([
             self.pickUpImageContainerView,
             self.picUpEmojiImage,
+            self.pickUpTitleLabel,
             self.pickUpButton
         ])
 
@@ -173,10 +194,16 @@ class TMDeliveryVC: AKViewController {
             make.size.equalTo(40)
         }
 
+        self.pickUpTitleLabel.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.pickUpButton.snp.top).offset(-10)
+            make.width.left.equalTo(self.pickUpButton)
+        }
+
         self.pickUpButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.pickUpImageContainerView.snp.bottom)
-            make.left.equalTo(self.pickUpImageContainerView.snp.right)
-            make.right.equalToSuperview()
+            make.left.equalTo(self.pickUpImageContainerView.snp.right).offset(10)
+            make.height.equalTo(30)
+            make.right.equalToSuperview().inset(10)
         }
 
         self.mapView.snp.makeConstraints { (make) in

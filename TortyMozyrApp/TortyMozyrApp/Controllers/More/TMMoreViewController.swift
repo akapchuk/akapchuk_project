@@ -161,6 +161,7 @@ class TMMoreViewController: AKViewController {
         self.title = NSLocalizedString("More", comment: "")
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: false)
+        self.navigationItem.backButtonTitle = " "
 
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
