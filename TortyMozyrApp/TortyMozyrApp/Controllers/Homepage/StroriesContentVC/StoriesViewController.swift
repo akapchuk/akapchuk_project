@@ -9,11 +9,15 @@ import UIKit
 
 class StoriesViewController: UIViewController {
 
+    // MARK: - properties
+
+    private var imageString: String?
+
     // MARK: - gui variables
 
     private lazy var storiesImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "launchScreen")
+//        imageView.image = UIImage(named: "merenRuletStoriesImage")
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -21,15 +25,16 @@ class StoriesViewController: UIViewController {
 
     private lazy var loadingView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.layer.opacity = 0.8
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
     private lazy var cancelImageView: AKImageView = {
         let image = AKImageView()
-        image.layer.opacity = 0.6
-        image.tintColor = .lightGray
+        image.layer.opacity = 0.8
+        image.tintColor = .white
         image.image = UIImage(systemName: "multiply.circle.fill")
         return image
     }()
@@ -53,6 +58,25 @@ class StoriesViewController: UIViewController {
         self.scale()
 
         self.cancelImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancelButtonTapped)))
+
+        self.loadStoriesImage()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        self.hideAppNavigationBars(false)
+    }
+
+    // MARK: - initialization
+
+    init(imageString: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.imageString = imageString
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - set up constraints
@@ -83,12 +107,19 @@ class StoriesViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = isHide
     }
 
+    private func loadStoriesImage() {
+        if let imageString = self.imageString {
+            self.storiesImageView.image = UIImage(named: imageString)
+        } else {
+            self.storiesImageView.image = UIImage(named: "launchScreen")
+        }
+    }
+
     // MARK: - actions
 
     private func storiesEnded() {
         Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
             self.navigationController?.pushViewController(TMHomepageViewController(), animated: true)
-            self.hideAppNavigationBars(false)
         }
 
     }

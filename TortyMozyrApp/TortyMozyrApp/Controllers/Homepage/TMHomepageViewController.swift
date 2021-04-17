@@ -10,6 +10,40 @@ import youtube_ios_player_helper
 
 class TMHomepageViewController: AKViewController {
 
+    let storiesData = [
+        CustomStoriesData(title: "Pies".localized,
+                          image: #imageLiteral(resourceName: "pearPieImage"),
+                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
+
+        CustomStoriesData(title: "На ДР",
+                          image: #imageLiteral(resourceName: "medovikCakeImage"),
+                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage"),
+
+        CustomStoriesData(title: "Торты для детей",
+                          image: #imageLiteral(resourceName: "cupcakeImage"),
+                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
+
+        CustomStoriesData(title: "Учителю",
+                          image: #imageLiteral(resourceName: "trubochkiSecondImage"),
+                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage"),
+
+        CustomStoriesData(title: "Наборы",
+                          image: #imageLiteral(resourceName: "bigFruitCakeImage"),
+                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
+
+        CustomStoriesData(title: "Торты в Мозыре",
+                          image: #imageLiteral(resourceName: "krasniyBarhatImage"),
+                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage"),
+
+        CustomStoriesData(title: "Любимым",
+                          image: #imageLiteral(resourceName: "fruitCakeImage"),
+                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
+
+        CustomStoriesData(title: "Торты в Мозыре",
+                          image: #imageLiteral(resourceName: "blackberryCakeImage"),
+                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage")
+    ]
+
     private let edgeInsets: UIEdgeInsets =  UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     private let imageSize =  CGSize(width: 50, height: 50)
     // MARK: - gui variables
@@ -179,7 +213,7 @@ class TMHomepageViewController: AKViewController {
 
 extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+
         if collectionView == self.storiesCollectionView {
             return CGSize(width: 80, height: 80)
         } else if collectionView == self.promotionsCollectionView {
@@ -187,11 +221,11 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
         } else {
             return CGSize(width: 300, height: 150)
         }
-        
+
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+
         if collectionView == self.storiesCollectionView {
             return storiesData.count
         } else if collectionView == self.promotionsCollectionView {
@@ -200,13 +234,21 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
             return videosData.count
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         if collectionView == self.storiesCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKStoriesCell.reuseIdentifier, for: indexPath)
             if let cell = cell as? AKStoriesCell {
                 cell.set(data: storiesData[indexPath.row])
+
+                cell.showStories = { [weak self] in
+                    let string = self?.storiesData[indexPath.row].storiesContenImage
+
+                    let controller = StoriesViewController(imageString: string ?? "launchScreen")
+                    self?.navigationController?.pushViewController(controller, animated: true)
+
+                }
             }
 
             return cell
@@ -215,23 +257,23 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
             if let cell = cell as? AKPromotionsCell {
                 cell.set(data: promotionsData[indexPath.row])
             }
-            
+
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKVideoCell.reuseIdentifier, for: indexPath)
             if let cell = cell as? AKVideoCell {
                 cell.set(data: videosData[indexPath.row])
             }
-            
+
             return cell
         }
-        
+
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case self.storiesCollectionView:
-            self.navigationController?.pushViewController(StoriesViewController(), animated: true)
+            self.navigationController?.pushViewController(StoriesViewController(imageString: self.storiesData[indexPath.row].storiesContenImage), animated: true)
         case self.promotionsCollectionView:
             self.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
         default:

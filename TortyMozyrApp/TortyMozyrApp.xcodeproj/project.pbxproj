@@ -55,6 +55,7 @@
 		11D20D032629F45A002FA6CA /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D022629F45A002FA6CA /* MapAnnotation.swift */; };
 		11D20D07262A1319002FA6CA /* AKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D06262A1319002FA6CA /* AKWebViewController.swift */; };
 		11D20D0B262A2FA8002FA6CA /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D0A262A2FA8002FA6CA /* String+Ex.swift */; };
+		11D20D21262AB770002FA6CA /* StoriesVCImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D20D20262AB770002FA6CA /* StoriesVCImages.xcassets */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
@@ -135,6 +136,7 @@
 		11D20D022629F45A002FA6CA /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		11D20D06262A1319002FA6CA /* AKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKWebViewController.swift; sourceTree = "<group>"; };
 		11D20D0A262A2FA8002FA6CA /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
+		11D20D20262AB770002FA6CA /* StoriesVCImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = StoriesVCImages.xcassets; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,13 +187,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11057A59260359AB003AB1B9 /* allPages */ = {
+		11057A59260359AB003AB1B9 /* ControllersContent */ = {
 			isa = PBXGroup;
 			children = (
+				11D20D1F262AB757002FA6CA /* StoriesVC */,
 				112D69CE2627524F00C92CC1 /* TMDeliveryVC */,
 				11057A5A260359BB003AB1B9 /* AKAboutPageCell */,
 			);
-			path = allPages;
+			path = ControllersContent;
 			sourceTree = "<group>";
 		};
 		11057A5A260359BB003AB1B9 /* AKAboutPageCell */ = {
@@ -561,6 +564,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		11D20D1F262AB757002FA6CA /* StoriesVC */ = {
+			isa = PBXGroup;
+			children = (
+				11D20D20262AB770002FA6CA /* StoriesVCImages.xcassets */,
+			);
+			path = StoriesVC;
+			sourceTree = "<group>";
+		};
 		11D3AE89260370A900F19071 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,7 +678,7 @@
 			children = (
 				11E410212625A67D002C10DC /* Localization */,
 				11EA6ABE262422F90035550A /* LottieAnimationJSON */,
-				11057A59260359AB003AB1B9 /* allPages */,
+				11057A59260359AB003AB1B9 /* ControllersContent */,
 				11DE86F925ED83C700CFFD69 /* Assets.xcassets */,
 				1193C19625EE4C5A00729DDB /* Colors.xcassets */,
 				11A5E5D925F126A700908AB5 /* SocialMediaIcons.xcassets */,
@@ -815,6 +826,7 @@
 			files = (
 				11DE86FD25ED83C700CFFD69 /* LaunchScreen.storyboard in Resources */,
 				1193C19725EE4C5A00729DDB /* Colors.xcassets in Resources */,
+				11D20D21262AB770002FA6CA /* StoriesVCImages.xcassets in Resources */,
 				11E410292625A73C002C10DC /* Localizable.strings in Resources */,
 				112D69D1262752C500C92CC1 /* TMDeliveryVCImages.xcassets in Resources */,
 				11057A5C260359D0003AB1B9 /* Media.xcassets in Resources */,

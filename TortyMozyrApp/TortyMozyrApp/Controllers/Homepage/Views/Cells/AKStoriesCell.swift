@@ -11,6 +11,8 @@ class AKStoriesCell: UICollectionViewCell {
 
     static let reuseIdentifier = "AKStoriesCell"
 
+    var showStories: (() -> Void)?
+
     private lazy var colorCircleStoriesView: AKCustomView = {
         let view = AKCustomView()
         view.backgroundColor = .systemOrange
