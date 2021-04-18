@@ -9,7 +9,7 @@ import UIKit
 
 struct CustomStoriesData {
     var title: String
-    var image: UIImage
+    var image: UIImage?
     var url: String
     var storiesContenImage: String
 }

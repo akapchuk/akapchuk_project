@@ -15,7 +15,7 @@ class AKMenuItemViewController: UIViewController {
     var imageName: String?
     var titleTextLabel: String?
     var descriptionTextLabel: String?
-    var productPricePerKg: String?
+    var itemPricePerKg: Double?
 
     // MARK: - gui variables
 
@@ -47,7 +47,6 @@ class AKMenuItemViewController: UIViewController {
 
     private lazy var cakeImageView: UIImageView = {
         let image = UIImageView()
-        //        image.image = UIImage(named: "medovikCakeImage")
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 40
@@ -79,10 +78,15 @@ class AKMenuItemViewController: UIViewController {
         return description
     }()
 
+    private var menuItemPrice: Double?
+
     private lazy var priceTitle: AKSubheaderTitleLabel = {
         let price = AKSubheaderTitleLabel()
-//        price.text = "\(self.menuItemPrice) BYN"
-        price.translatesAutoresizingMaskIntoConstraints = false
+
+        if let itemPrice = self.itemPricePerKg {
+            price.text = "\(itemPrice) BYN"
+        }
+
         return price
     }()
 
@@ -107,8 +111,6 @@ class AKMenuItemViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
-    private var menuItemPrice: Double?
 
     // MARK: - view life cycle
 
@@ -145,13 +147,13 @@ class AKMenuItemViewController: UIViewController {
     // MARK: - initialization
 
     init(imageName: String, titleTextLabel: String,
-         descriptionTextLabel: String, productPricePerKg: String) {
+         descriptionTextLabel: String, productPricePerKg: Double) {
 
         super.init(nibName: nil, bundle: nil)
         self.imageName = imageName
         self.titleTextLabel = titleTextLabel
         self.descriptionTextLabel = descriptionTextLabel
-        self.productPricePerKg = productPricePerKg
+        self.itemPricePerKg = productPricePerKg
     }
 
     required init?(coder: NSCoder) {
@@ -180,9 +182,8 @@ class AKMenuItemViewController: UIViewController {
             self.descriptionLabel.text = "Без описания"
         }
 
-        if let price = self.productPricePerKg {
-//            self.menuItemPrice = Double(price)
-            self.priceTitle.text = price
+        if let price = self.itemPricePerKg {
+            self.menuItemPrice = price
         } else {
             self.menuItemPrice = 0
         }
@@ -192,11 +193,11 @@ class AKMenuItemViewController: UIViewController {
     // MARK: - set up constraints
 
     private func setUpConctraints() {
-        NSLayoutConstraint.activate([
-            self.imageMaskView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.imageMaskView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            self.imageMaskView.heightAnchor.constraint(equalToConstant: self.view.frame.size.height / 4)
-        ])
+
+        self.imageMaskView.snp.makeConstraints { (make) in
+            make.top.width.equalToSuperview()
+            make.height.equalTo(self.view.frame.size.height / 3)
+        }
 
         NSLayoutConstraint.activate([
             self.buttonBackgroundView.topAnchor.constraint(equalTo: self.imageMaskView.topAnchor, constant: 50),
@@ -270,7 +271,6 @@ class AKMenuItemViewController: UIViewController {
         let alertController = UIAlertController(title: "Готово!",
                                                 message: "Товар добавлен в корзину",
                                                 preferredStyle: .actionSheet)
-        
         let continueAction = UIAlertAction(title: "Продолжить", style: .default) { _ in
             self.navigationController?.pushViewController(TMMainMenuViewController(), animated: true)
 

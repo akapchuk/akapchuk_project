@@ -14,42 +14,42 @@ class TMHomepageViewController: AKViewController {
 
     let storiesData = [
         CustomStoriesData(title: "Merengue".localized,
-                          image: #imageLiteral(resourceName: "pearPieImage"),
+                          image: UIImage(named: "merengueRollImage"),
                           url: "google.com",
                           storiesContenImage: "merenRuletStoriesImage"),
 
         CustomStoriesData(title: "Birthday".localized,
-                          image: #imageLiteral(resourceName: "medovikCakeImage"),
+                          image: UIImage(named: "numbersCake"),
                           url: "google.com",
                           storiesContenImage: "medovikBirthdayStoriesImage"),
 
         CustomStoriesData(title: "Cakes for children".localized,
-                          image: #imageLiteral(resourceName: "cupcakeImage"),
+                          image: UIImage(named: "blackberryCakeImage"),
                           url: "google.com",
                           storiesContenImage: "merenRuletStoriesImage"),
 
         CustomStoriesData(title: "For teacher".localized,
-                          image: #imageLiteral(resourceName: "trubochkiSecondImage"),
+                          image: UIImage(named: "fruitCakeImage"),
                           url: "google.com",
                           storiesContenImage: "medovikBirthdayStoriesImage"),
 
         CustomStoriesData(title: "Sets".localized,
-                          image: #imageLiteral(resourceName: "bigFruitCakeImage"),
+                          image: UIImage(named: "setsNYImage"),
                           url: "google.com",
                           storiesContenImage: "merenRuletStoriesImage"),
 
         CustomStoriesData(title: "Cakes in Mozyr".localized,
-                          image: #imageLiteral(resourceName: "krasniyBarhatImage"),
+                          image: UIImage(named: "napoleonCakeImage"),
                           url: "google.com",
                           storiesContenImage: "medovikBirthdayStoriesImage"),
 
         CustomStoriesData(title: "Pies".localized,
-                          image: #imageLiteral(resourceName: "pearPieImage"),
+                          image: UIImage(named: "strawberryPieImage"),
                           url: "google.com",
                           storiesContenImage: "merenRuletStoriesImage"),
 
         CustomStoriesData(title: "Cupcakes".localized,
-                          image: #imageLiteral(resourceName: "blackberryCakeImage"),
+                          image: UIImage(named: "cupcakeImage"),
                           url: "google.com",
                           storiesContenImage: "medovikBirthdayStoriesImage")
     ]

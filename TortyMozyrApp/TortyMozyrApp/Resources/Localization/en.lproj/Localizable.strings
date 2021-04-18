@@ -55,3 +55,22 @@
 
 // MARK: - AKCreateCustomOrder
 "Сreate an order" = "Сreate an order";
+
+// MARK: - TMMainMenuViewController
+"Honey Cake" = "Honey Cake";
+"Red velvet" = "Red Velvet";
+"Strawberry pie" = "Strawberry pie";
+"Condensed milk rolls" = "Condensed milk Rolls";
+"Pear pie" = "Pear Pie";
+"Choco Balls" = "Chocolate balls with cocoail";
+"Napoleon" = "Napoleon";
+
+"Honey Cake Description" = "Cake according to unique recipes of the last century from natural ingredients.";
+"Red Velvet Description" = "“Red Velvet” is a cake that is remembered for its bright red hue, delicate cream and airy, very porous cakes.";
+"Strawberry pie Description" = "You will fall in love with this aromatic, delicious strawberry tart!";
+"Condensed rolls Description" = "Delicious crispy rolls made from natural ingredients.";
+"Pear pie Description" = "In cooking, pears are used very widely, but the most delicious option is pear pie.";
+"Choco Balls Description" = "Take a wide cup, make hot milk, pour it a chocolate ball and look impatiently when the marshmallows will break free.";
+"Cupcakes Description" = "Chocolate cupcakes with butter cream will leave no one indifferent!";
+"Napoleon Description" = "Delicious, tender, layered homemade Napoleon cake.";
+

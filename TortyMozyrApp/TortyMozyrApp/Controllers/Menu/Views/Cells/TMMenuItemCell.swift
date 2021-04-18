@@ -84,7 +84,7 @@ class TMMenuItemCell: UICollectionViewCell {
         image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
         return image
     }()
-    
+
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
         title.textAlignment = .center
@@ -131,11 +131,11 @@ class TMMenuItemCell: UICollectionViewCell {
     }()
     
     private lazy var addToBasketIconImage: UIImageView = {
-        let star = UIImageView()
-        star.image = UIImage(systemName: "cart.fill.badge.plus")
-        star.tintColor = .white
-        star.translatesAutoresizingMaskIntoConstraints = false
-        return star
+        let image = UIImageView()
+        image.image = UIImage(systemName: "cart.fill.badge.plus")
+        image.tintColor = .white
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
     }()
     
     // MARK: - init cell
@@ -237,9 +237,10 @@ class TMMenuItemCell: UICollectionViewCell {
     
     func set(data: CustomMenuData) {
         self.titleLabel.text = data.title
-        self.priceLabel.text = data.price
+        // Force Unwrap
+        self.priceLabel.text = "\(String(data.price!)) BYN"
         self.ratingLabel.text = data.rating
-        self.itemImageView.image = UIImage(named: data.image!)
+        self.itemImageView.image = UIImage(named: data.image ?? "launchScreen")
         
         self.setNeedsUpdateConstraints()
     }
