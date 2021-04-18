@@ -39,7 +39,7 @@ class AKWebViewController: UIViewController {
     // MARK: - initialization
 
     init(stringUrl: String) {
-        super.init(nibName: nil, bundle: nil) // ??
+        super.init(nibName: nil, bundle: nil)
         self.stringUrl = stringUrl
     }
 

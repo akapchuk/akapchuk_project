@@ -24,13 +24,13 @@ class GreetingViewController: UIViewController {
 
     private lazy var welcomeTitleLabel: AKSubheaderTitleLabel = {
         let title = AKSubheaderTitleLabel()
-        title.text = NSLocalizedString("Welcome", comment: "")
+        title.text = "Welcome".localized
         return title
     }()
 
     private lazy var descriptionLabel: AKDescriptionTitleLabel = {
         let description = AKDescriptionTitleLabel()
-        description.text = NSLocalizedString("Greeting Message", comment: "")
+        description.text = "Greeting Message".localized
         return description
     }()
 

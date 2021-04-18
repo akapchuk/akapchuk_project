@@ -20,7 +20,14 @@
 "Watch" = "Watch";
 
 // MARK: - storiesData
+"Merengue" = "Merengue roll";
+"Birthday" = "Birthday";
+"Cakes for children" = "Cakes for children";
+"For teacher" = "For teacher";
+"Sets" = "Sets";
+"Cakes in Mozyr" = "Cakes in Mozyr";
 "Pies" = "Pies";
+"Cupcakes" = "Cupcakes";
 
 // MARK: - promotionsData
 
@@ -46,3 +53,5 @@
 // MARK: - TMMoreViewController
 "About Chef" = "About the pastry chef";
 
+// MARK: - AKCreateCustomOrder
+"Сreate an order" = "Сreate an order";

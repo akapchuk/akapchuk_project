@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
-class MedovikCakeViewController: UIViewController {
+class AKMenuItemViewController: UIViewController {
+
+    // MARK: - properties
+
+    var imageName: String?
+    var titleTextLabel: String?
+    var descriptionTextLabel: String?
+    var productPricePerKg: String?
 
     // MARK: - gui variables
 
@@ -40,7 +47,7 @@ class MedovikCakeViewController: UIViewController {
 
     private lazy var cakeImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "medovikCakeImage")
+        //        image.image = UIImage(named: "medovikCakeImage")
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 40
@@ -54,8 +61,7 @@ class MedovikCakeViewController: UIViewController {
 
     private lazy var headerTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = "Торт «‎Медовик‎»‎"
-        header.translatesAutoresizingMaskIntoConstraints = false
+        header.numberOfLines = 0
         return header
     }()
 
@@ -69,14 +75,13 @@ class MedovikCakeViewController: UIViewController {
 
     private lazy var descriptionLabel: AKDescriptionTitleLabel = {
         let description = AKDescriptionTitleLabel()
-        description.text = "Красивая легенда о многослойном шедевре подарит вам вдохновение и воспоминание, связанные с тортом. А если вы никогда не пробовали «‎Медовик‎»‎, то обязательно захотите это сделать."
         description.textAlignment = .left
         return description
     }()
 
     private lazy var priceTitle: AKSubheaderTitleLabel = {
         let price = AKSubheaderTitleLabel()
-        price.text = "\(self.medovikPrice) BYN"
+//        price.text = "\(self.menuItemPrice) BYN"
         price.translatesAutoresizingMaskIntoConstraints = false
         return price
     }()
@@ -103,15 +108,14 @@ class MedovikCakeViewController: UIViewController {
         return button
     }()
 
-    private var medovikPrice = 29.9
+    private var menuItemPrice: Double?
 
-    // MARK: - vc life cycle
+    // MARK: - view life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
-        // navController settings
         self.title = "Медовик"
         self.navigationController?.navigationBar.isHidden = true
 
@@ -129,6 +133,60 @@ class MedovikCakeViewController: UIViewController {
         self.buttonBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonTapped)))
 
         self.setUpConctraints()
+        self.loadData()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        self.navigationController?.navigationBar.isHidden = false
+    }
+
+    // MARK: - initialization
+
+    init(imageName: String, titleTextLabel: String,
+         descriptionTextLabel: String, productPricePerKg: String) {
+
+        super.init(nibName: nil, bundle: nil)
+        self.imageName = imageName
+        self.titleTextLabel = titleTextLabel
+        self.descriptionTextLabel = descriptionTextLabel
+        self.productPricePerKg = productPricePerKg
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    // MARK: - load data
+
+    private func loadData() {
+
+        if let imageName = self.imageName {
+            self.cakeImageView.image = UIImage(named: imageName)
+        } else {
+            self.cakeImageView.image = UIImage(named: "launchScreen")
+        }
+
+        if let titleText = self.titleTextLabel {
+            self.headerTitleLabel.text = titleText
+        } else {
+            self.headerTitleLabel.text = "Продукт"
+        }
+
+        if let descriptionText = self.descriptionTextLabel {
+            self.descriptionLabel.text = descriptionText
+        } else {
+            self.descriptionLabel.text = "Без описания"
+        }
+
+        if let price = self.productPricePerKg {
+//            self.menuItemPrice = Double(price)
+            self.priceTitle.text = price
+        } else {
+            self.menuItemPrice = 0
+        }
+
     }
 
     // MARK: - set up constraints
@@ -161,10 +219,11 @@ class MedovikCakeViewController: UIViewController {
             self.cakeImageView.heightAnchor.constraint(equalTo: self.imageMaskView.heightAnchor)
         ])
 
-        NSLayoutConstraint.activate([
-            self.headerTitleLabel.topAnchor.constraint(equalTo: self.imageMaskView.bottomAnchor, constant: 15),
-            self.headerTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20)
-        ])
+        self.headerTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.imageMaskView.snp.bottom).offset(15)
+            make.left.equalToSuperview().inset(20)
+            make.width.equalToSuperview().multipliedBy(0.8)
+        }
 
         NSLayoutConstraint.activate([
             self.subHeaderTitle.topAnchor.constraint(equalTo: self.headerTitleLabel.bottomAnchor, constant: 10),
@@ -178,7 +237,6 @@ class MedovikCakeViewController: UIViewController {
 
         self.priceTitle.snp.makeConstraints { (make) in
             make.left.equalTo(self.addToBasketButton.snp.left)
-            //            make.bottom.equalToSuperview().inset(175)
             make.bottom.equalTo(self.addToBasketButton.snp.top).offset(-10)
         }
 
@@ -203,7 +261,8 @@ class MedovikCakeViewController: UIViewController {
 
     @objc func productStepperWasChanged() {
         print("Stepper value is \(self.productStepper.value)")
-        self.priceTitle.text = "\(Double(round((self.medovikPrice * self.productStepper.value) * 100) / 100)) BYN"
+        // FORCE UNWRAP
+        self.priceTitle.text = "\(Double(round((self.menuItemPrice! * self.productStepper.value) * 100) / 100)) BYN"
         self.subHeaderTitle.text = "Вес \(Int((self.productStepper.value) * 1000)) гр."
     }
 
@@ -211,9 +270,10 @@ class MedovikCakeViewController: UIViewController {
         let alertController = UIAlertController(title: "Готово!",
                                                 message: "Товар добавлен в корзину",
                                                 preferredStyle: .actionSheet)
-
+        
         let continueAction = UIAlertAction(title: "Продолжить", style: .default) { _ in
-            self.navigationController?.pushViewController(TMMenuViewController(), animated: true)
+            self.navigationController?.pushViewController(TMMainMenuViewController(), animated: true)
+
         }
         alertController.addAction(continueAction)
 

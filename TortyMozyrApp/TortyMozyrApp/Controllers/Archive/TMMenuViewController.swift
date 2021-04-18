@@ -320,7 +320,7 @@ class TMMenuViewController: UIViewController {
     }
 
     @objc private func leftTileViewTapped() {
-        self.navigationController?.pushViewController(MedovikCakeViewController(), animated: false)
+//        self.navigationController?.pushViewController(AKMenuItemViewController(), animated: false)
     }
 
 }

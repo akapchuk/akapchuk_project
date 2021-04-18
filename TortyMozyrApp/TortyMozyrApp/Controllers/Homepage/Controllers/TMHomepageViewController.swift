@@ -10,42 +10,53 @@ import youtube_ios_player_helper
 
 class TMHomepageViewController: AKViewController {
 
+    // MARK: - properties
+
     let storiesData = [
+        CustomStoriesData(title: "Merengue".localized,
+                          image: #imageLiteral(resourceName: "pearPieImage"),
+                          url: "google.com",
+                          storiesContenImage: "merenRuletStoriesImage"),
+
+        CustomStoriesData(title: "Birthday".localized,
+                          image: #imageLiteral(resourceName: "medovikCakeImage"),
+                          url: "google.com",
+                          storiesContenImage: "medovikBirthdayStoriesImage"),
+
+        CustomStoriesData(title: "Cakes for children".localized,
+                          image: #imageLiteral(resourceName: "cupcakeImage"),
+                          url: "google.com",
+                          storiesContenImage: "merenRuletStoriesImage"),
+
+        CustomStoriesData(title: "For teacher".localized,
+                          image: #imageLiteral(resourceName: "trubochkiSecondImage"),
+                          url: "google.com",
+                          storiesContenImage: "medovikBirthdayStoriesImage"),
+
+        CustomStoriesData(title: "Sets".localized,
+                          image: #imageLiteral(resourceName: "bigFruitCakeImage"),
+                          url: "google.com",
+                          storiesContenImage: "merenRuletStoriesImage"),
+
+        CustomStoriesData(title: "Cakes in Mozyr".localized,
+                          image: #imageLiteral(resourceName: "krasniyBarhatImage"),
+                          url: "google.com",
+                          storiesContenImage: "medovikBirthdayStoriesImage"),
+
         CustomStoriesData(title: "Pies".localized,
                           image: #imageLiteral(resourceName: "pearPieImage"),
-                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
+                          url: "google.com",
+                          storiesContenImage: "merenRuletStoriesImage"),
 
-        CustomStoriesData(title: "На ДР",
-                          image: #imageLiteral(resourceName: "medovikCakeImage"),
-                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage"),
-
-        CustomStoriesData(title: "Торты для детей",
-                          image: #imageLiteral(resourceName: "cupcakeImage"),
-                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
-
-        CustomStoriesData(title: "Учителю",
-                          image: #imageLiteral(resourceName: "trubochkiSecondImage"),
-                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage"),
-
-        CustomStoriesData(title: "Наборы",
-                          image: #imageLiteral(resourceName: "bigFruitCakeImage"),
-                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
-
-        CustomStoriesData(title: "Торты в Мозыре",
-                          image: #imageLiteral(resourceName: "krasniyBarhatImage"),
-                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage"),
-
-        CustomStoriesData(title: "Любимым",
-                          image: #imageLiteral(resourceName: "fruitCakeImage"),
-                          url: "google.com", storiesContenImage: "merenRuletStoriesImage"),
-
-        CustomStoriesData(title: "Торты в Мозыре",
+        CustomStoriesData(title: "Cupcakes".localized,
                           image: #imageLiteral(resourceName: "blackberryCakeImage"),
-                          url: "google.com", storiesContenImage: "medovikBirthdayStoriesImage")
+                          url: "google.com",
+                          storiesContenImage: "medovikBirthdayStoriesImage")
     ]
 
     private let edgeInsets: UIEdgeInsets =  UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     private let imageSize =  CGSize(width: 50, height: 50)
+
     // MARK: - gui variables
 
     private lazy var storiesHeaderTitleLabel: AKHeaderTitleLabel = {
@@ -119,7 +130,9 @@ class TMHomepageViewController: AKViewController {
     }()
 
     private lazy var leftBarButtonItem: UIBarButtonItem = {
-        let barButton = UIBarButtonItem(systemItem: .add)
+        let barButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                     target: self,
+                                     action: #selector(addBarButtonTapped))
         return barButton
     }()
 
@@ -144,7 +157,7 @@ class TMHomepageViewController: AKViewController {
         self.mainView.addSubview(promotionsCollectionView)
         self.mainView.addSubview(videosHeaderTitleLabel)
         self.mainView.addSubview(videosCollectionView)
-        
+
         self.setUpConstraints()
     }
     
@@ -205,6 +218,10 @@ class TMHomepageViewController: AKViewController {
     
     @objc private func actualImageWasTapped() {
         self.navigationController?.pushViewController(AKActualTableViewController(), animated: true)
+    }
+
+    @objc private func addBarButtonTapped() {
+        self.navigationController?.pushViewController(AKCreateCustomOrderViewController(), animated: true)
     }
     
 }

@@ -65,7 +65,7 @@ class TMDeliveryCell: UICollectionViewCell {
         self.colorContainerView.addSubview(showInMapButton)
 
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -24,6 +24,7 @@
 		1121CD432627846800A81804 /* AKHorizontalCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */; };
 		1121CD472627872900A81804 /* AKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD462627872900A81804 /* AKImageView.swift */; };
 		112D69D1262752C500C92CC1 /* TMDeliveryVCImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */; };
+		11356013262AF7A300344FBB /* CreateCustomOrderVC.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11356012262AF7A300344FBB /* CreateCustomOrderVC.xcassets */; };
 		1145DEE926281C8200F2B2AA /* AKCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DEE826281C8200F2B2AA /* AKCustomView.swift */; };
 		1145DEEE2628309700F2B2AA /* AKAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145DEED2628309700F2B2AA /* AKAnimationView.swift */; };
 		114B697A2626389F00376E11 /* CustomDeliveryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B69792626389F00376E11 /* CustomDeliveryData.swift */; };
@@ -56,6 +57,7 @@
 		11D20D07262A1319002FA6CA /* AKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D06262A1319002FA6CA /* AKWebViewController.swift */; };
 		11D20D0B262A2FA8002FA6CA /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D0A262A2FA8002FA6CA /* String+Ex.swift */; };
 		11D20D21262AB770002FA6CA /* StoriesVCImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D20D20262AB770002FA6CA /* StoriesVCImages.xcassets */; };
+		11D20D26262AD584002FA6CA /* AKCreateCustomOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D25262AD584002FA6CA /* AKCreateCustomOrderViewController.swift */; };
 		11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */; };
 		11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F025ED83C000CFFD69 /* AppDelegate.swift */; };
 		11DE86F325ED83C000CFFD69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE86F225ED83C000CFFD69 /* SceneDelegate.swift */; };
@@ -77,7 +79,7 @@
 		11EA6AB9262309800035550A /* TMCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA6AB8262309800035550A /* TMCaller.swift */; };
 		11EA6ABC26230C5F0035550A /* AKVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA6ABB26230C5F0035550A /* AKVideoCell.swift */; };
 		11EA6AC12624236F0035550A /* cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 11EA6AC02624236F0035550A /* cat.json */; };
-		11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */; };
+		11EBB3DE25FE7885000EF11B /* AKMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EBB3DD25FE7885000EF11B /* AKMenuItemViewController.swift */; };
 		11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EBB3F025FE7C62000EF11B /* Products.xcassets */; };
 		11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */; };
 		11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */; };
@@ -105,6 +107,7 @@
 		1121CD422627846800A81804 /* AKHorizontalCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHorizontalCollectionViewLayout.swift; sourceTree = "<group>"; };
 		1121CD462627872900A81804 /* AKImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKImageView.swift; sourceTree = "<group>"; };
 		112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TMDeliveryVCImages.xcassets; sourceTree = "<group>"; };
+		11356012262AF7A300344FBB /* CreateCustomOrderVC.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CreateCustomOrderVC.xcassets; sourceTree = "<group>"; };
 		1145DEE826281C8200F2B2AA /* AKCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCustomView.swift; sourceTree = "<group>"; };
 		1145DEED2628309700F2B2AA /* AKAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAnimationView.swift; sourceTree = "<group>"; };
 		114B69792626389F00376E11 /* CustomDeliveryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDeliveryData.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 		11D20D06262A1319002FA6CA /* AKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKWebViewController.swift; sourceTree = "<group>"; };
 		11D20D0A262A2FA8002FA6CA /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		11D20D20262AB770002FA6CA /* StoriesVCImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = StoriesVCImages.xcassets; sourceTree = "<group>"; };
+		11D20D25262AD584002FA6CA /* AKCreateCustomOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCreateCustomOrderViewController.swift; sourceTree = "<group>"; };
 		11D3AE8F2603715900F19071 /* AKAboutPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAboutPageCell.swift; sourceTree = "<group>"; };
 		11DE86ED25ED83C000CFFD69 /* TortyMozyrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortyMozyrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DE86F025ED83C000CFFD69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,7 +167,7 @@
 		11EA6AB8262309800035550A /* TMCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMCaller.swift; sourceTree = "<group>"; };
 		11EA6ABB26230C5F0035550A /* AKVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKVideoCell.swift; sourceTree = "<group>"; };
 		11EA6AC02624236F0035550A /* cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cat.json; sourceTree = "<group>"; };
-		11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedovikCakeViewController.swift; sourceTree = "<group>"; };
+		11EBB3DD25FE7885000EF11B /* AKMenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKMenuItemViewController.swift; sourceTree = "<group>"; };
 		11EBB3F025FE7C62000EF11B /* Products.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Products.xcassets; sourceTree = "<group>"; };
 		11EF0E6225F227DB006FE5B8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMHomepageViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		11057A59260359AB003AB1B9 /* ControllersContent */ = {
 			isa = PBXGroup;
 			children = (
+				11356011262AF79200344FBB /* CreateCustomOrderVC */,
 				11D20D1F262AB757002FA6CA /* StoriesVC */,
 				112D69CE2627524F00C92CC1 /* TMDeliveryVC */,
 				11057A5A260359BB003AB1B9 /* AKAboutPageCell */,
@@ -263,6 +268,41 @@
 				112D69D0262752C500C92CC1 /* TMDeliveryVCImages.xcassets */,
 			);
 			path = TMDeliveryVC;
+			sourceTree = "<group>";
+		};
+		1135600E262AF67100344FBB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11EBB3DB25FE7859000EF11B /* Products */,
+				111887A42624389400B5E97E /* TMMainMenuViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1135600F262AF68500344FBB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11356010262AF69C00344FBB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11DEAE0A26170985002B8D03 /* Favourites */,
+				11057A5E26035C34003AB1B9 /* About */,
+				11852E5925F3D4E000C412FF /* TMMoreViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11356011262AF79200344FBB /* CreateCustomOrderVC */ = {
+			isa = PBXGroup;
+			children = (
+				11356012262AF7A300344FBB /* CreateCustomOrderVC.xcassets */,
+			);
+			path = CreateCustomOrderVC;
 			sourceTree = "<group>";
 		};
 		1145DEEC2628305800F2B2AA /* AnimationView */ = {
@@ -419,11 +459,9 @@
 		11AE542025FB9B390064B3EA /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				1181BCFB2618715E00B42647 /* ActualVC */,
-				11E4101C26258E6C002C10DC /* StroriesContentVC */,
+				11D20D23262AD53E002FA6CA /* Controllers */,
 				11AE9C5F261A0F9B00FC1AAC /* Data */,
 				11AE9C59261A084500FC1AAC /* Views */,
-				11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -431,10 +469,9 @@
 		11AE542125FB9B460064B3EA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				1135600E262AF67100344FBB /* Controllers */,
 				1121CD3426277EF800A81804 /* Data */,
 				1181BCF62617946B00B42647 /* Views */,
-				11EBB3DB25FE7859000EF11B /* Products */,
-				111887A42624389400B5E97E /* TMMainMenuViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -452,9 +489,9 @@
 		11AE542325FB9B570064B3EA /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				1135600F262AF68500344FBB /* Controllers */,
 				1178766E260C497000970385 /* Models */,
 				118C3F922602101800CCED7E /* Views */,
-				11852E5525F3D49F00C412FF /* TMBasketViewController.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -462,9 +499,7 @@
 		11AE542425FB9B5D0064B3EA /* More */ = {
 			isa = PBXGroup;
 			children = (
-				11DEAE0A26170985002B8D03 /* Favourites */,
-				11057A5E26035C34003AB1B9 /* About */,
-				11852E5925F3D4E000C412FF /* TMMoreViewController.swift */,
+				11356010262AF69C00344FBB /* Controllers */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -570,6 +605,25 @@
 				11D20D20262AB770002FA6CA /* StoriesVCImages.xcassets */,
 			);
 			path = StoriesVC;
+			sourceTree = "<group>";
+		};
+		11D20D23262AD53E002FA6CA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11D20D24262AD559002FA6CA /* CreateCustomOrderVC */,
+				1181BCFB2618715E00B42647 /* ActualVC */,
+				11E4101C26258E6C002C10DC /* StroriesContentVC */,
+				11EF0E6525F239B3006FE5B8 /* TMHomepageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11D20D24262AD559002FA6CA /* CreateCustomOrderVC */ = {
+			isa = PBXGroup;
+			children = (
+				11D20D25262AD584002FA6CA /* AKCreateCustomOrderViewController.swift */,
+			);
+			path = CreateCustomOrderVC;
 			sourceTree = "<group>";
 		};
 		11D3AE89260370A900F19071 /* Views */ = {
@@ -733,17 +787,17 @@
 		11EBB3DB25FE7859000EF11B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11EBB3DC25FE7865000EF11B /* Cakes */,
+				11EBB3DC25FE7865000EF11B /* MenuItem */,
 			);
 			path = Products;
 			sourceTree = "<group>";
 		};
-		11EBB3DC25FE7865000EF11B /* Cakes */ = {
+		11EBB3DC25FE7865000EF11B /* MenuItem */ = {
 			isa = PBXGroup;
 			children = (
-				11EBB3DD25FE7885000EF11B /* MedovikCakeViewController.swift */,
+				11EBB3DD25FE7885000EF11B /* AKMenuItemViewController.swift */,
 			);
-			path = Cakes;
+			path = MenuItem;
 			sourceTree = "<group>";
 		};
 		7AB6C316F50562E124A4767E /* Frameworks */ = {
@@ -835,6 +889,7 @@
 				11EBB3F125FE7C62000EF11B /* Products.xcassets in Resources */,
 				11DE86F825ED83C000CFFD69 /* Main.storyboard in Resources */,
 				11A5E5DA25F126A700908AB5 /* SocialMediaIcons.xcassets in Resources */,
+				11356013262AF7A300344FBB /* CreateCustomOrderVC.xcassets in Resources */,
 				1121CD292627752E00A81804 /* developing.json in Resources */,
 				11EA6AC12624236F0035550A /* cat.json in Resources */,
 				11EF0E7625F256EF006FE5B8 /* GoogleService-Info.plist in Resources */,
@@ -931,6 +986,7 @@
 				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
 				1145DEEE2628309700F2B2AA /* AKAnimationView.swift in Sources */,
 				111887A52624389500B5E97E /* TMMainMenuViewController.swift in Sources */,
+				11D20D26262AD584002FA6CA /* AKCreateCustomOrderViewController.swift in Sources */,
 				1121CD432627846800A81804 /* AKHorizontalCollectionViewLayout.swift in Sources */,
 				11EF0E6625F239B3006FE5B8 /* TMHomepageViewController.swift in Sources */,
 				11DEAE10261732CD002B8D03 /* AKDefaults.swift in Sources */,
@@ -952,7 +1008,7 @@
 				11DEAE1F26178A8E002B8D03 /* Date+Ex.swift in Sources */,
 				11AE541625FB96E70064B3EA /* AKDecrscriptionTitleLable.swift in Sources */,
 				11D3AE902603715900F19071 /* AKAboutPageCell.swift in Sources */,
-				11EBB3DE25FE7885000EF11B /* MedovikCakeViewController.swift in Sources */,
+				11EBB3DE25FE7885000EF11B /* AKMenuItemViewController.swift in Sources */,
 				1121CD2C26277D1200A81804 /* CustomStoriesData.swift in Sources */,
 				117B9D6A25F9181B001B172A /* RegisterViewController.swift in Sources */,
 				11DE870925EE36DF00CFFD69 /* GreetingViewController.swift in Sources */,

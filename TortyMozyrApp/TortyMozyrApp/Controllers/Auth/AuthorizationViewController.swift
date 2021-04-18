@@ -11,11 +11,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - gui elements
 
-    private lazy var backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "launchScreen")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var backgroundImageView: AKCorporateBackgroundImageView = {
+        let imageView = AKCorporateBackgroundImageView()
         return imageView
     }()
 
@@ -276,9 +273,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     @objc func createProfileButtonTapped() {
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
-        
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController(),
-                                                                                                           options: .transitionFlipFromLeft)
+
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController(),options: .transitionFlipFromLeft)
     }
 
     @objc func registerButtonTapped() {

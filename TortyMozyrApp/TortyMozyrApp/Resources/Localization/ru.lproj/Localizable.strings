@@ -20,7 +20,14 @@
 "Watch" = "Посмотреть";
 
 // MARK: - storiesData
+"Merengue" = "Меренговый рулет";
+"Birthday" = "На ДР";
+"Cakes for children" = "Торты для детей";
+"For teacher" = "Для учителя";
+"Sets" = "Наборы";
+"Cakes in Mozyr" = "Торты в Мозыре";
 "Pies" = "Пироги";
+"Cupcakes" = "Капкейки";
 
 // MARK: - promotionsData
 
@@ -45,3 +52,6 @@
 
 // MARK: - TMMoreViewController
 "About Chef" = "О кондитере";
+
+// MARK: - AKCreateCustomOrder
+"Сreate an order" = "Создать заказ";
