@@ -125,11 +125,6 @@ class TMHomepageViewController: AKViewController {
     }()
     
     private lazy var rightBarButtonItem: UIBarButtonItem = {
-        let barButton = UIBarButtonItem(systemItem: .search)
-        return barButton
-    }()
-
-    private lazy var leftBarButtonItem: UIBarButtonItem = {
         let barButton = UIBarButtonItem(barButtonSystemItem: .add,
                                      target: self,
                                      action: #selector(addBarButtonTapped))
@@ -146,7 +141,6 @@ class TMHomepageViewController: AKViewController {
         
         // NavController customize
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
-        self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: true)
         self.navigationItem.backButtonTitle = " "
         
         self.mainView.addSubview(storiesCollectionView)
