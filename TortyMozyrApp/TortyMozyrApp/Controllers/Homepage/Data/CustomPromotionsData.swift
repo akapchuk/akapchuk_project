@@ -16,19 +16,19 @@ struct CustomPromotionsData {
 }
 
 let promotionsData = [
-    CustomPromotionsData(title: "На все пироги",
+    CustomPromotionsData(title: "For all the pies".localized,
                          image: #imageLiteral(resourceName: "strawberryPieImage"),
                          url: "google.com",
                          color: .systemYellow,
                          percent: "-10%"),
 
-    CustomPromotionsData(title: "На каждый 5-й торт",
+    CustomPromotionsData(title: "For every 5th cake".localized,
                          image: #imageLiteral(resourceName: "medovikSecondImage"),
                          url: "google.com",
                          color: .systemTeal,
                          percent: "-25%"),
 
-    CustomPromotionsData(title: "Весь Май",
+    CustomPromotionsData(title: "All May".localized,
                          image: #imageLiteral(resourceName: "trubochkiSecondImage"),
                          url: "google.com",
                          color: .systemIndigo, 

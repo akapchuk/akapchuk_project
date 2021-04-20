@@ -118,19 +118,20 @@ class AKMenuItemViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "AKWhite")
 
-        self.title = "Медовик"
         self.navigationController?.navigationBar.isHidden = true
 
         self.view.addSubview(self.imageMaskView)
         self.imageMaskView.addSubview(self.cakeImageView)
         self.imageMaskView.addSubview(self.buttonBackgroundView)
         self.buttonBackgroundView.addSubview(backButtonImageView)
-        self.view.addSubview(headerTitleLabel)
-        self.view.addSubview(subHeaderTitle)
-        self.view.addSubview(addToBasketButton)
-        self.view.addSubview(productStepper)
-        self.view.addSubview(priceTitle)
-        self.view.addSubview(descriptionLabel)
+        self.view.addSubview([
+            self.headerTitleLabel,
+            self.subHeaderTitle,
+            self.addToBasketButton,
+            self.productStepper,
+            self.priceTitle,
+            self.descriptionLabel
+        ])
 
         self.buttonBackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonTapped)))
 
@@ -262,8 +263,8 @@ class AKMenuItemViewController: UIViewController {
 
     @objc func productStepperWasChanged() {
         print("Stepper value is \(self.productStepper.value)")
-        // FORCE UNWRAP
-        self.priceTitle.text = "\(Double(round((self.menuItemPrice! * self.productStepper.value) * 100) / 100)) BYN"
+        let cost: Double = Double(round(((self.menuItemPrice ?? 0) * self.productStepper.value) * 100) / 100)
+        self.priceTitle.text = "\(cost) BYN"
         self.subHeaderTitle.text = "Вес \(Int((self.productStepper.value) * 1000)) гр."
     }
 

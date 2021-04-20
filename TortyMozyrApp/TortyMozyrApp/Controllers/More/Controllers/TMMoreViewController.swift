@@ -283,6 +283,7 @@ class TMMoreViewController: AKViewController {
     }
 
     @objc func phoneCallTapped() {
+        TMCaller.openPhone("+3753312344567")
 
     }
 

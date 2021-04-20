@@ -54,7 +54,7 @@ class TMHomepageViewController: AKViewController {
                           storiesContenImage: "medovikBirthdayStoriesImage")
     ]
 
-    private let edgeInsets: UIEdgeInsets =  UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    private let edgeInsets: UIEdgeInsets =  UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20)
     private let imageSize =  CGSize(width: 50, height: 50)
 
     // MARK: - gui variables
@@ -92,6 +92,13 @@ class TMHomepageViewController: AKViewController {
         return image
     }()
 
+    private lazy var actualActionButton: AKSystemButton = {
+        let button = AKSystemButton()
+        button.backgroundColor = AKColors.orange
+        button.setTitle("Смотреть", for: .normal)
+        return button
+    }()
+
     private lazy var promotionsHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
         header.text = "Discounts".localized
@@ -110,7 +117,7 @@ class TMHomepageViewController: AKViewController {
 
     private lazy var videosHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = NSLocalizedString("Watch", comment: "")
+        header.text = "Watch".localized
         return header
     }()
 
@@ -123,7 +130,7 @@ class TMHomepageViewController: AKViewController {
         cv.dataSource = self
         return cv
     }()
-    
+
     private lazy var rightBarButtonItem: UIBarButtonItem = {
         let barButton = UIBarButtonItem(barButtonSystemItem: .add,
                                      target: self,
@@ -132,84 +139,93 @@ class TMHomepageViewController: AKViewController {
     }()
 
     // MARK: - app life cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(named: "AKWhite")
-        
-        self.title = NSLocalizedString("Homepage", comment: "")
-        
-        // NavController customize
+        self.view.backgroundColor = AKColors.white
+
+        self.title = "Homepage".localized
+
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.backButtonTitle = " "
-        
-        self.mainView.addSubview(storiesCollectionView)
-        self.mainView.addSubview(storiesHeaderTitleLabel)
-        self.mainView.addSubview(actualHeaderTitleLabel)
-        self.mainView.addSubview(actualImageView)
-        self.mainView.addSubview(promotionsHeaderTitleLabel)
-        self.mainView.addSubview(promotionsCollectionView)
-        self.mainView.addSubview(videosHeaderTitleLabel)
-        self.mainView.addSubview(videosCollectionView)
+
+        self.mainView.addSubview([
+            self.storiesHeaderTitleLabel,
+            self.storiesCollectionView,
+            self.actualHeaderTitleLabel,
+            self.actualImageView,
+            self.promotionsHeaderTitleLabel,
+            self.promotionsCollectionView,
+            self.videosHeaderTitleLabel,
+            self.videosCollectionView
+        ])
+
+        self.actualImageView.addSubview(self.actualActionButton)
 
         self.setUpConstraints()
     }
-    
+
     // MARK: - set up constraints
-    
+
     func setUpConstraints() {
-        
+
         self.storiesHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(10)
             make.left.right.equalToSuperview().inset(self.edgeInsets) // snapkit is kind
         }
-        
+
         self.storiesCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(self.storiesHeaderTitleLabel.snp.bottom).inset(15)
             make.width.equalTo(400)
             make.height.equalTo(130)
         }
-        
+
         self.actualHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.storiesCollectionView.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(20)
         }
-        
+
         self.actualImageView.snp.makeConstraints { (make) in
             make.top.equalTo(self.actualHeaderTitleLabel.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(150)
         }
-        
+
+        self.actualActionButton.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().multipliedBy(0.8)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(40)
+            make.bottom.equalToSuperview().inset(10)
+        }
+
         self.promotionsHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.actualImageView.snp.bottom).offset(40)
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
-        
+
         self.promotionsCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(self.promotionsHeaderTitleLabel.snp.bottom).offset(5)
             make.width.equalTo(UIScreen.main.bounds.width)
             make.height.equalTo(130)
-            //            make.bottom.equalToSuperview() // опасная штука
         }
-        
+
         self.videosHeaderTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.promotionsCollectionView.snp.bottom).offset(40)
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
-        
+
         self.videosCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(self.videosHeaderTitleLabel.snp.bottom).offset(5)
             make.width.equalTo(UIScreen.main.bounds.width)
             make.height.equalTo(150)
-            make.bottom.equalToSuperview().offset(-20) // опасная штука
+            make.bottom.equalToSuperview().offset(-20)
         }
-        
+
     }
-    
+
     // MARK: - actions
-    
+
     @objc private func actualImageWasTapped() {
         self.navigationController?.pushViewController(AKActualTableViewController(), animated: true)
     }
@@ -217,7 +233,7 @@ class TMHomepageViewController: AKViewController {
     @objc private func addBarButtonTapped() {
         self.navigationController?.pushViewController(AKCreateCustomOrderViewController(), animated: true)
     }
-    
+
 }
 
 // MARK: - extensions

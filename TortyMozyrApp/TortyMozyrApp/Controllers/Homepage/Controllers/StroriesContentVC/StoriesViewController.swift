@@ -118,9 +118,11 @@ class StoriesViewController: UIViewController {
     // MARK: - actions
 
     private func storiesEnded() {
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
+        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
             self.navigationController?.pushViewController(TMHomepageViewController(), animated: true)
         }
+
+        timer.invalidate() // вынести
 
     }
 

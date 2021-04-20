@@ -36,27 +36,32 @@ class GreetingViewController: UIViewController {
 
     private lazy var startButton: AKBigBlueButton = {
         let button = AKBigBlueButton()
-        button.setTitle(NSLocalizedString("Start", comment: ""), for: UIControl.State())
+        button.setTitle("Start".localized, for: UIControl.State())
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         return button
     }()
 
     // MARK: - app life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
 
-        self.view.addSubview(backgroundImageView)
-        self.view.addSubview(whiteAreaView)
-        self.whiteAreaView.addSubview(welcomeTitleLabel)
-        self.whiteAreaView.addSubview(descriptionLabel)
-        self.whiteAreaView.addSubview(startButton)
+        self.view.addSubview([
+            self.backgroundImageView,
+            self.whiteAreaView
+        ])
+
+        self.whiteAreaView.addSubview([
+            self.welcomeTitleLabel,
+            self.descriptionLabel,
+            self.startButton
+        ])
 
         self.setUpConstraints()
-
     }
 
-    // MARK: - constraints
+    // MARK: - set up constraints
 
     func setUpConstraints() {
 
@@ -86,13 +91,14 @@ class GreetingViewController: UIViewController {
     }
 
     // MARK: - actions
+    
     @objc func startButtonTapped() {
         let authPage = AuthorizationViewController()
         authPage.modalPresentationStyle = .fullScreen
         self.present(authPage, animated: false)
 
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(AuthorizationViewController(),
-                                                                                                           options: .transitionCrossDissolve)
+        (UIApplication.shared.connectedScenes.first?.delegate as?
+            SceneDelegate)?.changeRootViewController(AuthorizationViewController(), options: .transitionCrossDissolve)
     }
 
 }

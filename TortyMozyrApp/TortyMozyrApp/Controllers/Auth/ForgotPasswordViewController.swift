@@ -19,7 +19,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
     private lazy var whiteAreaView: UIView = {
         let whiteView = UIView()
         whiteView.backgroundColor = UIColor(named: "AKWhite")
@@ -64,16 +64,16 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
 
+    // MARK: - view life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // text field configuration
         self.emailTextField.keyboardType = .emailAddress
         self.emailTextField.textContentType = .emailAddress
         self.emailTextField.returnKeyType = .send
         self.emailTextField.delegate = self
 
-        // add gestures
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                               action: #selector(self.viewDidTapped)))
 
@@ -95,9 +95,11 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         self.sendNewPasswordButtonTapped()
         return true
     }
-    
+
     // MARK: - set constraints
+
     func setUpConstraints() {
+
         NSLayoutConstraint.activate([
             self.backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.backgroundImageView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -143,7 +145,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
             self.backButton.centerXAnchor.constraint(equalTo: self.whiteAreaView.centerXAnchor)
         ])
     }
-    
+
     // MARK: - actions
 
     @objc private func viewDidTapped() {
@@ -155,7 +157,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
         if let emailSymbols = self.emailTextField.text {
             if emailSymbols.isEmpty {
-                // UIAlert
+
                 let alertController = UIAlertController(title: "Ошибка",
                                                         message: "Адрес не введен",
                                                         preferredStyle: .alert)
@@ -167,11 +169,11 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
                 self.present(alertController, animated: true, completion: nil)
             } else if !emailSymbols.contains("@") || !emailSymbols.contains(".") {
-                // UIAlert
+
                 let alertController = UIAlertController(title: "Ошибка",
                                                         message: "Адрес электронной почты введен неверно",
                                                         preferredStyle: .alert)
-                
+
                 let okAction = UIAlertAction(title: "Ввести повторно", style: .default) { _ in
                     print("OK action tapped")
                     self.emailTextField.becomeFirstResponder()
@@ -188,7 +190,6 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
             }
         }
 
-        // UIAlert
         let alertController = UIAlertController(title: "Готово!",
                                                 message: "Проверьте вашу почту",
                                                 preferredStyle: .alert)
@@ -205,5 +206,4 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         print("Back button tapped")
         self.dismiss(animated: false, completion: nil)
     }
-    
 }

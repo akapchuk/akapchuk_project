@@ -13,7 +13,6 @@
 		1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */; };
 		111887A52624389500B5E97E /* TMMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887A42624389400B5E97E /* TMMainMenuViewController.swift */; };
 		111887A926243C7800B5E97E /* TMMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887A826243C7800B5E97E /* TMMenuItemCell.swift */; };
-		111887AC26243DD400B5E97E /* TMMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111887AB26243DD400B5E97E /* TMMenuItemModel.swift */; };
 		1118A4A02604E95000AF722E /* delivery.map.json in Resources */ = {isa = PBXBuildFile; fileRef = 1118A49E2604E95000AF722E /* delivery.map.json */; };
 		1121CD2C26277D1200A81804 /* CustomStoriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD2B26277D1200A81804 /* CustomStoriesData.swift */; };
 		1121CD2F26277D4600A81804 /* CustomPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */; };
@@ -37,8 +36,6 @@
 		1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BD06261878E900B42647 /* AKActualTableViewController.swift */; };
 		11845F01262DB5B4005A84CD /* developing.json in Resources */ = {isa = PBXBuildFile; fileRef = 11845F00262DB5B4005A84CD /* developing.json */; };
 		11845F05262DB7E2005A84CD /* AKBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11845F04262DB7E2005A84CD /* AKBlurEffect.swift */; };
-		11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E4F25F3D48100C412FF /* TMMenuViewController.swift */; };
-		11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */; };
 		11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5525F3D49F00C412FF /* TMBasketViewController.swift */; };
 		11852E5A25F3D4E000C412FF /* TMMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5925F3D4E000C412FF /* TMMoreViewController.swift */; };
 		11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */; };
@@ -51,6 +48,7 @@
 		11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */; };
 		11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */; };
 		11AE9C6D261A202500FC1AAC /* AKCustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */; };
+		11B4D289262EF51A0074875B /* AKColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4D288262EF51A0074875B /* AKColors.swift */; };
 		11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B80915261CE8030085793D /* AKPromotionsCell.swift */; };
 		11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */; };
 		11D20CF92629E9C0002FA6CA /* AKAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */; };
@@ -97,7 +95,6 @@
 		1110544825FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKSubheaderTitleLabel.swift; sourceTree = "<group>"; };
 		111887A42624389400B5E97E /* TMMainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMainMenuViewController.swift; sourceTree = "<group>"; };
 		111887A826243C7800B5E97E /* TMMenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuItemCell.swift; sourceTree = "<group>"; };
-		111887AB26243DD400B5E97E /* TMMenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuItemModel.swift; sourceTree = "<group>"; };
 		1118A49E2604E95000AF722E /* delivery.map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delivery.map.json; sourceTree = "<group>"; };
 		1121CD2B26277D1200A81804 /* CustomStoriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStoriesData.swift; sourceTree = "<group>"; };
 		1121CD2E26277D4600A81804 /* CustomPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPromotionsData.swift; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 		1181BD06261878E900B42647 /* AKActualTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKActualTableViewController.swift; sourceTree = "<group>"; };
 		11845F00262DB5B4005A84CD /* developing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = developing.json; sourceTree = "<group>"; };
 		11845F04262DB7E2005A84CD /* AKBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBlurEffect.swift; sourceTree = "<group>"; };
-		11852E4F25F3D48100C412FF /* TMMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMenuViewController.swift; sourceTree = "<group>"; };
-		11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDeliveryViewController.swift; sourceTree = "<group>"; };
 		11852E5525F3D49F00C412FF /* TMBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBasketViewController.swift; sourceTree = "<group>"; };
 		11852E5925F3D4E000C412FF /* TMMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMoreViewController.swift; sourceTree = "<group>"; };
 		11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTabBarViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +130,7 @@
 		11AE541B25FB9AE00064B3EA /* AKGrayThinDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKGrayThinDividerView.swift; sourceTree = "<group>"; };
 		11AE9C5B261A08B400FC1AAC /* AKStoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKStoriesCell.swift; sourceTree = "<group>"; };
 		11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCustomSearchController.swift; sourceTree = "<group>"; };
+		11B4D288262EF51A0074875B /* AKColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKColors.swift; sourceTree = "<group>"; };
 		11B80915261CE8030085793D /* AKPromotionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKPromotionsCell.swift; sourceTree = "<group>"; };
 		11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAdressViewController.swift; sourceTree = "<group>"; };
@@ -254,16 +250,6 @@
 			path = CollectionViewLayout;
 			sourceTree = "<group>";
 		};
-		1121CD4926278E4B00A81804 /* Archive */ = {
-			isa = PBXGroup;
-			children = (
-				11787673260C49FC00970385 /* Models */,
-				11852E5225F3D49000C412FF /* TMDeliveryViewController.swift */,
-				11852E4F25F3D48100C412FF /* TMMenuViewController.swift */,
-			);
-			path = Archive;
-			sourceTree = "<group>";
-		};
 		112D69CE2627524F00C92CC1 /* TMDeliveryVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,14 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				1178766F260C49A900970385 /* AKBasket.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		11787673260C49FC00970385 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				111887AB26243DD400B5E97E /* TMMenuItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -560,6 +538,14 @@
 			path = SearchController;
 			sourceTree = "<group>";
 		};
+		11B4D287262EF5080074875B /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				11B4D288262EF51A0074875B /* AKColors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		11C38F4826077A1E008A8CEF /* StackViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +677,7 @@
 		11DE870C25EE3AD700CFFD69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				11B4D287262EF5080074875B /* Colors */,
 				11845F03262DB7B9005A84CD /* VisualEffects */,
 				1145DEEC2628305800F2B2AA /* AnimationView */,
 				11DEAE0E261732B3002B8D03 /* DataSaving */,
@@ -722,7 +709,6 @@
 		11DE870E25EE3AF500CFFD69 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1121CD4926278E4B00A81804 /* Archive */,
 				11852E6025F3DCFA00C412FF /* Auth */,
 				11AE542025FB9B390064B3EA /* Homepage */,
 				11AE542125FB9B460064B3EA /* Menu */,
@@ -989,12 +975,11 @@
 				1121CD3B2627809700A81804 /* AKHorizontalCollectionView.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,
-				11852E5025F3D48100C412FF /* TMMenuViewController.swift in Sources */,
+				11B4D289262EF51A0074875B /* AKColors.swift in Sources */,
 				11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */,
 				11852E5A25F3D4E000C412FF /* TMMoreViewController.swift in Sources */,
 				11EF0E6D25F24EE7006FE5B8 /* AKWhiteAreaView.swift in Sources */,
 				1175DC482624240B007C52B4 /* AKSorryPageViewController.swift in Sources */,
-				11852E5325F3D49000C412FF /* TMDeliveryViewController.swift in Sources */,
 				1145DEEE2628309700F2B2AA /* AKAnimationView.swift in Sources */,
 				111887A52624389500B5E97E /* TMMainMenuViewController.swift in Sources */,
 				11D20D26262AD584002FA6CA /* AKCreateCustomOrderViewController.swift in Sources */,
@@ -1031,7 +1016,6 @@
 				11E8C1822627345900CE9DC0 /* TMDeliveryCell.swift in Sources */,
 				11AE9C5C261A08B400FC1AAC /* AKStoriesCell.swift in Sources */,
 				1121CD3626277F0F00A81804 /* CustomMenuData.swift in Sources */,
-				111887AC26243DD400B5E97E /* TMMenuItemModel.swift in Sources */,
 				1121CD472627872900A81804 /* AKImageView.swift in Sources */,
 				11AE541C25FB9AE00064B3EA /* AKGrayThinDividerView.swift in Sources */,
 				1175F07525F69DDD0071EBD8 /* AKHeaderTitleLabel.swift in Sources */,

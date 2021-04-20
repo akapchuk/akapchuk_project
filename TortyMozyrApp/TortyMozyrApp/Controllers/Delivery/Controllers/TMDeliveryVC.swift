@@ -285,6 +285,8 @@ class TMDeliveryVC: AKViewController {
             kalinkovichiAnnotation
         ])
         self.mapView.setCenter(mozyrCoordinate, animated: true)
+//        self.mapView.setRegion(, animated: <#T##Bool#>) для установки приближения
+
     }
 }
 

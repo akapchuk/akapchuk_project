@@ -178,10 +178,7 @@ class AKCreateCustomOrderViewController: AKViewController {
 
     @objc
     private func viewWasTapped() {
-        nameTextField.resignFirstResponder()
-        reasonTextField.resignFirstResponder()
-        productTypeTextField.resignFirstResponder()
-        telephoneNumberTextField.resignFirstResponder()
+        self.view.endEditing(true)
     }
 
     // MARK: - methods

@@ -23,7 +23,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var emailTextField: UITextField = {
         let email = UITextField()
-        email.placeholder = NSLocalizedString("Email", comment: "")
+        email.placeholder = "Email".localized
         email.translatesAutoresizingMaskIntoConstraints = false
         return email
     }()
@@ -35,7 +35,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var passwordTextField: UITextField = {
         let password = UITextField()
-        password.placeholder = NSLocalizedString("Password", comment: "")
+        password.placeholder = "Password".localized
         password.translatesAutoresizingMaskIntoConstraints = false
         return password
     }()
@@ -47,21 +47,21 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var forgotPasswordButton: AKSmallBlueButton = {
         let button = AKSmallBlueButton()
-        button.setTitle(NSLocalizedString("Forgot Password", comment: ""), for: UIControl.State())
+        button.setTitle("Forgot Password".localized, for: UIControl.State())
         button.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         return button
     }()
 
     private lazy var createProfileButton: AKBigBlueButton = {
         let button = AKBigBlueButton()
-        button.setTitle(NSLocalizedString("Log In", comment: ""), for: UIControl.State())
+        button.setTitle("Log In".localized, for: UIControl.State())
         button.addTarget(self, action: #selector(createProfileButtonTapped), for: .touchUpInside)
         return button
     }()
 
     private lazy var orLogInWithTextLabel: AKDescriptionTitleLabel = {
         let text = AKDescriptionTitleLabel()
-        text.text = NSLocalizedString("Or Log In With", comment: "")
+        text.text = "Or Log In With".localized
         text.font = UIFont.systemFont(ofSize: 17, weight: .light)
         return text
     }()
@@ -113,11 +113,11 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var alreadyHaveAccountStackView: UIStackView = {
         let text = AKDescriptionTitleLabel()
-        text.text = NSLocalizedString("Dont Have", comment: "")
+        text.text = "Dont Have".localized
         text.font = UIFont.systemFont(ofSize: 17, weight: .light)
 
         let button = AKSmallBlueButton()
-        button.setTitle(NSLocalizedString("Registration", comment: ""), for: UIControl.State())
+        button.setTitle("Registration".localized, for: UIControl.State())
         button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
 
         let stack = UIStackView(arrangedSubviews: [text, button])
@@ -142,28 +142,37 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
         self.view.addSubview(backgroundImageView)
         self.view.addSubview(whiteAreaView)
-        self.whiteAreaView.addSubview(emailTextField)
-        self.whiteAreaView.addSubview(grayEmailDividerView)
-        self.whiteAreaView.addSubview(passwordTextField)
-        self.whiteAreaView.addSubview(grayPasswordDividerView)
-        self.whiteAreaView.addSubview(forgotPasswordButton)
-        self.whiteAreaView.addSubview(createProfileButton)
-        self.whiteAreaView.addSubview(orLogInWithTextLabel)
-        self.whiteAreaView.addSubview(appleIDView)
+        self.whiteAreaView.addSubview([
+            self.emailTextField,
+            self.grayEmailDividerView,
+            self.passwordTextField,
+            self.grayPasswordDividerView,
+            self.forgotPasswordButton,
+            self.createProfileButton,
+            self.orLogInWithTextLabel,
+            self.appleIDView,
+            self.facebookView,
+            self.googleView,
+            self.alreadyHaveAccountStackView
+        ])
+
         self.appleIDView.addSubview(appleIDImageView)
-        self.whiteAreaView.addSubview(facebookView)
         self.facebookView.addSubview(facebookImageView)
-        self.whiteAreaView.addSubview(googleView)
         self.googleView.addSubview(googleImageView)
-        self.whiteAreaView.addSubview(alreadyHaveAccountStackView)
 
         self.setUpConstraints()
 
-        // add gestures
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewDidTapped)))
-        self.appleIDView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.appleIDButtonTapped)))
-        self.facebookView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.facebookButtonTapped)))
-        self.googleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.googleButtonTapped)))
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                              action: #selector(self.viewDidTapped)))
+
+        self.appleIDView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                     action: #selector(self.appleIDButtonTapped)))
+
+        self.facebookView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                      action: #selector(self.facebookButtonTapped)))
+
+        self.googleView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                    action: #selector(self.googleButtonTapped)))
     }
 
     // MARK: - text fields delegate
@@ -274,7 +283,8 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
     @objc func createProfileButtonTapped() {
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
 
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController(),options: .transitionFlipFromLeft)
+        (UIApplication.shared.connectedScenes.first?.delegate as?
+            SceneDelegate)?.changeRootViewController(TMTabBarViewController(), options: .transitionFlipFromLeft)
     }
 
     @objc func registerButtonTapped() {
