@@ -63,6 +63,7 @@ class AKAboutPageCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
         super.setSelected(selected, animated: animated)
         self.cardContainerView.backgroundColor = selected ? #colorLiteral(red: 0.9680817723, green: 0.9634761214, blue: 0.9716416001, alpha: 1) : .clear
 

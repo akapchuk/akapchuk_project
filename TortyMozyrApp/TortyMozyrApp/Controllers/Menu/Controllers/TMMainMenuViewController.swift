@@ -52,7 +52,7 @@ class TMMainMenuViewController: AKViewController {
 
     private lazy var menuItemsCollectionView: UICollectionView = {
         let menu = UICollectionView(frame: .zero, collectionViewLayout: self.collectionLayout)
-        menu.backgroundColor = #colorLiteral(red: 0.7804753184, green: 0.8724492192, blue: 1, alpha: 1)
+        menu.backgroundColor = AKColors.lightPuprple
         menu.showsVerticalScrollIndicator = false
         menu.showsHorizontalScrollIndicator = false
         menu.delegate = self
@@ -64,21 +64,21 @@ class TMMainMenuViewController: AKViewController {
 
     private lazy var rightBarButtonItem: UIBarButtonItem = {
         let barButton = UIBarButtonItem(barButtonSystemItem: .add,
-                                     target: self,
-                                     action: #selector(rightBarButtonWasTapped))
+                                        target: self,
+                                        action: #selector(rightBarButtonWasTapped))
         return barButton
     }()
-    
+
     // MARK: - view life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.title = "Menu".localized
         self.view.backgroundColor = .white
 
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
-        
+
         self.mainView.addSubview(self.menuItemsCollectionView)
         self.menuItemsCollectionView.addSubview(tagsCollectionView)
         self.setContentScrolling(isEnabled: false)
@@ -94,12 +94,12 @@ class TMMainMenuViewController: AKViewController {
             make.width.equalToSuperview()
             make.height.equalTo(40)
         }
-        
+
         self.menuItemsCollectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - actions
 
     @objc private func rightBarButtonWasTapped() {
@@ -136,6 +136,22 @@ extension TMMainMenuViewController: UICollectionViewDelegate, UICollectionViewDa
                 self?.navigationController?.pushViewController(controller, animated: true)
             }
 
+            cell.addItemInBasket = { [weak self] in
+                let alertController = UIAlertController(title: "Done".localized,
+                                                        message: "Товар добавлен в корзину",
+                                                        preferredStyle: .actionSheet)
+                let continueAction = UIAlertAction(title: "Продолжить", style: .default) { _ in
+                }
+                alertController.addAction(continueAction)
+
+                let goToBasketAction = UIAlertAction(title: "Перейти в корзину", style: .default) { _ in
+                    self?.navigationController?.pushViewController(TMBasketViewController(), animated: true)
+                }
+                alertController.addAction(goToBasketAction)
+
+                self?.present(alertController, animated: true, completion: nil)
+            }
+
         }
         return cell
     }
@@ -149,12 +165,11 @@ extension TMMainMenuViewController: UICollectionViewDelegateFlowLayout {
         let width = ((availableWidth - self.spaceBetweenCells * (self.cellsPerRow - 1)) / self.cellsPerRow)
         return CGSize(width: width, height: width * 1.5)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return self.spaceBetweenCells
-
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

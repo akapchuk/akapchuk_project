@@ -9,12 +9,15 @@ import UIKit
 
 class TMMenuItemCell: UICollectionViewCell {
 
+    // MARK: - properties
+
     var showItem: (() -> Void)?
+    var addItemInBasket: (() -> Void)?
     
     static let reuseIdentifier = "TMMenuItemCell"
-    
+
     private let edgeInsets = UIEdgeInsets(top: 6, left: 10, bottom: 0, right: 10)
-    
+
     private var isLiked = false {
         didSet {
             self.likeIconImage.image = isLiked
@@ -25,7 +28,7 @@ class TMMenuItemCell: UICollectionViewCell {
                 ? .red : AKColors.darkGray
         }
     }
-    
+
     private var isRated = false {
         didSet {
             self.ratingStarIconImage.image = isRated
@@ -33,9 +36,9 @@ class TMMenuItemCell: UICollectionViewCell {
                 : UIImage(systemName: "star")
         }
     }
-    
+
     // MARK: - gui variables
-    
+
     private lazy var tileItemView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
@@ -43,17 +46,17 @@ class TMMenuItemCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     private lazy var likeIconImage: UIImageView = {
         let like = UIImageView()
         like.image = UIImage(systemName: "heart")
-        like.tintColor = UIColor(named: "AKDarkGray")
+        like.tintColor = AKColors.darkGray
         like.isUserInteractionEnabled = true
         like.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(likeButtonTapped)))
         like.translatesAutoresizingMaskIntoConstraints = false
         return like
     }()
-    
+
     private lazy var priceBackgroundView: UIView = {
         let priceView = UIView()
         priceView.backgroundColor = .white
@@ -68,8 +71,7 @@ class TMMenuItemCell: UICollectionViewCell {
 
     private lazy var priceLabel: UILabel = {
         let price = UILabel()
-        price.text = "29,99 BYN"
-        price.textColor = #colorLiteral(red: 0.3361774385, green: 0.3524757922, blue: 0.5931012034, alpha: 1)
+        price.textColor = AKColors.darkPurple
         price.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         price.textAlignment = .center
         price.translatesAutoresizingMaskIntoConstraints = false
@@ -114,8 +116,7 @@ class TMMenuItemCell: UICollectionViewCell {
 
     private lazy var ratingLabel: UILabel = {
         let rating = UILabel()
-        rating.text = "4,9"
-        rating.textColor = UIColor(named: "AKDarkGray")
+        rating.textColor = AKColors.darkGray
         rating.font = UIFont.systemFont(ofSize: 18, weight: .thin)
         rating.translatesAutoresizingMaskIntoConstraints = false
         return rating
@@ -165,8 +166,7 @@ class TMMenuItemCell: UICollectionViewCell {
         ])
 
         self.priceBackgroundView.addSubview(priceLabel)
-        self.ratingWhiteAreaView.addSubview(ratingStarIconImage)
-        self.ratingWhiteAreaView.addSubview(ratingLabel)
+        self.ratingWhiteAreaView.addSubview([self.ratingStarIconImage, self.ratingLabel])
         self.addToBasketAreaView.addSubview(addToBasketIconImage)
 
     }
@@ -258,7 +258,7 @@ class TMMenuItemCell: UICollectionViewCell {
     }
 
     @objc private func addToBasketButtonTapped() {
-        print("Add to Basket Button tapped")
+        self.addItemInBasket?()
     }
 
     @objc private func imageTapped() {
