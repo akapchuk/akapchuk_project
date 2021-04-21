@@ -11,11 +11,11 @@ import TTGTagCollectionView
 class TMMainMenuViewController: AKViewController {
 
     // MARK: - properties
-    
+
     private let cellsPerRow: CGFloat = 2
     private let contentInset = UIEdgeInsets(all: 5)
     private let spaceBetweenCells: CGFloat = 10
-    
+
     // MARK: - gui variables
 
     private lazy var tagsCollectionView: TTGTextTagCollectionView = {
@@ -63,21 +63,18 @@ class TMMainMenuViewController: AKViewController {
     }()
 
     private lazy var rightBarButtonItem: UIBarButtonItem = {
-        let favImage = UIImage(systemName: "heart")
-        let barButton = UIBarButtonItem(image: favImage,
-                                        landscapeImagePhone: nil,
-                                        style: .plain,
-                                        target: self,
-                                        action: #selector(rightBarButtonWasTapped))
+        let barButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                     target: self,
+                                     action: #selector(rightBarButtonWasTapped))
         return barButton
     }()
     
-    // MARK: - initialization
-    
+    // MARK: - view life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = NSLocalizedString("Menu", comment: "")
+        self.title = "Menu".localized
         self.view.backgroundColor = .white
 
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
@@ -85,11 +82,9 @@ class TMMainMenuViewController: AKViewController {
         self.mainView.addSubview(self.menuItemsCollectionView)
         self.menuItemsCollectionView.addSubview(tagsCollectionView)
         self.setContentScrolling(isEnabled: false)
-        
         self.setUpConstraints()
-
     }
-    
+
     // MARK: - set up constraints
 
     private func setUpConstraints() {
@@ -104,11 +99,11 @@ class TMMainMenuViewController: AKViewController {
             make.edges.equalToSuperview()
         }
     }
-
+    
     // MARK: - actions
 
     @objc private func rightBarButtonWasTapped() {
-
+        self.navigationController?.pushViewController(AKCreateCustomOrderViewController(), animated: true)
     }
 
 }
@@ -159,6 +154,7 @@ extension TMMainMenuViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return self.spaceBetweenCells
+
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

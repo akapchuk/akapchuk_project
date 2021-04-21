@@ -6,17 +6,13 @@
 //
 
 import UIKit
-import SnapKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - gui variables
 
-    private lazy var backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "launchScreen")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var backgroundImageView: AKCorporateBackgroundImageView = {
+        let imageView = AKCorporateBackgroundImageView()
         return imageView
     }()
 
@@ -27,7 +23,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var emailTextField: UITextField = {
         let email = UITextField()
-        email.placeholder = "Электронная почта"
+        email.placeholder = "Email".localized
         email.translatesAutoresizingMaskIntoConstraints = false
         return email
     }()
@@ -39,7 +35,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var passwordTextField: UITextField = {
         let password = UITextField()
-        password.placeholder = "Пароль"
+        password.placeholder = "Password".localized
         password.translatesAutoresizingMaskIntoConstraints = false
         return password
     }()
@@ -51,7 +47,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var telephoneTextField: UITextField = {
         let telephone = UITextField()
-        telephone.placeholder = "Телефон"
+        telephone.placeholder = "Enter your phone number".localized
         telephone.translatesAutoresizingMaskIntoConstraints = false
         return telephone
     }()
@@ -63,14 +59,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var registerButton: AKBigBlueButton = {
         let button = AKBigBlueButton()
-        button.setTitle("Зарегистрироваться", for: UIControl.State())
+        button.setTitle("Register now".localized, for: UIControl.State())
         button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         return button
     }()
 
     private lazy var backButton: AKSmallBlueButton = {
         let button = AKSmallBlueButton()
-        button.setTitle("Вернуться", for: UIControl.State())
+        button.setTitle("Back".localized, for: UIControl.State())
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -92,17 +88,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.telephoneTextField.textContentType = .telephoneNumber
 
         self.view.addSubview(backgroundImageView)
-        self.view.addSubview(whiteAreaView)
-        self.whiteAreaView.addSubview(emailTextField)
-        self.whiteAreaView.addSubview(grayEmailDividerView)
-        self.whiteAreaView.addSubview(passwordTextField)
-        self.whiteAreaView.addSubview(grayPasswordDividerView)
-        self.whiteAreaView.addSubview(telephoneTextField)
-        self.whiteAreaView.addSubview(grayTelephoneDividerView)
-        self.whiteAreaView.addSubview(registerButton)
-        self.whiteAreaView.addSubview(backButton)
+        self.view.addSubview(self.whiteAreaView)
 
-        // add gestures
+        self.whiteAreaView.addSubview([
+            self.emailTextField,
+            self.grayEmailDividerView,
+            self.passwordTextField,
+            self.grayPasswordDividerView,
+            self.telephoneTextField,
+            self.grayTelephoneDividerView,
+            self.registerButton,
+            self.backButton
+        ])
+
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewDidTapped)))
 
         self.setUpConstraints()
@@ -171,7 +169,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             make.top.equalTo(self.registerButton.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
-
     }
 
     // MARK: - actions
@@ -180,12 +177,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-    @objc func registerButtonTapped() {
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(TMTabBarViewController(),
-                                                                                                           options: .transitionFlipFromLeft)
+    @objc private func registerButtonTapped() {
+        (UIApplication.shared.connectedScenes.first?.delegate as?
+            SceneDelegate)?.changeRootViewController(TMTabBarViewController(), options: .transitionFlipFromLeft)
     }
 
-    @objc func backButtonTapped() {
+    @objc private func backButtonTapped() {
         self.dismiss(animated: false, completion: nil)
     }
 

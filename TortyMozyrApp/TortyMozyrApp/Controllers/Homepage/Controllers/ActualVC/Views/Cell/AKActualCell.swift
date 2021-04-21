@@ -9,13 +9,17 @@ import UIKit
 
 class AKActualCell: UITableViewCell {
 
+    // MARK: - properties
+
+    var showPage: (() -> Void)?
+
     static let reuseIdentifier = "AKActualCell"
 
     // MARK: - gui variables
 
     private lazy var cardContainerView: AKCustomView = {
         let view = AKCustomView()
-        view.backgroundColor = UIColor(named: "AKWhite")
+        view.backgroundColor = AKColors.white
         view.layer.cornerRadius = 15
         return view
     }()
@@ -43,12 +47,15 @@ class AKActualCell: UITableViewCell {
 
     private lazy var actionButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(named: "AKBlue")
+        button.backgroundColor = AKColors.blue
         button.layer.cornerRadius = 5
-        button.setTitle("Подробнее", for: UIControl.State())
+        button.setTitle("More details".localized, for: UIControl.State())
+        button.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
+    // MARK: - initialization
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -63,22 +70,23 @@ class AKActualCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        self.cardContainerView.backgroundColor = selected ? #colorLiteral(red: 0.9680817723, green: 0.9634761214, blue: 0.9716416001, alpha: 1) : UIColor(named: "AKWhite")
+        self.cardContainerView.backgroundColor = selected ? #colorLiteral(red: 0.9680817723, green: 0.9634761214, blue: 0.9716416001, alpha: 1) : AKColors.white
 
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
-            self.cardContainerView.backgroundColor = UIColor(named: "AKWhite")
+            self.cardContainerView.backgroundColor = AKColors.white
         }
     }
 
     func initCell() {
         self.contentView.addSubview(cardContainerView)
-        self.cardContainerView.addSubview(cardImageView)
-        self.cardContainerView.addSubview(subheaderTitleLabel)
-        self.cardContainerView.addSubview(descriptionTitleLabel)
+        self.cardContainerView.addSubview([
+            self.cardImageView,
+            self.subheaderTitleLabel,
+            self.descriptionTitleLabel,
+            self.actionButton
+        ])
 
         self.selectionStyle = .none
-
-        self.cardContainerView.addSubview(actionButton)
     }
 
     // MARK: - set up constraints
@@ -127,4 +135,9 @@ class AKActualCell: UITableViewCell {
     }
 
     // MARK: - actions
+
+    @objc private func actionButtonTapped() {
+        self.showPage?()
+    }
+
 }

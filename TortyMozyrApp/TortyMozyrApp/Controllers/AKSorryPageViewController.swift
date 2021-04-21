@@ -33,13 +33,14 @@ class AKSorryPageViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Page under construction".localized
-        self.view.backgroundColor = .white
 
+        self.view.backgroundColor = .white
         self.view.addSubview([self.messageTitleLabel,
                               self.lottieAnimationView])
 
         self.setUpConstraints()
     }
+
     // MARK: - set up constraints
 
     func setUpConstraints() {

@@ -92,7 +92,7 @@ class GreetingViewController: UIViewController {
 
     // MARK: - actions
     
-    @objc func startButtonTapped() {
+    @objc private func startButtonTapped() {
         let authPage = AuthorizationViewController()
         authPage.modalPresentationStyle = .fullScreen
         self.present(authPage, animated: false)

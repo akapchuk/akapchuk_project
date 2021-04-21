@@ -9,6 +9,8 @@ import UIKit
 
 class AKViewController: UIViewController {
 
+    // MARK: - gui variables
+
     private(set) lazy var mainScrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.showsVerticalScrollIndicator = false
@@ -20,6 +22,8 @@ class AKViewController: UIViewController {
 
     private(set) lazy var mainView = UIView()
 
+    // MARK: - view life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,14 +31,14 @@ class AKViewController: UIViewController {
         self.mainScrollView.addSubview(mainView)
 
         self.mainScrollView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
 
         self.setContentScrolling(isEnabled: true)
-
     }
+
+    // MARK: - set content scrolling
 
     func setContentScrolling(isEnabled: Bool) {
         self.mainView.snp.remakeConstraints { (make) in
@@ -44,5 +48,4 @@ class AKViewController: UIViewController {
             }
         }
     }
-
 }

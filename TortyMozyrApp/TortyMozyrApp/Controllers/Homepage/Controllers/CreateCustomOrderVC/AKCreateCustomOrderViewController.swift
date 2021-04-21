@@ -11,23 +11,23 @@ class AKCreateCustomOrderViewController: AKViewController {
 
     // MARK: - properties
 
-    fileprivate let reasons = ["День Рождения",
-                               "Для девушки",
-                               "Для коллег",
-                               "На юбилей",
-                               "Без вреда для фигуры",
-                               "Для ребёнка",
-                               "На свадьбу",
-                               "Другое. Напишу в комментарий."
+    fileprivate let reasons = ["Birthday".localized,
+                               "To a loved one".localized,
+                               "For colleagues".localized,
+                               "For the anniversary".localized,
+                               "Without harm to the figure".localized,
+                               "For a child".localized,
+                               "For the wedding".localized,
+                               "Other. I'll write in a comment.".localized
     ]
 
-    fileprivate let productTypes = ["Торт",
-                                    "Пирожные",
-                                    "Пирог",
-                                    "Орешки со сгущёнкой",
-                                    "Трубочки со сгущёнкой",
-                                    "Набор",
-                                    "Другое. Напишу в комментарий."
+    fileprivate let productTypes = ["Cake".localized,
+                                    "Dessert".localized,
+                                    "Pies".localized,
+                                    "Nuts with condensed milk".localized,
+                                    "Condensed milk rolls".localized,
+                                    "Sets".localized,
+                                    "Other. I'll write in a comment.".localized
     ]
 
     // MARK: - gui variables
@@ -136,6 +136,7 @@ class AKCreateCustomOrderViewController: AKViewController {
         self.title = "Сreate an order".localized
 
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewWasTapped)))
+
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         self.navigationItem.backButtonTitle = " "
 
@@ -162,10 +163,9 @@ class AKCreateCustomOrderViewController: AKViewController {
         self.navigationController?.pushViewController(TMMainMenuViewController(), animated: true)
     }
 
-    @objc
-    private func sendOrderButtonTapped() {
-        let alertController = UIAlertController(title: "Готово!",
-                                                message: "Заказ отправлен. Свяжемся в ближайшее время!",
+    @objc private func sendOrderButtonTapped() {
+        let alertController = UIAlertController(title: "Done".localized,
+                                                message: "The order has been sent. We will contact you shortly!".localized,
                                                 preferredStyle: .actionSheet)
         let okAction = UIAlertAction(title: "ОК", style: .default) { _ in
             self.navigationController?.pushViewController(TMHomepageViewController(), animated: true)
@@ -176,12 +176,11 @@ class AKCreateCustomOrderViewController: AKViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 
-    @objc
-    private func viewWasTapped() {
+    @objc private func viewWasTapped() {
         self.view.endEditing(true)
     }
 
-    // MARK: - methods
+    // MARK: - set up constraints
 
     private func setUpConstraints() {
 
@@ -222,7 +221,7 @@ class AKCreateCustomOrderViewController: AKViewController {
         self.sendOrderButton.snp.makeConstraints { (make) in
             make.top.equalTo(self.telephoneNumberTextField.snp.bottom).offset(40)
             make.left.right.equalToSuperview().inset(25)
-            make.bottom.equalToSuperview() // опасный
+            make.bottom.equalToSuperview()
         }
 
     }

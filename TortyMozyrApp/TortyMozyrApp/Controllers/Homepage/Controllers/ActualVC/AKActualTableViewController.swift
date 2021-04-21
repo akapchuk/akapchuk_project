@@ -36,7 +36,7 @@ class AKActualTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Актуальное"
+        self.title = "Actual".localized
         self.view.backgroundColor = .white
 
         self.tableView.separatorStyle = .none
@@ -57,8 +57,11 @@ class AKActualTableViewController: UITableViewController {
         if let cell = cell as? AKActualCell {
             cell.setCellData(image: self.images[indexPath.row] ?? #imageLiteral(resourceName: "blackberryCakeImage"),
                              imageName: self.titles[indexPath.row],
-                             imageDescription: self.descriptions[indexPath.row]
-                             /*,button: UIButton()*/)
+                             imageDescription: self.descriptions[indexPath.row])
+
+            cell.showPage = { [weak self] in
+                self?.navigationController?.pushViewController(AKSorryPageViewController(), animated: true)
+            }
         }
         return cell
     }

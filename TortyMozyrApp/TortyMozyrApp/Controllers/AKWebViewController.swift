@@ -16,6 +16,7 @@ class AKWebViewController: UIViewController {
     private var url: URL?
 
     // MARK: - gui variables
+
     private lazy var webView: WKWebView = {
         let view = WKWebView()
         view.navigationDelegate = self

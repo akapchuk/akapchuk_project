@@ -8,7 +8,7 @@
 import UIKit
 
 class TMMenuItemCell: UICollectionViewCell {
-    
+
     var showItem: (() -> Void)?
     
     static let reuseIdentifier = "TMMenuItemCell"
@@ -22,7 +22,7 @@ class TMMenuItemCell: UICollectionViewCell {
                 : UIImage(systemName: "heart")
             
             self.likeIconImage.tintColor = isLiked
-                ? .red : UIColor(named: "AKDarkGray")
+                ? .red : AKColors.darkGray
         }
     }
     
@@ -65,7 +65,7 @@ class TMMenuItemCell: UICollectionViewCell {
         priceView.translatesAutoresizingMaskIntoConstraints = false
         return priceView
     }()
-    
+
     private lazy var priceLabel: UILabel = {
         let price = UILabel()
         price.text = "29,99 BYN"
@@ -75,7 +75,7 @@ class TMMenuItemCell: UICollectionViewCell {
         price.translatesAutoresizingMaskIntoConstraints = false
         return price
     }()
-    
+
     private lazy var itemImageView: AKImageView = {
         let image = AKImageView()
         image.layer.borderColor = UIColor.white.cgColor
@@ -94,7 +94,7 @@ class TMMenuItemCell: UICollectionViewCell {
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
-    
+
     private lazy var ratingWhiteAreaView: UIView = {
         let area = UIView()
         area.backgroundColor = .white
@@ -103,7 +103,7 @@ class TMMenuItemCell: UICollectionViewCell {
         area.translatesAutoresizingMaskIntoConstraints = false
         return area
     }()
-    
+
     private lazy var ratingStarIconImage: UIImageView = {
         let star = UIImageView()
         star.image = UIImage(systemName: "star")
@@ -111,7 +111,7 @@ class TMMenuItemCell: UICollectionViewCell {
         star.translatesAutoresizingMaskIntoConstraints = false
         return star
     }()
-    
+
     private lazy var ratingLabel: UILabel = {
         let rating = UILabel()
         rating.text = "4,9"
@@ -120,7 +120,7 @@ class TMMenuItemCell: UICollectionViewCell {
         rating.translatesAutoresizingMaskIntoConstraints = false
         return rating
     }()
-    
+
     private lazy var addToBasketAreaView: UIView = {
         let area = UIView()
         area.backgroundColor = .systemOrange
@@ -129,7 +129,7 @@ class TMMenuItemCell: UICollectionViewCell {
         area.translatesAutoresizingMaskIntoConstraints = false
         return area
     }()
-    
+
     private lazy var addToBasketIconImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "cart.fill.badge.plus")
@@ -137,23 +137,23 @@ class TMMenuItemCell: UICollectionViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
+
     // MARK: - init cell
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         self.initView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func initView() {
-        
+
         self.translatesAutoresizingMaskIntoConstraints = false
-        
+
         self.contentView.addSubview(tileItemView)
         self.tileItemView.addSubview([
             self.likeIconImage,
@@ -163,65 +163,66 @@ class TMMenuItemCell: UICollectionViewCell {
             self.ratingWhiteAreaView,
             self.addToBasketAreaView
         ])
+
         self.priceBackgroundView.addSubview(priceLabel)
         self.ratingWhiteAreaView.addSubview(ratingStarIconImage)
         self.ratingWhiteAreaView.addSubview(ratingLabel)
         self.addToBasketAreaView.addSubview(addToBasketIconImage)
-        
+
     }
-    
+
     // MARK: - set up constraints
-    
+
     override func updateConstraints() {
-        
+
         self.tileItemView.snp.updateConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
+
         self.likeIconImage.snp.updateConstraints { (make) in
             make.size.equalTo(28)
             make.left.top.equalToSuperview().inset(5)
         }
-        
+
         self.priceBackgroundView.snp.updateConstraints { (make) in
             make.top.right.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.6)
             make.height.equalTo(30)
         }
-        
+
         self.priceLabel.snp.updateConstraints { (make) in
             make.center.equalToSuperview()
         }
-        
+
         self.itemImageView.snp.updateConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().multipliedBy(0.8)
             make.size.equalTo(120)
         }
-        
+
         self.titleLabel.snp.updateConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
             make.top.equalTo(self.itemImageView.snp.bottom).offset(5)
-            
+
         }
-        
+
         self.ratingWhiteAreaView.snp.updateConstraints { (make) in
             make.left.bottom.equalToSuperview().inset(10)
             make.width.equalToSuperview().multipliedBy(0.35)
             make.height.equalTo(30)
         }
-        
+
         self.ratingStarIconImage.snp.updateConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().inset(5)
         }
-        
+
         self.ratingLabel.snp.updateConstraints { (make) in
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().inset(5)
         }
-        
+
         self.addToBasketAreaView.snp.updateConstraints { (make) in
             make.left.equalTo(self.ratingWhiteAreaView.snp.right).offset(20)
             make.right.bottom.equalToSuperview().inset(10)
@@ -250,18 +251,18 @@ class TMMenuItemCell: UICollectionViewCell {
         self.isLiked.toggle()
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
     }
-    
+
     @objc private func ratingButtonTapped() {
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()
         self.isRated.toggle()
     }
-    
+
     @objc private func addToBasketButtonTapped() {
         print("Add to Basket Button tapped")
     }
-    
+
     @objc private func imageTapped() {
         self.showItem?()
     }
-    
+
 }

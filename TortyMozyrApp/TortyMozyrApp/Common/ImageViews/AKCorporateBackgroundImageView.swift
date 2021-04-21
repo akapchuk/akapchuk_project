@@ -30,5 +30,3 @@ class AKCorporateBackgroundImageView: UIImageView {
     }
 
 }
-
-// Создать класс наследуемый от UIView . В методе иницаизатора установить настройки.

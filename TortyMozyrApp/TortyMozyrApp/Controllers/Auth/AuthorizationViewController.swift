@@ -287,7 +287,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
             SceneDelegate)?.changeRootViewController(TMTabBarViewController(), options: .transitionFlipFromLeft)
     }
 
-    @objc func registerButtonTapped() {
+    @objc private func registerButtonTapped() {
         let registerVC = RegisterViewController()
         registerVC.modalPresentationStyle = .fullScreen
         self.present(registerVC, animated: false)
@@ -297,15 +297,15 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-    @objc func appleIDButtonTapped() {
+    @objc private func appleIDButtonTapped() {
         print("Apple ID Button Was Tapped")
     }
 
-    @objc func facebookButtonTapped() {
+    @objc private func facebookButtonTapped() {
         print("Facebooke Button Was Tapped")
     }
 
-    @objc func googleButtonTapped() {
+    @objc private func googleButtonTapped() {
         print("Google Button Was Tapped")
     }
 }
