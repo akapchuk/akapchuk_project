@@ -22,6 +22,14 @@
 "For every 5th cake" = "На каждый 5-й торт";
 "All May" = "Весь Май";
 
+// MARK: - AKCreateCustomOrderViewController
+"Custom order" = "Персональный заказ";
+"Name" = "Ваше имя";
+"Reason for the order" = "По какому поводу заказ?";
+"What type of product are you interested" = "Какой тип товара вас интересует?";
+"Enter your phone number" = "Введите номер телефона";
+"Send an order" = "Отправить заказ";
+
 // MARK: - storiesData
 "Merengue" = "Меренговый рулет";
 "Birthday" = "На ДР";
@@ -31,8 +39,6 @@
 "Cakes in Mozyr" = "Торты в Мозыре";
 "Pies" = "Пироги";
 "Cupcakes" = "Капкейки";
-
-// MARK: - promotionsData
 
 // MARK: - GreetingViewController
 "Start" = "Начать";
@@ -61,7 +67,7 @@
 
 // MARK: - TMMainMenuViewController
 "Honey Cake" = "Медовик";
-"Red velvet" = "Красный Бархат";
+"Red Velvet" = "Красный Бархат";
 "Strawberry pie" = "Клубничный пирог";
 "Condensed milk rolls" = "Трубочки со сгущёнкой";
 "Pear pie" = "Грушевый пирог";
@@ -76,3 +82,12 @@
 "Choco Balls Description" = "Берёте широкую чашку, готовите горячее молоко, заливаете им шоколадные-шар и смотрите с нетерпением, когда уже зефирки вырвутся на свободу.";
 "Cupcakes Description" = "Шоколадные капкейки со сливочным кремом никого не оставят равнодушным! ";
 "Napoleon Description" = "Вкусный, нежный, слоёный домашний торт Наполеон. ";
+
+"Cake" = "Торт";
+"Dessert" = "Десерт";
+"Gift" = "Подарок";
+"To a loved one" = "Любимому человеку";
+"Childhood desserts" = "Десерты детства";
+
+// MARK: - Other
+"Page under construction" = "Страница находится в разработке";

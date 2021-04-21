@@ -9,7 +9,7 @@ import UIKit
 
 class TMTabBarViewController: UITabBarController {
 
-    // MARK: - app life cycle
+    // MARK: - view life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,27 +17,27 @@ class TMTabBarViewController: UITabBarController {
         // MARK: - tab bar configuration
 
         let homepageController = TMHomepageViewController()
-        homepageController.tabBarItem = UITabBarItem(title: NSLocalizedString("Homepage", comment: ""),
+        homepageController.tabBarItem = UITabBarItem(title: "Homepage".localized,
                                                      image: UIImage(systemName: "house.circle"),
                                                      selectedImage: UIImage(systemName: "house.circle.fill"))
 
         let menuController = TMMainMenuViewController()
-        menuController.tabBarItem = UITabBarItem(title: NSLocalizedString("Menu", comment: ""),
+        menuController.tabBarItem = UITabBarItem(title: "Menu".localized,
                                                  image: UIImage(systemName: "line.horizontal.3.circle"),
                                                  selectedImage: UIImage(systemName: "line.horizontal.3.circle.fill"))
 
         let deliveryController = TMDeliveryVC()
-        deliveryController.tabBarItem = UITabBarItem(title: NSLocalizedString("Delivery", comment: ""),
+        deliveryController.tabBarItem = UITabBarItem(title: "Delivery".localized,
                                                      image: UIImage(systemName: "car.circle"),
                                                      selectedImage: UIImage(systemName: "car.circle.fill"))
 
         let basketController = TMBasketViewController()
-        basketController.tabBarItem = UITabBarItem(title: NSLocalizedString("Basket", comment: ""),
+        basketController.tabBarItem = UITabBarItem(title: "Basket".localized,
                                                    image: UIImage(systemName: "cart.circle"),
                                                    selectedImage: UIImage(systemName: "cart.circle.fill"))
 
         let moreController = TMMoreViewController()
-        moreController.tabBarItem = UITabBarItem(title: NSLocalizedString("More", comment: ""),
+        moreController.tabBarItem = UITabBarItem(title: "More".localized,
                                                  image: UIImage(systemName: "ellipsis.circle"),
                                                  selectedImage: UIImage(systemName: "ellipsis.circle.fill"))
 
@@ -53,26 +53,24 @@ class TMTabBarViewController: UITabBarController {
     }
 
     func setTabBarAppearance() {
-        self.tabBar.barTintColor = UIColor(named: "AKWhite")
-        self.tabBar.tintColor = UIColor(named: "AKBlue")
-        self.tabBar.unselectedItemTintColor = UIColor(named: "AKLightGray")
-        self.tabBar.itemPositioning = .automatic
-        //        self.tabBar.isTranslucent = true
-
-        // Tab Bar Shadow configure
+        self.tabBar.unselectedItemTintColor = AKColors.lightGray
+        self.tabBar.barTintColor = AKColors.white
+        self.tabBar.tintColor = AKColors.blue
+        self.tabBar.layer.shadowColor = AKColors.blue?.cgColor
         self.tabBar.layer.shadowOffset = CGSize(width: 0, height: -5)
         self.tabBar.layer.shadowRadius = 5
         self.tabBar.layer.shadowOpacity = 0.2
-        self.tabBar.layer.shadowColor = UIColor(named: "AKBlue")?.cgColor
+        self.tabBar.itemPositioning = .automatic
     }
 
     // MARK: - tab bar icons animation
+
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = self.tabBar.items?.firstIndex(of: item),
               let imageView = tabBar.subviews[index + 1].subviews.first as? UIImageView else { return }
 
         UIView.animate(withDuration: 0.5,
-                       delay: 0, // задержка перед анимацией
+                       delay: 0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.5,
                        options: .curveEaseInOut) {
@@ -80,7 +78,7 @@ class TMTabBarViewController: UITabBarController {
             imageView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
 
             UIView.animate(withDuration: 0.5,
-                           delay: 0.2, // задержка перед анимацией
+                           delay: 0.2,
                            usingSpringWithDamping: 0.5,
                            initialSpringVelocity: 0.5,
                            options: .curveEaseInOut) {

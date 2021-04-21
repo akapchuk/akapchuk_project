@@ -11,10 +11,10 @@ import Lottie
 class AKSorryPageViewController: UIViewController {
     
     // MARK: - gui variables
-    
+
     private lazy var messageTitleLabel: AKDescriptionTitleLabel = {
         let text = AKDescriptionTitleLabel()
-        text.text = NSLocalizedString("Sorry Message", comment: "")
+        text.text = "Sorry Message".localized
         return text
     }()
 
@@ -32,11 +32,11 @@ class AKSorryPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Страница в разработке"
+        self.title = "Page under construction".localized
         self.view.backgroundColor = .white
 
-        self.view.addSubview(messageTitleLabel)
-        self.view.addSubview(lottieAnimationView)
+        self.view.addSubview([self.messageTitleLabel,
+                              self.lottieAnimationView])
 
         self.setUpConstraints()
     }
@@ -56,7 +56,4 @@ class AKSorryPageViewController: UIViewController {
         }
 
     }
-
-    // MARK: - actions
-
 }

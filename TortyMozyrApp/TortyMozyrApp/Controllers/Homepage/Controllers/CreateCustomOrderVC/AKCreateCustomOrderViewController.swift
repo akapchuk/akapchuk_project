@@ -51,7 +51,7 @@ class AKCreateCustomOrderViewController: AKViewController {
 
     private lazy var headerTitleLabel: AKSubheaderTitleLabel = {
         let title = AKSubheaderTitleLabel()
-        title.text = "Персональный заказ"
+        title.text = "Custom order".localized
         title.textColor = .white
         return title
     }()
@@ -59,7 +59,7 @@ class AKCreateCustomOrderViewController: AKViewController {
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.placeholder = "Ваше имя"
+        textField.placeholder = "Name".localized
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = self
         return textField
@@ -69,7 +69,7 @@ class AKCreateCustomOrderViewController: AKViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.inputView = self.reasonsPickerView
-        textField.placeholder = "По какому поводу заказ?"
+        textField.placeholder = "Reason for the order".localized
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -85,7 +85,7 @@ class AKCreateCustomOrderViewController: AKViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.inputView = self.productTypePickerView
-        textField.placeholder = "Какой тип товара вас интересует?"
+        textField.placeholder = "What type of product are you interested".localized
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -100,7 +100,7 @@ class AKCreateCustomOrderViewController: AKViewController {
     private lazy var telephoneNumberTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.placeholder = "Введите номер телефона"
+        textField.placeholder = "Enter your phone number".localized
         textField.keyboardType = .numberPad
         textField.textContentType = .telephoneNumber
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +110,7 @@ class AKCreateCustomOrderViewController: AKViewController {
 
     private lazy var sendOrderButton: AKSystemButton = {
         let button = AKSystemButton()
-        button.setTitle("Отправить заказ", for: UIControl.State())
+        button.setTitle("Send an order".localized, for: UIControl.State())
         button.backgroundColor = .systemOrange
         button.addTarget(self, action: #selector(sendOrderButtonTapped), for: .touchUpInside)
         button.layer.borderWidth = 3

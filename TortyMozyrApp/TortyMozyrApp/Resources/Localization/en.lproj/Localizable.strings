@@ -22,6 +22,14 @@
 "For every 5th cake" = "For every 5th cake";
 "All May" = "All May";
 
+// MARK: - AKCreateCustomOrderViewController
+"Custom order" = "Custom order";
+"Name" = "Name";
+"Reason for the order" = "What is the reason for the order?";
+"What type of product are you interested" = "Product are you interested in?";
+"Enter your phone number" = "Enter your phone number";
+"Send an order" = "Send an order";
+
 // MARK: - storiesData
 "Merengue" = "Merengue roll";
 "Birthday" = "Birthday";
@@ -31,8 +39,6 @@
 "Cakes in Mozyr" = "Cakes in Mozyr";
 "Pies" = "Pies";
 "Cupcakes" = "Cupcakes";
-
-// MARK: - promotionsData
 
 // MARK: - GreetingViewController
 "Start" = "Start";
@@ -76,4 +82,13 @@
 "Choco Balls Description" = "Take a wide cup, make hot milk, pour it a chocolate ball and look impatiently when the marshmallows will break free.";
 "Cupcakes Description" = "Chocolate cupcakes with butter cream will leave no one indifferent!";
 "Napoleon Description" = "Delicious, tender, layered homemade Napoleon cake.";
+
+"Cake" = "Cake";
+"Dessert" = "Dessert";
+"Gift" = "Gift";
+"To a loved one" = "To a loved one";
+"Childhood desserts" = "Childhood desserts";
+
+// MARK: - Other
+"Page under construction" = "This page is under construction";
 

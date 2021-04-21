@@ -227,26 +227,25 @@ class TMMenuItemCell: UICollectionViewCell {
             make.right.bottom.equalToSuperview().inset(10)
             make.height.equalTo(30)
         }
-        
+
         self.addToBasketIconImage.snp.updateConstraints { (make) in
             make.center.equalToSuperview()
         }
-        
+
         super.updateConstraints()
     }
-    
+
     func set(data: CustomMenuData) {
         self.titleLabel.text = data.title
-        // Force Unwrap
-        self.priceLabel.text = "\(String(data.price!)) BYN"
+        self.priceLabel.text = "\(String(data.price ?? 0)) BYN"
         self.ratingLabel.text = data.rating
         self.itemImageView.image = UIImage(named: data.image ?? "launchScreen")
-        
+
         self.setNeedsUpdateConstraints()
     }
-    
+
     // MARK: - actions
-    
+
     @objc private func likeButtonTapped() {
         self.isLiked.toggle()
         UIImpactFeedbackGenerator(style: .soft).impactOccurred()

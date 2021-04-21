@@ -9,6 +9,8 @@ import UIKit
 import TTGTagCollectionView
 
 class TMMainMenuViewController: AKViewController {
+
+    // MARK: - properties
     
     private let cellsPerRow: CGFloat = 2
     private let contentInset = UIEdgeInsets(all: 5)
@@ -21,14 +23,16 @@ class TMMainMenuViewController: AKViewController {
         let textTagConfig = TTGTextTagConfig()
         textTagConfig.backgroundColor = .systemBlue
         textTagConfig.textColor = .white
-        tags.addTags(["Торт",
-                      "Десерт",
-                      "Подарок",
-                      "Пирог",
-                      "Наборы",
-                      "Десерты детства",
-                      "На День Рождения",
-                      "Любимому человеку"], with: textTagConfig)
+
+        tags.addTags(["Cake".localized,
+                      "Dessert".localized,
+                      "Gift".localized,
+                      "Pies".localized,
+                      "Sets".localized,
+                      "Childhood desserts".localized,
+                      "Birthday".localized,
+                      "To a loved one".localized], with: textTagConfig)
+
         tags.scrollDirection = .horizontal
         tags.layer.backgroundColor = UIColor.clear.cgColor
         tags.showsHorizontalScrollIndicator = false
@@ -100,13 +104,13 @@ class TMMainMenuViewController: AKViewController {
             make.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - actions
 
     @objc private func rightBarButtonWasTapped() {
 
     }
-    
+
 }
 
 // MARK: - extensions
@@ -136,9 +140,8 @@ extension TMMainMenuViewController: UICollectionViewDelegate, UICollectionViewDa
                 controller.title = "Товар"
                 self?.navigationController?.pushViewController(controller, animated: true)
             }
-            
+
         }
-        
         return cell
     }
 

@@ -35,7 +35,6 @@
 		1181BD022618775500B42647 /* AKActualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BD012618775500B42647 /* AKActualCell.swift */; };
 		1181BD07261878E900B42647 /* AKActualTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1181BD06261878E900B42647 /* AKActualTableViewController.swift */; };
 		11845F01262DB5B4005A84CD /* developing.json in Resources */ = {isa = PBXBuildFile; fileRef = 11845F00262DB5B4005A84CD /* developing.json */; };
-		11845F05262DB7E2005A84CD /* AKBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11845F04262DB7E2005A84CD /* AKBlurEffect.swift */; };
 		11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5525F3D49F00C412FF /* TMBasketViewController.swift */; };
 		11852E5A25F3D4E000C412FF /* TMMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5925F3D4E000C412FF /* TMMoreViewController.swift */; };
 		11852E5D25F3D54F00C412FF /* TMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */; };
@@ -117,7 +116,6 @@
 		1181BD012618775500B42647 /* AKActualCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKActualCell.swift; sourceTree = "<group>"; };
 		1181BD06261878E900B42647 /* AKActualTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKActualTableViewController.swift; sourceTree = "<group>"; };
 		11845F00262DB5B4005A84CD /* developing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = developing.json; sourceTree = "<group>"; };
-		11845F04262DB7E2005A84CD /* AKBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBlurEffect.swift; sourceTree = "<group>"; };
 		11852E5525F3D49F00C412FF /* TMBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMBasketViewController.swift; sourceTree = "<group>"; };
 		11852E5925F3D4E000C412FF /* TMMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMMoreViewController.swift; sourceTree = "<group>"; };
 		11852E5C25F3D54F00C412FF /* TMTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTabBarViewController.swift; sourceTree = "<group>"; };
@@ -387,14 +385,6 @@
 				1181BD012618775500B42647 /* AKActualCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		11845F03262DB7B9005A84CD /* VisualEffects */ = {
-			isa = PBXGroup;
-			children = (
-				11845F04262DB7E2005A84CD /* AKBlurEffect.swift */,
-			);
-			path = VisualEffects;
 			sourceTree = "<group>";
 		};
 		11852E6025F3DCFA00C412FF /* Auth */ = {
@@ -678,7 +668,6 @@
 			isa = PBXGroup;
 			children = (
 				11B4D287262EF5080074875B /* Colors */,
-				11845F03262DB7B9005A84CD /* VisualEffects */,
 				1145DEEC2628305800F2B2AA /* AnimationView */,
 				11DEAE0E261732B3002B8D03 /* DataSaving */,
 				1121CD412627843300A81804 /* CollectionViewLayout */,
@@ -999,7 +988,6 @@
 				11AE541925FB99000064B3EA /* AKSmallBlueButton.swift in Sources */,
 				11DE86F125ED83C000CFFD69 /* AppDelegate.swift in Sources */,
 				1110544925FBA0F8002A6E79 /* AKSubheaderTitleLabel.swift in Sources */,
-				11845F05262DB7E2005A84CD /* AKBlurEffect.swift in Sources */,
 				114B697A2626389F00376E11 /* CustomDeliveryData.swift in Sources */,
 				11DEAE0C261709AD002B8D03 /* AKFavouriteViewController.swift in Sources */,
 				11DEAE1F26178A8E002B8D03 /* Date+Ex.swift in Sources */,

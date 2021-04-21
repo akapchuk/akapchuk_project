@@ -95,7 +95,11 @@ class TMHomepageViewController: AKViewController {
     private lazy var actualActionButton: AKSystemButton = {
         let button = AKSystemButton()
         button.backgroundColor = AKColors.orange
-        button.setTitle("Смотреть", for: .normal)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = AKColors.white?.cgColor
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        button.addTarget(self, action: #selector(actualImageWasTapped), for: .touchUpInside)
+        button.setTitle("Watch".localized, for: .normal)
         return button
     }()
 

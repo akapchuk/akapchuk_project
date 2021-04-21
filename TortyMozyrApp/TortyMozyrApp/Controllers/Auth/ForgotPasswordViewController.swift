@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
@@ -22,7 +21,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var whiteAreaView: UIView = {
         let whiteView = UIView()
-        whiteView.backgroundColor = UIColor(named: "AKWhite")
+        whiteView.backgroundColor = AKColors.white
         whiteView.layer.cornerRadius = 40
         whiteView.layer.maskedCorners = [
             .layerMinXMinYCorner,
@@ -77,13 +76,18 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                               action: #selector(self.viewDidTapped)))
 
-        self.view.addSubview(backgroundImageView)
-        self.view.addSubview(whiteAreaView)
-        self.view.addSubview(titleLabel)
-        self.whiteAreaView.addSubview(emailTextField)
+        self.view.addSubview([
+            self.backgroundImageView,
+            self.whiteAreaView,
+            self.titleLabel
+        ])
+
+        self.whiteAreaView.addSubview([
+            self.emailTextField,
+            self.sendNewPasswordButton,
+            self.backButton
+        ])
         self.emailTextField.addSubview(grayEmailDividerView)
-        self.whiteAreaView.addSubview(sendNewPasswordButton)
-        self.whiteAreaView.addSubview(backButton)
 
         self.setUpConstraints()
     }

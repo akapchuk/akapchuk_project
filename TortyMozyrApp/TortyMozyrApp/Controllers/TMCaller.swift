@@ -44,12 +44,12 @@ class TMCaller {
             }
         }
     }
-    
+
     class func canOpenUrl(_ urlString: String) -> Bool {
         guard let url = URL(string: urlString) else { return false }
         return UIApplication.shared.canOpenURL(url)
     }
-    
+
     @discardableResult
     class func openUrl(_ urlString: String,
                        options: [UIApplication.OpenExternalURLOptionsKey: Any] = [:],
@@ -58,7 +58,7 @@ class TMCaller {
         UIApplication.shared.open(url, options: options, completionHandler: completion)
         return true
     }
-    
+
     class func openPhone(_ phone: String) {
         self.openUrl("tel://" + phone)
     }
@@ -67,7 +67,7 @@ class TMCaller {
     class func openMail(emailSubject: String, toEmail: String, body: String) -> Bool {
         return self.openUrl("mailto:\(toEmail)?subject=\(emailSubject)&body=\(body)")
     }
-    
+
     @discardableResult
     class func openMail(emailSubject: String, toEmail: String, url: URL? = nil) -> Bool {
         var bodyString: String = ""
@@ -77,7 +77,7 @@ class TMCaller {
         let path = "mailto:\(toEmail)?subject=\(emailSubject)\(bodyString)"
         return self.openUrl(path)
     }
-    
+
     class func open(socialNetwork: SocialNetwork) {
         let (appScheme, url) = socialNetwork.openUrls
         guard let scheme = appScheme, self.openUrl(scheme) else {
@@ -85,8 +85,7 @@ class TMCaller {
             return
         }
     }
-    
-    /// true - if at least one email account is enabled on the device
+
     @discardableResult
     class func openMailWithVC(emailSubject: String = "",
                               toEmail: String,
@@ -94,7 +93,7 @@ class TMCaller {
                               isHTML: Bool = false,
                               delegate: MFMailComposeViewControllerDelegate) -> Bool {
         guard MFMailComposeViewController.canSendMail() else { return false }
-        
+
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = delegate
         mailVC.setSubject(emailSubject)
@@ -102,9 +101,7 @@ class TMCaller {
         if let body = body {
             mailVC.setMessageBody(body, isHTML: isHTML)
         }
-        //        MWI.sh.currentNavController.present(mailVC, animated: true)
-        
+
         return true
     }
 }
-

@@ -68,7 +68,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var appleIDView: UIView = {
         let orangeView = UIView()
-        orangeView.backgroundColor = UIColor(named: "AKOrange")
+        orangeView.backgroundColor = AKColors.orange
         orangeView.layer.cornerRadius = 8
         orangeView.translatesAutoresizingMaskIntoConstraints = false
         return orangeView
@@ -83,7 +83,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var facebookView: UIView = {
         let orangeView = UIView()
-        orangeView.backgroundColor = UIColor(named: "AKOrange")
+        orangeView.backgroundColor = AKColors.orange
         orangeView.layer.cornerRadius = 8
         orangeView.translatesAutoresizingMaskIntoConstraints = false
         return orangeView
@@ -98,7 +98,7 @@ class AuthorizationViewController: UIViewController, UITextFieldDelegate {
 
     private lazy var googleView: UIView = {
         let orangeView = UIView()
-        orangeView.backgroundColor = UIColor(named: "AKOrange")
+        orangeView.backgroundColor = AKColors.orange
         orangeView.layer.cornerRadius = 8
         orangeView.translatesAutoresizingMaskIntoConstraints = false
         return orangeView
