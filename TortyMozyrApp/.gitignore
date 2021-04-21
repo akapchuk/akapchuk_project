@@ -1,5 +1,3 @@
-
-####
 # Xcode
 .DS_Store
 */build/*
@@ -18,8 +16,18 @@ DerivedData
 .idea/
 *.hmap
 UserInterfaceState.xcuserstate
+Pods/
 *.xccheckout
-
+Build/
 ####
-#Pods
-#Pods/
+# Carthage
+Carthage/Build.rbenv-vars
+!Cartfile
+!Cartfile.private
+!Cartfile.resolved
+####
+# rbenv
+.rbenv-vars
+#CI
+.build/
+.vendor/

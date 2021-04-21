@@ -43,6 +43,7 @@ class StoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.backButtonTitle = " "
 
         self.view.addSubview([
             self.storiesImageView,
@@ -118,11 +119,12 @@ class StoriesViewController: UIViewController {
     // MARK: - actions
 
     private func storiesEnded() {
-        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
             self.navigationController?.pushViewController(TMHomepageViewController(), animated: true)
         }
 
-        timer.invalidate() // вынести
+//        timer.invalidate() // вынести
+//        timer.fire()
 
     }
 
