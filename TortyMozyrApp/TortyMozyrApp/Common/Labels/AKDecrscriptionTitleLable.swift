@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class AKDescriptionTitleLabel: UILabel {
 
     override init(frame: CGRect) {
@@ -20,7 +19,7 @@ class AKDescriptionTitleLabel: UILabel {
     }
 
     private func setUpLabel() {
-        textColor = UIColor(named: "AKLightGray")
+        textColor = AKColors.darkGray
         font = UIFont.systemFont(ofSize: 15, weight: .light)
         textAlignment = .center
         numberOfLines = 0

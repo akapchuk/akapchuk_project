@@ -19,7 +19,7 @@ class AKHeaderTitleLabel: UILabel {
     }
 
     private func setUpLabel() {
-        textColor = UIColor(named: "AKDarkGray")
+        textColor = AKColors.darkGray
         font = UIFont.systemFont(ofSize: 35, weight: .heavy)
         textAlignment = .left
         translatesAutoresizingMaskIntoConstraints = false

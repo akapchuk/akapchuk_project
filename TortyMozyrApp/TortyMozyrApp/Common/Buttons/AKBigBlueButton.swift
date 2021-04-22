@@ -24,7 +24,7 @@ class AKBigBlueButton: UIButton {
     }
 
     private func setUpButton() {
-        setTitleColor(UIColor(named: "AKWhite"), for: UIControl.State())
+        setTitleColor(AKColors.white, for: UIControl.State())
         backgroundColor = AKColors.blue
         titleLabel?.font = UIFont.systemFont(ofSize: 17)
         translatesAutoresizingMaskIntoConstraints = false

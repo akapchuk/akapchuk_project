@@ -19,7 +19,7 @@ class AKSubheaderTitleLabel: UILabel {
     }
 
     private func setUpLabel() {
-        textColor = UIColor(named: "AKDarkGray")
+        textColor = AKColors.darkGray
         font = UIFont.systemFont(ofSize: 25, weight: .heavy)
         numberOfLines = 0
         translatesAutoresizingMaskIntoConstraints = false
