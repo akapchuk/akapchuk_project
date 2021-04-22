@@ -10,6 +10,8 @@ import SnapKit
 
 class AKBasketItemCell: UITableViewCell {
 
+    // MARK: - properties
+
     static let reuseIdentifier = "AKBasketItemCell"
 
     var ratingWasTapped: (() -> Void)?
@@ -85,6 +87,8 @@ class AKBasketItemCell: UITableViewCell {
         stepper.translatesAutoresizingMaskIntoConstraints = false
         return stepper
     }()
+
+    // MARK: - cell initialization
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

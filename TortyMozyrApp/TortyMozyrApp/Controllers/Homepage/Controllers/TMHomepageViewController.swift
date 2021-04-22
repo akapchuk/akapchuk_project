@@ -54,6 +54,38 @@ class TMHomepageViewController: AKViewController {
                           storiesContenImage: "medovikBirthdayStoriesImage")
     ]
 
+    let videosData = [
+        CustomVideosData(title: "Первое видео",
+                         id: "D5tdtncYeXs"),
+
+        CustomVideosData(title: "Второе видео",
+                         id: "hpikLBH8B88"),
+
+        CustomVideosData(title: "Третье видео",
+                         id: "isIgQQG2gHQ")
+    ]
+
+    let promotionsData = [
+        CustomPromotionsData(title: "For all the pies".localized,
+                             image: #imageLiteral(resourceName: "strawberryPieImage"),
+                             url: "google.com",
+                             color: .systemYellow,
+                             percent: "-10%"),
+
+        CustomPromotionsData(title: "For every 5th cake".localized,
+                             image: #imageLiteral(resourceName: "medovikSecondImage"),
+                             url: "google.com",
+                             color: .systemTeal,
+                             percent: "-25%"),
+
+        CustomPromotionsData(title: "All May".localized,
+                             image: #imageLiteral(resourceName: "trubochkiSecondImage"),
+                             url: "google.com",
+                             color: .systemIndigo,
+                             percent: "-5%")
+    ]
+
+
     private let edgeInsets: UIEdgeInsets =  UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20)
     private let imageSize =  CGSize(width: 50, height: 50)
 
@@ -260,9 +292,9 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
         if collectionView == self.storiesCollectionView {
             return storiesData.count
         } else if collectionView == self.promotionsCollectionView {
-            return promotionsData.count
+            return self.promotionsData.count
         } else {
-            return videosData.count
+            return self.videosData.count
         }
     }
 
@@ -286,14 +318,14 @@ extension TMHomepageViewController: UICollectionViewDelegateFlowLayout, UICollec
         } else if collectionView == self.promotionsCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKPromotionsCell.reuseIdentifier, for: indexPath)
             if let cell = cell as? AKPromotionsCell {
-                cell.set(data: promotionsData[indexPath.row])
+                cell.set(data: self.promotionsData[indexPath.row])
             }
 
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AKVideoCell.reuseIdentifier, for: indexPath)
             if let cell = cell as? AKVideoCell {
-                cell.set(data: videosData[indexPath.row])
+                cell.set(data: self.videosData[indexPath.row])
             }
 
             return cell

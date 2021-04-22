@@ -17,7 +17,6 @@ class AKBigBlueButton: UIButton {
         super.init(frame: frame)
 
         setUpButton()
-
     }
 
     required init?(coder: NSCoder) {

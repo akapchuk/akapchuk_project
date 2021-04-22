@@ -9,9 +9,13 @@ import UIKit
 
 class AKStoriesCell: UICollectionViewCell {
 
+    // MARK: - properties
+
     static let reuseIdentifier = "AKStoriesCell"
 
     var showStories: (() -> Void)?
+
+    // MARK: - gui variables
 
     private lazy var colorCircleStoriesView: AKCustomView = {
         let view = AKCustomView()
@@ -47,7 +51,6 @@ class AKStoriesCell: UICollectionViewCell {
         colorCircleStoriesView.addSubview(whiteCircleStoriesView)
         whiteCircleStoriesView.addSubview(storiesImageView)
         colorCircleStoriesView.addSubview(storiesTitle)
-
     }
 
     required init?(coder: NSCoder) {

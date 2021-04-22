@@ -19,7 +19,6 @@ class AKWebViewController: UIViewController {
 
     private lazy var webView: WKWebView = {
         let view = WKWebView()
-        view.navigationDelegate = self
         return view
     }()
 
@@ -66,10 +65,4 @@ class AKWebViewController: UIViewController {
             }
         }
     }
-}
-
-// MARK: - extensions
-
-extension AKWebViewController: WKNavigationDelegate {
-
 }

@@ -11,7 +11,7 @@ class AKCreateCustomOrderViewController: AKViewController {
 
     // MARK: - properties
 
-    fileprivate let reasons = ["Birthday".localized,
+    private let reasons = ["Birthday".localized,
                                "To a loved one".localized,
                                "For colleagues".localized,
                                "For the anniversary".localized,
@@ -21,7 +21,7 @@ class AKCreateCustomOrderViewController: AKViewController {
                                "Other. I'll write in a comment.".localized
     ]
 
-    fileprivate let productTypes = ["Cake".localized,
+    private let productTypes = ["Cake".localized,
                                     "Dessert".localized,
                                     "Pies".localized,
                                     "Nuts with condensed milk".localized,

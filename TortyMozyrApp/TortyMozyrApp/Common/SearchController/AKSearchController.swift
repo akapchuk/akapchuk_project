@@ -14,8 +14,6 @@ class AKSearchController: UISearchContainerViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 

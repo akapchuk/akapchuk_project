@@ -20,29 +20,30 @@ class AKVideoCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     // MARK: - cell initialization
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         contentView.addSubview(playerView)
         self.setNeedsUpdateConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - set up constraints
-    
+
     override func updateConstraints() {
-        
+
         self.playerView.snp.updateConstraints { (make) in
             make.width.equalTo(300)
             make.height.equalTo(150)
+            make.edges.equalToSuperview()
         }
-        
+
         super.updateConstraints()
     }
 
@@ -50,8 +51,6 @@ class AKVideoCell: UICollectionViewCell {
 
     func set(data: CustomVideosData) {
         self.playerView.load(withVideoId: data.id)
-
-        self.setNeedsUpdateConstraints()
     }
-    
+
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class AKAboutViewController: UITableViewController {
 
+    // MARK: - properties
+
     var images = [
         UIImage(named: "about.mozyr"),
         UIImage(named: "about.experience"),
@@ -30,7 +32,7 @@ class AKAboutViewController: UITableViewController {
         "Нас выбирают крупнейшие компании за высокое качество и индивидуальный подход. В век массмаркета особую ценность приобретают подарки, сделанные вручную и с душой. Мы нанесем Ваш съедобный логотип на любое угощение."
     ]
 
-    // MARK: - app life cycle
+    // MARK: - view life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

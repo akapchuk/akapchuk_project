@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 //private lazy var alreadyHaveAccountStackView: UIStackView = {
 //    let text = AKDescriptionTitleLabel()
 //    text.text = "Нет аккаунта?"

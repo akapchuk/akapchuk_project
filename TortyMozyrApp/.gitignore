@@ -19,15 +19,18 @@ UserInterfaceState.xcuserstate
 Pods/
 *.xccheckout
 Build/
+
 ####
 # Carthage
 Carthage/Build.rbenv-vars
 !Cartfile
 !Cartfile.private
 !Cartfile.resolved
+
 ####
 # rbenv
 .rbenv-vars
+
 #CI
 .build/
 .vendor/

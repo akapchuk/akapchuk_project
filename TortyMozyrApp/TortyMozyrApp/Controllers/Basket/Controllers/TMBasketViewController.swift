@@ -56,7 +56,6 @@ class TMBasketViewController: UITableViewController {
         self.tableView.showsVerticalScrollIndicator = false
         self.tableView.register(AKBasketItemCell.self,
                                 forCellReuseIdentifier: AKBasketItemCell.reuseIdentifier)
-        // table editting settings
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.rightBarButtonItems = [self.editButtonItem]
     }
@@ -64,7 +63,6 @@ class TMBasketViewController: UITableViewController {
     // MARK: - fav notification
 
     private func sendFavActionNotification(id: UUID) {
-//        NotificationCenter.default.post(Notification(name: .itemFavAction))
         let notificationInfo: [String: UUID] = ["id": id]
         NotificationCenter.default.post(name: .itemFavAction,
                                         object: nil, userInfo: notificationInfo)

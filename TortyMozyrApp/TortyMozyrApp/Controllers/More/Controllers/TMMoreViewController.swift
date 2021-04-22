@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class TMMoreViewController: AKViewController {
 
@@ -95,7 +94,7 @@ class TMMoreViewController: AKViewController {
     private lazy var exitButton: AKSystemButton = {
         let button = AKSystemButton()
         button.setTitle("Выйти", for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKDarkGray")
+        button.backgroundColor = AKColors.darkGray
         button.addTarget(self, action: #selector(exitButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -135,7 +134,7 @@ class TMMoreViewController: AKViewController {
     private lazy var aboutAuthorButton: UIButton = {
         let button = UIButton()
         button.setTitle("Смотреть", for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKOrange")
+        button.backgroundColor = AKColors.orange
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(aboutAuthorButtonTapped), for: .touchUpInside)
         return button
@@ -158,12 +157,12 @@ class TMMoreViewController: AKViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = NSLocalizedString("More", comment: "")
+        self.title = "More".localized
         self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
         self.navigationItem.setLeftBarButton(leftBarButtonItem, animated: false)
         self.navigationItem.backButtonTitle = " "
 
-        self.view.backgroundColor = UIColor(named: "AKWhite")
+        self.view.backgroundColor = AKColors.white
 
         self.mainView.addSubview(socialNetworkBackgroundView)
         self.socialNetworkBackgroundView.addSubview(socailNetworksTitleLabel)
@@ -176,9 +175,11 @@ class TMMoreViewController: AKViewController {
         self.vkIconView.addSubview(vkIconImage)
 
         self.mainView.addSubview(aboutAuthorBackgroundView)
-        self.aboutAuthorBackgroundView.addSubview(aboutAuthorImageView)
-        self.aboutAuthorBackgroundView.addSubview(aboutAuthorTitleLabel)
-        self.aboutAuthorBackgroundView.addSubview(aboutAuthorButton)
+        self.aboutAuthorBackgroundView.addSubview([
+            self.aboutAuthorImageView,
+            self.aboutAuthorTitleLabel,
+            self.aboutAuthorButton
+        ])
 
         self.mainView.addSubview(exitButton)
 
@@ -189,7 +190,6 @@ class TMMoreViewController: AKViewController {
 
     func setUpConstraints() {
 
-        /// set up constraints on social networks view
         self.socialNetworkBackgroundView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().inset(20)
             make.left.right.equalToSuperview().inset(25)
@@ -240,7 +240,6 @@ class TMMoreViewController: AKViewController {
             make.width.height.equalTo(24)
         }
 
-        /// About author banner constraints
         self.aboutAuthorBackgroundView.snp.makeConstraints { (make) in
             make.top.equalTo(self.socialNetworkBackgroundView.snp.bottom).offset(270)
             make.left.right.equalToSuperview().inset(25)
@@ -265,7 +264,6 @@ class TMMoreViewController: AKViewController {
             make.height.equalTo(30)
         }
 
-        /// Exit button constraints
         self.exitButton.snp.makeConstraints { (make) in
             make.top.equalTo(self.aboutAuthorImageView.snp.bottom).offset(20)
             make.bottom.equalToSuperview()
@@ -275,33 +273,35 @@ class TMMoreViewController: AKViewController {
 
     // MARK: - actions
 
-    @objc func infoNavBarButtonTapped() {
+    @objc private func infoNavBarButtonTapped() {
         self.navigationController?.pushViewController(AKAboutViewController(), animated: true)
     }
-    @objc func favNavBarButtonTapped() {
+    @objc private func favNavBarButtonTapped() {
         self.navigationController?.pushViewController(AKFavouriteViewController(), animated: true)
     }
 
-    @objc func phoneCallTapped() {
+    @objc private func phoneCallTapped() {
         TMCaller.openPhone("+3753312344567")
 
     }
 
-    @objc func aboutAuthorButtonTapped() {
+    @objc private func aboutAuthorButtonTapped() {
         self.navigationController?.pushViewController(AKAboutViewController(), animated: true)
     }
 
-    @objc func instagramTapped() {
-        let instargamSafariPage = SFSafariViewController(url: URL(string: "https://www.instagram.com/torty_mozyr/")!)
-        present(instargamSafariPage, animated: true)
+    @objc private func instagramTapped() {
+        let instargamPage = AKWebViewController(stringUrl: "https://www.instagram.com/torty_mozyr/")
+        instargamPage.title = "Instagram"
+        self.navigationController?.pushViewController(instargamPage, animated: true)
     }
 
-    @objc func vkTapped() {
-        let vkSafariPage = SFSafariViewController(url: URL(string: "https://vk.com/torty_mozyr")!)
-        present(vkSafariPage, animated: true)
+    @objc private func vkTapped() {
+        let vkPage = AKWebViewController(stringUrl: "https://vk.com/torty_mozyr")
+        vkPage.title = "VK"
+        self.navigationController?.pushViewController(vkPage, animated: true)
     }
 
-    @objc func exitButtonTapped() {
+    @objc private func exitButtonTapped() {
         self.navigationController?.pushViewController(AuthorizationViewController(), animated: true)
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true

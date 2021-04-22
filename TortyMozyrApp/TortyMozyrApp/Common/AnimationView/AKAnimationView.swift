@@ -28,9 +28,5 @@ class AKAnimationView: UIView {
         self.view.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-
-//        self.view.contentMode = .scaleAspectFit
-//        loopMode = .loop
-//        play()
     }
 }

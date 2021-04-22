@@ -17,7 +17,6 @@ class StoriesViewController: UIViewController {
 
     private lazy var storiesImageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.image = UIImage(named: "merenRuletStoriesImage")
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -122,10 +121,6 @@ class StoriesViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
             self.navigationController?.pushViewController(TMHomepageViewController(), animated: true)
         }
-
-//        timer.invalidate() // вынести
-//        timer.fire()
-
     }
 
     private func scale() {

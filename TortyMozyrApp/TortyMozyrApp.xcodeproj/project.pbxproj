@@ -49,7 +49,6 @@
 		11AE9C6D261A202500FC1AAC /* AKCustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */; };
 		11B4D289262EF51A0074875B /* AKColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4D288262EF51A0074875B /* AKColors.swift */; };
 		11B80916261CE8030085793D /* AKPromotionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B80915261CE8030085793D /* AKPromotionsCell.swift */; };
-		11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */; };
 		11D20CF92629E9C0002FA6CA /* AKAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */; };
 		11D20D032629F45A002FA6CA /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D022629F45A002FA6CA /* MapAnnotation.swift */; };
 		11D20D07262A1319002FA6CA /* AKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D20D06262A1319002FA6CA /* AKWebViewController.swift */; };
@@ -130,7 +129,6 @@
 		11AE9C6C261A202500FC1AAC /* AKCustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCustomSearchController.swift; sourceTree = "<group>"; };
 		11B4D288262EF51A0074875B /* AKColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKColors.swift; sourceTree = "<group>"; };
 		11B80915261CE8030085793D /* AKPromotionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKPromotionsCell.swift; sourceTree = "<group>"; };
-		11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworksStackView.swift; sourceTree = "<group>"; };
 		11D20CF82629E9BF002FA6CA /* AKAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAdressViewController.swift; sourceTree = "<group>"; };
 		11D20D022629F45A002FA6CA /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		11D20D06262A1319002FA6CA /* AKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKWebViewController.swift; sourceTree = "<group>"; };
@@ -536,14 +534,6 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		11C38F4826077A1E008A8CEF /* StackViews */ = {
-			isa = PBXGroup;
-			children = (
-				11C38F4926077A41008A8CEF /* SocialNetworksStackView.swift */,
-			);
-			path = StackViews;
-			sourceTree = "<group>";
-		};
 		11D20CFB2629EA58002FA6CA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,7 +664,6 @@
 				1121CD392627806700A81804 /* CollectionViews */,
 				11AE9C66261A1F4A00FC1AAC /* SearchController */,
 				114B32D426178E2B007CBCAA /* Steppers */,
-				11C38F4826077A1E008A8CEF /* StackViews */,
 				1110544425FB9E50002A6E79 /* ImageViews */,
 				11AE542625FB9BDB0064B3EA /* Views */,
 				11AE541F25FB9B060064B3EA /* Labels */,
@@ -960,7 +949,6 @@
 				11D20CF92629E9C0002FA6CA /* AKAdressViewController.swift in Sources */,
 				11852E5625F3D49F00C412FF /* TMBasketViewController.swift in Sources */,
 				1156C20E260297CF00E85F37 /* AKStepper.swift in Sources */,
-				11C38F4A26077A41008A8CEF /* SocialNetworksStackView.swift in Sources */,
 				1121CD3B2627809700A81804 /* AKHorizontalCollectionView.swift in Sources */,
 				11EF0E6325F227DB006FE5B8 /* ForgotPasswordViewController.swift in Sources */,
 				1110544625FB9E77002A6E79 /* AKCorporateBackgroundImageView.swift in Sources */,

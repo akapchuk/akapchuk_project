@@ -11,7 +11,7 @@ import WebKit
 
 class TMDeliveryVC: AKViewController {
 
-    // MARK: - variables
+    // MARK: - properties
 
     let deliveryListItemsData = [
         CustomDeliveryListData(title: "ДОСТАВКА В ПРЕДЕЛАХ ПЕРВОГО РАЙОНА В МОЗЫРЕ",
@@ -40,8 +40,8 @@ class TMDeliveryVC: AKViewController {
     // MARK: - gui variables
 
     private lazy var mapOrListSegmentedControl: UISegmentedControl = {
-        let items = [NSLocalizedString("List", comment: ""),
-                     NSLocalizedString("On Map", comment: "")]
+        let items = ["List".localized,
+                     "On Map".localized]
         let itemsPics = [UIImage(systemName: "list.bullet"), UIImage(systemName: "map")]
 
         let controller = UISegmentedControl(items: itemsPics as [Any])
@@ -50,7 +50,7 @@ class TMDeliveryVC: AKViewController {
         controller.layer.borderWidth = 1
         controller.layer.masksToBounds = true
         controller.selectedSegmentTintColor = .systemYellow
-        controller.layer.borderColor = UIColor(named: "AKDarkGray")?.cgColor
+        controller.layer.borderColor = AKColors.darkGray?.cgColor
         controller.addTarget(self, action: #selector(handleSegmentValueChanged(_:)), for: .valueChanged)
         controller.translatesAutoresizingMaskIntoConstraints = false
         return controller
@@ -58,7 +58,7 @@ class TMDeliveryVC: AKViewController {
 
     private lazy var deliveryTypeHeaderTitleLabel: AKHeaderTitleLabel = {
         let header = AKHeaderTitleLabel()
-        header.text = NSLocalizedString("List", comment: "")
+        header.text = "List".localized
         return header
     }()
 
@@ -129,7 +129,7 @@ class TMDeliveryVC: AKViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = NSLocalizedString("Delivery", comment: "")
+        self.title = "Delivery".localized
         self.view.backgroundColor = .white
 
         self.navigationItem.backButtonTitle = " "
@@ -179,7 +179,7 @@ class TMDeliveryVC: AKViewController {
             make.top.equalTo(self.deliveryListCollectionView.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(150)
-            make.bottom.equalToSuperview() // опасная штука
+            make.bottom.equalToSuperview()
         }
 
         self.pickUpImageContainerView.snp.makeConstraints { (make) in
@@ -231,11 +231,11 @@ class TMDeliveryVC: AKViewController {
         }
     }
 
-    fileprivate func hideMapSectionElements(_ isHide: Bool) {
+    private func hideMapSectionElements(_ isHide: Bool) {
         self.mapView.isHidden = isHide
     }
 
-    @objc fileprivate func pickUpButtonTapped() {
+    @objc private func pickUpButtonTapped() {
         self.navigationController?.pushViewController(AKAdressViewController(), animated: true)
     }
 
@@ -266,16 +266,16 @@ class TMDeliveryVC: AKViewController {
                                                     coordinate: firstDistrictCoordinate)
 
         let mozyrAnnotation = MapAnnotation(title: "По Мозырю",
-                                                    subtitle: "+ 10 BYN",
-                                                    coordinate: mozyrCoordinate)
+                                            subtitle: "+ 10 BYN",
+                                            coordinate: mozyrCoordinate)
 
         let kozenkiAnnotation = MapAnnotation(title: "Доставка в Козенки",
-                                                    subtitle: "+ 20 BYN",
-                                                    coordinate: kozenkiCoordinate)
+                                              subtitle: "+ 20 BYN",
+                                              coordinate: kozenkiCoordinate)
 
         let kalinkovichiAnnotation = MapAnnotation(title: "Доставка в калинковичи",
-                                                    subtitle: "+ 20 BYN",
-                                                    coordinate: kalinkovichiCoordinate)
+                                                   subtitle: "+ 20 BYN",
+                                                   coordinate: kalinkovichiCoordinate)
 
         self.mapView.addAnnotations([
             pickUpAnnotation,
@@ -285,7 +285,9 @@ class TMDeliveryVC: AKViewController {
             kalinkovichiAnnotation
         ])
         self.mapView.setCenter(mozyrCoordinate, animated: true)
-//        self.mapView.setRegion(, animated: <#T##Bool#>) для установки приближения
+
+        // TODO: - implement later
+        //        self.mapView.setRegion(, animated: <#T##Bool#>) для установки приближения
 
     }
 }
@@ -309,9 +311,8 @@ extension TMDeliveryVC: UICollectionViewDelegateFlowLayout, UICollectionViewData
             cell.set(data: deliveryListItemsData[indexPath.row])
             cell.showMap = { [weak self] in
                 let url = self?.deliveryListItemsData[indexPath.row].url
-                // URL  использовать в webView
                 let controller = AKWebViewController(stringUrl: url ?? "https://google.com")
-                controller.title = "На карте"
+                controller.title = "On Map".localized
                 self?.navigationController?.pushViewController(controller, animated: true)
             }
         }
@@ -333,7 +334,7 @@ extension TMDeliveryVC: MKMapViewDelegate {
         } else {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: MapAnnotation.identifierPickUp)
             annotationView.glyphImage = UIImage(systemName: "heart")
-            annotationView.markerTintColor = UIColor(named: "AKOrange")
+            annotationView.markerTintColor = AKColors.orange
             annotationView.selectedGlyphImage = UIImage(systemName: "heart.fill")
 
             annotationView.canShowCallout = true

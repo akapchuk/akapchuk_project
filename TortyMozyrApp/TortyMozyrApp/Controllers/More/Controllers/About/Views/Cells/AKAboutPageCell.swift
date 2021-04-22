@@ -58,6 +58,8 @@ class AKAboutPageCell: UITableViewCell {
         self.initCell()
     }
 
+    // MARK: - initialization
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -81,6 +83,8 @@ class AKAboutPageCell: UITableViewCell {
 
         self.selectionStyle = .none
     }
+
+    // MARK: - set up constraints
 
     override func updateConstraints() {
 
@@ -116,6 +120,8 @@ class AKAboutPageCell: UITableViewCell {
 
         super.updateConstraints()
     }
+
+    // MARK: - set cell data
 
     func setCellData(image: UIImage, imageName: String, imageDescription: String) {
         self.subheaderTitleLabel.text = imageName

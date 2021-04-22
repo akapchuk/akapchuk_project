@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class AKMenuItemViewController: UIViewController {
 
@@ -66,7 +65,7 @@ class AKMenuItemViewController: UIViewController {
 
     private lazy var subHeaderTitle: UILabel = {
         let subHeader = UILabel()
-        subHeader.text = "Вес: \(Int(self.productStepper.value * 1000)) гр."
+        subHeader.text = "\("Weight".localized): \(Int(self.productStepper.value * 1000)) \("g.".localized)"
         subHeader.font = UIFont.systemFont(ofSize: 25, weight: .medium)
         subHeader.translatesAutoresizingMaskIntoConstraints = false
         return subHeader
@@ -105,8 +104,8 @@ class AKMenuItemViewController: UIViewController {
 
     private lazy var addToBasketButton: AKSystemButton = {
         let button = AKSystemButton()
-        button.setTitle("Добавить в корзину", for: UIControl.State())
-        button.backgroundColor = UIColor(named: "AKOrange")
+        button.setTitle("Add to Shopping Cart".localized, for: UIControl.State())
+        button.backgroundColor = AKColors.orange
         button.addTarget(self, action: #selector(addToBasketButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -116,7 +115,7 @@ class AKMenuItemViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(named: "AKWhite")
+        self.view.backgroundColor = AKColors.white
 
         self.navigationController?.navigationBar.isHidden = true
 
@@ -256,20 +255,19 @@ class AKMenuItemViewController: UIViewController {
 
     // MARK: - actions
 
-    @objc func backButtonTapped() {
+    @objc private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.navigationBar.isHidden = false
     }
 
-    @objc func productStepperWasChanged() {
-        print("Stepper value is \(self.productStepper.value)")
+    @objc private func productStepperWasChanged() {
         let cost: Double = Double(round(((self.menuItemPrice ?? 0) * self.productStepper.value) * 100) / 100)
         self.priceTitle.text = "\(cost) BYN"
-        self.subHeaderTitle.text = "Вес \(Int((self.productStepper.value) * 1000)) гр."
+        self.subHeaderTitle.text = "\("Weight".localized): \(Int((self.productStepper.value) * 1000)) \("g.".localized)"
     }
 
-    @objc func addToBasketButtonTapped() {
-        let alertController = UIAlertController(title: "Готово!",
+    @objc private func addToBasketButtonTapped() {
+        let alertController = UIAlertController(title: "Done".localized,
                                                 message: "Товар добавлен в корзину",
                                                 preferredStyle: .actionSheet)
         let continueAction = UIAlertAction(title: "Продолжить", style: .default) { _ in
