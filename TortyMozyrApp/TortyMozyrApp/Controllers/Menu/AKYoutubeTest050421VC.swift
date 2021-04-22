@@ -32,7 +32,7 @@ class AKYoutubeTest050421VC: UIViewController {
         self.playerView.snp.makeConstraints { (make) in
             make.height.equalTo(300)
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.centerX.centerY.equalToSuperview()
+            make.center.equalToSuperview()
         }
     }
 
